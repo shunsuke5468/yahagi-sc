@@ -86,7 +86,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 .pm-main{position:relative;overflow:hidden;}
 .pm-main img{width:100%;height:100%;object-fit:cover;transition:transform .6s;}
 .pm-main:hover img{transform:scale(1.04);}
-.pm-side{display:grid;grid-template-rows:1fr 1fr;gap:3px;background:#fff;}
+.pm-side{display:grid;grid-template-rows:1.2fr 0.8fr;gap:3px;background:#fff;}
 .pm-sub{position:relative;overflow:hidden;}
 .pm-sub img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
 .pm-sub:hover img{transform:scale(1.07);}
@@ -707,18 +707,18 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     <img class="trophy-img" src="images/trophy.JPG" alt="獲得トロフィー一覧">
 
     <!-- 成績サマリー -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:2rem;">
-      <div style="background:#fff;border:2px solid var(--red);border-radius:18px;padding:1.75rem;text-align:center;box-shadow:0 4px 20px rgba(217,27,42,.1);">
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(80px,1fr));gap:8px;margin-bottom:2rem;">
+      <div style="background:#fff;border:2px solid var(--red);border-radius:14px;padding:1rem .5rem;text-align:center;box-shadow:0 4px 20px rgba(217,27,42,.1);">
         <div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--red);text-transform:uppercase;margin-bottom:.5rem;">優勝</div>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--red);line-height:1;">10</div>
         <div style="font-size:.85rem;font-weight:700;color:var(--text2);">回</div>
       </div>
-      <div style="background:#fff;border:2px solid #888;border-radius:18px;padding:1.75rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);">
+      <div style="background:#fff;border:2px solid #888;border-radius:14px;padding:1rem .5rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);">
         <div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#666;text-transform:uppercase;margin-bottom:.5rem;">準優勝</div>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;color:#666;line-height:1;">11</div>
         <div style="font-size:.85rem;font-weight:700;color:var(--text2);">回</div>
       </div>
-      <div style="background:#fff;border:2px solid #CD7F32;border-radius:18px;padding:1.75rem;text-align:center;box-shadow:0 4px 20px rgba(205,127,50,.1);">
+      <div style="background:#fff;border:2px solid #CD7F32;border-radius:14px;padding:1rem .5rem;text-align:center;box-shadow:0 4px 20px rgba(205,127,50,.1);">
         <div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#CD7F32;text-transform:uppercase;margin-bottom:.5rem;">3位</div>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;color:#CD7F32;line-height:1;">6</div>
         <div style="font-size:.85rem;font-weight:700;color:var(--text2);">回</div>
