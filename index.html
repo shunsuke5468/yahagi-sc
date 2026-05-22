@@ -2,6 +2,9 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>矢作サッカークラブ | 小田原市 幼児・小学生サッカー少年団 Since 1974</title>
 <meta name="description" content="1974年創設・小田原市矢作地区の少年サッカークラブ。幼児〜小学6年生対象。月会費2,500円・体験無料。土日祝 矢作小学校グランドで活動中。">
@@ -145,7 +148,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 /* RESULTS */
 .results-section{background:var(--off);padding:5rem 1.5rem;}
-.trophy-img{width:100%;height:450px;object-fit:cover;border-radius:18px;margin:1.5rem 0;box-shadow:0 8px 32px rgba(0,0,0,.12);}
+.trophy-img{width:100%;height:600px;object-fit:cover;object-position:center;border-radius:18px;margin:1.5rem 0;box-shadow:0 8px 32px rgba(0,0,0,.12);}
 .results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
 .result-card{background:#fff;border:2px solid var(--border);border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:10px;transition:all .2s;}
 .result-card:hover{border-color:var(--red);transform:translateY(-2px);}
@@ -206,7 +209,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 /* FINAL CTA */
 .final-cta{position:relative;overflow:hidden;min-height:600px;display:flex;align-items:center;}
-.final-bg{position:absolute;inset:0;background:url('images/final_bg.JPG') top center/cover no-repeat;}
+.final-bg{position:absolute;inset:0;background:url('images/final_bg.JPG') center center/cover no-repeat;}
 .final-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(168,15,27,.9),rgba(80,0,10,.75));}
 .final-inner{position:relative;z-index:1;padding:6rem 1.5rem;text-align:center;max-width:680px;margin:0 auto;}
 .final-logo{width:80px;margin:0 auto 1.5rem;filter:drop-shadow(0 6px 20px rgba(0,0,0,.4));animation:float 3s ease-in-out infinite;}
@@ -398,7 +401,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     <p style="font-size:.9rem;color:var(--text2);max-width:600px;margin-top:.5rem;">
       矢作サッカークラブのコーチ陣は、1974年の創設以来培われてきた指導理念のもと、一人ひとりのお子さまに向き合います。
     </p>
-    <div class="coach-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <div class="coach-grid" style="display:grid !important;grid-template-columns:repeat(3,1fr) !important;gap:20px !important;">
       <div class="coach-card" style="animation-delay:0.00s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
           <!-- TODO: 顔写真追加時は下の img タグのコメントを解除し、src に画像パスを設定 -->
