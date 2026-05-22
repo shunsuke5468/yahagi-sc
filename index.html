@@ -145,7 +145,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 /* RESULTS */
 .results-section{background:var(--off);padding:5rem 1.5rem;}
-.trophy-img{width:100%;height:300px;object-fit:cover;border-radius:18px;margin:1.5rem 0;box-shadow:0 8px 32px rgba(0,0,0,.12);}
+.trophy-img{width:100%;height:450px;object-fit:cover;border-radius:18px;margin:1.5rem 0;box-shadow:0 8px 32px rgba(0,0,0,.12);}
 .results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
 .result-card{background:#fff;border:2px solid var(--border);border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:10px;transition:all .2s;}
 .result-card:hover{border-color:var(--red);transform:translateY(-2px);}
@@ -257,6 +257,13 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 }
 @media(max-width:480px){
   .coach-grid{grid-template-columns:repeat(2,1fr) !important;gap:8px !important;}
+}
+
+@media screen and (max-width:768px){
+  div.coach-grid{grid-template-columns:repeat(2,1fr) !important;gap:10px !important;}
+}
+@media screen and (max-width:480px){
+  div.coach-grid{grid-template-columns:repeat(2,1fr) !important;gap:8px !important;}
 }
 </style>
 </head>
@@ -391,7 +398,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     <p style="font-size:.9rem;color:var(--text2);max-width:600px;margin-top:.5rem;">
       矢作サッカークラブのコーチ陣は、1974年の創設以来培われてきた指導理念のもと、一人ひとりのお子さまに向き合います。
     </p>
-    <div class="coach-grid">
+    <div class="coach-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div class="coach-card" style="animation-delay:0.00s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
           <!-- TODO: 顔写真追加時は下の img タグのコメントを解除し、src に画像パスを設定 -->
