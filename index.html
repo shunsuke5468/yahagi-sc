@@ -2,17 +2,9 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>矢作サッカークラブ | 小田原市 幼児・小学生サッカー少年団 Since 1974</title>
-<meta name="description" content="1974年創設・小田原市矢作地区の少年サッカークラブ。幼児〜小学6年生対象。月会費2,500円・体験無料。土日祝 矢作小学校グランドで活動中。">
-<meta property="og:title" content="矢作サッカークラブ | 小田原市 幼児・小学生サッカー少年団">
-<meta property="og:description" content="1974年創設の矢作SC。幼児〜小学6年生・月2,500円・体験無料。一緒にサッカーをしよう！">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<title>矢作サッカークラブ | 小田原市 Since 1974</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --red:#D91B2A; --red-dark:#A80F1B; --red-pale:#FFF0F1;
@@ -32,7 +24,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);border-bottom:3px solid var(--red);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.08);}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;letter-spacing:.02em;}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-logo img{width:36px;height:36px;object-fit:contain;}
+.nav-logo img{width:56px;height:56px;object-fit:contain;}
 .nav-logo-text{font-size:.78rem;font-weight:900;color:var(--text);line-height:1.2;}
 .nav-logo-text span{display:block;font-size:.6rem;color:var(--text2);font-weight:700;}
 .nav-links{display:flex;align-items:center;gap:0;}
@@ -49,7 +41,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 /* HERO */
 .hero{position:relative;height:100vh;min-height:600px;max-height:940px;overflow:hidden;display:flex;align-items:center;}
-.hero-bg{position:absolute;inset:0;background:url('images/hero.JPG') center/cover no-repeat;}
+.hero-bg{position:absolute;inset:0;background:url('yahagi_assets/img_1.jpg') center/cover no-repeat;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(110deg,rgba(170,8,18,.88) 0%,rgba(170,8,18,.6) 45%,rgba(0,0,0,.2) 100%);}
 .hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:2rem 2rem 5rem;width:100%;}
 .hero-logo{width:80px;margin-bottom:1rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,.4));animation:float 4s ease-in-out infinite;}
@@ -148,7 +140,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 /* RESULTS */
 .results-section{background:var(--off);padding:5rem 1.5rem;}
-.trophy-img{width:100%;height:600px;object-fit:cover;object-position:center;border-radius:18px;margin:1.5rem 0;box-shadow:0 8px 32px rgba(0,0,0,.12);}
+.trophy-img{width:100%;height:300px;object-fit:cover;border-radius:18px;margin:1.5rem 0;box-shadow:0 8px 32px rgba(0,0,0,.12);}
 .results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
 .result-card{background:#fff;border:2px solid var(--border);border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:10px;transition:all .2s;}
 .result-card:hover{border-color:var(--red);transform:translateY(-2px);}
@@ -209,7 +201,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 /* FINAL CTA */
 .final-cta{position:relative;overflow:hidden;min-height:600px;display:flex;align-items:center;}
-.final-bg{position:absolute;inset:0;background:url('images/final_bg.JPG') center center/cover no-repeat;}
+.final-bg{position:absolute;inset:0;background:url('yahagi_assets/img_2.jpg') top center/cover no-repeat;}
 .final-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(168,15,27,.9),rgba(80,0,10,.75));}
 .final-inner{position:relative;z-index:1;padding:6rem 1.5rem;text-align:center;max-width:680px;margin:0 auto;}
 .final-logo{width:80px;margin:0 auto 1.5rem;filter:drop-shadow(0 6px 20px rgba(0,0,0,.4));animation:float 3s ease-in-out infinite;}
@@ -223,7 +215,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 /* FOOTER */
 .footer{background:var(--navy);color:rgba(255,255,255,.6);padding:3rem 1.5rem 5rem;}
 .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;}
-.footer-brand img{width:60px;margin-bottom:.75rem;opacity:.9;}
+.footer-brand img{width:60px;margin-bottom:.75rem;opacity:.9;mix-blend-mode:screen;}
 .footer-brand-name{font-size:.85rem;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:.25rem;letter-spacing:.05em;}
 .footer-brand-sub{font-size:.72rem;color:rgba(255,255,255,.5);}
 .footer-col-title{font-size:.7rem;font-weight:900;letter-spacing:.2em;color:var(--yellow);margin-bottom:.75rem;text-transform:uppercase;}
@@ -252,21 +244,18 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
   .pm-sub img{height:160px;}
   .stats-inner{grid-template-columns:1fr 1fr;}
   .phil-grid{grid-template-columns:1fr;}
-  .coach-grid{grid-template-columns:repeat(2,1fr) !important;gap:10px !important;}
+  .coach-grid{grid-template-columns:repeat(2,1fr);}
   .course-grid{grid-template-columns:1fr;}
   .sch-grid{grid-template-columns:1fr;}
   .price-layout{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr;}
 }
 @media(max-width:480px){
-  .coach-grid{grid-template-columns:repeat(2,1fr) !important;gap:8px !important;}
+  .coach-grid{grid-template-columns:repeat(2,1fr);}
 }
 
-@media screen and (max-width:768px){
-  div.coach-grid{grid-template-columns:repeat(2,1fr) !important;gap:10px !important;}
-}
-@media screen and (max-width:480px){
-  div.coach-grid{grid-template-columns:repeat(2,1fr) !important;gap:8px !important;}
+@media(max-width:768px){
+  div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:repeat(2,1fr) !important;}
 }
 </style>
 </head>
@@ -276,7 +265,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="#">
-      <img src="images/logo.jpg" alt="YAHAGI SC">
+      <img src="yahagi_assets/logo_1.png" alt="YAHAGI SC">
       <div class="nav-logo-text">矢作サッカークラブ<span>YAHAGI SC | Since 1974</span></div>
     </a>
     <div class="nav-links">
@@ -286,7 +275,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <a class="nav-link" href="#results">実績</a>
       <a class="nav-link" href="#schedule">練習情報</a>
       <a class="nav-link" href="#price">費用</a>
-      <a class="nav-link" href="#join">入団の流れ</a>
+      <a class="nav-link" href="#join">入団方法</a>
       <a class="nav-link" href="#faq">FAQ</a>
       <a class="nav-cta" href="#contact">⚽ 体験申込はこちら</a>
     </div>
@@ -312,7 +301,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
-    <img class="hero-logo" style="display:none;" src="images/logo.jpg" alt="YAHAGI SC">
+    <img class="hero-logo" style="display:none;" src="yahagi_assets/logo_1.png" alt="YAHAGI SC">
     <div class="hero-badge">⚽ 小田原市・矢作地区 2026年度 団員募集</div>
     <div class="hero-title">
       サッカーで、<span class="yel">強く</span>なれ。<br>
@@ -326,7 +315,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div class="hstat"><div class="hstat-num">50<span class="hstat-u">年+</span></div><div class="hstat-l">の歴史</div></div>
       <div class="hstat"><div class="hstat-num">57<span class="hstat-u">名</span></div><div class="hstat-l">の仲間</div></div>
       <div class="hstat"><div class="hstat-num">2,500<span class="hstat-u">円</span></div><div class="hstat-l">月会費</div></div>
-      <div class="hstat"><div class="hstat-num">80<span class="hstat-u">+</span></div><div class="hstat-l">年間大会・試合</div></div>
+      <div class="hstat"><div class="hstat-num">80<span class="hstat-u">+</span></div><div class="hstat-l">年間試合</div></div>
     </div>
     <div class="hero-btns">
       <a href="#contact" class="btn btn-yellow">⚽ 無料体験に参加する</a>
@@ -343,7 +332,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
   <div class="stats-inner">
     <div class="sb-item"><div class="sb-num">1974</div><div class="sb-l">創設年</div></div>
     <div class="sb-item"><div class="sb-num">57<span class="sb-u">名</span></div><div class="sb-l">現在の団員数</div></div>
-    <div class="sb-item"><div class="sb-num">80<span class="sb-u">+</span></div><div class="sb-l">年間大会・試合数</div></div>
+    <div class="sb-item"><div class="sb-num">80<span class="sb-u">+</span></div><div class="sb-l">年間試合数</div></div>
     <div class="sb-item"><div class="sb-num">U6<span class="sb-u">〜U12</span></div><div class="sb-l">全カテゴリー</div></div>
   </div>
 </div>
@@ -358,16 +347,16 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     <div style="margin-top:2rem;">
       <div class="photo-magazine">
         <div class="pm-main">
-          <img src="images/gallery1.JPG" alt="全員集合">
+          <img src="yahagi_assets/img_1.jpg" alt="全員集合">
           <div class="pm-overlay"><div class="pm-label"><span>TEAM PHOTO</span>矢作SCファミリー全員集合！</div></div>
         </div>
         <div class="pm-side">
           <div class="pm-sub">
-            <img src="images/gallery2.JPG" alt="BBQ大会">
+            <img src="yahagi_assets/img_3.jpg" alt="BBQ大会">
             <div class="pm-overlay"><div class="pm-label"><span>EVENT</span>🎉 BBQ・水鉄砲 大盛り上がり！</div></div>
           </div>
           <div class="pm-sub">
-            <img src="images/gallery3.JPG" alt="キッズ教室">
+            <img src="yahagi_assets/img_4.jpg" alt="キッズ教室">
             <div class="pm-overlay"><div class="pm-label"><span>KIDS CLASS</span>👶 幼児も大歓迎！</div></div>
           </div>
         </div>
@@ -401,201 +390,238 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     <p style="font-size:.9rem;color:var(--text2);max-width:600px;margin-top:.5rem;">
       矢作サッカークラブのコーチ陣は、1974年の創設以来培われてきた指導理念のもと、一人ひとりのお子さまに向き合います。
     </p>
-    <div class="coach-grid" style="display:grid !important;grid-template-columns:repeat(3,1fr) !important;gap:20px !important;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2.5rem;">
       <div class="coach-card" style="animation-delay:0.00s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
-          <!-- TODO: 顔写真追加時は下の img タグのコメントを解除し、src に画像パスを設定 -->
-          <!-- <img src="coaches/kusaka.jpg" alt="日下 研一" style="width:100%;height:100%;object-fit:cover;object-position:top;"> -->
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#D91B2A;"></div>
-        </div><div class="coach-name-en">KENICHI KUSAKA</div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#D91B2A;">総監督・育成指導統括</div>
+          <div class="coach-name">日下 研一</div><div class="coach-name-en">KENICHI KUSAKA</div>
+          
+          
           <p class="coach-msg">「選手一人ひとりの可能性を信じ、サッカーを通じて心と体を育てます。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.07s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#1565C0;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#1565C0;">代表・U-10監督</div>
           <div class="coach-name">早坂 浩明</div><div class="coach-name-en">HIROAKI HAYASAKA</div>
+          
+          
           <p class="coach-msg">「クリエイティブな選手を育てることをミッションに、日々指導に向き合っています。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.14s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#27AE6018,#27AE6038);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#27AE60;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#27AE60;">相談役</div>
           <div class="coach-name">河野 浩二</div><div class="coach-name-en">KOJI KAWANO</div>
+          
+          
           <p class="coach-msg">「長年の経験を活かし、クラブ全体をサポートしています。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.21s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#D91B2A;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#D91B2A;">U-12コーチ</div>
           <div class="coach-name">諸星 達也</div><div class="coach-name-en">TATSUYA MOROHOSHI</div>
+          
+          
           <p class="coach-msg">「高学年の選手たちが次のステージで輝けるよう、戦術と技術を丁寧に指導します。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.28s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#1565C0;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#1565C0;">U-12コーチ</div>
           <div class="coach-name">柏木 誉史</div><div class="coach-name-en">TAKAFUMI KASHIWAGI</div>
+          
+          
           <p class="coach-msg">「選手が持つ可能性を最大限に引き出す指導を心がけています。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.35s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#D91B2A;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#D91B2A;">U-12コーチ</div>
           <div class="coach-name">瀬戸 俊明</div><div class="coach-name-en">TOSHIAKI SETO</div>
+          
+          
           <p class="coach-msg">「サッカーの楽しさと厳しさを両立した指導で選手を育てます。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.42s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#6A1B9A18,#6A1B9A38);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#6A1B9A;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#6A1B9A;">U-12コーチ</div>
           <div class="coach-name">高橋 富康</div><div class="coach-name-en">TOMIYASU TAKAHASHI</div>
+          
+          
           <p class="coach-msg">「プレーと審判の両面からサッカーを深く理解した指導を行います。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.49s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#1565C0;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#1565C0;">U-10コーチ</div>
           <div class="coach-name">植田 健</div><div class="coach-name-en">KEN UEDA</div>
+          
+          
           <p class="coach-msg">「個の技術を高め、サッカーの楽しさを伝えることを大切にしています。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.56s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#D91B2A;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#D91B2A;">U-10コーチ</div>
           <div class="coach-name">赤松 歩</div><div class="coach-name-en">AYUMU AKAMATSU</div>
+          
+          
           <p class="coach-msg">「子どもたちが主体的にサッカーを楽しめる環境づくりを大切にしています。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.63s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#1565C0;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#1565C0;">U-10コーチ</div>
           <div class="coach-name">田中 祐也</div><div class="coach-name-en">YUYA TANAKA</div>
+          
+          
           <p class="coach-msg">「技術の基礎をしっかり固め、選手の成長を丁寧にサポートします。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.70s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#27AE6018,#27AE6038);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#27AE60;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#27AE60;">U-8コーチ</div>
           <div class="coach-name">三橋 義昭</div><div class="coach-name-en">YOSHIAKI MITSUHASHI</div>
+          
+          
           <p class="coach-msg">「初めてサッカーに触れるお子さまが「楽しい！」と感じられる練習を作ります。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.77s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#E6510018,#E6510038);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#E65100;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#E65100;">U-8コーチ</div>
           <div class="coach-name">甲 淳一</div><div class="coach-name-en">JUNICHI KOU</div>
+          
+          
           <p class="coach-msg">「子どもたちの笑顔のために、毎回全力で練習に向き合います。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.84s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#D91B2A;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#D91B2A;">U-8コーチ</div>
           <div class="coach-name">徳永 哲和</div><div class="coach-name-en">TETSUKAZU TOKUNAGA</div>
+          
+          
           <p class="coach-msg">「低学年の子どもたちがボールを好きになれるよう楽しい練習を心がけます。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.91s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#1565C0;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#1565C0;">U-8コーチ</div>
           <div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div>
+          
+          
           <p class="coach-msg">「サッカーの基礎をゲーム感覚で楽しく身につけられるよう指導します。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:0.98s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#6A1B9A18,#6A1B9A38);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#6A1B9A;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#6A1B9A;">GK専門コーチ</div>
           <div class="coach-name">渋谷 芳美</div><div class="coach-name-en">YOSHIMI SHIBUYA</div>
+          
+          
           <p class="coach-msg">「ゴールキーパーの専門技術を徹底指導。ゴールを守る選手を育てます。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:1.05s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#27AE6018,#27AE6038);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#27AE60;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#27AE60;">湘北担当コーチ</div>
           <div class="coach-name">磯﨑 幸二</div><div class="coach-name-en">KOJI ISOZAKI</div>
+          
+          
           <p class="coach-msg">「地域のサッカー発展に貢献しながら、選手の技術向上に取り組んでいます。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:1.12s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#D91B2A;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#D91B2A;">コーチ</div>
           <div class="coach-name">遠藤 匠</div><div class="coach-name-en">TAKUMI ENDO</div>
+          
+          
           <p class="coach-msg">「合宿など年間行事を通じ、選手同士の絆を深める活動を企画します。」</p>
         </div>
       </div>
       <div class="coach-card" style="animation-delay:1.19s">
         <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
-          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真イメージ</div>
           <div class="coach-initial-bar" style="background:#1565C0;"></div>
         </div>
         <div class="coach-body">
           <div class="coach-role" style="color:#1565C0;">コーチ</div>
           <div class="coach-name">下田 翔也</div><div class="coach-name-en">SHOYA SHIMODA</div>
+          
+          
           <p class="coach-msg">「クラブ全体の運営をサポートしながら、選手の成長を見守ります。」</p>
         </div>
       </div>
@@ -613,7 +639,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     <div class="course-grid">
       <div class="course-card">
         <div class="course-top">
-          <img src="images/gallery3.JPG" alt="U-8">
+          <img src="yahagi_assets/img_4.jpg" alt="U-8">
           <div class="course-top-overlay" style="background:rgba(217,27,42,.72);">
             <div class="course-cat">U-8</div><div class="course-age">1〜2年生 / 幼児</div>
           </div>
@@ -630,7 +656,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       </div>
       <div class="course-card">
         <div class="course-top">
-          <img src="images/gallery2.JPG" alt="U-10">
+          <img src="yahagi_assets/img_2.jpg" alt="U-10">
           <div class="course-top-overlay" style="background:rgba(180,110,0,.78);">
             <div class="course-cat" style="color:var(--yellow);">U-10</div><div class="course-age" style="color:rgba(255,255,255,.9);">3〜4年生</div>
           </div>
@@ -647,7 +673,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       </div>
       <div class="course-card">
         <div class="course-top">
-          <img src="images/gallery1.JPG" alt="U-12">
+          <img src="yahagi_assets/img_1.jpg" alt="U-12">
           <div class="course-top-overlay" style="background:rgba(13,27,62,.78);">
             <div class="course-cat">U-12</div><div class="course-age">5〜6年生</div>
           </div>
@@ -678,7 +704,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       2025年度も多くの大会で好成績を収めることができました。
     </p>
 
-    <img class="trophy-img" src="images/trophy.JPG" alt="獲得トロフィー一覧">
+    <img class="trophy-img" src="yahagi_assets/img_5.jpg" alt="獲得トロフィー一覧">
 
     <!-- 成績サマリー -->
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:2rem;">
@@ -700,7 +726,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     </div>
 
     <div style="background:var(--red-pale);border-radius:14px;padding:1rem 1.25rem;font-size:.82rem;color:var(--text2);text-align:center;line-height:1.7;">
-      ※ 2025年度（2025年4月〜2026年3月）の成績集計です
+      ※ 2025年度（2025年3月〜2026年3月）の成績集計です
     </div>
   </div>
 </section>
@@ -828,19 +854,19 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
   <div class="final-bg"></div>
   <div class="final-ov"></div>
   <div class="final-inner">
-    <img class="final-logo" style="display:none;" src="images/logo.jpg" alt="YAHAGI SC">
+    <img class="final-logo" style="display:none;" src="yahagi_assets/logo_1.png" alt="YAHAGI SC">
     <div class="final-title">グラウンドで待っています！<br><span>一緒にサッカーをしよう⚽</span></div>
     <p class="final-p">体験練習は完全無料・道具不要・当日見学OK。<br>矢作小学校グランドに気軽に遊びに来てください。<br>57名の仲間とコーチ陣が笑顔で待っています！</p>
     <div class="btn-group">
-      <a href="#join" class="btn btn-yellow">⚽ 体験練習に参加する（無料）</a>
-      <!-- TODO: LINE公式URL取得後に href="https://lin.ee/XXXXXXX" に変更し、クラスを line-btn に変更 -->
-      <a href="#contact" class="btn btn-white" style="opacity:.75;cursor:default;">💬 LINE公式アカウント（近日公開）</a>
+      <a href="#contact" class="btn btn-yellow">⚽ 体験練習に参加する（無料）</a>
+      <!-- LINE URL: ここにhttps://lin.ee/xxxxxxを設定 -->
+      <a href="#contact" class="line-btn">💬 LINEは準備中（近日公開）</a>
     </div>
     <div class="final-note" style="margin-top:1rem;">
         📍 矢作小学校グランド（小田原市）<br>
         🕗 土・日・祝日 8:00〜11:00 ｜ キッズ教室 11:00〜12:00<br><br>
         <span style="background:rgba(255,255,255,.15);padding:6px 14px;border-radius:8px;font-size:11px;">
-          💬 LINE公式アカウントは近日公開予定です
+          💬 LINE・お問い合わせ先は近日公開予定です
         </span>
       </div>
   </div>
@@ -850,7 +876,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="images/logo.jpg" alt="YAHAGI SC">
+      <img src="yahagi_assets/logo_1.png" alt="YAHAGI SC">
       <div class="footer-brand-name">矢作サッカークラブ</div>
       <div class="footer-brand-sub">YAHAGI SOCCER CLUB | Since 1974<br>小田原市 矢作地区</div>
     </div>
@@ -870,18 +896,18 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div class="footer-col-item">📍 矢作小学校グランド（小田原市）</div>
       <div class="footer-col-item">🕗 土・日・祝日 8:00〜11:00</div>
       <div class="footer-col-item">👶 キッズ教室 11:00〜12:00</div>
-      <div class="footer-col-item">💬 LINE公式アカウント（近日公開）</div>
+      <div class="footer-col-item">💬 LINEでお問い合わせ</div>
       <div class="footer-col-item" style="margin-top:.75rem;">代表：早坂 浩明</div>
       <div class="footer-col-item">総監督：日下 研一</div>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 矢作サッカークラブ ｜ 小田原市 矢作地区</div>
+  <div class="footer-bottom">© 2026 矢作サッカークラブ ｜ 【部外秘】本資料の無断転載・配布を禁じます</div>
 </footer>
 
 <!-- STICKY -->
 <div class="sticky">
   <span class="sticky-txt">⚽ 矢作SC 2026年度 団員募集中！体験練習 無料</span>
-  <a href="#contact" class="btn btn-red" style="font-size:.88rem;padding:10px 24px;">⚽ 体験申込はこちら</a>
+  <a href="#contact" class="btn btn-red" style="font-size:.88rem;padding:10px 24px;">今すぐ申し込む</a>
 </div>
 
 
