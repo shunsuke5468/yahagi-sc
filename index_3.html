@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>矢作サッカークラブ | 小田原市 幼児・小学生サッカー少年団 Since 1974</title>
+<meta name="description" content="1974年創設・小田原市矢作地区の少年サッカークラブ。幼児〜小学6年生対象。月会費2,500円・体験無料。土日祝 矢作小学校グランドで活動中。">
+<meta property="og:title" content="矢作サッカークラブ | 小田原市 幼児・小学生サッカー少年団">
+<meta property="og:description" content="1974年創設の矢作SC。幼児〜小学6年生・月2,500円・体験無料。一緒にサッカーをしよう！">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D91B2A; --red-dark:#A80F1B; --red-pale:#FFF0F1;
+  --yellow:#FFB800; --yellow-l:#FFF8E0;
+  --white:#fff; --off:#F8F8F8; --light:#F2F2F2;
+  --border:#E5E5E5; --text:#1A1A1A; --text2:#555; --text3:#999;
+  --green:#27AE60; --blue:#1565C0; --navy:#0D1B3E;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{scroll-behavior:smooth;}
+/* スムーズスクロール オフセット（固定ナビ分） */
+[id] { scroll-margin-top: 70px; }
+
+body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;line-height:1.7;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.97);border-bottom:3px solid var(--red);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.08);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px;letter-spacing:.02em;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo img{width:36px;height:36px;object-fit:contain;}
+.nav-logo-text{font-size:.78rem;font-weight:900;color:var(--text);line-height:1.2;}
+.nav-logo-text span{display:block;font-size:.6rem;color:var(--text2);font-weight:700;}
+.nav-links{display:flex;align-items:center;gap:0;}
+.nav-link{padding:.5rem 1rem;font-size:.78rem;font-weight:700;color:var(--text2);text-decoration:none;border-radius:6px;transition:color .2s,background .2s;white-space:nowrap;}
+.nav-link:hover,.nav-link.active{color:var(--red);background:var(--red-pale);}
+.nav-cta{background:var(--red);color:#fff;padding:.5rem 1.25rem;border-radius:100px;font-size:.78rem;font-weight:900;text-decoration:none;margin-left:.5rem;transition:background .2s;}
+.nav-cta:hover{background:var(--red-dark);}
+
+/* TICKER */
+.ticker{background:var(--red);color:#fff;overflow:hidden;padding:9px 0;white-space:nowrap;margin-top:64px;}
+.ticker-inner{display:inline-flex;animation:marquee 26s linear infinite;}
+.ticker-item{font-size:11px;font-weight:600;letter-spacing:.12em;padding:0 2rem;}
+.ticker-star{color:var(--yellow);}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:600px;max-height:940px;overflow:hidden;display:flex;align-items:center;}
+.hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center/cover no-repeat;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(110deg,rgba(170,8,18,.88) 0%,rgba(170,8,18,.6) 45%,rgba(0,0,0,.2) 100%);}
+.hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:2rem 2rem 5rem;width:100%;}
+.hero-logo{width:80px;margin-bottom:1rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,.4));animation:float 4s ease-in-out infinite;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--yellow);color:var(--text);font-size:11px;font-weight:900;letter-spacing:.18em;padding:5px 14px;border-radius:100px;margin-bottom:1rem;}
+.hero-title{font-size:clamp(1.7rem,5.5vw,4.4rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:.75rem;text-shadow:0 2px 12px rgba(0,0,0,.35);letter-spacing:-.02em;white-space:nowrap;}
+.hero-title .yel{color:var(--yellow);}
+.hero-sub{font-size:clamp(.85rem,1.8vw,1.1rem);font-weight:500;color:rgba(255,255,255,.85);margin-bottom:1.75rem;line-height:1.8;max-width:500px;}
+.hero-stats{display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;}
+.hstat{background:rgba(255,255,255,.13);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:.75rem 1rem;text-align:center;}
+.hstat-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);line-height:1;}
+.hstat-u{font-size:.8rem;color:#fff;}
+.hstat-l{font-size:10px;color:rgba(255,255,255,.65);margin-top:2px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:.92rem;font-weight:900;padding:14px 30px;border-radius:100px;text-decoration:none;cursor:pointer;border:none;letter-spacing:.04em;transition:all .2s;}
+.btn-yellow{background:var(--yellow);color:var(--text);box-shadow:0 6px 24px rgba(255,184,0,.45);animation:pulse-y 2.5s ease-in-out infinite;}
+.btn-white{background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:#fff;border:2px solid rgba(255,255,255,.4);}
+.btn-white:hover{background:rgba(255,255,255,.25);}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 6px 24px rgba(217,27,42,.4);}
+.btn-red:hover{background:var(--red-dark);}
+.hero-scroll{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.2em;text-align:center;z-index:2;}
+.hero-scroll::before{content:'';display:block;width:1px;height:36px;background:rgba(255,255,255,.35);margin:0 auto .4rem;}
+
+/* STATS BAND */
+.stats-band{background:var(--red);padding:2rem 1.5rem;}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.sb-item{text-align:center;padding:1rem;border-right:1px solid rgba(255,255,255,.18);}
+.sb-item:last-child{border-right:none;}
+.sb-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--yellow);line-height:1;letter-spacing:.02em;}
+.sb-u{font-size:.9rem;color:#fff;}
+.sb-l{font-size:10px;color:rgba(255,255,255,.65);letter-spacing:.1em;margin-top:3px;}
+
+/* SECTION */
+.section{padding:5rem 1.5rem;}
+.si{max-width:1100px;margin:0 auto;}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:.3em;color:var(--red);text-transform:uppercase;margin-bottom:.4rem;display:flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;}
+.sec-eyebrow::before{content:'';display:inline-block;width:16px;height:3px;background:var(--red);border-radius:2px;flex-shrink:0;}
+.sec-title{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;line-height:1.2;margin-bottom:1rem;letter-spacing:-.02em;}
+.hl{color:var(--red);} .yl{color:var(--yellow);}
+
+/* PHOTO MAGAZINE */
+.photo-magazine{display:grid;grid-template-columns:1.35fr 1fr;height:520px;overflow:hidden;border-radius:20px;box-shadow:0 12px 48px rgba(0,0,0,.12);}
+.pm-main{position:relative;overflow:hidden;}
+.pm-main img{width:100%;height:100%;object-fit:cover;transition:transform .6s;}
+.pm-main:hover img{transform:scale(1.04);}
+.pm-side{display:grid;grid-template-rows:1fr 1fr;gap:3px;background:#fff;}
+.pm-sub{position:relative;overflow:hidden;}
+.pm-sub img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.pm-sub:hover img{transform:scale(1.07);}
+.pm-overlay{position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.62));display:flex;align-items:flex-end;padding:.9rem 1.1rem;}
+.pm-label{color:#fff;font-size:.78rem;font-weight:600;line-height:1.4;letter-spacing:.02em;}
+.pm-label span{display:block;font-size:.65rem;color:rgba(255,255,255,.65);letter-spacing:.12em;}
+
+/* PHILOSOPHY */
+.phil-section{background:var(--navy);padding:3.5rem 1.5rem;position:relative;overflow:hidden;}
+.phil-section::before{content:'YAHAGI SC';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,18vw,14rem);color:rgba(255,255,255,.03);white-space:nowrap;pointer-events:none;letter-spacing:.02em;}
+.phil-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:1.5rem;}
+.phil-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.4rem 1.25rem;text-align:left;transition:background .3s,transform .3s;}
+.phil-card:hover{background:rgba(255,255,255,.1);transform:translateY(-5px);}
+.phil-icon{font-size:2.4rem;margin-bottom:.75rem;}
+.phil-title{font-size:.9rem;font-weight:700;color:var(--yellow);margin-bottom:.35rem;letter-spacing:.02em;}
+.phil-desc{font-size:.78rem;color:rgba(255,255,255,.72);line-height:1.65;}
+
+/* COACH SECTION */
+.coach-section{background:var(--off);padding:5rem 1.5rem;}
+.coach-section-inner{max-width:1100px;margin:0 auto;}
+.coach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2.5rem;}
+.coach-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;animation:fadeUp .6s ease both;}
+.coach-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.1);}
+.coach-avatar{height:130px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.coach-emoji{font-size:3.5rem;position:relative;z-index:1;filter:drop-shadow(0 3px 8px rgba(0,0,0,.12));}
+.coach-initial-bar{position:absolute;bottom:0;left:0;right:0;height:4px;}
+.coach-body{padding:1.1rem 1.2rem;flex:1;display:flex;flex-direction:column;gap:.35rem;}
+.coach-role{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;font-family:'Inter',sans-serif;}
+.coach-name{font-size:1.05rem;font-weight:700;line-height:1.3;letter-spacing:.01em;}
+.coach-name-en{font-size:.68rem;color:var(--text3);letter-spacing:.18em;font-family:'Inter',sans-serif;font-weight:600;text-transform:uppercase;}
+.coach-tags{display:flex;flex-wrap:wrap;gap:5px;margin:.25rem 0;}
+.coach-tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;background:var(--light);color:var(--text2);border:1px solid var(--border);}
+.coach-msg{font-size:.78rem;color:var(--text2);line-height:1.65;border-left:2px solid var(--red);padding-left:.7rem;margin-top:.3rem;}
+
+/* COURSES */
+.course-section{background:#fff;padding:5rem 1.5rem;}
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:2rem;}
+.course-card{border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.09);transition:transform .3s;}
+.course-card:hover{transform:translateY(-6px);}
+.course-top{height:180px;position:relative;overflow:hidden;}
+.course-top img{width:100%;height:100%;object-fit:cover;}
+.course-top-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.course-cat{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:#fff;line-height:1;text-shadow:0 2px 8px rgba(0,0,0,.4);}
+.course-age{font-size:12px;font-weight:900;color:rgba(255,255,255,.9);letter-spacing:.1em;}
+.course-body{padding:1.25rem;background:#fff;}
+.course-name{font-size:.95rem;font-weight:900;margin-bottom:.5rem;}
+.course-list{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.course-list li{font-size:.77rem;color:var(--text2);display:flex;gap:6px;line-height:1.55;}
+.c-dot{color:var(--red);flex-shrink:0;}
+
+/* RESULTS */
+.results-section{background:var(--off);padding:5rem 1.5rem;}
+.trophy-img{width:100%;height:300px;object-fit:cover;border-radius:18px;margin:1.5rem 0;box-shadow:0 8px 32px rgba(0,0,0,.12);}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
+.result-card{background:#fff;border:2px solid var(--border);border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:10px;transition:all .2s;}
+.result-card:hover{border-color:var(--red);transform:translateY(-2px);}
+.result-medal{font-size:1.5rem;flex-shrink:0;}
+.result-title{font-size:.79rem;font-weight:700;line-height:1.4;}
+.result-sub{font-size:.7rem;color:var(--text3);}
+
+/* SCHEDULE */
+.sch-section{background:#fff;padding:5rem 1.5rem;}
+.sch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:2rem;}
+.sch-card{background:var(--off);border:2px solid var(--border);border-radius:18px;padding:1.5rem;transition:border-color .3s;}
+.sch-card:hover{border-color:var(--red);}
+.sch-card.hl{border-color:var(--yellow);background:var(--yellow-l);}
+.sch-type{font-size:10px;font-weight:900;letter-spacing:.2em;color:var(--red);margin-bottom:.5rem;text-transform:uppercase;}
+.sch-title{font-size:1.05rem;font-weight:900;margin-bottom:.75rem;}
+.sch-row{display:flex;gap:8px;font-size:.81rem;color:var(--text2);margin-bottom:.5rem;align-items:flex-start;line-height:1.55;}
+
+/* PRICE */
+.price-section{background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);padding:5rem 1.5rem;}
+.price-inner{max-width:1100px;margin:0 auto;}
+.price-layout{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:2rem;}
+.price-card{background:rgba(255,255,255,.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:2rem;}
+.price-card.main{background:#fff;}
+.price-lbl{font-size:11px;font-weight:900;letter-spacing:.15em;margin-bottom:.5rem;}
+.price-card.main .price-lbl{color:var(--red);}
+.price-card:not(.main) .price-lbl{color:rgba(255,255,255,.65);}
+.price-amount{display:flex;align-items:baseline;gap:.4rem;margin-bottom:.3rem;}
+.price-num{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;line-height:1;letter-spacing:.02em;}
+.price-card.main .price-num{color:var(--red);}
+.price-card:not(.main) .price-num{color:#fff;}
+.price-unit{font-size:.88rem;opacity:.7;}
+.price-note{font-size:.76rem;margin-bottom:1.25rem;opacity:.6;}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.price-list li{font-size:.84rem;display:flex;gap:8px;}
+.price-card.main .price-list li{color:var(--text);}
+.price-card:not(.main) .price-list li{color:rgba(255,255,255,.88);}
+.chk-g{color:var(--green);flex-shrink:0;}
+.chk-y{color:var(--yellow);flex-shrink:0;}
+
+/* STEPS */
+.steps-section{background:var(--off);padding:5rem 1.5rem;}
+.step-list{margin-top:2rem;display:flex;flex-direction:column;gap:0;max-width:700px;}
+.step-item{display:grid;grid-template-columns:60px 1fr;gap:1.25rem;padding:1.5rem 0;border-bottom:1px dashed var(--border);align-items:flex-start;}
+.step-item:last-child{border-bottom:none;}
+.step-circle{width:50px;height:50px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;flex-shrink:0;box-shadow:0 4px 14px rgba(217,27,42,.3);}
+.step-line{width:2px;height:20px;background:var(--border);margin:4px auto 0;}
+.step-title{font-weight:700;font-size:.95rem;color:var(--red);margin-bottom:.3rem;padding-top:.65rem;letter-spacing:.01em;}
+.step-desc{font-size:.82rem;color:var(--text2);line-height:1.7;}
+
+/* FAQ */
+.faq-section{background:#fff;padding:5rem 1.5rem;}
+.faq-list{margin-top:2rem;display:flex;flex-direction:column;gap:10px;max-width:800px;}
+.faq-item{background:var(--off);border:2px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color .2s;}
+.faq-item:hover{border-color:var(--red);}
+.faq-q{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;font-weight:700;font-size:.88rem;}
+.faq-qb{color:var(--red);font-weight:900;font-size:1.2rem;font-family:'Bebas Neue',sans-serif;flex-shrink:0;line-height:1.3;}
+.faq-a{padding:4px 20px 16px 46px;font-size:.82rem;color:var(--text2);line-height:1.8;}
+
+/* FINAL CTA */
+.final-cta{position:relative;overflow:hidden;min-height:600px;display:flex;align-items:center;}
+.final-bg{position:absolute;inset:0;background:url('images/final_bg.jpg') top center/cover no-repeat;}
+.final-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(168,15,27,.9),rgba(80,0,10,.75));}
+.final-inner{position:relative;z-index:1;padding:6rem 1.5rem;text-align:center;max-width:680px;margin:0 auto;}
+.final-logo{width:80px;margin:0 auto 1.5rem;filter:drop-shadow(0 6px 20px rgba(0,0,0,.4));animation:float 3s ease-in-out infinite;}
+.final-title{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.25;margin-bottom:1rem;}
+.final-title span{color:var(--yellow);}
+.final-p{color:rgba(255,255,255,.85);font-size:.93rem;margin-bottom:2.5rem;line-height:1.9;}
+.btn-group{display:flex;flex-direction:column;align-items:center;gap:1rem;}
+.line-btn{display:inline-flex;align-items:center;gap:10px;background:#06C755;color:#fff;font-size:.95rem;font-weight:900;padding:14px 34px;border-radius:100px;text-decoration:none;box-shadow:0 4px 20px rgba(6,199,85,.4);}
+.final-note{margin-top:1.5rem;font-size:11px;color:rgba(255,255,255,.45);}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(255,255,255,.6);padding:3rem 1.5rem 5rem;}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;}
+.footer-brand img{width:60px;margin-bottom:.75rem;opacity:.9;}
+.footer-brand-name{font-size:.85rem;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:.25rem;letter-spacing:.05em;}
+.footer-brand-sub{font-size:.72rem;color:rgba(255,255,255,.5);}
+.footer-col-title{font-size:.7rem;font-weight:900;letter-spacing:.2em;color:var(--yellow);margin-bottom:.75rem;text-transform:uppercase;}
+.footer-col-item{font-size:.78rem;color:rgba(255,255,255,.55);margin-bottom:.4rem;}
+.footer-bottom{max-width:1100px;margin:.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.7rem;color:rgba(255,255,255,.3);}
+
+/* STICKY */
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.97);border-top:3px solid var(--red);padding:10px 1.5rem;display:flex;justify-content:center;align-items:center;gap:16px;z-index:999;flex-wrap:wrap;backdrop-filter:blur(12px);box-shadow:0 -4px 20px rgba(217,27,42,.1);}
+.sticky-txt{font-size:13px;font-weight:900;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes pulse-y{0%,100%{box-shadow:0 6px 24px rgba(255,184,0,.45);transform:scale(1)}50%{box-shadow:0 10px 40px rgba(255,184,0,.7);transform:scale(1.04)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+
+/* DIVIDER */
+.div-stripe{height:5px;background:linear-gradient(90deg,var(--red-dark),var(--red),var(--yellow),var(--red),var(--red-dark));background-size:300% auto;animation:shimmer 5s linear infinite;}
+
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .photo-magazine{grid-template-columns:1fr;height:auto;}
+  .pm-main img{height:280px;}
+  .pm-side{grid-template-rows:none;grid-template-columns:1fr 1fr;}
+  .pm-sub img{height:160px;}
+  .stats-inner{grid-template-columns:1fr 1fr;}
+  .phil-grid{grid-template-columns:1fr;}
+  .coach-grid{grid-template-columns:repeat(2,1fr) !important;gap:12px;}
+  .course-grid{grid-template-columns:1fr;}
+  .sch-grid{grid-template-columns:1fr;}
+  .price-layout{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  .coach-grid{grid-template-columns:repeat(2,1fr) !important;gap:8px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">
+      <img src="images/logo.jpg" alt="YAHAGI SC">
+      <div class="nav-logo-text">矢作サッカークラブ<span>YAHAGI SC | Since 1974</span></div>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="#about">クラブについて</a>
+      <a class="nav-link" href="#coach">コーチ紹介</a>
+      <a class="nav-link" href="#course">カテゴリー</a>
+      <a class="nav-link" href="#results">実績</a>
+      <a class="nav-link" href="#schedule">練習情報</a>
+      <a class="nav-link" href="#price">費用</a>
+      <a class="nav-link" href="#join">入団の流れ</a>
+      <a class="nav-link" href="#faq">FAQ</a>
+      <a class="nav-cta" href="#contact">⚽ 体験申込はこちら</a>
+    </div>
+  </div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span class="ticker-star">⚽</span> 矢作サッカークラブ 2026年度 団員募集中！</span>
+    <span class="ticker-item"><span class="ticker-star">★</span> Since 1974 小田原市 矢作地区</span>
+    <span class="ticker-item"><span class="ticker-star">⚽</span> 幼児〜小学6年生対象 月会費2,500円</span>
+    <span class="ticker-item"><span class="ticker-star">★</span> 体験練習 無料！土日祝 矢作小学校グランド</span>
+    <span class="ticker-item"><span class="ticker-star">⚽</span> 矢作サッカークラブ 2026年度 団員募集中！</span>
+    <span class="ticker-item"><span class="ticker-star">★</span> Since 1974 小田原市 矢作地区</span>
+    <span class="ticker-item"><span class="ticker-star">⚽</span> 幼児〜小学6年生対象 月会費2,500円</span>
+    <span class="ticker-item"><span class="ticker-star">★</span> 体験練習 無料！土日祝 矢作小学校グランド</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <img class="hero-logo" style="display:none;" src="images/logo.jpg" alt="YAHAGI SC">
+    <div class="hero-badge">⚽ 小田原市・矢作地区 2026年度 団員募集</div>
+    <div class="hero-title">
+      サッカーで、<span class="yel">強く</span>なれ。<br>
+      仲間と、<span class="yel">笑顔</span>で。
+    </div>
+    <div class="hero-sub">
+      1974年創設・歴史と伝統の矢作サッカークラブ<br>
+      幼児から小学生まで、本気でサッカーをやろう！
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">50<span class="hstat-u">年+</span></div><div class="hstat-l">の歴史</div></div>
+      <div class="hstat"><div class="hstat-num">57<span class="hstat-u">名</span></div><div class="hstat-l">の仲間</div></div>
+      <div class="hstat"><div class="hstat-num">2,500<span class="hstat-u">円</span></div><div class="hstat-l">月会費</div></div>
+      <div class="hstat"><div class="hstat-num">80<span class="hstat-u">+</span></div><div class="hstat-l">年間大会・試合</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-yellow">⚽ 無料体験に参加する</a>
+      <a href="#coach" class="btn btn-white">👨‍💼 コーチ紹介を見る</a>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="sb-item"><div class="sb-num">1974</div><div class="sb-l">創設年</div></div>
+    <div class="sb-item"><div class="sb-num">57<span class="sb-u">名</span></div><div class="sb-l">現在の団員数</div></div>
+    <div class="sb-item"><div class="sb-num">80<span class="sb-u">+</span></div><div class="sb-l">年間大会・試合数</div></div>
+    <div class="sb-item"><div class="sb-num">U6<span class="sb-u">〜U12</span></div><div class="sb-l">全カテゴリー</div></div>
+  </div>
+</div>
+
+<div class="div-stripe"></div>
+
+<!-- PHOTO MAGAZINE -->
+<section class="section" style="background:var(--off);padding-bottom:3rem;">
+  <div class="si">
+    <div class="sec-eyebrow">Photo Gallery</div>
+    <div class="sec-title">グラウンドに広がる<span class="hl">笑顔と情熱</span></div>
+    <div style="margin-top:2rem;">
+      <div class="photo-magazine">
+        <div class="pm-main">
+          <img src="images/IMG_0884.jpg" alt="全員集合">
+          <div class="pm-overlay"><div class="pm-label"><span>TEAM PHOTO</span>矢作SCファミリー全員集合！</div></div>
+        </div>
+        <div class="pm-side">
+          <div class="pm-sub">
+            <img src="images/IMG_0885.jpg" alt="BBQ大会">
+            <div class="pm-overlay"><div class="pm-label"><span>EVENT</span>🎉 BBQ・水鉄砲 大盛り上がり！</div></div>
+          </div>
+          <div class="pm-sub">
+            <img src="images/IMG_0886.jpg" alt="キッズ教室">
+            <div class="pm-overlay"><div class="pm-label"><span>KIDS CLASS</span>👶 幼児も大歓迎！</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- PHILOSOPHY -->
+<section class="phil-section" id="philosophy">
+  <div class="phil-inner">
+    <div class="sec-eyebrow" style="color:rgba(255,255,255,.5);">Philosophy</div>
+    <div class="sec-title" style="color:#fff;">矢作SCが大切にする<span style="color:var(--yellow);">3つの柱</span></div>
+    <div class="phil-grid">
+      <div class="phil-card"><div class="phil-icon">⚽</div><div class="phil-title">競技技能を磨く</div><div class="phil-desc">テクニック・フィジカル・個人戦術の3要素をバランスよく強化。必要な時に必要な技術を発揮できる選手を育てます。</div></div>
+      <div class="phil-card"><div class="phil-icon">❤️</div><div class="phil-title">心を育てる</div><div class="phil-desc">自主性・主体性・協調性・社会性・耐える心。「褒め育」指導で子どもの自信を引き出し、自分で考え行動できる力を養います。</div></div>
+      <div class="phil-card"><div class="phil-icon">🤝</div><div class="phil-title">仲間を尊重する</div><div class="phil-desc">最善の努力・相手へのリスペクト・元気な挨拶。サッカーを通じて仲間・相手・審判への感謝の気持ちを育てます。</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- COACH -->
+<section class="coach-section" id="coach">
+  <div class="coach-section-inner">
+    <div class="sec-eyebrow">Coach &amp; Staff</div>
+    <div class="sec-title">コーチ・<span class="hl">スタッフ紹介</span></div>
+    <p style="font-size:.9rem;color:var(--text2);max-width:600px;margin-top:.5rem;">
+      矢作サッカークラブのコーチ陣は、1974年の創設以来培われてきた指導理念のもと、一人ひとりのお子さまに向き合います。
+    </p>
+    <div class="coach-grid">
+      <div class="coach-card" style="animation-delay:0.00s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
+          <!-- TODO: 顔写真追加時は下の img タグのコメントを解除し、src に画像パスを設定 -->
+          <!-- <img src="coaches/kusaka.jpg" alt="日下 研一" style="width:100%;height:100%;object-fit:cover;object-position:top;"> -->
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#D91B2A;"></div>
+        </div><div class="coach-name-en">KENICHI KUSAKA</div>
+          <p class="coach-msg">「選手一人ひとりの可能性を信じ、サッカーを通じて心と体を育てます。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.07s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#1565C0;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#1565C0;">代表・U-10監督</div>
+          <div class="coach-name">早坂 浩明</div><div class="coach-name-en">HIROAKI HAYASAKA</div>
+          <p class="coach-msg">「クリエイティブな選手を育てることをミッションに、日々指導に向き合っています。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.14s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#27AE6018,#27AE6038);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#27AE60;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#27AE60;">相談役</div>
+          <div class="coach-name">河野 浩二</div><div class="coach-name-en">KOJI KAWANO</div>
+          <p class="coach-msg">「長年の経験を活かし、クラブ全体をサポートしています。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.21s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#D91B2A;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#D91B2A;">U-12コーチ</div>
+          <div class="coach-name">諸星 達也</div><div class="coach-name-en">TATSUYA MOROHOSHI</div>
+          <p class="coach-msg">「高学年の選手たちが次のステージで輝けるよう、戦術と技術を丁寧に指導します。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.28s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#1565C0;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#1565C0;">U-12コーチ</div>
+          <div class="coach-name">柏木 誉史</div><div class="coach-name-en">TAKAFUMI KASHIWAGI</div>
+          <p class="coach-msg">「選手が持つ可能性を最大限に引き出す指導を心がけています。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.35s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#D91B2A;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#D91B2A;">U-12コーチ</div>
+          <div class="coach-name">瀬戸 俊明</div><div class="coach-name-en">TOSHIAKI SETO</div>
+          <p class="coach-msg">「サッカーの楽しさと厳しさを両立した指導で選手を育てます。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.42s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#6A1B9A18,#6A1B9A38);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#6A1B9A;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#6A1B9A;">U-12コーチ</div>
+          <div class="coach-name">高橋 富康</div><div class="coach-name-en">TOMIYASU TAKAHASHI</div>
+          <p class="coach-msg">「プレーと審判の両面からサッカーを深く理解した指導を行います。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.49s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#1565C0;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#1565C0;">U-10コーチ</div>
+          <div class="coach-name">植田 健</div><div class="coach-name-en">KEN UEDA</div>
+          <p class="coach-msg">「個の技術を高め、サッカーの楽しさを伝えることを大切にしています。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.56s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#D91B2A;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#D91B2A;">U-10コーチ</div>
+          <div class="coach-name">赤松 歩</div><div class="coach-name-en">AYUMU AKAMATSU</div>
+          <p class="coach-msg">「子どもたちが主体的にサッカーを楽しめる環境づくりを大切にしています。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.63s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#1565C0;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#1565C0;">U-10コーチ</div>
+          <div class="coach-name">田中 祐也</div><div class="coach-name-en">YUYA TANAKA</div>
+          <p class="coach-msg">「技術の基礎をしっかり固め、選手の成長を丁寧にサポートします。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.70s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#27AE6018,#27AE6038);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#27AE60;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#27AE60;">U-8コーチ</div>
+          <div class="coach-name">三橋 義昭</div><div class="coach-name-en">YOSHIAKI MITSUHASHI</div>
+          <p class="coach-msg">「初めてサッカーに触れるお子さまが「楽しい！」と感じられる練習を作ります。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.77s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#E6510018,#E6510038);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#E65100;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#E65100;">U-8コーチ</div>
+          <div class="coach-name">甲 淳一</div><div class="coach-name-en">JUNICHI KOU</div>
+          <p class="coach-msg">「子どもたちの笑顔のために、毎回全力で練習に向き合います。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.84s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#D91B2A;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#D91B2A;">U-8コーチ</div>
+          <div class="coach-name">徳永 哲和</div><div class="coach-name-en">TETSUKAZU TOKUNAGA</div>
+          <p class="coach-msg">「低学年の子どもたちがボールを好きになれるよう楽しい練習を心がけます。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.91s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#1565C0;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#1565C0;">U-8コーチ</div>
+          <div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div>
+          <p class="coach-msg">「サッカーの基礎をゲーム感覚で楽しく身につけられるよう指導します。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:0.98s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#6A1B9A18,#6A1B9A38);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#6A1B9A;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#6A1B9A;">GK専門コーチ</div>
+          <div class="coach-name">渋谷 芳美</div><div class="coach-name-en">YOSHIMI SHIBUYA</div>
+          <p class="coach-msg">「ゴールキーパーの専門技術を徹底指導。ゴールを守る選手を育てます。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:1.05s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#27AE6018,#27AE6038);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#27AE60;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#27AE60;">湘北担当コーチ</div>
+          <div class="coach-name">磯﨑 幸二</div><div class="coach-name-en">KOJI ISOZAKI</div>
+          <p class="coach-msg">「地域のサッカー発展に貢献しながら、選手の技術向上に取り組んでいます。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:1.12s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A18,#D91B2A38);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#D91B2A;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#D91B2A;">コーチ</div>
+          <div class="coach-name">遠藤 匠</div><div class="coach-name-en">TAKUMI ENDO</div>
+          <p class="coach-msg">「合宿など年間行事を通じ、選手同士の絆を深める活動を企画します。」</p>
+        </div>
+      </div>
+      <div class="coach-card" style="animation-delay:1.19s">
+        <div class="coach-avatar" style="background:linear-gradient(135deg,#1565C018,#1565C038);">
+          <div class="coach-emoji" style="font-size:1rem;font-weight:700;color:var(--text3);letter-spacing:.05em;">写真追加予定</div>
+          <div class="coach-initial-bar" style="background:#1565C0;"></div>
+        </div>
+        <div class="coach-body">
+          <div class="coach-role" style="color:#1565C0;">コーチ</div>
+          <div class="coach-name">下田 翔也</div><div class="coach-name-en">SHOYA SHIMODA</div>
+          <p class="coach-msg">「クラブ全体の運営をサポートしながら、選手の成長を見守ります。」</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- COURSES -->
+<section class="course-section" id="course">
+  <div class="si">
+    <div class="sec-eyebrow">Category</div>
+    <div class="sec-title">年齢・学年別<span class="yl">3つのカテゴリー</span></div>
+    <div class="course-grid">
+      <div class="course-card">
+        <div class="course-top">
+          <img src="images/IMG_0886.jpg" alt="U-8">
+          <div class="course-top-overlay" style="background:rgba(217,27,42,.72);">
+            <div class="course-cat">U-8</div><div class="course-age">1〜2年生 / 幼児</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-name">低学年・キッズチーム</div>
+          <ul class="course-list">
+            <li><span class="c-dot">▶</span><span>ボールタッチ・リフティング基礎</span></li>
+            <li><span class="c-dot">▶</span><span>スキルテスト目標：25点</span></li>
+            <li><span class="c-dot">▶</span><span>キッズ教室：土日祝 11:00〜12:00</span></li>
+            <li><span class="c-dot">▶</span><span>ミニゲームで楽しく上達！</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-top">
+          <img src="images/IMG_0885.jpg" alt="U-10">
+          <div class="course-top-overlay" style="background:rgba(180,110,0,.78);">
+            <div class="course-cat" style="color:var(--yellow);">U-10</div><div class="course-age" style="color:rgba(255,255,255,.9);">3〜4年生</div>
+          </div>
+        </div>
+        <div class="course-body" style="border-top:3px solid var(--yellow);">
+          <div class="course-name">中学年チーム</div>
+          <ul class="course-list">
+            <li><span class="c-dot">▶</span><span>基本＋実践技術を習得</span></li>
+            <li><span class="c-dot">▶</span><span>スキルテスト目標：35点</span></li>
+            <li><span class="c-dot">▶</span><span>2025年度 優勝・準優勝多数</span></li>
+            <li><span class="c-dot">▶</span><span>対人練習・パス・フォーメーション</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="course-top">
+          <img src="images/IMG_0884.jpg" alt="U-12">
+          <div class="course-top-overlay" style="background:rgba(13,27,62,.78);">
+            <div class="course-cat">U-12</div><div class="course-age">5〜6年生</div>
+          </div>
+        </div>
+        <div class="course-body">
+          <div class="course-name">高学年チーム</div>
+          <ul class="course-list">
+            <li><span class="c-dot">▶</span><span>実践技術・チーム戦術を完成</span></li>
+            <li><span class="c-dot">▶</span><span>スキルテスト目標：40点以上</span></li>
+            <li><span class="c-dot">▶</span><span>県選手権・協会主催大会参加</span></li>
+            <li><span class="c-dot">▶</span><span>GK専門コーチ在籍</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- RESULTS -->
+<section class="results-section" id="results">
+  <div class="si">
+    <div class="sec-eyebrow">Achievement</div>
+    <div class="sec-title">たくさんの<span class="hl">輝かしい成績！</span></div>
+    <p style="font-size:.88rem;color:var(--text2);margin-top:.5rem;line-height:1.8;max-width:640px;">
+      矢作サッカークラブは地元地域の大会はもちろん、県内のさまざまな大会に出場しています。<br>
+      2025年度も多くの大会で好成績を収めることができました。
+    </p>
+
+    <img class="trophy-img" src="images/IMG_0889.jpg" alt="獲得トロフィー一覧">
+
+    <!-- 成績サマリー -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:2rem;">
+      <div style="background:#fff;border:2px solid var(--red);border-radius:18px;padding:1.75rem;text-align:center;box-shadow:0 4px 20px rgba(217,27,42,.1);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--red);text-transform:uppercase;margin-bottom:.5rem;">優勝</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--red);line-height:1;">10</div>
+        <div style="font-size:.85rem;font-weight:700;color:var(--text2);">回</div>
+      </div>
+      <div style="background:#fff;border:2px solid #888;border-radius:18px;padding:1.75rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#666;text-transform:uppercase;margin-bottom:.5rem;">準優勝</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;color:#666;line-height:1;">11</div>
+        <div style="font-size:.85rem;font-weight:700;color:var(--text2);">回</div>
+      </div>
+      <div style="background:#fff;border:2px solid #CD7F32;border-radius:18px;padding:1.75rem;text-align:center;box-shadow:0 4px 20px rgba(205,127,50,.1);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#CD7F32;text-transform:uppercase;margin-bottom:.5rem;">3位</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;color:#CD7F32;line-height:1;">6</div>
+        <div style="font-size:.85rem;font-weight:700;color:var(--text2);">回</div>
+      </div>
+    </div>
+
+    <div style="background:var(--red-pale);border-radius:14px;padding:1rem 1.25rem;font-size:.82rem;color:var(--text2);text-align:center;line-height:1.7;">
+      ※ 2025年度（2025年4月〜2026年3月）の成績集計です
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- SCHEDULE -->
+<section class="sch-section" id="schedule">
+  <div class="si">
+    <div class="sec-eyebrow">Schedule</div>
+    <div class="sec-title">活動スケジュール</div>
+    <div class="sch-grid">
+      <div class="sch-card">
+        <div class="sch-type">通常練習（全学年）</div>
+        <div class="sch-title">📅 毎週 土・日・祝日</div>
+        <div class="sch-row"><span>🕗</span><span>8:00〜11:00 / 夏時間 7:00〜10:00（7〜9月）</span></div>
+        <div class="sch-row"><span>📍</span><span>矢作小学校グランド（小田原市）</span></div>
+        <div class="sch-row"><span>👕</span><span>練習着・トレシューまたはスパイク</span></div>
+        <div class="sch-row"><span>🎒</span><span>ボール・スネあて・タオル・水筒</span></div>
+      </div>
+      <div class="sch-card hl">
+        <div class="sch-type">⭐ キッズサッカー教室</div>
+        <div class="sch-title">📅 毎週 土・日・祝日</div>
+        <div class="sch-row"><span>🕐</span><span>11:00〜12:00（夏時間：10:00〜11:00）</span></div>
+        <div class="sch-row"><span>👶</span><span>幼児〜低学年対象</span></div>
+        <div class="sch-row"><span>✅</span><span>体験参加 大歓迎！無料で参加できます</span></div>
+      </div>
+      <div class="sch-card">
+        <div class="sch-type">朝練習（4年生以上）</div>
+        <div class="sch-title">📅 週1回（平日）</div>
+        <div class="sch-row"><span>🌅</span><span>7:00〜7:50</span></div>
+        <div class="sch-row"><span>📍</span><span>矢作小学校グランド</span></div>
+        <div class="sch-row"><span>🌧</span><span>6:20時点で雨なら中止・MGよりLINE連絡</span></div>
+      </div>
+      <div class="sch-card">
+        <div class="sch-type">年間行事</div>
+        <div class="sch-title">📅 充実のイベントカレンダー</div>
+        <div class="sch-row"><span>⛺</span><span>夏合宿（御殿場 1泊2日）</span></div>
+        <div class="sch-row"><span>🍖</span><span>全学年BBQ大会（いこいの森）</span></div>
+        <div class="sch-row"><span>⚽</span><span>矢作カップ・初蹴り大会</span></div>
+        <div class="sch-row"><span>🏅</span><span>全学年スキルテスト・FANTASISTA表彰</span></div>
+      </div>
+    
+    <div style="margin-top:1.5rem;background:var(--off);border-radius:14px;padding:1rem 1.25rem;font-size:.82rem;color:var(--text2);line-height:1.85;border-left:3px solid var(--red);">
+      📌 <strong style="color:var(--text);">休日について</strong><br>
+      ゴールデンウィーク・夏休み・年末年始などの大型連休期間は基本的にお休みです。<br>
+      キッズサッカー教室は上記に加え、グラウンドの状況などにより休みになることがあります。<br>
+      詳細は各チームのマネージャーよりLINEでご連絡いたします。
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- PRICE -->
+<section class="price-section" id="price">
+  <div class="price-inner">
+    <div class="sec-eyebrow" style="color:rgba(255,255,255,.55);">Fee</div>
+    <div class="sec-title" style="color:#fff;">費用・月会費の<span style="color:var(--yellow);">ご案内</span></div>
+    <div class="price-layout">
+      <div class="price-card main">
+        <div class="price-lbl">月会費（毎月）</div>
+        <div class="price-amount"><div class="price-num">2,500</div><div class="price-unit">円 / 月</div></div>
+        <div class="price-note">兄弟3人目以降は月1,500円</div>
+        <ul class="price-list">
+          <li><span class="chk-g">✓</span><span>土日祝の通常練習参加</span></li>
+          <li><span class="chk-g">✓</span><span>キッズサッカー教室参加</span></li>
+          <li><span class="chk-g">✓</span><span>各種大会・試合参加</span></li>
+          <li><span class="chk-g">✓</span><span>育成プログラムによる指導</span></li>
+          <li><span class="chk-g">✓</span><span>スキルテスト・FANTASISTA表彰制度</span></li>
+        </ul>
+      </div>
+      <div class="price-card main">
+        <div class="price-lbl">入団時（初回のみ）</div>
+        <div class="price-amount"><div class="price-num">4,500</div><div class="price-unit">円 ＋ 保険料</div></div>
+        <div class="price-note">スポーツ安全保険加入金（実費）別途</div>
+        <ul class="price-list">
+          <li><span class="chk-y">⭐</span><span>スポーツ安全保険加入</span></li>
+          <li><span class="chk-y">⭐</span><span>サッカー協会登録</span></li>
+          <li><span class="chk-y">⭐</span><span>ユニフォームシャツ貸与（赤・黄緑）</span></li>
+          <li><span class="chk-y">⭐</span><span>入団のしおり・名簿登録</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- STEPS -->
+<section class="steps-section" id="join">
+  <div class="si">
+    <div class="sec-eyebrow">How to Join</div>
+    <div class="sec-title">入団まで<span class="hl">4ステップ</span></div>
+    <div class="step-list">
+      <div class="step-item"><div><div class="step-circle">1</div><div class="step-line"></div></div><div><div class="step-title">⚽ 体験練習に来てみよう！</div><div class="step-desc">道具不要・練習着でOK。土日祝の通常練習またはキッズ教室（11:00〜）に気軽にお越しください。</div></div></div>
+      <div class="step-item"><div><div class="step-circle">2</div><div class="step-line"></div></div><div><div class="step-title">📝 入団申込書を提出</div><div class="step-desc">保護者の方が署名・捺印の上ご提出ください。規約のご確認をお願いします。</div></div></div>
+      <div class="step-item"><div><div class="step-circle">3</div><div class="step-line"></div></div><div><div class="step-title">💰 入団金・保険料をお支払い</div><div class="step-desc">入団金4,500円＋スポーツ安全保険加入金をお支払いください。ユニフォームシャツは貸与されます。</div></div></div>
+      <div class="step-item"><div><div class="step-circle">4</div></div><div><div class="step-title">🎉 チームに合流・練習スタート！</div><div class="step-desc">57名の仲間とコーチ陣が笑顔で待っています！TimeTreeでスケジュール共有します。</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="si">
+    <div class="sec-eyebrow">FAQ</div>
+    <div class="sec-title">よくある<span class="hl">質問</span></div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>サッカー未経験・初心者でも入れますか？</span></div><div class="faq-a">もちろんです！幼児向けキッズ教室やU-8カテゴリーでは初めてボールに触れるお子さまも多数在籍。基礎から楽しく丁寧に指導します。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>少年団と習い事の掛け持ちはできますか？</span></div><div class="faq-a">できます。学校行事と重なる場合も柔軟に対応。休む際はマネージャーへ事前にご連絡ください。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>保護者の当番や役割はありますか？</span></div><div class="faq-a">基本的にはありませんが、試合会場までの送迎や試合の審判対応などのご協力をお願いしております。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>年度途中からの入団はできますか？</span></div><div class="faq-a">随時入団受付中です。まずは体験練習からお気軽にどうぞ！</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="contact">
+  <div class="final-bg"></div>
+  <div class="final-ov"></div>
+  <div class="final-inner">
+    <img class="final-logo" style="display:none;" src="images/logo.jpg" alt="YAHAGI SC">
+    <div class="final-title">グラウンドで待っています！<br><span>一緒にサッカーをしよう⚽</span></div>
+    <p class="final-p">体験練習は完全無料・道具不要・当日見学OK。<br>矢作小学校グランドに気軽に遊びに来てください。<br>57名の仲間とコーチ陣が笑顔で待っています！</p>
+    <div class="btn-group">
+      <a href="#join" class="btn btn-yellow">⚽ 体験練習に参加する（無料）</a>
+      <!-- TODO: LINE公式URL取得後に href="https://lin.ee/XXXXXXX" に変更し、クラスを line-btn に変更 -->
+      <a href="#contact" class="btn btn-white" style="opacity:.75;cursor:default;">💬 LINE公式アカウント（近日公開）</a>
+    </div>
+    <div class="final-note" style="margin-top:1rem;">
+        📍 矢作小学校グランド（小田原市）<br>
+        🕗 土・日・祝日 8:00〜11:00 ｜ キッズ教室 11:00〜12:00<br><br>
+        <span style="background:rgba(255,255,255,.15);padding:6px 14px;border-radius:8px;font-size:11px;">
+          💬 LINE公式アカウントは近日公開予定です
+        </span>
+      </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/logo.jpg" alt="YAHAGI SC">
+      <div class="footer-brand-name">矢作サッカークラブ</div>
+      <div class="footer-brand-sub">YAHAGI SOCCER CLUB | Since 1974<br>小田原市 矢作地区</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <div class="footer-col-item"><a href="#about" style="color:inherit;text-decoration:none;">クラブについて</a></div>
+      <div class="footer-col-item"><a href="#coach" style="color:inherit;text-decoration:none;">コーチ紹介</a></div>
+      <div class="footer-col-item"><a href="#course" style="color:inherit;text-decoration:none;">カテゴリー</a></div>
+      <div class="footer-col-item"><a href="#results" style="color:inherit;text-decoration:none;">実績</a></div>
+      <div class="footer-col-item"><a href="#schedule" style="color:inherit;text-decoration:none;">練習情報</a></div>
+      <div class="footer-col-item"><a href="#price" style="color:inherit;text-decoration:none;">費用</a></div>
+      <div class="footer-col-item"><a href="#join" style="color:inherit;text-decoration:none;">入団の流れ</a></div>
+      <div class="footer-col-item"><a href="#faq" style="color:inherit;text-decoration:none;">よくある質問</a></div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-col-item">📍 矢作小学校グランド（小田原市）</div>
+      <div class="footer-col-item">🕗 土・日・祝日 8:00〜11:00</div>
+      <div class="footer-col-item">👶 キッズ教室 11:00〜12:00</div>
+      <div class="footer-col-item">💬 LINE公式アカウント（近日公開）</div>
+      <div class="footer-col-item" style="margin-top:.75rem;">代表：早坂 浩明</div>
+      <div class="footer-col-item">総監督：日下 研一</div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 矢作サッカークラブ ｜ 小田原市 矢作地区</div>
+</footer>
+
+<!-- STICKY -->
+<div class="sticky">
+  <span class="sticky-txt">⚽ 矢作SC 2026年度 団員募集中！体験練習 無料</span>
+  <a href="#contact" class="btn btn-red" style="font-size:.88rem;padding:10px 24px;">⚽ 体験申込はこちら</a>
+</div>
+
+
+<script>
+// ナビ固定高さ
+const NAV_H = 64;
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href').slice(1);
+    if (!targetId) return;
+    const target = document.getElementById(targetId);
+    if (!target) return;
+    e.preventDefault();
+    const top = target.getBoundingClientRect().top + window.pageYOffset - NAV_H;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
