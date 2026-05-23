@@ -257,6 +257,23 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 @media(max-width:768px){
   div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:repeat(2,1fr) !important;}
 }
+
+/* HAMBURGER MENU */
+.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;cursor:pointer;gap:5px;border:none;background:none;padding:0;z-index:1100;}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--red);border-radius:2px;transition:all .3s ease;}
+.hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:63px;left:0;right:0;background:#fff;border-bottom:3px solid var(--red);box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:999;padding:1rem 1.5rem 1.5rem;flex-direction:column;gap:4px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{padding:.75rem 1rem;font-size:.9rem;font-weight:700;color:var(--text2);text-decoration:none;border-radius:8px;transition:background .2s,color .2s;}
+.mobile-menu a:hover{background:var(--red-pale);color:var(--red);}
+.mobile-menu .m-cta{background:var(--red);color:#fff;text-align:center;border-radius:100px;margin-top:.5rem;padding:.85rem;}
+.mobile-menu .m-cta:hover{background:var(--red-dark);}
+
+@media(max-width:768px){
+  .hamburger{display:flex;}
+}
 </style>
 </head>
 <body>
@@ -279,8 +296,24 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <a class="nav-link" href="#faq">FAQ</a>
       <a class="nav-cta" href="#contact">⚽ 体験申込はこちら</a>
     </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- モバイルメニュー -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="m-link">クラブについて</a>
+  <a href="#coach" class="m-link">コーチ紹介</a>
+  <a href="#course" class="m-link">カテゴリー</a>
+  <a href="#results" class="m-link">実績</a>
+  <a href="#schedule" class="m-link">練習情報</a>
+  <a href="#price" class="m-link">費用</a>
+  <a href="#join" class="m-link">入団方法</a>
+  <a href="#faq" class="m-link">FAQ</a>
+  <a href="#contact" class="m-cta">⚽ 体験申込はこちら</a>
+</div>
 
 <!-- TICKER -->
 <div class="ticker">
@@ -928,5 +961,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 </script>
 
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+// メニューのリンクをクリックしたら閉じる
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+</script>
 </body>
 </html>
