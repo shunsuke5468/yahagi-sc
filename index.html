@@ -230,12 +230,13 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 .hero-scroll::before{content:'';display:block;width:1px;height:36px;background:rgba(255,255,255,.35);margin:0 auto .4rem;}
 
 /* STATS BAND */
-.stats-band{background:var(--red);padding:2rem 1.5rem;}
+.stats-band{background:#f8f8f8;padding:2rem 1.5rem;border-top:3px solid var(--red);border-bottom:3px solid var(--red);}
 .stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
-.sb-item{text-align:center;padding:1rem;border-right:1px solid rgba(255,255,255,.18);}
+.sb-item{text-align:center;padding:1rem;border-right:1px solid #e0e0e0;}
 .sb-item:last-child{border-right:none;}
-.sb-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--yellow);line-height:1;letter-spacing:.02em;}
-.sb-u{font-size:.9rem;color:#fff;}
+.sb-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--red);line-height:1;letter-spacing:.02em;}
+.sb-u{font-size:.9rem;color:var(--text2);}
+.sb-l{font-size:10px;color:var(--text3);letter-spacing:.1em;margin-top:3px;}
 .sb-l{font-size:10px;color:rgba(255,255,255,.65);letter-spacing:.1em;margin-top:3px;}
 
 /* SECTION */
@@ -557,7 +558,12 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       1974年創設・歴史と伝統の矢作サッカークラブ<br>
       幼児から小学生まで、本気でサッカーをやろう！
     </div>
-
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">1974</div><div class="hstat-l">創設年</div></div>
+      <div class="hstat"><div class="hstat-num">57<span class="hstat-u">名</span></div><div class="hstat-l">の仲間</div></div>
+      <div class="hstat"><div class="hstat-num">2,500<span class="hstat-u">円</span></div><div class="hstat-l">月会費</div></div>
+      <div class="hstat" style="border:2px solid rgba(255,255,255,.5);"><div class="hstat-num">無料</div><div class="hstat-l">キッズ教室 体験参加</div></div>
+    </div>
     <div class="hero-btns">
       <a href="#contact" class="btn btn-yellow">無料体験に参加する</a>
       <a href="#coach" class="btn btn-white">コーチ紹介を見る</a>
@@ -565,24 +571,6 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
   </div>
   <div class="hero-scroll">SCROLL</div>
 </section>
-
-<div class="div-stripe"></div>
-
-<!-- STATS BAND -->
-<div class="stats-band">
-  <div class="stats-inner">
-    <div class="sb-item"><div class="sb-num">1974</div><div class="sb-l">創設年</div></div>
-    <div class="sb-item"><div class="sb-num">57<span class="sb-u">名</span></div><div class="sb-l">現在の団員数</div></div>
-    <div class="sb-item" style="background:rgba(245,192,0,.18);border-radius:8px;">
-      <div class="sb-num" style="font-size:1.9rem;">2,500<span class="sb-u" style="font-size:.8rem;">円/月</span></div>
-      <div class="sb-l" style="color:var(--yellow);font-weight:700;letter-spacing:.05em;">月会費</div>
-    </div>
-    <div class="sb-item" style="background:rgba(255,255,255,.15);border-radius:8px;">
-      <div class="sb-num" style="font-size:2rem;letter-spacing:.02em;">無料</div>
-      <div class="sb-l" style="color:#fff;font-weight:700;">キッズ教室 体験参加</div>
-    </div>
-  </div>
-</div>
 
 <div class="div-stripe"></div>
 
