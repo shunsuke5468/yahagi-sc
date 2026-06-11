@@ -430,6 +430,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 }
 @media(max-width:480px){
   .coach-grid{grid-template-columns:repeat(2,1fr);}
+  div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr !important;}
 }
 @media(max-width:768px){
   div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:repeat(2,1fr) !important;}
@@ -625,12 +626,12 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 <section style="background:var(--off);padding:5rem 1.5rem;" id="safety">
   <div class="si">
     <div class="sec-eyebrow">Safety &amp; Health</div>
-    <div class="sec-title">サッカー以外でも<span class="hl">子どもたちを守る</span></div>
+    <div class="sec-title">安心して預けられる、<span class="hl">子どもの安全・健康への取り組み</span></div>
     <p style="font-size:.9rem;color:var(--text2);max-width:640px;margin-top:.5rem;line-height:1.8;">
       競技力の向上だけでなく、子どもたちの安全・健康を守るための取り組みを積極的に行っています。
       地域の専門機関と連携した講座・講習を定期的に開催しています。
     </p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr) 1fr;gap:20px;margin-top:2.5rem;align-items:stretch;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2.5rem;align-items:stretch;">
 
       <!-- 熱中症 -->
       <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
@@ -680,11 +681,49 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
         </div>
       </div>
 
-      <!-- 一言メッセージ（AEDの隣） -->
-      <div style="background:var(--navy);border-radius:18px;padding:1.6rem 1.4rem;display:flex;flex-direction:column;justify-content:center;gap:1rem;box-shadow:0 4px 20px rgba(0,0,0,.1);">
-        <div style="font-size:.82rem;color:var(--yellow);font-weight:900;line-height:1.6;text-align:center;">「サッカーを通じて、子どもたちの命と健康を守る」</div>
-        <div style="width:40px;height:2px;background:var(--red);margin:0 auto;"></div>
-        <div style="font-size:.78rem;color:rgba(255,255,255,.75);line-height:1.8;text-align:center;">グラウンドの内外で子どもたちが安心して活動できる環境づくりに取り組んでいます。</div>
+      <!-- スポーツ栄養学 -->
+      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="background:linear-gradient(135deg,#E65100,#BF360C);padding:1.8rem 1.6rem;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.6);margin-bottom:.5rem;">SPORTS NUTRITION</div>
+          <div style="font-size:1.35rem;font-weight:900;color:#fff;line-height:1.3;">スポーツ栄養学</div>
+          <div style="margin-top:.6rem;display:inline-block;background:rgba(255,255,255,.15);border-radius:100px;padding:3px 12px;font-size:.72rem;color:#fff;font-weight:700;letter-spacing:.08em;">食と健康の勉強会</div>
+        </div>
+        <div style="padding:1.3rem 1.4rem;">
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#E65100;flex-shrink:0;">▶</span><span>成長過程に必要な食事の栄養バランスを学ぶ</span></li>
+            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#E65100;flex-shrink:0;">▶</span><span>試合前・中・後の効果的な栄養補給方法</span></li>
+            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#E65100;flex-shrink:0;">▶</span><span>食事でパフォーマンスと回復力を高める</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 社会貢献活動 -->
+      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="background:linear-gradient(135deg,#6A1B9A,#4A148C);padding:1.8rem 1.6rem;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.6);margin-bottom:.5rem;">COMMUNITY CONTRIBUTION</div>
+          <div style="font-size:1.35rem;font-weight:900;color:#fff;line-height:1.3;">社会貢献活動</div>
+          <div style="margin-top:.6rem;display:inline-block;background:rgba(255,255,255,.15);border-radius:100px;padding:3px 12px;font-size:.72rem;color:#fff;font-weight:700;letter-spacing:.08em;">地域とともに育つクラブ</div>
+        </div>
+        <div style="padding:1.3rem 1.4rem;">
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
+            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#6A1B9A;flex-shrink:0;">▶</span><span>クリーンアップ活動：学校グランド周辺のごみ拾いを月一回実施</span></li>
+            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#6A1B9A;flex-shrink:0;">▶</span><span>子どもたちが地域への感謝と責任感を育む機会に</span></li>
+            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#6A1B9A;flex-shrink:0;">▶</span><span>サッカーを通じて人として大切なことを学ぶ</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- メッセージカード -->
+      <div style="background:var(--navy);border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);transition:transform .3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="background:linear-gradient(135deg,#0D1B4B,#162660);padding:1.8rem 1.6rem;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.4);margin-bottom:.5rem;">OUR COMMITMENT</div>
+          <div style="font-size:1.1rem;font-weight:900;color:var(--yellow);line-height:1.5;">私たちの約束</div>
+        </div>
+        <div style="padding:1.6rem 1.4rem;display:flex;flex-direction:column;gap:1rem;">
+          <div style="font-size:.85rem;color:var(--yellow);font-weight:900;line-height:1.7;">「サッカーを通じて、子どもたちの命と健康を守る」</div>
+          <div style="width:36px;height:2px;background:var(--red);"></div>
+          <div style="font-size:.8rem;color:rgba(255,255,255,.75);line-height:1.9;">グラウンドの内外で子どもたちが安心して活動できる環境づくりに取り組んでいます。</div>
+        </div>
       </div>
 
     </div>
