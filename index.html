@@ -7,14 +7,85 @@
 <link rel="icon" type="image/png" sizes="16x16" href="apple-touch-icon.png">
 <link rel="shortcut icon" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>矢作サッカークラブ | 小田原市 Since 1974</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<!-- Facebook SDK -->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-  src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v18.0">
+<title>矢作サッカークラブ | 小田原市の少年サッカー Since 1974</title>
+
+<!-- SEO -->
+<meta name="description" content="小田原市矢作地区の少年サッカークラブ「矢作SC」。創設50年、U-6〜U-12の団員を募集中。無料体験随時受付・道具不要・当日見学OK。挨拶・リスペクト・全力のオンリーワン指導で子どもの可能性を伸ばします。">
+<meta name="keywords" content="矢作サッカークラブ,矢作SC,小田原市,少年サッカー,サッカークラブ,体験,団員募集,U-12,キッズ">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://yahagi-sc.pages.dev/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="矢作サッカークラブ">
+<meta property="og:title" content="矢作サッカークラブ | 小田原市の少年サッカー Since 1974">
+<meta property="og:description" content="創設50年、小田原市矢作地区の少年サッカークラブ。U-6〜U-12団員募集中。無料体験随時受付・道具不要・当日見学OK。">
+<meta property="og:url" content="https://yahagi-sc.pages.dev/">
+<meta property="og:image" content="https://yahagi-sc.pages.dev/images/hero.JPG">
+<meta property="og:image:alt" content="矢作サッカークラブ 集合写真">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="矢作サッカークラブ | 小田原市の少年サッカー Since 1974">
+<meta name="twitter:description" content="創設50年、小田原市矢作地区の少年サッカークラブ。U-6〜U-12団員募集中。無料体験随時受付。">
+<meta name="twitter:image" content="https://yahagi-sc.pages.dev/images/hero.JPG">
+
+<!-- 構造化データ (SportsActivityLocation) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "矢作サッカークラブ",
+  "alternateName": "矢作SC",
+  "description": "小田原市矢作地区の少年サッカークラブ。創設50年、U-6〜U-12の団員を募集中。",
+  "url": "https://yahagi-sc.pages.dev/",
+  "logo": "https://yahagi-sc.pages.dev/images/logo_transparent.png",
+  "image": "https://yahagi-sc.pages.dev/images/hero.JPG",
+  "foundingDate": "1974",
+  "sport": "Soccer",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "小田原市",
+    "addressRegion": "神奈川県",
+    "addressCountry": "JP"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "矢作小学校グラウンド",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "小田原市",
+      "addressRegion": "神奈川県",
+      "addressCountry": "JP"
+    }
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Saturday", "Sunday", "PublicHolidays"],
+    "opens": "08:00",
+    "closes": "11:00"
+  }
+}
 </script>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+/* ============================================================
+   REDUCED MOTION / 初回のみイントロ
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  #intro { display: none !important; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* 再訪問者にはイントロを出さない（JSで body.intro-seen を付与） */
+body.intro-seen #intro { display: none !important; }
+
 /* ============================================================
    INTRO ANIMATION
    ============================================================ */
@@ -578,6 +649,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       創設50年の矢作SCが育てるのは、技術だけじゃない。<br>
       挨拶・リスペクト・全力――<span style="color:var(--yellow);font-weight:900;font-size:clamp(1.1em,4vw,1.6em);">オンリーワン</span>の指導で、選手の可能性を引き出します。
     </div>
+    <!-- ⚠️ 団員数「57名」は3箇所（ヒーロー・入団の流れ・最終CTA）に記載。更新時は全て揃えること -->
     <div class="hero-stats">
       <div class="hstat"><div class="hstat-num">1974</div><div class="hstat-l">創設年</div></div>
       <div class="hstat"><div class="hstat-num">57<span class="hstat-u">名</span></div><div class="hstat-l">の仲間</div></div>
@@ -603,51 +675,51 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.12);">
         <div id="pg-slides" style="display:flex;transition:transform .5s ease;">
           <div style="min-width:100%;position:relative;">
-            <img src="images/gallery_kawasaki_01.jpg" alt="サッカースクール集合" style="width:100%;height:520px;object-fit:cover;display:block;">
+            <img src="images/gallery_kawasaki_01.jpg" alt="サッカースクール集合" fetchpriority="high" decoding="async" style="width:100%;height:520px;object-fit:cover;display:block;">
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:2rem 1.8rem 1.4rem;">
               <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">SOCCER SCHOOL</div>
               <div style="color:#fff;font-size:1rem;font-weight:800;">川崎竜聖選手によるサッカースクール開校</div>
             </div>
           </div>
           <div style="min-width:100%;position:relative;">
-            <img src="images/gallery_kawasaki_02.jpg" alt="サッカースクール練習" style="width:100%;height:520px;object-fit:cover;display:block;">
+            <img loading="lazy" decoding="async" src="images/gallery_kawasaki_02.jpg" alt="サッカースクール練習" style="width:100%;height:520px;object-fit:cover;display:block;">
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:2rem 1.8rem 1.4rem;">
               <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">SOCCER SCHOOL</div>
               <div style="color:#fff;font-size:1rem;font-weight:800;">みんなの憧れ！指導の様子</div>
             </div>
           </div>
           <div style="min-width:100%;position:relative;">
-            <img src="images/hero.JPG" alt="全員集合" style="width:100%;height:520px;object-fit:cover;display:block;">
+            <img loading="lazy" decoding="async" src="images/hero.JPG" alt="全員集合" style="width:100%;height:520px;object-fit:cover;display:block;">
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:2rem 1.8rem 1.4rem;">
               <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">TEAM PHOTO</div>
               <div style="color:#fff;font-size:1rem;font-weight:800;">矢作SCファミリー全員集合！</div>
             </div>
           </div>
           <div style="min-width:100%;position:relative;">
-            <img src="images/gallery_event_01.JPG" alt="BBQ大会" style="width:100%;height:520px;object-fit:cover;display:block;">
+            <img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="BBQ大会" style="width:100%;height:520px;object-fit:cover;display:block;">
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:2rem 1.8rem 1.4rem;">
               <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">EVENT</div>
               <div style="color:#fff;font-size:1rem;font-weight:800;">🎉 BBQ・水鉄砲 大盛り上がり！</div>
             </div>
           </div>
           <div style="min-width:100%;position:relative;">
-            <img src="images/gallery_school_01.JPG" alt="キッズ教室" style="width:100%;height:520px;object-fit:cover;display:block;">
+            <img loading="lazy" decoding="async" src="images/gallery_school_01.JPG" alt="キッズ教室" style="width:100%;height:520px;object-fit:cover;display:block;">
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:2rem 1.8rem 1.4rem;">
               <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">KIDS CLASS</div>
               <div style="color:#fff;font-size:1rem;font-weight:800;">👶 幼児も大歓迎！</div>
             </div>
           </div>
         </div>
-        <button onclick="pgSlide(-1)" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border:none;color:#fff;font-size:1.5rem;width:46px;height:46px;border-radius:50%;cursor:pointer;transition:background .2s;line-height:1;" onmouseover="this.style.background='rgba(255,255,255,.45)'" onmouseout="this.style.background='rgba(255,255,255,.25)'">‹</button>
-        <button onclick="pgSlide(1)"  style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border:none;color:#fff;font-size:1.5rem;width:46px;height:46px;border-radius:50%;cursor:pointer;transition:background .2s;line-height:1;" onmouseover="this.style.background='rgba(255,255,255,.45)'" onmouseout="this.style.background='rgba(255,255,255,.25)'">›</button>
+        <button onclick="pgSlide(-1)" aria-label="前のスライド" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border:none;color:#fff;font-size:1.5rem;width:46px;height:46px;border-radius:50%;cursor:pointer;transition:background .2s;line-height:1;" onmouseover="this.style.background='rgba(255,255,255,.45)'" onmouseout="this.style.background='rgba(255,255,255,.25)'">‹</button>
+        <button onclick="pgSlide(1)" aria-label="次のスライド" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border:none;color:#fff;font-size:1.5rem;width:46px;height:46px;border-radius:50%;cursor:pointer;transition:background .2s;line-height:1;" onmouseover="this.style.background='rgba(255,255,255,.45)'" onmouseout="this.style.background='rgba(255,255,255,.25)'">›</button>
         <div style="position:absolute;top:14px;right:16px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:100px;" id="pg-counter">1 / 5</div>
       </div>
-      <div style="display:flex;justify-content:center;gap:8px;margin-top:1rem;">
-        <button id="pg-dot-0" onclick="pgGoTo(0)" style="width:10px;height:10px;border-radius:50%;border:none;background:var(--red);cursor:pointer;padding:0;transition:background .2s;"></button>
-        <button id="pg-dot-1" onclick="pgGoTo(1)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
-        <button id="pg-dot-2" onclick="pgGoTo(2)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
-        <button id="pg-dot-3" onclick="pgGoTo(3)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
-        <button id="pg-dot-4" onclick="pgGoTo(4)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
+      <div style="display:flex;justify-content:center;gap:8px;margin-top:1rem;" role="tablist" aria-label="フォトギャラリー">
+        <button id="pg-dot-0" aria-label="スライド1へ" onclick="pgGoTo(0)" style="width:10px;height:10px;border-radius:50%;border:none;background:var(--red);cursor:pointer;padding:0;transition:background .2s;"></button>
+        <button id="pg-dot-1" aria-label="スライド2へ" onclick="pgGoTo(1)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
+        <button id="pg-dot-2" aria-label="スライド3へ" onclick="pgGoTo(2)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
+        <button id="pg-dot-3" aria-label="スライド4へ" onclick="pgGoTo(3)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
+        <button id="pg-dot-4" aria-label="スライド5へ" onclick="pgGoTo(4)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
       </div>
       <script>
       (function(){
@@ -963,15 +1035,15 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     <div class="sec-title">年齢・学年別<span class="yl">3つのカテゴリー</span></div>
     <div class="course-grid">
       <div class="course-card">
-        <div class="course-top"><img src="images/gallery_event_01.JPG" alt="U-8"><div class="course-top-overlay" style="background:rgba(217,27,42,.72);"><div class="course-cat">U-8</div><div class="course-age">1〜2年生 / 幼児</div></div></div>
+        <div class="course-top"><img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="U-8"><div class="course-top-overlay" style="background:rgba(217,27,42,.72);"><div class="course-cat">U-8</div><div class="course-age">1〜2年生 / 幼児</div></div></div>
         <div class="course-body"><div class="course-name">低学年・キッズチーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>ボールタッチ・リフティング基礎</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：25点</span></li><li><span class="c-dot">▶</span><span>キッズ教室：土日祝 11:00〜12:00</span></li><li><span class="c-dot">▶</span><span>ミニゲームで楽しく上達！</span></li></ul></div>
       </div>
       <div class="course-card">
-        <div class="course-top"><img src="images/gallery_trophy.JPG" alt="U-10"><div class="course-top-overlay" style="background:rgba(180,110,0,.78);"><div class="course-cat" style="color:var(--yellow);">U-10</div><div class="course-age" style="color:rgba(255,255,255,.9);">3〜4年生</div></div></div>
+        <div class="course-top"><img loading="lazy" decoding="async" src="images/gallery_trophy.JPG" alt="U-10"><div class="course-top-overlay" style="background:rgba(180,110,0,.78);"><div class="course-cat" style="color:var(--yellow);">U-10</div><div class="course-age" style="color:rgba(255,255,255,.9);">3〜4年生</div></div></div>
         <div class="course-body" style="border-top:3px solid var(--yellow);"><div class="course-name">中学年チーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>基本＋実践技術を習得</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：35点</span></li><li><span class="c-dot">▶</span><span>2025年度 優勝・準優勝多数</span></li><li><span class="c-dot">▶</span><span>対人練習・パス・フォーメーション</span></li></ul></div>
       </div>
       <div class="course-card">
-        <div class="course-top"><img src="images/hero_bg.JPG" alt="U-12"><div class="course-top-overlay" style="background:rgba(13,27,62,.78);"><div class="course-cat">U-12</div><div class="course-age">5〜6年生</div></div></div>
+        <div class="course-top"><img loading="lazy" decoding="async" src="images/hero_bg.JPG" alt="U-12"><div class="course-top-overlay" style="background:rgba(13,27,62,.78);"><div class="course-cat">U-12</div><div class="course-age">5〜6年生</div></div></div>
         <div class="course-body"><div class="course-name">高学年チーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>実践技術・チーム戦術を完成</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：40点以上</span></li><li><span class="c-dot">▶</span><span>県選手権・協会主催大会参加</span></li><li><span class="c-dot">▶</span><span>GK専門コーチ在籍</span></li></ul></div>
       </div>
     </div>
@@ -1041,14 +1113,14 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <!-- 写真エリア -->
       <div style="display:flex;flex-direction:column;gap:12px;" id="ob-section-photos">
         <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4);">
-          <img src="images/ob_kawasaki_03.JPG" alt="川崎竜聖 全体集合" class="ob-img-main" style="width:100%;height:260px;object-fit:cover;display:block;">
+          <img loading="lazy" decoding="async" src="images/ob_kawasaki_03.JPG" alt="川崎竜聖 全体集合" class="ob-img-main" style="width:100%;height:260px;object-fit:cover;display:block;">
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
           <div style="border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.4);">
-            <img src="images/ob_kawasaki_01.JPG" alt="川崎竜聖 花束" class="ob-img-sub" style="width:100%;height:160px;object-fit:cover;object-position:top;display:block;">
+            <img loading="lazy" decoding="async" src="images/ob_kawasaki_01.JPG" alt="川崎竜聖 花束" class="ob-img-sub" style="width:100%;height:160px;object-fit:cover;object-position:top;display:block;">
           </div>
           <div style="border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.4);">
-            <img src="images/ob_kawasaki_02.JPG" alt="川崎竜聖 子どもたちと" class="ob-img-sub" style="width:100%;height:160px;object-fit:cover;display:block;">
+            <img loading="lazy" decoding="async" src="images/ob_kawasaki_02.JPG" alt="川崎竜聖 子どもたちと" class="ob-img-sub" style="width:100%;height:160px;object-fit:cover;display:block;">
           </div>
         </div>
       </div>
@@ -1168,7 +1240,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     <div class="btn-group">
       <a href="https://lin.ee/nX8Ezjx5" target="_blank" class="line-btn">💬 LINEで体験申込・お問い合わせ</a>
     </div>
-    <p style="color:rgba(255,255,255,.75);font-size:.85rem;margin-top:.75rem;line-height:1.8;">LINEからいつでも気軽にご連絡ください。<br>体験練習の日程や入団についてお答えします！</p>
+    <p style="color:rgba(255,255,255,.75);font-size:.85rem;margin-top:.75rem;line-height:1.8;">LINEからいつでも気軽にご連絡ください。<br>体験練習の日程や入団についてお答えします！<br><span style="font-size:.8rem;opacity:.85;">LINEをお使いでない方は、練習日にグランドへ直接お越しいただいてもOKです。</span></p>
     <div class="final-note" style="margin-top:1rem;">
       📍 矢作小学校グランド（小田原市）<br>
       🕗 土・日・祝日 8:00〜11:00 ｜ キッズ教室 11:00〜12:00
@@ -1211,46 +1283,60 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 </footer>
 
 <script>
-// ======= INTRO PARTICLES =======
-const introColors = ['#cc0000','#ff4444','#ffffff','#ffaaaa','#ff0000'];
-setTimeout(() => {
-  for (let i = 0; i < 32; i++) {
-    const p = document.createElement('div');
-    p.className = 'intro-particle';
-    const size  = 4 + Math.random() * 9;
-    const angle = (i / 32) * Math.PI * 2;
-    const dist  = 80 + Math.random() * 140;
-    const vx    = Math.cos(angle) * dist;
-    const vy    = Math.sin(angle) * dist - 80;
-    Object.assign(p.style, {
-      width: size + 'px', height: size + 'px',
-      background: introColors[Math.floor(Math.random() * introColors.length)],
-      left: '50%', top: '42%',
-      borderRadius: Math.random() > 0.4 ? '50%' : '2px',
-      boxShadow: '0 0 8px #cc0000',
-    });
-    document.body.appendChild(p);
-    requestAnimationFrame(() => {
-      p.style.transition = `transform ${0.5 + Math.random()*0.4}s cubic-bezier(0.2,0,0.3,1), opacity 0.5s ease`;
-      p.style.opacity = '1';
-      p.style.transform = `translate(${vx}px, ${vy}px)`;
-      setTimeout(() => {
-        p.style.opacity = '0';
-        p.style.transform = `translate(${vx*2}px, ${vy*2 + 100}px)`;
-      }, 150);
-      setTimeout(() => p.remove(), 1000);
-    });
-  }
-}, 1600);
+// ======= INTRO: 初回のみ / reduced-motion はスキップ =======
+var introEl = document.getElementById('intro');
+var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var introSeen = false;
+try { introSeen = sessionStorage.getItem('introSeen') === '1'; } catch(e) {}
 
-// イントロ終了後に非表示
-setTimeout(() => {
-  const intro = document.getElementById('intro');
-  if (intro) intro.style.display = 'none';
-}, 4700);
+if (prefersReduced || introSeen) {
+  // イントロを即時スキップ
+  document.body.classList.add('intro-seen');
+  if (introEl) introEl.style.display = 'none';
+} else {
+  try { sessionStorage.setItem('introSeen', '1'); } catch(e) {}
+
+  // ======= INTRO PARTICLES =======
+  var introColors = ['#cc0000','#ff4444','#ffffff','#ffaaaa','#ff0000'];
+  setTimeout(function() {
+    for (let i = 0; i < 32; i++) {
+      const p = document.createElement('div');
+      p.className = 'intro-particle';
+      const size  = 4 + Math.random() * 9;
+      const angle = (i / 32) * Math.PI * 2;
+      const dist  = 80 + Math.random() * 140;
+      const vx    = Math.cos(angle) * dist;
+      const vy    = Math.sin(angle) * dist - 80;
+      Object.assign(p.style, {
+        width: size + 'px', height: size + 'px',
+        background: introColors[Math.floor(Math.random() * introColors.length)],
+        left: '50%', top: '42%',
+        borderRadius: Math.random() > 0.4 ? '50%' : '2px',
+        boxShadow: '0 0 8px #cc0000',
+      });
+      document.body.appendChild(p);
+      requestAnimationFrame(() => {
+        p.style.transition = `transform ${0.5 + Math.random()*0.4}s cubic-bezier(0.2,0,0.3,1), opacity 0.5s ease`;
+        p.style.opacity = '1';
+        p.style.transform = `translate(${vx}px, ${vy}px)`;
+        setTimeout(() => {
+          p.style.opacity = '0';
+          p.style.transform = `translate(${vx*2}px, ${vy*2 + 100}px)`;
+        }, 150);
+        setTimeout(() => p.remove(), 1000);
+      });
+    }
+  }, 1600);
+
+  // イントロ終了後に非表示
+  setTimeout(function() {
+    if (introEl) introEl.style.display = 'none';
+  }, 4700);
+}
 
 // ======= NAV SMOOTH SCROLL =======
-const NAV_H = 64;
+var navEl = document.querySelector('.nav');
+function getNavH(){ return navEl ? navEl.offsetHeight : 64; }
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const targetId = this.getAttribute('href').slice(1);
@@ -1258,7 +1344,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const target = document.getElementById(targetId);
     if (!target) return;
     e.preventDefault();
-    const top = target.getBoundingClientRect().top + window.pageYOffset - NAV_H;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - getNavH();
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
@@ -1276,6 +1362,12 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     mobileMenu.classList.remove('open');
   });
 });
+</script>
+
+<!-- Facebook SDK (描画後に読み込み) -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v18.0">
 </script>
 </body>
 </html>
