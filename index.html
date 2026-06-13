@@ -516,6 +516,8 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
   .hstat{flex:0 0 calc(50% - .3rem);}
   .hero-badge{white-space:normal;text-align:center;justify-content:center;}
   #ob .si > div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+  /* キッズセクション モバイル */
+  #course .kids-grid{grid-template-columns:1fr !important;}
 }
 @media(max-width:480px){
   .coach-grid{grid-template-columns:repeat(2,1fr);}
@@ -1036,19 +1038,103 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     <div class="sec-eyebrow">Category</div>
     <div class="sec-title">年齢・学年別<span class="yl">3つのカテゴリー</span></div>
     <div class="course-grid">
+      <!-- U-8 -->
       <div class="course-card">
-        <div class="course-top"><img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="U-8"><div class="course-top-overlay" style="background:rgba(217,27,42,.72);"><div class="course-cat">U-8</div><div class="course-age">1〜2年生 / 幼児</div></div></div>
-        <div class="course-body"><div class="course-name">低学年・キッズチーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>ボールタッチ・リフティング基礎</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：25点</span></li><li><span class="c-dot">▶</span><span>キッズ教室：土日祝 11:00〜12:00</span></li><li><span class="c-dot">▶</span><span>ミニゲームで楽しく上達！</span></li></ul></div>
+        <div class="course-top"><img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="U-8"><div class="course-top-overlay" style="background:rgba(217,27,42,.72);"><div class="course-cat">U-8</div><div class="course-age">1〜2年生</div></div></div>
+        <div class="course-body"><div class="course-name">低学年チーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>ボールタッチ・リフティング基礎</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：25点</span></li><li><span class="c-dot">▶</span><span>基礎練習＆サッカーの楽しさを学びます！</span></li></ul></div>
       </div>
+      <!-- U-10 -->
       <div class="course-card">
         <div class="course-top"><img loading="lazy" decoding="async" src="images/gallery_trophy.JPG" alt="U-10"><div class="course-top-overlay" style="background:rgba(180,110,0,.78);"><div class="course-cat" style="color:var(--yellow);">U-10</div><div class="course-age" style="color:rgba(255,255,255,.9);">3〜4年生</div></div></div>
         <div class="course-body" style="border-top:3px solid var(--yellow);"><div class="course-name">中学年チーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>基本＋実践技術を習得</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：35点</span></li><li><span class="c-dot">▶</span><span>2025年度 優勝・準優勝多数</span></li><li><span class="c-dot">▶</span><span>対人練習・パス・フォーメーション</span></li></ul></div>
       </div>
+      <!-- U-12 -->
       <div class="course-card">
         <div class="course-top"><img loading="lazy" decoding="async" src="images/hero_bg.JPG" alt="U-12"><div class="course-top-overlay" style="background:rgba(13,27,62,.78);"><div class="course-cat">U-12</div><div class="course-age">5〜6年生</div></div></div>
         <div class="course-body"><div class="course-name">高学年チーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>実践技術・チーム戦術を完成</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：40点以上</span></li><li><span class="c-dot">▶</span><span>県選手権・協会主催大会参加</span></li><li><span class="c-dot">▶</span><span>GK専門コーチ在籍</span></li></ul></div>
       </div>
     </div>
+
+    <!-- ★ キッズサッカー教室 セクション -->
+    <div style="margin-top:3.5rem;background:linear-gradient(135deg,#fff8f8 0%,#fff4e0 100%);border-radius:22px;border:2px solid rgba(217,27,42,.12);overflow:hidden;">
+
+      <!-- ヘッダー帯 -->
+      <div style="background:linear-gradient(90deg,var(--red-dark),var(--red));padding:1.2rem 2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:#fff;line-height:1;letter-spacing:.04em;">KIDS</div>
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.7);">SOCCER CLASS</div>
+          <div style="font-size:1.1rem;font-weight:900;color:#fff;letter-spacing:.05em;">キッズサッカー教室</div>
+        </div>
+        <div style="margin-left:auto;background:rgba(255,255,255,.2);border-radius:100px;padding:5px 16px;font-size:.78rem;font-weight:800;color:#fff;letter-spacing:.08em;white-space:nowrap;">幼児〜年長</div>
+      </div>
+
+      <!-- コンテンツ -->
+      <div class="kids-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2rem;">
+
+        <!-- 左：プレゴールデンエイジ説明 -->
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div>
+            <div style="display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;font-size:11px;font-weight:900;letter-spacing:.15em;padding:4px 14px;border-radius:100px;margin-bottom:.75rem;">プレゴールデンエイジ（5〜8歳）</div>
+            <p style="font-size:.88rem;color:var(--text2);line-height:1.85;margin:0;">
+              脳や神経系が急速に発達し、<strong style="color:var(--text);">成人の約80%に達する</strong>この時期。多種多様な動作をたくさん経験することが何より大切です。
+            </p>
+          </div>
+
+          <!-- 動作キーワード -->
+          <div style="background:#fff;border-radius:14px;padding:1.2rem;box-shadow:0 2px 12px rgba(0,0,0,.06);">
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.85rem;">あらゆる動きを経験</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span style="font-size:1rem;font-weight:900;color:var(--text);background:var(--red-pale);padding:8px 18px;border-radius:100px;border:1.5px solid rgba(217,27,42,.2);">走る</span>
+              <span style="font-size:1rem;font-weight:900;color:var(--text);background:var(--red-pale);padding:8px 18px;border-radius:100px;border:1.5px solid rgba(217,27,42,.2);">跳ぶ</span>
+              <span style="font-size:1rem;font-weight:900;color:var(--text);background:var(--red-pale);padding:8px 18px;border-radius:100px;border:1.5px solid rgba(217,27,42,.2);">転がる</span>
+              <span style="font-size:1rem;font-weight:900;color:var(--text);background:var(--red-pale);padding:8px 18px;border-radius:100px;border:1.5px solid rgba(217,27,42,.2);">投げる</span>
+              <span style="font-size:1rem;font-weight:900;color:#fff;background:var(--red);padding:8px 18px;border-radius:100px;border:1.5px solid var(--red);">蹴る</span>
+            </div>
+          </div>
+
+          <div style="background:rgba(217,27,42,.07);border-left:3px solid var(--red);border-radius:0 10px 10px 0;padding:.9rem 1.1rem;">
+            <p style="font-size:.83rem;color:var(--text);line-height:1.8;margin:0;">全身を動かす楽しさを知ることで<strong>神経回路のネットワーク</strong>が形成され、あらゆる動きを習得しやすい土台が育まれます。</p>
+          </div>
+        </div>
+
+        <!-- 右：クラス情報 -->
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="background:#fff;border-radius:16px;padding:1.4rem;box-shadow:0 4px 16px rgba(0,0,0,.08);">
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.75rem;">CLASS INFO</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:.7rem;">
+              <li style="display:flex;align-items:flex-start;gap:8px;font-size:.86rem;color:var(--text2);line-height:1.6;">
+                <span style="color:var(--red);flex-shrink:0;font-weight:700;">●</span>
+                <span><strong style="color:var(--text);">練習日：</strong>土日祝　11:00〜12:00</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:8px;font-size:.86rem;color:var(--text2);line-height:1.6;">
+                <span style="color:var(--red);flex-shrink:0;font-weight:700;">●</span>
+                <span><strong style="color:var(--text);">場所：</strong>矢作小学校グラウンド</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:8px;font-size:.86rem;color:var(--text2);line-height:1.6;">
+                <span style="color:var(--red);flex-shrink:0;font-weight:700;">●</span>
+                <span><strong style="color:var(--text);">対象：</strong>幼児（年少〜年長）</span>
+              </li>
+              <li style="display:flex;align-items:flex-start;gap:8px;font-size:.86rem;color:var(--text2);line-height:1.6;">
+                <span style="color:var(--red);flex-shrink:0;font-weight:700;">●</span>
+                <span><strong style="color:var(--text);">体験：</strong>無料・道具不要・当日OK</span>
+              </li>
+            </ul>
+          </div>
+
+          <div style="background:#fff;border-radius:16px;padding:1.4rem;box-shadow:0 4px 16px rgba(0,0,0,.08);">
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.75rem;">PROGRAM</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:.55rem;">
+              <li style="display:flex;gap:8px;font-size:.85rem;color:var(--text2);line-height:1.55;"><span style="color:var(--red);flex-shrink:0;">▶</span><span>多種多様な動き遊びで運動神経を育てる</span></li>
+              <li style="display:flex;gap:8px;font-size:.85rem;color:var(--text2);line-height:1.55;"><span style="color:var(--red);flex-shrink:0;">▶</span><span>ボールに慣れる・サッカーの楽しさを体験</span></li>
+              <li style="display:flex;gap:8px;font-size:.85rem;color:var(--text2);line-height:1.55;"><span style="color:var(--red);flex-shrink:0;">▶</span><span>元気な挨拶・礼儀・友達づくり</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- /キッズセクション -->
+
   </div>
 </section>
 
@@ -1238,7 +1324,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     <div class="faq-list">
       <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>サッカー未経験・初心者でも入れますか？</span></div><div class="faq-a">もちろんです！幼児向けキッズ教室やU-8カテゴリーでは初めてボールに触れるお子さまも多数在籍。基礎から楽しく丁寧に指導します。</div></div>
       <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>少年団と習い事の掛け持ちはできますか？</span></div><div class="faq-a">できます。学校行事と重なる場合も柔軟に対応。休む際はマネージャーへ事前にご連絡ください。</div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>保護者の当番や役割はありますか？</span></div><div class="faq-a">基本的にはありませんが、試合会場までの送迎や試合の審判対応などのご協力をお願いしております。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>保護者の当番や役割はありますか？</span></div><div class="faq-a">基本的にはありませんが、試合会場までの送迎や試合の審判対応などのご協力をお願いしております。また各カテゴリーには<strong>マネージャー</strong>（主にカテゴリー監督との連絡窓口）をお願いしており、LINEでのスケジュール連絡などを担っていただいています。</div></div>
       <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>年度途中からの入団はできますか？</span></div><div class="faq-a">随時入団受付中です。まずは体験練習からお気軽にどうぞ！</div></div>
     </div>
   </div>
