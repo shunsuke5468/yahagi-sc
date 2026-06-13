@@ -491,6 +491,8 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
   #pg-slides img{height:60vw !important;max-height:420px;}
   #ob-section-photos .ob-img-main{height:55vw !important;max-height:320px;}
   #ob-section-photos .ob-img-sub{height:40vw !important;max-height:220px;}
+  /* モバイルでの選手カードの最小高さ調整 */
+  #ob .ob-player-card{min-height:380px !important;}
 }
 @media(max-width:768px){
   .photo-magazine{grid-template-columns:1fr;height:auto;}
@@ -1085,29 +1087,44 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;align-items:start;">
 
-      <!-- テキストエリア -->
-      <div style="display:flex;flex-direction:column;gap:1.25rem;">
-        <div style="display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--text);font-size:11px;font-weight:900;letter-spacing:.18em;padding:5px 16px;border-radius:100px;width:fit-content;">2026 トップチーム登録</div>
+      <!-- テキストエリア（選手画像をバックイメージに） -->
+      <div style="position:relative;border-radius:20px;overflow:hidden;min-height:460px;box-shadow:0 16px 48px rgba(0,0,0,.5);">
+        <!-- 選手画像（背景） -->
+        <img loading="lazy" decoding="async" src="images/ob_kawasaki_player.PNG" alt="川崎竜聖選手"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;">
+        <!-- グラデーション オーバーレイ（読みやすくする） -->
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,40,.97) 0%,rgba(5,10,40,.75) 45%,rgba(5,10,40,.25) 100%);"></div>
+        <!-- テキストコンテンツ -->
+        <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:1.1rem;padding:1.5rem 1.5rem 1.75rem;justify-content:flex-end;height:100%;box-sizing:border-box;min-height:460px;">
+          <div style="display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--text);font-size:11px;font-weight:900;letter-spacing:.18em;padding:5px 16px;border-radius:100px;width:fit-content;">2026 トップチーム登録</div>
 
-        <div>
-          <div style="font-size:.78rem;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.5);margin-bottom:.4rem;">GRADUATE</div>
-          <div style="font-size:2.4rem;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.01em;">川崎 竜聖</div>
-          <div style="font-size:.85rem;color:rgba(255,255,255,.55);letter-spacing:.15em;margin-top:.3rem;">RYUSEI KAWASAKI</div>
+          <div>
+            <div style="font-size:.78rem;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.5);margin-bottom:.4rem;">GRADUATE</div>
+            <div style="font-size:2.4rem;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.01em;">川崎 竜聖</div>
+            <div style="font-size:.85rem;color:rgba(255,255,255,.55);letter-spacing:.15em;margin-top:.3rem;">RYUSEI KAWASAKI</div>
+          </div>
+
+          <div style="width:40px;height:3px;background:var(--yellow);border-radius:2px;"></div>
+
+          <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:1.2rem 1.4rem;">
+            <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;color:var(--yellow);margin-bottom:.5rem;">PROFESSIONAL TEAM</div>
+            <div style="font-size:1.15rem;font-weight:900;color:#fff;line-height:1.4;">湘南ベルマーレ<br>フットサルクラブ</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.65);margin-top:.5rem;">2026シーズン　トップチーム登録</div>
+          </div>
+
+          <div style="background:rgba(255,255,255,.06);border-left:3px solid var(--yellow);border-radius:0 10px 10px 0;padding:1rem 1.2rem;">
+            <div style="font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.9;">矢作サッカークラブで育った仲間が、プロの舞台へ羽ばたきました。竜聖くん、おめでとうございます！クラブ全員で応援しています。</div>
+          </div>
+
+          <!-- Instagram リンク -->
+          <a href="https://www.instagram.com/kawaryuuuuuuu?igsh=MXVzY2U5N3c4anVtcg==" target="_blank" rel="noopener noreferrer"
+            style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;font-size:.82rem;font-weight:800;letter-spacing:.06em;padding:10px 18px;border-radius:100px;text-decoration:none;width:fit-content;box-shadow:0 4px 16px rgba(188,24,136,.4);transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram をフォローする
+          </a>
+
+          <div style="font-size:.75rem;color:rgba(255,255,255,.4);letter-spacing:.08em;">矢作サッカークラブ　卒団生</div>
         </div>
-
-        <div style="width:40px;height:3px;background:var(--yellow);border-radius:2px;"></div>
-
-        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:1.2rem 1.4rem;">
-          <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;color:var(--yellow);margin-bottom:.5rem;">PROFESSIONAL TEAM</div>
-          <div style="font-size:1.15rem;font-weight:900;color:#fff;line-height:1.4;">湘南ベルマーレ<br>フットサルクラブ</div>
-          <div style="font-size:.8rem;color:rgba(255,255,255,.65);margin-top:.5rem;">2026シーズン　トップチーム登録</div>
-        </div>
-
-        <div style="background:rgba(255,255,255,.06);border-left:3px solid var(--yellow);border-radius:0 10px 10px 0;padding:1rem 1.2rem;">
-          <div style="font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.9;">矢作サッカークラブで育った仲間が、プロの舞台へ羽ばたきました。竜聖くん、おめでとうございます！クラブ全員で応援しています。</div>
-        </div>
-
-        <div style="font-size:.75rem;color:rgba(255,255,255,.4);letter-spacing:.08em;">矢作サッカークラブ　卒団生</div>
       </div>
 
       <!-- 写真エリア -->
