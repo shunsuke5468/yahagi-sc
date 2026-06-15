@@ -1647,16 +1647,35 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     }).join('');
   }
 
-  fetch('news.json', {cache:'no-store'})
-    .then(function(r){ if(!r.ok) throw new Error('not found'); return r.json(); })
-    .then(function(data){
-      // 日付の新しい順に並べ、最大5件
-      data.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
-      render(data.slice(0,5));
-    })
-    .catch(function(){
-      box.innerHTML = '<div style="padding:1.5rem;text-align:center;color:var(--text3);font-size:.9rem;">お知らせを読み込めませんでした。</div>';
-    });
+  // ===== お知らせの取得先 =====
+  // GASのWebアプリURLを設定すると、スプレッドシート連携が有効になります。
+  // 空のままなら news.json を読み込みます。
+  var NEWS_API_URL = "https://script.google.com/macros/s/AKfycbwE0n8H41AdIlDMN5_BEIJ1SWgn4dkvjcJWOMrAujhInnMh5qR5kSIpeqLDWXMyVEhK/exec"; // 例: "https://script.google.com/macros/s/XXXX/exec"
+
+  function show(data){
+    if(!Array.isArray(data)) data = [];
+    data.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+    render(data.slice(0,5));
+  }
+
+  function loadFromJson(){
+    fetch('news.json', {cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw new Error('not found'); return r.json(); })
+      .then(show)
+      .catch(function(){
+        box.innerHTML = '<div style="padding:1.5rem;text-align:center;color:var(--text3);font-size:.9rem;">お知らせを読み込めませんでした。</div>';
+      });
+  }
+
+  if(NEWS_API_URL){
+    // ① スプレッドシートAPIを優先
+    fetch(NEWS_API_URL, {cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw new Error('api error'); return r.json(); })
+      .then(show)
+      .catch(loadFromJson); // ② 失敗時は news.json にフォールバック
+  } else {
+    loadFromJson();
+  }
 })();
 </script>
 <script>
