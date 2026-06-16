@@ -330,7 +330,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 /* HERO */
 .hero{position:relative;height:80vh;min-height:500px;max-height:800px;overflow:hidden;display:flex;align-items:flex-end;}
-.hero-bg{position:absolute;inset:0;background:url('images/hero.JPG') center/cover no-repeat;}
+.hero-bg{position:absolute;inset:0;background:url('images/hero.JPG') center/cover no-repeat;background-image:-webkit-image-set(url('images/hero.webp') type('image/webp'), url('images/hero.JPG') type('image/jpeg'));background-image:image-set(url('images/hero.webp') type('image/webp'), url('images/hero.JPG') type('image/jpeg'));background-position:center;background-size:cover;background-repeat:no-repeat;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(110deg,rgba(170,8,18,.88) 0%,rgba(170,8,18,.6) 45%,rgba(0,0,0,.2) 100%);}
 .hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:5rem 2rem 6rem;width:100%;}
 .hero-logo{width:80px;margin-bottom:1rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,.4));animation:float 4s ease-in-out infinite;}
@@ -493,7 +493,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 /* FINAL CTA */
 .final-cta{position:relative;overflow:hidden;min-height:800px;display:flex;align-items:center;}
-.final-bg{position:absolute;inset:0;background:url('images/hero_bg.JPG') center center/cover no-repeat;}
+.final-bg{position:absolute;inset:0;background:url('images/hero_bg.JPG') center center/cover no-repeat;background-image:-webkit-image-set(url('images/hero_bg.webp') type('image/webp'), url('images/hero_bg.JPG') type('image/jpeg'));background-image:image-set(url('images/hero_bg.webp') type('image/webp'), url('images/hero_bg.JPG') type('image/jpeg'));background-position:center;background-size:cover;background-repeat:no-repeat;}
 .final-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(168,15,27,.9),rgba(80,0,10,.75));}
 .final-inner{position:relative;z-index:1;padding:6rem 1.5rem;text-align:center;max-width:680px;margin:0 auto;}
 .final-logo{width:80px;margin:0 auto 1.5rem;filter:drop-shadow(0 6px 20px rgba(0,0,0,.4));animation:float 3s ease-in-out infinite;}
@@ -756,35 +756,35 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.12);">
         <div id="pg-slides" style="display:flex;transition:transform .5s ease;">
           <div style="min-width:100%;position:relative;">
-            <img src="images/gallery_kawasaki_01.jpg" alt="サッカースクール集合" fetchpriority="high" decoding="async" style="width:100%;height:520px;object-fit:cover;display:block;">
+            <picture><source srcset="images/gallery_kawasaki_01.webp" type="image/webp"><img src="images/gallery_kawasaki_01.jpg" alt="サッカースクール集合" fetchpriority="high" decoding="async" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:2rem 1.8rem 1.4rem;">
               <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">SOCCER SCHOOL</div>
               <div style="color:#fff;font-size:1rem;font-weight:800;">川崎竜聖選手によるサッカースクール開校</div>
             </div>
           </div>
           <div style="min-width:100%;position:relative;">
-            <img loading="lazy" decoding="async" src="images/gallery_kawasaki_02.jpg" alt="サッカースクール練習" style="width:100%;height:520px;object-fit:cover;display:block;">
+            <picture><source srcset="images/gallery_kawasaki_02.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_kawasaki_02.jpg" alt="サッカースクール練習" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:2rem 1.8rem 1.4rem;">
               <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">SOCCER SCHOOL</div>
               <div style="color:#fff;font-size:1rem;font-weight:800;">みんなの憧れ！指導の様子</div>
             </div>
           </div>
           <div style="min-width:100%;position:relative;">
-            <img loading="lazy" decoding="async" src="images/hero.JPG" alt="全員集合" style="width:100%;height:520px;object-fit:cover;display:block;">
+            <picture><source srcset="images/hero.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/hero.JPG" alt="全員集合" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:2rem 1.8rem 1.4rem;">
               <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">TEAM PHOTO</div>
               <div style="color:#fff;font-size:1rem;font-weight:800;">矢作SCファミリー全員集合！</div>
             </div>
           </div>
           <div style="min-width:100%;position:relative;">
-            <img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="BBQ大会" style="width:100%;height:520px;object-fit:cover;display:block;">
+            <picture><source srcset="images/gallery_event_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="BBQ大会" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:2rem 1.8rem 1.4rem;">
               <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">EVENT</div>
               <div style="color:#fff;font-size:1rem;font-weight:800;">🎉 BBQ・水鉄砲 大盛り上がり！</div>
             </div>
           </div>
           <div style="min-width:100%;position:relative;">
-            <img loading="lazy" decoding="async" src="images/gallery_school_01.JPG" alt="キッズ教室" style="width:100%;height:520px;object-fit:cover;display:block;">
+            <picture><source srcset="images/gallery_school_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_school_01.JPG" alt="キッズ教室" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:2rem 1.8rem 1.4rem;">
               <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">KIDS CLASS</div>
               <div style="color:#fff;font-size:1rem;font-weight:800;">👶 幼児も大歓迎！</div>
@@ -1088,7 +1088,8 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A12,#D91B2A2e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#D91B2A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #D91B2A55;position:relative;z-index:1;">渋</div><div class="coach-initial-bar" style="background:#D91B2A;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">顧問</div><div class="coach-name">渋谷 芳美</div><div class="coach-name-en">YOSHIMI SHIBUYA</div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A12,#D91B2A2e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#D91B2A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #D91B2A55;position:relative;z-index:1;">河</div><div class="coach-initial-bar" style="background:#D91B2A;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">相談役・育成指導統括</div><div class="coach-name">河野 浩二</div><div class="coach-name-en">KOJI KOUNO</div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A12,#D91B2A2e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#D91B2A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #D91B2A55;position:relative;z-index:1;">日</div><div class="coach-initial-bar" style="background:#D91B2A;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">総監督・U-8&キッズ監督</div><div class="coach-name">日下 研一</div><div class="coach-name-en">KENICHI KUSAKA</div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A12,#D91B2A2e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#D91B2A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #D91B2A55;position:relative;z-index:1;">甲</div><div class="coach-initial-bar" style="background:#D91B2A;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">GK担当</div><div class="coach-name">甲 淳一</div><div class="coach-name-en">JUNICHI KOU</div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A12,#D91B2A2e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#D91B2A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #D91B2A55;position:relative;z-index:1;">早</div><div class="coach-initial-bar" style="background:#D91B2A;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">クラブ代表・U-10監督</div><div class="coach-name">早坂 浩明</div><div class="coach-name-en">HIROAKI HAYASAKA</div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#D91B2A12,#D91B2A2e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#D91B2A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #D91B2A55;position:relative;z-index:1;">甲</div><div class="coach-initial-bar" style="background:#D91B2A;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">GK担当</div><div class="coach-name">甲 淳一</div><div class="coach-name-en">JUNICHI KINOE</div></div></div>
       <!-- U-12 -->
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#1565C012,#1565C02e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#1565C0;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #1565C055;position:relative;z-index:1;">諸</div><div class="coach-initial-bar" style="background:#1565C0;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12監督</div><div class="coach-name">諸星 達也</div><div class="coach-name-en">TATSUYA MOROHOSHI</div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#1565C012,#1565C02e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#1565C0;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #1565C055;position:relative;z-index:1;">柏</div><div class="coach-initial-bar" style="background:#1565C0;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">柏木 誉史</div><div class="coach-name-en">TAKAFUMI KASHIWAGI</div></div></div>
@@ -1097,7 +1098,6 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#1565C012,#1565C02e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#1565C0;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #1565C055;position:relative;z-index:1;">下</div><div class="coach-initial-bar" style="background:#1565C0;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">下田 翔也</div><div class="coach-name-en">SHOYA SHIMODA</div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#1565C012,#1565C02e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#1565C0;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #1565C055;position:relative;z-index:1;">磯</div><div class="coach-initial-bar" style="background:#1565C0;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">磯﨑 幸二</div><div class="coach-name-en">KOJI ISOZAKI</div></div></div>
       <!-- U-10 -->
-      <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#27AE6012,#27AE602e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#27AE60;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #27AE6055;position:relative;z-index:1;">早</div><div class="coach-initial-bar" style="background:#27AE60;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#27AE60;">U-10監督</div><div class="coach-name">早坂 浩明</div><div class="coach-name-en">HIROAKI HAYASAKA</div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#27AE6012,#27AE602e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#27AE60;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #27AE6055;position:relative;z-index:1;">植</div><div class="coach-initial-bar" style="background:#27AE60;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">植田 健</div><div class="coach-name-en">KEN UEDA</div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#27AE6012,#27AE602e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#27AE60;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #27AE6055;position:relative;z-index:1;">赤</div><div class="coach-initial-bar" style="background:#27AE60;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">赤松 歩</div><div class="coach-name-en">AYUMU AKAMATSU</div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#27AE6012,#27AE602e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#27AE60;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #27AE6055;position:relative;z-index:1;">田</div><div class="coach-initial-bar" style="background:#27AE60;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">田中 祐也</div><div class="coach-name-en">YUYA TANAKA</div></div></div>
@@ -1107,7 +1107,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#E6510012,#E651002e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#E65100;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #E6510055;position:relative;z-index:1;">徳</div><div class="coach-initial-bar" style="background:#E65100;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">徳永 哲和</div><div class="coach-name-en">TETSUKAZU TOKUNAGA</div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#E6510012,#E651002e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#E65100;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #E6510055;position:relative;z-index:1;">柏</div><div class="coach-initial-bar" style="background:#E65100;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div></div></div>
       <!-- U-8アシスタント -->
-      <div class="coach-card"><div class="coach-avatar" style="background:linear-gradient(135deg,#E6510012,#E651002e);"><div class="coach-initial" style="width:74px;height:74px;border-radius:50%;background:#E65100;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.1rem;font-weight:900;box-shadow:0 6px 18px #E6510055;position:relative;z-index:1;">髙</div><div class="coach-initial-bar" style="background:#E65100;"></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8アシスタントコーチ</div><div class="coach-name">髙山 侑樹</div><div class="coach-name-en">YUKI TAKAYAMA</div></div></div>
+      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8アシスタントコーチ</div><div class="coach-name">髙山 侑樹</div><div class="coach-name-en">YUKI TAKAYAMA</div></div></div>
     </div>
     </div>
   </div>
@@ -1123,17 +1123,17 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
     <div class="course-grid">
       <!-- U-8 -->
       <div class="course-card">
-        <div class="course-top"><img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="U-8"><div class="course-top-overlay" style="background:rgba(217,27,42,.72);"><div class="course-cat">U-8</div><div class="course-age">1〜2年生</div></div></div>
+        <div class="course-top"><picture><source srcset="images/gallery_event_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="U-8"></picture><div class="course-top-overlay" style="background:rgba(217,27,42,.72);"><div class="course-cat">U-8</div><div class="course-age">1〜2年生</div></div></div>
         <div class="course-body"><div class="course-name">低学年チーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>ボールタッチ・リフティング基礎</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：25点</span></li><li><span class="c-dot">▶</span><span>基礎練習＆サッカーの楽しさを学びます！</span></li></ul></div>
       </div>
       <!-- U-10 -->
       <div class="course-card">
-        <div class="course-top"><img loading="lazy" decoding="async" src="images/gallery_trophy.JPG" alt="U-10"><div class="course-top-overlay" style="background:rgba(180,110,0,.78);"><div class="course-cat" style="color:var(--yellow);">U-10</div><div class="course-age" style="color:rgba(255,255,255,.9);">3〜4年生</div></div></div>
+        <div class="course-top"><picture><source srcset="images/gallery_trophy.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_trophy.JPG" alt="U-10"></picture><div class="course-top-overlay" style="background:rgba(180,110,0,.78);"><div class="course-cat" style="color:var(--yellow);">U-10</div><div class="course-age" style="color:rgba(255,255,255,.9);">3〜4年生</div></div></div>
         <div class="course-body" style="border-top:3px solid var(--yellow);"><div class="course-name">中学年チーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>基本＋実践技術を習得</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：35点</span></li><li><span class="c-dot">▶</span><span>2025年度 優勝・準優勝多数</span></li><li><span class="c-dot">▶</span><span>対人練習・パス・フォーメーション</span></li></ul></div>
       </div>
       <!-- U-12 -->
       <div class="course-card">
-        <div class="course-top"><img loading="lazy" decoding="async" src="images/hero_bg.JPG" alt="U-12"><div class="course-top-overlay" style="background:rgba(13,27,62,.78);"><div class="course-cat">U-12</div><div class="course-age">5〜6年生</div></div></div>
+        <div class="course-top"><picture><source srcset="images/hero_bg.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/hero_bg.JPG" alt="U-12"></picture><div class="course-top-overlay" style="background:rgba(13,27,62,.78);"><div class="course-cat">U-12</div><div class="course-age">5〜6年生</div></div></div>
         <div class="course-body"><div class="course-name">高学年チーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>実践技術・チーム戦術を完成</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：40点以上</span></li><li><span class="c-dot">▶</span><span>県選手権・協会主催大会参加</span></li><li><span class="c-dot">▶</span><span>GK専門コーチ在籍</span></li></ul></div>
       </div>
     </div>
@@ -1232,7 +1232,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       地元地域の大会はもちろん、県内のさまざまな大会に出場しています。<br>
       2025年度も多くの大会で好成績を収めることができました。
     </p>
-    <img class="trophy-img" src="images/gallery_team_all.JPG" alt="獲得トロフィー一覧">
+    <picture><source srcset="images/gallery_team_all.webp" type="image/webp"><img class="trophy-img" src="images/gallery_team_all.JPG" alt="獲得トロフィー一覧"></picture>
     <div style="display:grid;grid-template-columns:repeat(3,minmax(80px,1fr));gap:8px;margin-bottom:2rem;">
       <div style="background:#fff;border:2px solid var(--red);border-radius:14px;padding:1rem .5rem;text-align:center;box-shadow:0 4px 20px rgba(217,27,42,.1);"><div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--red);text-transform:uppercase;margin-bottom:.5rem;">優勝</div><div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--red);line-height:1;">10</div><div style="font-size:.85rem;font-weight:700;color:var(--text2);">回</div></div>
       <div style="background:#fff;border:2px solid #888;border-radius:14px;padding:1rem .5rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);"><div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#666;text-transform:uppercase;margin-bottom:.5rem;">準優勝</div><div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;color:#666;line-height:1;">11</div><div style="font-size:.85rem;font-weight:700;color:var(--text2);">回</div></div>
@@ -1259,8 +1259,8 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <!-- テキストエリア（選手画像をバックイメージに） -->
       <div style="position:relative;border-radius:20px;overflow:hidden;min-height:460px;box-shadow:0 16px 48px rgba(0,0,0,.5);">
         <!-- 選手画像（背景） -->
-        <img loading="lazy" decoding="async" src="images/ob_kawasaki_player.PNG" alt="川崎竜聖選手"
-          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;">
+        <picture><source srcset="images/ob_kawasaki_player.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_player.PNG" alt="川崎竜聖選手"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;"></picture>
         <!-- グラデーション オーバーレイ（読みやすくする） -->
         <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,40,.97) 0%,rgba(5,10,40,.75) 45%,rgba(5,10,40,.25) 100%);"></div>
         <!-- テキストコンテンツ -->
@@ -1299,14 +1299,14 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <!-- 写真エリア -->
       <div style="display:flex;flex-direction:column;gap:12px;" id="ob-section-photos">
         <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4);">
-          <img loading="lazy" decoding="async" src="images/ob_kawasaki_03.JPG" alt="川崎竜聖 全体集合" class="ob-img-main" style="width:100%;height:260px;object-fit:cover;display:block;">
+          <picture><source srcset="images/ob_kawasaki_03.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_03.JPG" alt="川崎竜聖 全体集合" class="ob-img-main" style="width:100%;height:260px;object-fit:cover;display:block;"></picture>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
           <div style="border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.4);">
-            <img loading="lazy" decoding="async" src="images/ob_kawasaki_01.JPG" alt="川崎竜聖 花束" class="ob-img-sub" style="width:100%;height:160px;object-fit:cover;object-position:top;display:block;">
+            <picture><source srcset="images/ob_kawasaki_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_01.JPG" alt="川崎竜聖 花束" class="ob-img-sub" style="width:100%;height:160px;object-fit:cover;object-position:top;display:block;"></picture>
           </div>
           <div style="border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.4);">
-            <img loading="lazy" decoding="async" src="images/ob_kawasaki_02.JPG" alt="川崎竜聖 子どもたちと" class="ob-img-sub" style="width:100%;height:160px;object-fit:cover;display:block;">
+            <picture><source srcset="images/ob_kawasaki_02.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_02.JPG" alt="川崎竜聖 子どもたちと" class="ob-img-sub" style="width:100%;height:160px;object-fit:cover;display:block;"></picture>
           </div>
         </div>
       </div>
@@ -1488,6 +1488,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div class="footer-col-item">LINEでお問い合わせ</div>
       <div class="footer-col-item" style="margin-top:.75rem;">相談役：河野 浩二</div>
       <div class="footer-col-item">総監督：日下 研一</div>
+      <div class="footer-col-item">代表：早坂 浩明</div>
     </div>
   </div>
   <div class="footer-bottom">© 2026 矢作サッカークラブ ｜ 小田原市 矢作地区</div>
