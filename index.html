@@ -338,16 +338,26 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 .hero-title{font-size:clamp(1.7rem,5.5vw,4.4rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:.75rem;text-shadow:0 2px 12px rgba(0,0,0,.35);letter-spacing:-.02em;}
 .hero-title .yel{color:var(--yellow);}
 .hero-sub{font-size:clamp(.85rem,1.8vw,1.1rem);font-weight:500;color:rgba(255,255,255,.85);margin-bottom:1.2rem;line-height:1.8;max-width:500px;}
-.hero-stats{display:flex;gap:.6rem;margin-bottom:1.5rem;flex-wrap:nowrap;}
-.hstat{background:rgba(0,0,0,.55);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,.7);border-radius:10px;padding:.5rem .7rem;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.hstat-num{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--yellow);line-height:1;white-space:nowrap;}
-.hstat-u{font-size:.65rem;color:#fff;}
-.hstat-l{font-size:9px;color:rgba(255,255,255,.65);margin-top:2px;}
+.hero-stats{display:flex;gap:.6rem;margin-bottom:1.6rem;flex-wrap:nowrap;}
+.hstat{position:relative;background:linear-gradient(160deg,rgba(20,20,28,.62),rgba(10,10,16,.78));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:.85rem .7rem .75rem;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .25s,border-color .25s;}
+.hstat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--yellow),#ffe082);opacity:.9;}
+.hstat:hover{transform:translateY(-3px);border-color:rgba(245,192,0,.4);}
+.hstat-num{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--yellow);line-height:1;white-space:nowrap;letter-spacing:.02em;text-shadow:0 2px 12px rgba(245,192,0,.3);}
+.hstat-u{font-size:.7rem;color:#fff;margin-left:1px;}
+.hstat-l{font-size:9.5px;font-weight:600;color:rgba(255,255,255,.7);margin-top:5px;letter-spacing:.06em;}
+/* 無料ボックス（強調） */
+.hstat-free{background:linear-gradient(160deg,rgba(245,192,0,.95),rgba(230,160,0,.92));border-color:rgba(255,255,255,.5);}
+.hstat-free::before{background:rgba(255,255,255,.55);}
+.hstat-free .hstat-num{color:#1a1a1a;text-shadow:none;}
+.hstat-free .hstat-l{color:rgba(0,0,0,.6);}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn{display:inline-flex;align-items:center;gap:8px;font-size:.92rem;font-weight:900;padding:14px 30px;border-radius:100px;text-decoration:none;cursor:pointer;border:none;letter-spacing:.04em;transition:all .2s;}
-.btn-yellow{background:var(--yellow);color:var(--text);box-shadow:0 6px 24px rgba(255,184,0,.45);animation:pulse-y 2.5s ease-in-out infinite;}
-.btn-white{background:rgba(255,255,255,.15);backdrop-filter:blur(8px);color:#fff;border:2px solid rgba(255,255,255,.4);}
-.btn-white:hover{background:rgba(255,255,255,.25);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:.92rem;font-weight:900;padding:15px 32px;border-radius:14px;text-decoration:none;cursor:pointer;border:none;letter-spacing:.04em;transition:all .25s;}
+.btn-yellow{background:linear-gradient(135deg,#ffd11a,#f5c000);color:var(--text);box-shadow:0 8px 28px rgba(245,192,0,.5);animation:pulse-y 2.5s ease-in-out infinite;position:relative;overflow:hidden;}
+.btn-yellow::after{content:'→';font-size:1.05rem;font-weight:700;transition:transform .25s;}
+.btn-yellow:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(245,192,0,.6);}
+.btn-yellow:hover::after{transform:translateX(4px);}
+.btn-white{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;border:1.5px solid rgba(255,255,255,.45);}
+.btn-white:hover{background:rgba(255,255,255,.22);transform:translateY(-2px);border-color:rgba(255,255,255,.7);}
 .btn-red{background:var(--red);color:#fff;box-shadow:0 6px 24px rgba(217,27,42,.4);}
 .btn-red:hover{background:var(--red-dark);}
 .hero-scroll{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.2em;text-align:center;z-index:2;}
@@ -721,7 +731,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div class="hstat"><div class="hstat-num">1974</div><div class="hstat-l">創設年</div></div>
       <div class="hstat"><div class="hstat-num">57<span class="hstat-u">名</span></div><div class="hstat-l">の仲間</div></div>
       <div class="hstat"><div class="hstat-num" style="white-space:nowrap;">2,500<span class="hstat-u">円</span></div><div class="hstat-l">月会費</div></div>
-      <div class="hstat" style="border:2px solid rgba(255,255,255,.5);"><div class="hstat-num">無料</div><div class="hstat-l">キッズ教室 体験参加</div></div>
+      <div class="hstat hstat-free"><div class="hstat-num">無料</div><div class="hstat-l">キッズ教室 体験参加</div></div>
     </div>
     <div class="hero-btns">
       <a href="#contact" class="btn btn-yellow">無料体験に参加する</a>
