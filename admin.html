@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>お知らせ管理 | 矢作サッカークラブ</title>
+<style>
+  :root{
+    --red:#D91B2A; --red-dark:#A80F1B; --red-pale:#FFF0F1;
+    --blue:#1565C0; --green:#27AE60; --orange:#E65100;
+    --off:#F9F9F9; --border:#E0E0E0; --text:#111; --text2:#444; --text3:#888;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Noto Sans JP',sans-serif;background:#f4f5f7;color:var(--text);line-height:1.7;font-size:15px;padding:0 0 4rem;}
+  .topbar{background:linear-gradient(90deg,var(--red-dark),var(--red));color:#fff;padding:1rem 1.25rem;display:flex;align-items:center;gap:.75rem;}
+  .topbar h1{font-size:1.05rem;font-weight:900;letter-spacing:.03em;}
+  .topbar .tag{margin-left:auto;font-size:.72rem;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:100px;font-weight:700;}
+  .wrap{max-width:760px;margin:1.5rem auto;padding:0 1rem;}
+  .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.5rem;margin-bottom:1.25rem;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .card h2{font-size:1rem;font-weight:900;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
+  .card h2 .num{width:24px;height:24px;border-radius:50%;background:var(--red);color:#fff;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  label{display:block;font-size:.82rem;font-weight:700;color:var(--text2);margin-bottom:.35rem;margin-top:.9rem;}
+  label:first-of-type{margin-top:0;}
+  input,select,textarea{width:100%;padding:.7rem .85rem;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:.92rem;color:var(--text);background:#fff;transition:border-color .2s;}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--red);}
+  textarea{resize:vertical;min-height:76px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:none;border-radius:10px;font-family:inherit;font-weight:800;font-size:.9rem;padding:.75rem 1.4rem;cursor:pointer;transition:opacity .2s,transform .1s;}
+  .btn:active{transform:scale(.98);}
+  .btn-primary{background:var(--red);color:#fff;}
+  .btn-primary:hover{opacity:.9;}
+  .btn-sub{background:#eef0f3;color:var(--text);}
+  .btn-sub:hover{background:#e3e6ea;}
+  .btn-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.1rem;}
+  .list-item{display:flex;gap:.75rem;align-items:flex-start;padding:.85rem;border:1px solid var(--border);border-radius:10px;margin-bottom:.6rem;background:var(--off);}
+  .list-item .date{font-size:.78rem;font-weight:700;color:var(--text3);white-space:nowrap;padding-top:2px;}
+  .badge{font-size:.68rem;font-weight:800;color:#fff;padding:2px 10px;border-radius:100px;white-space:nowrap;}
+  .list-item .body-wrap{flex:1;min-width:0;}
+  .list-item .ttl{font-size:.88rem;font-weight:700;line-height:1.4;}
+  .list-item .bd{font-size:.78rem;color:var(--text2);margin-top:.2rem;}
+  .del{background:none;border:none;color:var(--red);cursor:pointer;font-size:1.1rem;font-weight:700;padding:.2rem .5rem;flex-shrink:0;}
+  .output{width:100%;min-height:160px;font-family:monospace;font-size:.8rem;background:#1e1e1e;color:#d4d4d4;border:none;border-radius:10px;padding:1rem;white-space:pre;overflow:auto;}
+  .hint{font-size:.8rem;color:var(--text3);line-height:1.7;margin-top:.5rem;}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:#111;color:#fff;padding:.75rem 1.5rem;border-radius:100px;font-size:.85rem;font-weight:700;opacity:0;transition:all .3s;z-index:100;}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
+  .gate{position:fixed;inset:0;background:#f4f5f7;display:flex;align-items:center;justify-content:center;z-index:200;padding:1rem;}
+  .gate-card{background:#fff;border-radius:16px;padding:2rem;max-width:340px;width:100%;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.1);}
+  .gate-card h2{font-size:1.1rem;margin-bottom:.5rem;}
+  .gate-card p{font-size:.82rem;color:var(--text3);margin-bottom:1.25rem;}
+</style>
+</head>
+<body>
+
+<!-- パスワードゲート -->
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <h2>🔒 お知らせ管理</h2>
+    <p>合言葉を入力してください</p>
+    <input type="password" id="gatePass" placeholder="合言葉" style="text-align:center;" onkeydown="if(event.key==='Enter')checkGate()">
+    <button class="btn btn-primary" style="width:100%;margin-top:1rem;" onclick="checkGate()">入る</button>
+    <p style="margin-top:1rem;margin-bottom:0;font-size:.72rem;">※簡易ロックです。本当の秘密情報は載せないでください。</p>
+  </div>
+</div>
+
+<div class="topbar">
+  <h1>⚽ お知らせ管理</h1>
+  <span class="tag">矢作SC</span>
+</div>
+
+<div class="wrap">
+
+  <!-- STEP 1: 入力 -->
+  <div class="card">
+    <h2><span class="num">1</span>お知らせを入力</h2>
+    <label>日付</label>
+    <input type="date" id="f-date">
+    <label>カテゴリー</label>
+    <select id="f-cat">
+      <option value="お知らせ">お知らせ（緑）</option>
+      <option value="大会結果">大会結果（青）</option>
+      <option value="休講">休講（オレンジ）</option>
+      <option value="中止">中止（オレンジ）</option>
+      <option value="重要">重要（赤）</option>
+      <option value="イベント">イベント（紫）</option>
+    </select>
+    <label>タイトル（必須）</label>
+    <input type="text" id="f-title" placeholder="例：U-10 地区大会 準優勝！">
+    <label>本文（任意）</label>
+    <textarea id="f-body" placeholder="例：接戦を勝ち抜き準優勝。応援ありがとうございました！"></textarea>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="addItem()">＋ リストに追加</button>
+      <button class="btn btn-sub" onclick="clearForm()">クリア</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: 一覧 -->
+  <div class="card">
+    <h2><span class="num">2</span>現在のお知らせ一覧</h2>
+    <div id="list"></div>
+    <div class="hint" id="empty-hint">まだお知らせがありません。上のフォームから追加するか、「既存を読み込む」で現在のnews.jsonを取り込めます。</div>
+    <div class="btn-row">
+      <button class="btn btn-sub" onclick="loadExisting()">📥 既存のnews.jsonを読み込む</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: 出力 -->
+  <div class="card">
+    <h2><span class="num">3</span>news.json を書き出す</h2>
+    <textarea class="output" id="output" readonly>[]</textarea>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="copyJson()">📋 コピー</button>
+      <button class="btn btn-sub" onclick="downloadJson()">⬇️ news.json をダウンロード</button>
+    </div>
+    <div class="hint">
+      <strong>反映手順：</strong>「コピー」または「ダウンロード」した内容で、リポジトリの <code>news.json</code> を上書き保存（Commit）してください。Cloudflareが自動でサイトに反映します。
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // ===== 簡易パスワード（運営で共有する合言葉。必要に応じて書き換え） =====
+  var PASSWORD = "yahagi2026";
+
+  function checkGate(){
+    var v = document.getElementById('gatePass').value;
+    if(v === PASSWORD){
+      document.getElementById('gate').style.display = 'none';
+      try{ sessionStorage.setItem('adminOk','1'); }catch(e){}
+    } else {
+      toast('合言葉が違います');
+    }
+  }
+  // セッション内なら再入力不要
+  try{ if(sessionStorage.getItem('adminOk')==='1'){ document.getElementById('gate').style.display='none'; } }catch(e){}
+
+  // 今日の日付を初期値に
+  document.getElementById('f-date').value = new Date().toISOString().slice(0,10);
+
+  var catColor = { 'お知らせ':'#27AE60', '大会結果':'#1565C0', '休講':'#E65100', '中止':'#E65100', '重要':'#D91B2A', 'イベント':'#7B2D8E' };
+  var items = [];
+
+  function fmtDate(s){
+    var d = new Date(s); if(isNaN(d)) return s;
+    return d.getFullYear()+'.'+('0'+(d.getMonth()+1)).slice(-2)+'.'+('0'+d.getDate()).slice(-2);
+  }
+
+  function render(){
+    items.sort(function(a,b){ return new Date(b.date)-new Date(a.date); });
+    var list = document.getElementById('list');
+    document.getElementById('empty-hint').style.display = items.length ? 'none' : 'block';
+    list.innerHTML = items.map(function(it,i){
+      var color = catColor[it.category] || '#666';
+      return '<div class="list-item">'+
+        '<div class="date">'+fmtDate(it.date)+'</div>'+
+        '<span class="badge" style="background:'+color+'">'+it.category+'</span>'+
+        '<div class="body-wrap"><div class="ttl">'+esc(it.title)+'</div>'+
+        (it.body?'<div class="bd">'+esc(it.body)+'</div>':'')+'</div>'+
+        '<button class="del" onclick="removeItem('+i+')" title="削除">×</button>'+
+      '</div>';
+    }).join('');
+    updateOutput();
+  }
+
+  function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function addItem(){
+    var title = document.getElementById('f-title').value.trim();
+    if(!title){ toast('タイトルを入力してください'); return; }
+    items.push({
+      date: document.getElementById('f-date').value,
+      category: document.getElementById('f-cat').value,
+      title: title,
+      body: document.getElementById('f-body').value.trim()
+    });
+    clearForm();
+    render();
+    toast('追加しました');
+  }
+
+  function removeItem(i){
+    if(confirm('このお知らせを削除しますか？')){ items.splice(i,1); render(); }
+  }
+
+  function clearForm(){
+    document.getElementById('f-title').value='';
+    document.getElementById('f-body').value='';
+  }
+
+  function updateOutput(){
+    // bodyが空のものはキーごと省略してスッキリ
+    var clean = items.map(function(it){
+      var o = { date:it.date, category:it.category, title:it.title };
+      if(it.body) o.body = it.body;
+      return o;
+    });
+    document.getElementById('output').value = JSON.stringify(clean, null, 2);
+  }
+
+  function loadExisting(){
+    fetch('news.json',{cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(data){
+        items = data.slice();
+        render();
+        toast('読み込みました（'+items.length+'件）');
+      })
+      .catch(function(){ toast('news.json が見つかりませんでした'); });
+  }
+
+  function copyJson(){
+    var ta = document.getElementById('output');
+    ta.select();
+    navigator.clipboard.writeText(ta.value).then(function(){
+      toast('コピーしました');
+    }).catch(function(){
+      document.execCommand('copy'); toast('コピーしました');
+    });
+  }
+
+  function downloadJson(){
+    var blob = new Blob([document.getElementById('output').value], {type:'application/json'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'news.json';
+    a.click();
+    toast('ダウンロードしました');
+  }
+
+  var toastTimer;
+  function toast(msg){
+    var t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ t.classList.remove('show'); }, 2000);
+  }
+
+  render();
+</script>
+</body>
+</html>
