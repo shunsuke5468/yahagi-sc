@@ -339,13 +339,13 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 .hero-title{font-size:clamp(1.7rem,5.5vw,4.4rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:.75rem;text-shadow:0 2px 12px rgba(0,0,0,.35);letter-spacing:-.02em;}
 .hero-title .yel{color:var(--yellow);}
 .hero-sub{font-size:clamp(.85rem,1.8vw,1.1rem);font-weight:500;color:rgba(255,255,255,.85);margin-bottom:1.2rem;line-height:1.8;max-width:500px;}
-.hero-stats{display:flex;gap:clamp(1.2rem,4vw,2.6rem);margin:1.4rem 0 1.7rem;flex-wrap:wrap;background:linear-gradient(135deg,rgba(8,6,12,.9),rgba(24,18,30,.82));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:1.3rem 1.5rem;max-width:620px;box-shadow:0 10px 30px rgba(0,0,0,.35);}
+.hero-stats{display:flex;gap:clamp(1.4rem,4.5vw,3rem) clamp(1.2rem,4vw,2.6rem);margin:1.4rem 0 1.7rem;flex-wrap:wrap;background:linear-gradient(135deg,rgba(10,8,14,.4),rgba(26,20,32,.4));backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:1.5rem 1.6rem;max-width:640px;box-shadow:0 10px 30px rgba(0,0,0,.22);}
 .hstat{position:relative;background:none;border:none;border-radius:0;padding:0;text-align:left;flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-start;box-shadow:none;}
 
 .hstat:hover .hstat-num{color:#FFC400;text-shadow:0 1px 2px rgba(0,0,0,.9),0 2px 8px rgba(0,0,0,.7),0 0 1px rgba(0,0,0,.9);-webkit-text-stroke:.5px rgba(0,0,0,.35);}
-.hstat-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.7rem,4.8vw,2.2rem);color:var(--yellow);line-height:1;white-space:nowrap;letter-spacing:.03em;text-shadow:0 2px 12px rgba(0,0,0,.55);}
-.hstat-u{font-size:.7rem;color:#fff;margin-left:1px;}
-.hstat-l{font-size:11px;font-weight:700;color:rgba(255,255,255,.95);margin-top:7px;letter-spacing:.08em;text-shadow:0 1px 4px rgba(0,0,0,.6);}
+.hstat-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,7.5vw,3.4rem);color:var(--yellow);line-height:1;white-space:nowrap;letter-spacing:.03em;text-shadow:0 2px 12px rgba(0,0,0,.55);}
+.hstat-u{font-size:1rem;color:#fff;margin-left:2px;}
+.hstat-l{font-size:12.5px;font-weight:700;color:rgba(255,255,255,.95);margin-top:8px;letter-spacing:.08em;text-shadow:0 1px 4px rgba(0,0,0,.6);}
 /* 無料ボックス（強調） */
 
 
@@ -491,8 +491,12 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 .step-list{margin-top:2rem;display:flex;flex-direction:column;gap:0;max-width:700px;}
 .step-item{display:grid;grid-template-columns:60px 1fr;gap:1.25rem;padding:1.5rem 0;border-bottom:1px dashed var(--border);align-items:flex-start;}
 .step-item:last-child{border-bottom:none;}
-.step-circle{width:50px;height:50px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;flex-shrink:0;box-shadow:0 4px 14px rgba(217,27,42,.3);}
-.step-line{width:2px;height:20px;background:var(--border);margin:4px auto 0;}
+.step-circle{width:50px;height:50px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#fff;flex-shrink:0;box-shadow:0 4px 14px rgba(217,27,42,.3);position:relative;z-index:1;}
+.step-item:first-child .step-circle{box-shadow:0 4px 14px rgba(217,27,42,.5),0 0 0 6px rgba(217,27,42,.12);}
+.step-item:first-child .step-circle::after{content:'START';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--yellow);color:#111;font-size:8.5px;font-weight:900;letter-spacing:.06em;padding:2px 7px;border-radius:8px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.25);}
+.step-item:last-child .step-title{color:var(--red);}
+.step-item:last-child .step-circle{background:linear-gradient(135deg,var(--red),#F5A623);}
+.step-line{width:3px;height:20px;background:linear-gradient(var(--red),var(--border));margin:4px auto 0;border-radius:2px;}
 .step-title{font-weight:700;font-size:.95rem;color:var(--red);margin-bottom:.3rem;padding-top:.65rem;letter-spacing:.01em;}
 .step-desc{font-size:.88rem;color:var(--text2);line-height:1.7;}
 
@@ -519,13 +523,18 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 .final-note{margin-top:1.5rem;font-size:11px;color:rgba(255,255,255,.45);}
 
 /* FOOTER */
-.footer{background:#1a1a1a;color:rgba(255,255,255,.6);padding:3rem 1.5rem 5rem;}
+.footer{position:relative;background:linear-gradient(160deg,#0D1B4B,#12224f 55%,#0a1638);color:rgba(255,255,255,.6);padding:3.5rem 1.5rem 5rem;overflow:hidden;}
+.footer::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(560px,80vw);height:min(560px,80vw);background:url('images/logo_transparent.png') center/contain no-repeat;opacity:.07;pointer-events:none;z-index:0;}
+.footer-inner{position:relative;z-index:1;}
+.footer-bottom{position:relative;z-index:1;}
+.footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red-dark),var(--red),var(--yellow),var(--red),var(--red-dark));background-size:300% auto;animation:shimmer 5s linear infinite;}
 .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;}
 .footer-brand img{width:56px;margin-bottom:.75rem;}
 .footer-brand-name{font-size:.85rem;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:.25rem;letter-spacing:.05em;}
 .footer-brand-sub{font-size:.78rem;color:rgba(255,255,255,.5);}
 .footer-col-title{font-size:.7rem;font-weight:900;letter-spacing:.2em;color:var(--yellow);margin-bottom:.75rem;text-transform:uppercase;}
-.footer-col-item{font-size:.84rem;color:rgba(255,255,255,.55);margin-bottom:.4rem;}
+.footer-col-item{font-size:.84rem;color:rgba(255,255,255,.55);margin-bottom:.5rem;}
+.footer-col-item a:hover{color:var(--yellow);}
 .footer-bottom{max-width:1100px;margin:.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.7rem;color:rgba(255,255,255,.3);}
 
 /* ANIMATIONS */
@@ -1484,22 +1493,23 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="images/logo_transparent.png" alt="YAHAGI SC">
       <div class="footer-brand-name">矢作サッカークラブ</div>
       <div class="footer-brand-sub">YAHAGI SOCCER CLUB | Since 1974<br>小田原市 矢作地区</div>
     </div>
     <div>
       <div class="footer-col-title">Quick Links</div>
-      <div class="footer-col-item"><a href="#about" style="color:inherit;text-decoration:none;">クラブについて</a></div>
-      <div class="footer-col-item"><a href="#coach" style="color:inherit;text-decoration:none;">コーチ紹介</a></div>
-      <div class="footer-col-item"><a href="#course" style="color:inherit;text-decoration:none;">カテゴリー</a></div>
-      <div class="footer-col-item"><a href="#onlyone" style="color:inherit;text-decoration:none;">オンリーワンノート</a></div>
-      <div class="footer-col-item"><a href="#safety" style="color:inherit;text-decoration:none;">安全・健康への取り組み</a></div>
-      <div class="footer-col-item"><a href="#results" style="color:inherit;text-decoration:none;">実績</a></div>
-      <div class="footer-col-item"><a href="#schedule" style="color:inherit;text-decoration:none;">練習情報</a></div>
-      <div class="footer-col-item"><a href="#price" style="color:inherit;text-decoration:none;">費用</a></div>
-      <div class="footer-col-item"><a href="#join" style="color:inherit;text-decoration:none;">入団の流れ</a></div>
-      <div class="footer-col-item"><a href="#faq" style="color:inherit;text-decoration:none;">よくある質問</a></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 1rem;">
+        <div class="footer-col-item"><a href="#about" style="color:inherit;text-decoration:none;">クラブについて</a></div>
+        <div class="footer-col-item"><a href="#coach" style="color:inherit;text-decoration:none;">コーチ紹介</a></div>
+        <div class="footer-col-item"><a href="#course" style="color:inherit;text-decoration:none;">カテゴリー</a></div>
+        <div class="footer-col-item"><a href="#onlyone" style="color:inherit;text-decoration:none;">オンリーワンノート</a></div>
+        <div class="footer-col-item"><a href="#safety" style="color:inherit;text-decoration:none;">安全・健康</a></div>
+        <div class="footer-col-item"><a href="#results" style="color:inherit;text-decoration:none;">実績</a></div>
+        <div class="footer-col-item"><a href="#schedule" style="color:inherit;text-decoration:none;">練習情報</a></div>
+        <div class="footer-col-item"><a href="#price" style="color:inherit;text-decoration:none;">費用</a></div>
+        <div class="footer-col-item"><a href="#join" style="color:inherit;text-decoration:none;">入団の流れ</a></div>
+        <div class="footer-col-item"><a href="#faq" style="color:inherit;text-decoration:none;">よくある質問</a></div>
+      </div>
     </div>
     <div>
       <div class="footer-col-title">Contact</div>
