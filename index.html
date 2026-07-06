@@ -1524,18 +1524,22 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 </footer>
 
 <script>
-// ======= INTRO: 初回のみ / reduced-motion はスキップ =======
+// ======= INTRO: 7日間に1回のみ / reduced-motion はスキップ =======
 var introEl = document.getElementById('intro');
 var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var introSeen = false;
-try { introSeen = sessionStorage.getItem('introSeen') === '1'; } catch(e) {}
+var INTRO_SKIP_DAYS = 7; // イントロを再表示するまでの日数
+try {
+  var seenAt = parseInt(localStorage.getItem('introSeenAt') || '0', 10);
+  introSeen = seenAt > 0 && (Date.now() - seenAt) < INTRO_SKIP_DAYS * 24 * 60 * 60 * 1000;
+} catch(e) {}
 
 if (prefersReduced || introSeen) {
   // イントロを即時スキップ
   document.body.classList.add('intro-seen');
   if (introEl) introEl.style.display = 'none';
 } else {
-  try { sessionStorage.setItem('introSeen', '1'); } catch(e) {}
+  try { localStorage.setItem('introSeenAt', String(Date.now())); } catch(e) {}
 
   // ======= INTRO PARTICLES =======
   var introColors = ['#cc0000','#ff4444','#ffffff','#ffaaaa','#ff0000'];
