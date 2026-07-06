@@ -2,6 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R1KP9SBKM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R1KP9SBKM1');
+</script>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="apple-touch-icon.png">
@@ -1779,6 +1787,37 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     });
   },{rootMargin:'-35% 0px -55% 0px'});
   Object.keys(map).forEach(function(id){io.observe(document.getElementById(id));});
+})();
+</script>
+<!-- ======= GA4: 主要CTAクリック計測 ======= -->
+<script>
+(function(){
+  function track(label, extra){
+    if (typeof gtag === 'function') {
+      gtag('event', 'cta_click', Object.assign({cta_label: label}, extra || {}));
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    // LINEボタン（フッター・追従ボタン等、line.meリンク全て）
+    document.querySelectorAll('a[href*="lin.ee"], a.line-btn, #floatCta').forEach(function(el){
+      el.addEventListener('click', function(){ track('LINE申込', {link_url: el.href}); });
+    });
+    // ヘッダー・メニューの体験申込ボタン
+    document.querySelectorAll('a.nav-cta, a.m-cta').forEach(function(el){
+      el.addEventListener('click', function(){ track('体験申込はこちら（ヘッダー/メニュー）'); });
+    });
+    // ヒーローの黄色ボタン（無料体験に参加する）
+    document.querySelectorAll('a.btn-yellow').forEach(function(el){
+      el.addEventListener('click', function(){ track('無料体験に参加する（ヒーロー）'); });
+    });
+    // Googleマップ・Facebookなど外部リンク
+    document.querySelectorAll('a[href*="google.com/maps"]').forEach(function(el){
+      el.addEventListener('click', function(){ track('地図を開く'); });
+    });
+    document.querySelectorAll('a[href*="facebook.com"]').forEach(function(el){
+      el.addEventListener('click', function(){ track('Facebookリンク'); });
+    });
+  });
 })();
 </script>
 </body>
