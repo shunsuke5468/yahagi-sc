@@ -1539,7 +1539,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 var introEl = document.getElementById('intro');
 var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var introSeen = false;
-var INTRO_SKIP_DAYS = 7; // イントロを再表示するまでの日数
+var INTRO_SKIP_DAYS = 1; // イントロを再表示するまでの日数
 try {
   var seenAt = parseInt(localStorage.getItem('introSeenAt') || '0', 10);
   introSeen = seenAt > 0 && (Date.now() - seenAt) < INTRO_SKIP_DAYS * 24 * 60 * 60 * 1000;
