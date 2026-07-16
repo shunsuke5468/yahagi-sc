@@ -1142,7 +1142,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kinoe.jpg" alt="甲 淳一" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ・GK担当</div><div class="coach-name">甲 淳一</div><div class="coach-name-en">JUNICHI KINOE</div></div></div>
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">三橋 義昭</div><div class="coach-name-en">YOSHIAKI MITSUHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_tokunaga.jpg" alt="徳永 哲和" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">徳永 哲和</div><div class="coach-name-en">YOSHIKAZU TOKUNAGA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_tomo.jpg" alt="柏木 知之" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
       <!-- U-8アシスタント -->
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8アシスタントコーチ</div><div class="coach-name">髙山 侑樹</div><div class="coach-name-en">YUKI TAKAYAMA</div><div class="coach-lic"><span>救命技能認定</span></div></div></div>
     </div>
@@ -1539,7 +1539,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 var introEl = document.getElementById('intro');
 var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var introSeen = false;
-var INTRO_SKIP_DAYS = 7; // イントロを再表示するまでの日数
+var INTRO_SKIP_DAYS = 1; // イントロを再表示するまでの日数
 try {
   var seenAt = parseInt(localStorage.getItem('introSeenAt') || '0', 10);
   introSeen = seenAt > 0 && (Date.now() - seenAt) < INTRO_SKIP_DAYS * 24 * 60 * 60 * 1000;
