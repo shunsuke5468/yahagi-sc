@@ -608,6 +608,20 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
   .scroll-progress{display:none;}
 }
 
+/* --- パーティクルモーフィング --- */
+.pmorph-section{position:relative;background:radial-gradient(ellipse at 50% 40%,#1c1c24 0%,#0c0c10 70%);overflow:hidden;}
+#pmorphCanvas{display:block;width:100%;height:420px;cursor:crosshair;touch-action:pan-y;}
+.pmorph-caption{position:absolute;left:0;right:0;bottom:1.4rem;text-align:center;pointer-events:none;padding:0 1.5rem;}
+.pmorph-eyebrow{font-size:10px;font-weight:700;letter-spacing:.35em;color:var(--yellow);margin-bottom:.4rem;font-family:'Inter',sans-serif;}
+.pmorph-text{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.8;}
+@media (max-width:600px){
+  #pmorphCanvas{height:320px;}
+  .pmorph-br{display:none;}
+}
+@media (prefers-reduced-motion: reduce){
+  .pmorph-section{display:none;}
+}
+
 /* DIVIDER */
 .div-stripe{height:5px;background:linear-gradient(90deg,var(--red-dark),var(--red),var(--yellow),var(--red),var(--red-dark));background-size:300% auto;animation:shimmer 5s linear infinite;}
 
@@ -1558,6 +1572,17 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 <div class="div-stripe"></div>
 
+<!-- PARTICLE MORPH SECTION -->
+<section class="pmorph-section" id="spirit" aria-label="矢作SCの想い">
+  <canvas id="pmorphCanvas"></canvas>
+  <div class="pmorph-caption">
+    <div class="pmorph-eyebrow">OUR SPIRIT</div>
+    <div class="pmorph-text">触れてみてください。<br class="pmorph-br">何度崩れても、また立ち上がる。それが矢作SCの子どもたちです。</div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
 <!-- FINAL CTA -->
 <section class="final-cta" id="contact">
   <div class="final-bg"></div>
@@ -1707,6 +1732,161 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 </a>
 <!-- トップに戻る -->
 <button class="to-top" id="toTop" aria-label="ページトップへ戻る" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+// ======= PARTICLE MORPH ENGINE =======
+(function(){
+  var canvas = document.getElementById('pmorphCanvas');
+  if(!canvas) return;
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(prefersReduced) return;
+
+  var ctx = canvas.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var particles = [];
+  var mouse = {x:-9999, y:-9999};
+  var WORDS = ['挑戦','成長','仲間','YAHAGI SC'];
+  var COLORS = ['#D91B2A','#F5C000','#ffffff'];
+  var wordIdx = 0;
+  var running = false;
+  var isMobile = window.innerWidth < 600;
+  var GAP = isMobile ? 5 : 4;       // 文字サンプリング間隔（小さいほど粒子が多い）
+  var MAXP = isMobile ? 700 : 1400; // 粒子数上限
+
+  function resize(){
+    var rect = canvas.getBoundingClientRect();
+    W = rect.width; H = rect.height;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+
+  // 指定した単語のドット座標を取得
+  function sampleWord(word){
+    var off = document.createElement('canvas');
+    off.width = W; off.height = H;
+    var octx = off.getContext('2d');
+    var isAscii = /^[\x00-\x7F\s]+$/.test(word);
+    var size = isMobile ? (isAscii ? 54 : 110) : (isAscii ? 120 : 190);
+    octx.font = '900 ' + size + 'px "Noto Sans JP","Inter",sans-serif';
+    octx.textAlign = 'center';
+    octx.textBaseline = 'middle';
+    octx.fillStyle = '#fff';
+    octx.fillText(word, W/2, H/2 - 14);
+    var data = octx.getImageData(0,0,W,H).data;
+    var pts = [];
+    for(var y=0; y<H; y+=GAP){
+      for(var x=0; x<W; x+=GAP){
+        if(data[(y*W + x)*4 + 3] > 128){
+          pts.push({x:x, y:y});
+        }
+      }
+    }
+    // 上限を超える場合は間引く
+    while(pts.length > MAXP){
+      pts.splice(Math.floor(Math.random()*pts.length), 1);
+    }
+    return pts;
+  }
+
+  function setTargets(word){
+    var pts = sampleWord(word);
+    // 粒子数を合わせる
+    while(particles.length < pts.length){
+      particles.push({
+        x: Math.random()*W, y: Math.random()*H,
+        vx:0, vy:0, tx:0, ty:0,
+        c: COLORS[Math.floor(Math.random()*COLORS.length)],
+        r: 1.1 + Math.random()*1.3
+      });
+    }
+    particles.length = pts.length;
+    // シャッフルして自然な再集合に
+    pts.sort(function(){ return Math.random() - .5; });
+    for(var i=0; i<particles.length; i++){
+      particles[i].tx = pts[i].x;
+      particles[i].ty = pts[i].y;
+    }
+  }
+
+  function tick(){
+    if(!running) return;
+    ctx.clearRect(0,0,W,H);
+    for(var i=0; i<particles.length; i++){
+      var p = particles[i];
+      // ターゲットへのばね
+      p.vx += (p.tx - p.x) * 0.045;
+      p.vy += (p.ty - p.y) * 0.045;
+      // マウス反発
+      var dx = p.x - mouse.x, dy = p.y - mouse.y;
+      var d2 = dx*dx + dy*dy;
+      if(d2 < 8100){ // 90px以内
+        var d = Math.sqrt(d2) || 1;
+        var f = (90 - d) / 90 * 7;
+        p.vx += (dx/d) * f;
+        p.vy += (dy/d) * f;
+      }
+      p.vx *= 0.86; p.vy *= 0.86;
+      p.x += p.vx; p.y += p.vy;
+      ctx.fillStyle = p.c;
+      ctx.fillRect(p.x, p.y, p.r, p.r);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  var cycleTimer = null;
+  function startCycle(){
+    if(cycleTimer) return;
+    cycleTimer = setInterval(function(){
+      wordIdx = (wordIdx + 1) % WORDS.length;
+      setTargets(WORDS[wordIdx]);
+    }, 4200);
+  }
+  function stopCycle(){
+    if(cycleTimer){ clearInterval(cycleTimer); cycleTimer = null; }
+  }
+
+  // 画面内にあるときだけ動かす（省電力）
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        if(!running){ running = true; tick(); startCycle(); }
+      } else {
+        running = false; stopCycle();
+      }
+    });
+  }, {threshold: 0.15});
+  io.observe(canvas);
+
+  // 入力
+  canvas.addEventListener('mousemove', function(e){
+    var r = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+  });
+  canvas.addEventListener('mouseleave', function(){ mouse.x = -9999; mouse.y = -9999; });
+  canvas.addEventListener('touchmove', function(e){
+    var r = canvas.getBoundingClientRect();
+    var t = e.touches[0];
+    mouse.x = t.clientX - r.left; mouse.y = t.clientY - r.top;
+  }, {passive:true});
+  canvas.addEventListener('touchend', function(){ mouse.x = -9999; mouse.y = -9999; });
+
+  window.addEventListener('resize', function(){
+    resize();
+    setTargets(WORDS[wordIdx]);
+  });
+
+  // フォント読み込み後に初期化（日本語フォントのレンダリング崩れ防止）
+  function init(){
+    resize();
+    setTargets(WORDS[0]);
+  }
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(init);
+  } else {
+    setTimeout(init, 300);
+  }
+})();
+</script>
 <script>
 // ======= PREMIUM FX PACK =======
 (function(){
