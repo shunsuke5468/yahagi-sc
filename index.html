@@ -339,8 +339,17 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 /* HERO */
 .hero{position:relative;min-height:500px;overflow:visible;display:flex;align-items:flex-start;}
-.hero-bg{position:absolute;inset:0;background:url('images/hero.JPG') center/cover no-repeat;background-image:-webkit-image-set(url('images/hero.webp') type('image/webp'), url('images/hero.JPG') type('image/jpeg'));background-image:image-set(url('images/hero.webp') type('image/webp'), url('images/hero.JPG') type('image/jpeg'));background-position:center;background-size:cover;background-repeat:no-repeat;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(110deg,rgba(170,8,18,.5) 0%,rgba(170,8,18,.26) 45%,rgba(0,0,0,.06) 100%);}
+.hero-bg-slider{position:absolute;inset:0;overflow:hidden;background:#111;}
+.hero-bg-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease;}
+.hero-bg-slide.active{opacity:1;z-index:1;}
+.hero-bg-slide img{width:100%;height:100%;object-fit:cover;display:block;animation:heroKenburns 15s ease-in-out infinite alternate;}
+.hero-bg-slide:nth-child(odd) img{animation-name:heroKenburnsAlt;}
+@keyframes heroKenburns{from{transform:scale(1) translate(0,0);}to{transform:scale(1.14) translate(-1.5%,-1%);}}
+@keyframes heroKenburnsAlt{from{transform:scale(1.1) translate(-1%,0);}to{transform:scale(1.22) translate(1%,-1.5%);}}
+@media (prefers-reduced-motion: reduce){
+  .hero-bg-slide img{animation:none;}
+}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(110deg,rgba(170,8,18,.5) 0%,rgba(170,8,18,.26) 45%,rgba(0,0,0,.06) 100%);z-index:1;}
 .hero-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:3.5rem 2rem 4rem;width:100%;}
 .hero-logo{width:80px;margin-bottom:1rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,.4));animation:float 4s ease-in-out infinite;}
 .hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--yellow);color:var(--text);font-size:11px;font-weight:900;letter-spacing:.18em;padding:5px 14px;border-radius:100px;margin-bottom:1rem;}
@@ -561,6 +570,44 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 @keyframes pulse-y{0%,100%{box-shadow:0 6px 24px rgba(255,184,0,.45);transform:scale(1)}50%{box-shadow:0 10px 40px rgba(255,184,0,.7);transform:scale(1.04)}}
 @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
 
+/* ============================================================
+   PREMIUM FX PACK
+   ============================================================ */
+/* --- スクロールプログレスバー --- */
+.scroll-progress{position:fixed;top:0;left:0;height:4px;width:0%;background:linear-gradient(90deg,var(--red),var(--yellow));z-index:2000;box-shadow:0 0 12px rgba(217,27,42,.6);transition:width .1s linear;}
+
+/* --- 巨大マーキー帯 --- */
+.mega-marquee{background:#111;overflow:hidden;padding:1.1rem 0;position:relative;}
+.mega-marquee::before,.mega-marquee::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;}
+.mega-marquee::before{left:0;background:linear-gradient(90deg,#111,transparent);}
+.mega-marquee::after{right:0;background:linear-gradient(-90deg,#111,transparent);}
+.mega-marquee-inner{display:inline-flex;white-space:nowrap;animation:megaMarquee 24s linear infinite;}
+.mega-marquee-item{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,7vw,5rem);letter-spacing:.06em;line-height:1;padding:0 1.6rem;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.35);}
+.mega-marquee-item.fill{color:var(--red);-webkit-text-stroke:0;}
+.mega-marquee-item.yel{color:var(--yellow);-webkit-text-stroke:0;}
+@keyframes megaMarquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* --- コーチカード3Dチルト --- */
+.coach-card{transform-style:preserve-3d;will-change:transform;}
+.coach-card.tilting{transition:none;}
+.coach-card:not(.tilting){transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .3s;}
+
+/* --- ボタンリップル --- */
+.btn,.nav-cta,.line-btn,.float-cta{position:relative;overflow:hidden;}
+.fx-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:fxRipple .55s ease-out forwards;pointer-events:none;}
+@keyframes fxRipple{to{transform:scale(3.2);opacity:0;}}
+
+/* --- ヒーロータイトル 光のスイープ --- */
+.hero-title{position:relative;}
+.hero-title::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.4) 50%,transparent 70%);background-size:250% 100%;background-position:120% 0;animation:heroShine 5.5s ease-in-out infinite;pointer-events:none;mix-blend-mode:overlay;}
+@keyframes heroShine{0%,60%{background-position:130% 0;}85%,100%{background-position:-40% 0;}}
+
+@media (prefers-reduced-motion: reduce){
+  .mega-marquee-inner{animation:none;}
+  .hero-title::after{animation:none;display:none;}
+  .scroll-progress{display:none;}
+}
+
 /* DIVIDER */
 .div-stripe{height:5px;background:linear-gradient(90deg,var(--red-dark),var(--red),var(--yellow),var(--red),var(--red-dark));background-size:300% auto;animation:shimmer 5s linear infinite;}
 
@@ -620,6 +667,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- ============================================================
      INTRO ANIMATION
@@ -734,7 +782,20 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 <!-- HERO -->
 <section class="hero" id="about">
-  <div class="hero-bg"></div>
+  <div class="hero-bg-slider" id="heroBgSlider">
+    <div class="hero-bg-slide active">
+      <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.JPG" alt="" fetchpriority="high" decoding="async"></picture>
+    </div>
+    <div class="hero-bg-slide">
+      <picture><source srcset="images/gallery_team_all.webp" type="image/webp"><img src="images/gallery_team_all.JPG" alt="" loading="lazy" decoding="async"></picture>
+    </div>
+    <div class="hero-bg-slide">
+      <picture><source srcset="images/gallery_kawasaki_01.webp" type="image/webp"><img src="images/gallery_kawasaki_01.jpg" alt="" loading="lazy" decoding="async"></picture>
+    </div>
+    <div class="hero-bg-slide">
+      <picture><source srcset="images/gallery_event_01.webp" type="image/webp"><img src="images/gallery_event_01.JPG" alt="" loading="lazy" decoding="async"></picture>
+    </div>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <img class="hero-logo" style="display:none;" src="images/logo_transparent.png" alt="YAHAGI SC">
@@ -761,6 +822,28 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
   </div>
   <div class="hero-scroll">SCROLL</div>
 </section>
+
+<!-- MEGA MARQUEE -->
+<div class="mega-marquee" aria-hidden="true">
+  <div class="mega-marquee-inner">
+    <span class="mega-marquee-item">YAHAGI SC</span>
+    <span class="mega-marquee-item fill">⚽</span>
+    <span class="mega-marquee-item">SINCE 1974</span>
+    <span class="mega-marquee-item yel">★</span>
+    <span class="mega-marquee-item">ODAWARA</span>
+    <span class="mega-marquee-item fill">⚽</span>
+    <span class="mega-marquee-item">YAHAGI SC</span>
+    <span class="mega-marquee-item yel">★</span>
+    <span class="mega-marquee-item">YAHAGI SC</span>
+    <span class="mega-marquee-item fill">⚽</span>
+    <span class="mega-marquee-item">SINCE 1974</span>
+    <span class="mega-marquee-item yel">★</span>
+    <span class="mega-marquee-item">ODAWARA</span>
+    <span class="mega-marquee-item fill">⚽</span>
+    <span class="mega-marquee-item">YAHAGI SC</span>
+    <span class="mega-marquee-item yel">★</span>
+  </div>
+</div>
 
 <div class="div-stripe"></div>
 
@@ -1130,11 +1213,11 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_morohoshi.jpg" alt="諸星 達也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12監督</div><div class="coach-name">諸星 達也</div><div class="coach-name-en">TATSUYA MOROHOSHI</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_t.jpg" alt="柏木 誉史" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">柏木 誉史</div><div class="coach-name-en">TAKAFUMI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span><span>クラブウェルフェアオフィサー</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_seto.jpg" alt="瀬戸 俊明" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">瀬戸 俊明</div><div class="coach-name-en">TOSHIAKI SETO</div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_takahashi.jpg" alt="高橋 富康" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">高橋 富康</div><div class="coach-name-en">TOMIYASU TAKAHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_ueda.jpg" alt="高橋 富康" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">高橋 富康</div><div class="coach-name-en">TOMIYASU TAKAHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_shimoda.jpg" alt="下田 翔也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">下田 翔也</div><div class="coach-name-en">SHOYA SHIMODA</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>JFA公認4級審判員</span><span>JFA公認キッズリーダー</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_isozaki.jpg" alt="磯﨑 幸二" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">磯﨑 幸二</div><div class="coach-name-en">KOJI ISOZAKI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>小田原サッカー協会 技術部役員</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_takahashi.jpg" alt="磯﨑 幸二" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">磯﨑 幸二</div><div class="coach-name-en">KOJI ISOZAKI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>小田原サッカー協会 技術部役員</span></div></div></div>
       <!-- U-10 -->
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_ueda.jpg" alt="植田 健" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">植田 健</div><div class="coach-name-en">KEN UEDA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>赤十字ベーシックライフサポーター</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_isozaki.jpg" alt="植田 健" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">植田 健</div><div class="coach-name-en">KEN UEDA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>赤十字ベーシックライフサポーター</span></div></div></div>
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">赤松 歩</div><div class="coach-name-en">AYUMU AKAMATSU</div><div class="coach-lic"><span>JFA公認4級審判員</span></div></div></div>
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">田中 祐也</div><div class="coach-name-en">YUYA TANAKA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">遠藤 匠</div><div class="coach-name-en">TAKUMI ENDO</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span></div></div></div>
@@ -1142,7 +1225,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kinoe.jpg" alt="甲 淳一" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ・GK担当</div><div class="coach-name">甲 淳一</div><div class="coach-name-en">JUNICHI KINOE</div></div></div>
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">三橋 義昭</div><div class="coach-name-en">YOSHIAKI MITSUHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_tokunaga.jpg" alt="徳永 哲和" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">徳永 哲和</div><div class="coach-name-en">YOSHIKAZU TOKUNAGA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_tomo.jpg" alt="柏木 知之" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
       <!-- U-8アシスタント -->
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8アシスタントコーチ</div><div class="coach-name">髙山 侑樹</div><div class="coach-name-en">YUKI TAKAYAMA</div><div class="coach-lic"><span>救命技能認定</span></div></div></div>
     </div>
@@ -1299,9 +1382,6 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;"></picture>
         <!-- グラデーション オーバーレイ（読みやすくする） -->
         <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,40,.88) 0%,rgba(5,10,40,.55) 45%,rgba(5,10,40,.12) 100%);"></div>
-        <!-- 湘南の猛進 透かしロゴ -->
-        <img loading="lazy" decoding="async" src="images/shonan_mousin_white.png" alt="" aria-hidden="true"
-          style="position:absolute;top:1.2rem;right:-1rem;width:60%;max-width:320px;opacity:.16;z-index:1;pointer-events:none;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3));">
         <!-- テキストコンテンツ -->
         <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:1.1rem;padding:1.5rem 1.5rem 1.75rem;justify-content:flex-end;height:100%;box-sizing:border-box;min-height:460px;">
           <div style="display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--text);font-size:11px;font-weight:900;letter-spacing:.18em;padding:5px 16px;border-radius:100px;width:fit-content;">2026 トップチーム登録</div>
@@ -1539,7 +1619,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 var introEl = document.getElementById('intro');
 var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var introSeen = false;
-var INTRO_SKIP_DAYS = 1; // イントロを再表示するまでの日数
+var INTRO_SKIP_DAYS = 7; // イントロを再表示するまでの日数
 try {
   var seenAt = parseInt(localStorage.getItem('introSeenAt') || '0', 10);
   introSeen = seenAt > 0 && (Date.now() - seenAt) < INTRO_SKIP_DAYS * 24 * 60 * 60 * 1000;
@@ -1627,6 +1707,73 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 </a>
 <!-- トップに戻る -->
 <button class="to-top" id="toTop" aria-label="ページトップへ戻る" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+// ======= PREMIUM FX PACK =======
+(function(){
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // --- スクロールプログレスバー ---
+  var bar = document.getElementById('scrollProgress');
+  if(bar && !prefersReduced){
+    window.addEventListener('scroll', function(){
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    }, {passive:true});
+  }
+
+  // --- コーチカード3Dチルト（PCのみ） ---
+  var isTouch = 'ontouchstart' in window;
+  if(!isTouch && !prefersReduced){
+    document.querySelectorAll('.coach-card').forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - .5;
+        var py = (e.clientY - r.top) / r.height - .5;
+        card.classList.add('tilting');
+        card.style.transform = 'perspective(700px) rotateY(' + (px*7) + 'deg) rotateX(' + (-py*7) + 'deg) translateY(-4px)';
+      });
+      card.addEventListener('mouseleave', function(){
+        card.classList.remove('tilting');
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // --- ボタンリップル ---
+  if(!prefersReduced){
+    document.querySelectorAll('.btn, .nav-cta, .line-btn, .float-cta').forEach(function(el){
+      el.addEventListener('click', function(e){
+        var r = el.getBoundingClientRect();
+        var d = Math.max(r.width, r.height);
+        var s = document.createElement('span');
+        s.className = 'fx-ripple';
+        s.style.width = s.style.height = d + 'px';
+        s.style.left = (e.clientX - r.left - d/2) + 'px';
+        s.style.top = (e.clientY - r.top - d/2) + 'px';
+        el.appendChild(s);
+        setTimeout(function(){ s.remove(); }, 600);
+      });
+    });
+  }
+})();
+</script>
+<script>
+// ======= HERO BG SLIDESHOW (Ken Burns) =======
+(function(){
+  var slider = document.getElementById('heroBgSlider');
+  if(!slider) return;
+  var slides = slider.querySelectorAll('.hero-bg-slide');
+  if(slides.length < 2) return;
+  var cur = 0;
+  var INTERVAL = 6000; // 各写真の表示時間
+  setInterval(function(){
+    slides[cur].classList.remove('active');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+  }, INTERVAL);
+})();
+</script>
 <script>
 // ======= SCROLL REVEAL =======
 (function(){
