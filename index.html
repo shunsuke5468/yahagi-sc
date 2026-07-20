@@ -2,6 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preload" as="image" href="images/hero.webp" type="image/webp">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1KP9SBKM1"></script>
 <script>
@@ -593,7 +595,8 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 .coach-card:not(.tilting){transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .3s;}
 
 /* --- ボタンリップル --- */
-.btn,.nav-cta,.line-btn,.float-cta{position:relative;overflow:hidden;}
+.btn,.nav-cta,.line-btn{position:relative;overflow:hidden;}
+.float-cta{overflow:hidden;}
 .fx-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:fxRipple .55s ease-out forwards;pointer-events:none;}
 @keyframes fxRipple{to{transform:scale(3.2);opacity:0;}}
 
@@ -620,6 +623,64 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 }
 @media (prefers-reduced-motion: reduce){
   .pmorph-section{display:none;}
+}
+
+/* --- 画面外セクションの描画コスト削減 --- */
+#onlyone, #results, #schedule, #price, .faq-section, .steps-section{
+  content-visibility:auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
+/* --- ぼくたちの夢 --- */
+.dreams-section{background:linear-gradient(180deg,#fff 0%,#FFF7E6 100%);padding:5rem 1.5rem 0;position:relative;overflow:hidden;}
+.dreams-sky{position:relative;height:360px;margin-top:1rem;}
+.dream-bubble{position:absolute;bottom:-90px;background:#fff;border:2px solid var(--border);border-radius:18px 18px 18px 4px;padding:.7rem 1.1rem;box-shadow:0 6px 22px rgba(0,0,0,.08);white-space:nowrap;animation:dreamFloat linear infinite;will-change:transform,opacity;opacity:0;}
+.dream-bubble .d-text{font-size:.88rem;font-weight:700;color:var(--text);line-height:1.5;}
+.dream-bubble .d-meta{font-size:.68rem;color:var(--text3);margin-top:2px;letter-spacing:.06em;}
+.dream-bubble.c-red{border-color:rgba(217,27,42,.35);}
+.dream-bubble.c-red .d-text{color:var(--red);}
+.dream-bubble.c-yel{border-color:rgba(200,150,0,.4);background:var(--yellow-l);}
+@keyframes dreamFloat{
+  0%{transform:translateY(0) rotate(-1deg);opacity:0;}
+  8%{opacity:1;}
+  85%{opacity:1;}
+  100%{transform:translateY(-430px) rotate(1.5deg);opacity:0;}
+}
+@media (max-width:600px){
+  .dreams-sky{height:300px;}
+  .dream-bubble .d-text{font-size:.8rem;}
+  @keyframes dreamFloat{
+    0%{transform:translateY(0);opacity:0;}
+    8%{opacity:1;}
+    85%{opacity:1;}
+    100%{transform:translateY(-370px);opacity:0;}
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .dream-bubble{animation:none;opacity:1;position:static;display:inline-block;margin:.4rem;}
+  .dreams-sky{height:auto;padding-bottom:2rem;}
+}
+
+/* --- 湘南の猛進 ロゴ演出 --- */
+.shonan-logo{
+  position:absolute; z-index:1; pointer-events:none;
+  bottom:-6%; right:-6%; width:78%; max-width:420px;
+  opacity:0; transform:rotate(-7deg) scale(.92) translateY(20px);
+  filter:drop-shadow(0 0 18px rgba(217,27,42,.55)) drop-shadow(0 0 42px rgba(217,27,42,.25));
+  transition:opacity 1.1s cubic-bezier(.16,1,.3,1), transform 1.1s cubic-bezier(.16,1,.3,1);
+}
+.shonan-logo.in{opacity:.9; transform:rotate(-7deg) scale(1) translateY(0);}
+.shonan-logo img{width:100%; display:block; animation:shonanGlow 3.6s ease-in-out infinite;}
+@keyframes shonanGlow{
+  0%,100%{filter:drop-shadow(0 0 10px rgba(217,27,42,.5));}
+  50%{filter:drop-shadow(0 0 26px rgba(245,192,0,.6));}
+}
+@media (max-width:600px){
+  .shonan-logo{width:66%; right:-4%; bottom:-4%;}
+}
+@media (prefers-reduced-motion: reduce){
+  .shonan-logo{opacity:.85; transform:rotate(-7deg) scale(1);}
+  .shonan-logo img{animation:none;}
 }
 
 /* DIVIDER */
@@ -1396,6 +1457,10 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;"></picture>
         <!-- グラデーション オーバーレイ（読みやすくする） -->
         <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,40,.88) 0%,rgba(5,10,40,.55) 45%,rgba(5,10,40,.12) 100%);"></div>
+        <!-- 湘南の猛進 ロゴ（グロー演出） -->
+        <div class="shonan-logo" id="shonanLogo" aria-hidden="true">
+          <img loading="lazy" decoding="async" src="images/shonan_mousin_white.png" alt="">
+        </div>
         <!-- テキストコンテンツ -->
         <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:1.1rem;padding:1.5rem 1.5rem 1.75rem;justify-content:flex-end;height:100%;box-sizing:border-box;min-height:460px;">
           <div style="display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--text);font-size:11px;font-weight:900;letter-spacing:.18em;padding:5px 16px;border-radius:100px;width:fit-content;">2026 トップチーム登録</div>
@@ -1572,6 +1637,21 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 
 <div class="div-stripe"></div>
 
+<!-- DREAMS SECTION -->
+<section class="dreams-section" id="dreams">
+  <div class="si" style="position:relative;z-index:2;">
+    <div class="sec-eyebrow">Our Dreams</div>
+    <div class="sec-title">ぼくたちの、<span class="hl">夢。</span></div>
+    <p style="font-size:.9rem;color:var(--text2);max-width:640px;margin-top:.5rem;line-height:1.8;">
+      オンリーワンノートに、子どもたちが自分の手で書いた夢と目標。<br>
+      その一つひとつを、クラブ全員で応援しています。
+    </p>
+  </div>
+  <div class="dreams-sky" id="dreamsSky" aria-hidden="true"></div>
+</section>
+
+<div class="div-stripe"></div>
+
 <!-- PARTICLE MORPH SECTION -->
 <section class="pmorph-section" id="spirit" aria-label="矢作SCの想い">
   <canvas id="pmorphCanvas"></canvas>
@@ -1732,6 +1812,65 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 </a>
 <!-- トップに戻る -->
 <button class="to-top" id="toTop" aria-label="ページトップへ戻る" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+// ======= 湘南の猛進 ロゴ 出現演出 =======
+(function(){
+  var el = document.getElementById('shonanLogo');
+  if(!el) return;
+  if(!('IntersectionObserver' in window)){ el.classList.add('in'); return; }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){ el.classList.add('in'); io.unobserve(el); }
+    });
+  }, {threshold:.25});
+  io.observe(el);
+})();
+</script>
+<script>
+// ======= DREAMS FLOATING BUBBLES =======
+(function(){
+  var sky = document.getElementById('dreamsSky');
+  if(!sky) return;
+
+  // ★★★ ここを実際の子どもたちの夢に差し替えてください ★★★
+  // （オンリーワンノートから、本人・保護者の許可を得たものを掲載）
+  // text: 夢・目標の言葉 / meta: 学年など（名前は載せない）
+  var DREAMS = [
+    {text:'プロサッカー選手になりたい', meta:'6年生'},
+    {text:'リフティング100回できるようになる', meta:'3年生'},
+    {text:'セレッソ大阪に入りたい', meta:'5年生'},
+    {text:'キーパーで1点も入れさせない', meta:'4年生'},
+    {text:'ワールドカップに出る！', meta:'2年生'},
+    {text:'ドリブルで全員抜きたい', meta:'5年生'},
+    {text:'FANTASISTAゴールドをとる', meta:'4年生'},
+    {text:'友だちみたいに強くなりたい', meta:'1年生'},
+    {text:'お父さんより上手くなる', meta:'3年生'},
+    {text:'県大会で優勝する', meta:'6年生'},
+  ];
+  // ★★★ 差し替えここまで ★★★
+
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var colors = ['', 'c-red', 'c-yel'];
+  var isMobile = window.innerWidth < 600;
+
+  DREAMS.forEach(function(d, i){
+    var b = document.createElement('div');
+    b.className = 'dream-bubble ' + colors[i % colors.length];
+    b.innerHTML = '<div class="d-text">' + d.text + '</div>' +
+                  (d.meta ? '<div class="d-meta">' + d.meta + '</div>' : '');
+    if(!prefersReduced){
+      var left = 2 + (i * 37) % 78; // 適度に散らす
+      var dur = 11 + (i * 2.7) % 8;  // 11〜19秒
+      var delay = -(i * 3.1) % 19;   // 開始位置をずらす
+      b.style.left = left + '%';
+      b.style.animationDuration = dur + 's';
+      b.style.animationDelay = delay + 's';
+      if(isMobile && i >= 6) return; // モバイルは6個まで
+    }
+    sky.appendChild(b);
+  });
+})();
+</script>
 <script>
 // ======= PARTICLE MORPH ENGINE =======
 (function(){
@@ -1948,6 +2087,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   var cur = 0;
   var INTERVAL = 6000; // 各写真の表示時間
   setInterval(function(){
+    if(document.hidden) return; // タブ非表示中は省電力のため停止
     slides[cur].classList.remove('active');
     cur = (cur + 1) % slides.length;
     slides[cur].classList.add('active');
@@ -2069,10 +2209,31 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 })();
 </script>
 
-<!-- Facebook SDK (描画後に読み込み) -->
+<!-- Facebook SDK (セクション接近時に遅延読み込み) -->
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-  src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v18.0">
+<script>
+(function(){
+  var fbBox = document.querySelector('.fb-page');
+  if(!fbBox) return;
+  var loaded = false;
+  function loadSdk(){
+    if(loaded) return; loaded = true;
+    var s = document.createElement('script');
+    s.async = true; s.defer = true; s.crossOrigin = 'anonymous';
+    s.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v18.0';
+    document.body.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ loadSdk(); io.disconnect(); }
+      });
+    }, {rootMargin:'600px 0px'});
+    io.observe(fbBox);
+  } else {
+    loadSdk();
+  }
+})();
 </script>
 <script>
 /* ===== 数字カウントアップ ===== */
