@@ -628,7 +628,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 /* --- ぼくたちの夢 --- */
 .dreams-section{background:linear-gradient(180deg,#fff 0%,#FFF7E6 100%);padding:5rem 1.5rem 0;position:relative;overflow:hidden;}
 .dreams-sky{position:relative;height:360px;margin-top:1rem;}
-.dream-bubble{position:absolute;bottom:-90px;background:#fff;border:2px solid var(--border);border-radius:18px 18px 18px 4px;padding:.7rem 1.1rem;box-shadow:0 6px 22px rgba(0,0,0,.08);white-space:nowrap;animation:dreamFloat linear infinite;will-change:transform,opacity;opacity:0;}
+.dream-bubble{position:absolute;bottom:-90px;background:#fff;border:2px solid var(--border);border-radius:18px 18px 18px 4px;padding:.7rem 1.1rem;box-shadow:0 6px 22px rgba(0,0,0,.08);white-space:normal;max-width:260px;animation:dreamFloat linear infinite;will-change:transform,opacity;opacity:0;}
 .dream-bubble .d-text{font-size:.88rem;font-weight:700;color:var(--text);line-height:1.5;}
 .dream-bubble .d-meta{font-size:.68rem;color:var(--text3);margin-top:2px;letter-spacing:.06em;}
 .dream-bubble.c-red{border-color:rgba(217,27,42,.35);}
@@ -643,6 +643,7 @@ body{font-family:'Noto Sans JP','Inter',sans-serif;background:#fff;color:var(--t
 @media (max-width:600px){
   .dreams-sky{height:300px;}
   .dream-bubble .d-text{font-size:.8rem;}
+  .dream-bubble{max-width:180px;}
   @keyframes dreamFloat{
     0%{transform:translateY(0);opacity:0;}
     8%{opacity:1;}
@@ -1969,7 +1970,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     b.innerHTML = '<div class="d-text">' + d.text + '</div>' +
                   (d.meta ? '<div class="d-meta">' + d.meta + '</div>' : '');
     if(!prefersReduced){
-      var left = 2 + (i * 37) % 78; // 適度に散らす
+      var left = isMobile ? (2 + (i * 19) % 48) : (2 + (i * 37) % 78); // モバイルは右端に届かない範囲に限定
       var dur = 11 + (i * 2.7) % 8;  // 11〜19秒
       var delay = -(i * 3.1) % 19;   // 開始位置をずらす
       b.style.left = left + '%';
