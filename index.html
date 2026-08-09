@@ -722,6 +722,15 @@ section > .si{position:relative;z-index:1;}
   .dot-nav a{transition:none;}
 }
 
+/* --- ストロングポイント：PDFチラシ掲載 --- */
+.sp-flyer-section{background:linear-gradient(180deg,#0f0f12 0%,#1a1a20 100%);padding:5rem 1.5rem;position:relative;overflow:hidden;}
+.sp-flyer-section .sec-title{color:#fff;}
+.sp-lead{font-size:.9rem;color:rgba(255,255,255,.7);max-width:640px;margin-top:.5rem;line-height:1.8;}
+.sp-flyer-frame{max-width:640px;margin:2rem auto 0;border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);}
+.sp-flyer-frame img{width:100%;display:block;}
+.sp-flyer-dl{display:flex;align-items:center;justify-content:center;gap:8px;max-width:640px;margin:1.3rem auto 0;background:var(--yellow);color:#111;font-size:.88rem;font-weight:900;padding:.9rem 1.5rem;border-radius:100px;text-decoration:none;transition:transform .2s,box-shadow .2s;}
+.sp-flyer-dl:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,192,0,.35);}
+
 /* DIVIDER */
 .div-stripe{height:5px;background:linear-gradient(90deg,var(--red-dark),var(--red),var(--yellow),var(--red),var(--red-dark));background-size:300% auto;animation:shimmer 5s linear infinite;}
 
@@ -1694,6 +1703,31 @@ section > .si{position:relative;z-index:1;}
 
 <div class="div-stripe"></div>
 
+<!-- ============================================================
+     STRONG POINT PROGRAM 2026 案内（PDFチラシをそのまま掲載）
+     ============================================================ -->
+<section class="sp-flyer-section" id="strongpoint">
+  <div class="si">
+    <div class="sec-eyebrow" style="color:var(--yellow);">Strong Point Program 2026</div>
+    <div class="sec-title">君だけの、<span style="color:var(--yellow);">武器を見つけよう。</span></div>
+    <p class="sp-lead">
+      自分の強み（ストロングポイント）を伸ばしたい、探ってみたい——新たな挑戦に取り組みます。<br>
+      詳しくは下記のご案内をご覧ください。
+    </p>
+    <div class="sp-flyer-frame">
+      <picture>
+        <source srcset="images/sp_flyer_2026.webp" type="image/webp">
+        <img src="images/sp_flyer_2026.jpg" alt="STRONG POINT PROGRAM 2026 ご案内チラシ" loading="lazy" decoding="async">
+      </picture>
+    </div>
+    <a class="sp-flyer-dl" href="images/sp_flyer_2026.pdf" target="_blank" rel="noopener noreferrer">
+      📄 PDFをダウンロード・印刷する
+    </a>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
 <!-- PARTICLE MORPH SECTION -->
 <section class="pmorph-section" id="spirit" aria-label="矢作SCの想い">
   <canvas id="pmorphCanvas"></canvas>
@@ -1872,6 +1906,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     join:      {en:'JOIN US',   label:'入団方法'},
     faq:       {en:'FAQ',       label:'FAQ'},
     dreams:    {en:'DREAMS',    label:'ぼくたちの夢'},
+    strongpoint:{en:'STRONG POINT', label:'ストロングポイント', light:true},
     contact:   {en:'CONTACT',   label:'体験申込'}
     // spirit（OUR SPIRIT／パーティクル演出）は、粒子が作る文字と
     // 視覚的に競合するため意図的に対象外にしています
@@ -1950,16 +1985,16 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   // （オンリーワンノートから、本人・保護者の許可を得たものを掲載）
   // text: 夢・目標の言葉 / meta: 学年など（名前は載せない）
   var DREAMS = [
-    {text:'プロサッカー選手になりたい', meta:'6年生'},
-    {text:'リフティング100回できるようになる', meta:'3年生'},
-    {text:'セレッソ大阪に入りたい', meta:'5年生'},
-    {text:'キーパーで1点も入れさせない', meta:'4年生'},
-    {text:'ワールドカップに出る！', meta:'2年生'},
-    {text:'ドリブルで全員抜きたい', meta:'5年生'},
-    {text:'FANTASISTAゴールドをとる', meta:'4年生'},
-    {text:'友だちみたいに強くなりたい', meta:'1年生'},
-    {text:'お父さんより上手くなる', meta:'3年生'},
-    {text:'県大会で優勝する', meta:'6年生'},
+    {text:'全国大会でベスト8に入る', meta:'6年生'},
+    {text:'神奈川県トレセンに選ばれる', meta:'5年生'},
+    {text:'湘南ベルマーレジュニアユースに合格する', meta:'6年生'},
+    {text:'リフティング1000回を達成する', meta:'4年生'},
+    {text:'県大会の得点王になる', meta:'5年生'},
+    {text:'1対1で誰にも負けない選手になる', meta:'3年生'},
+    {text:'川崎竜聖選手みたいにプロになる', meta:'2年生'},
+    {text:'キーパーで全国大会に出る', meta:'4年生'},
+    {text:'小田原一のドリブラーになる', meta:'1年生'},
+    {text:'日本代表に選ばれる', meta:'6年生'},
   ];
   // ★★★ 差し替えここまで ★★★
 
