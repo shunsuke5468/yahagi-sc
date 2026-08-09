@@ -722,6 +722,91 @@ section > .si{position:relative;z-index:1;}
   .dot-nav a{transition:none;}
 }
 
+/* --- ストロングポイント・プログラム 結果 --- */
+.sp-section{background:linear-gradient(180deg,#0f0f12 0%,#1a1a20 100%);padding:5rem 1.5rem;position:relative;overflow:hidden;}
+.sp-section .sec-title,.sp-section .sp-lead{color:#fff;}
+.sp-lead{font-size:.9rem;color:rgba(255,255,255,.7);max-width:640px;margin-top:.5rem;line-height:1.8;}
+.sp-total{display:inline-flex;align-items:baseline;gap:.4rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:.5rem 1.4rem;margin-top:1.4rem;}
+.sp-total .n{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);line-height:1;}
+.sp-total .t{font-size:.8rem;color:rgba(255,255,255,.7);font-weight:700;}
+
+/* コース別バー */
+.sp-bars{display:flex;flex-direction:column;gap:1.1rem;margin-top:2.5rem;}
+.sp-bar-row{display:grid;grid-template-columns:132px 1fr;gap:1rem;align-items:center;}
+.sp-bar-label{display:flex;align-items:center;gap:.55rem;}
+.sp-bar-letter{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.25rem;color:#fff;flex-shrink:0;}
+.sp-bar-name{font-size:.82rem;font-weight:800;color:#fff;line-height:1.3;}
+.sp-bar-name span{display:block;font-size:.64rem;color:rgba(255,255,255,.45);letter-spacing:.1em;font-weight:600;}
+.sp-bar-track{background:rgba(255,255,255,.07);border-radius:100px;height:36px;position:relative;overflow:hidden;}
+.sp-bar-fill{height:100%;border-radius:100px;width:0;transition:width 1.3s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;justify-content:flex-end;padding-right:.8rem;}
+.sp-bar-fill .v{font-size:.8rem;font-weight:900;color:#fff;white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,.35);}
+.sp-a .sp-bar-letter,.sp-a .sp-bar-fill{background:linear-gradient(90deg,#D91B2A,#ff5a68);}
+.sp-b .sp-bar-letter,.sp-b .sp-bar-fill{background:linear-gradient(90deg,#1565C0,#4a9eff);}
+.sp-c .sp-bar-letter,.sp-c .sp-bar-fill{background:linear-gradient(90deg,#27AE60,#5ee39b);}
+.sp-d .sp-bar-letter,.sp-d .sp-bar-fill{background:linear-gradient(90deg,#E65100,#ffa040);}
+
+/* 子どもたちの声 */
+.sp-voices-title{font-size:1rem;font-weight:900;color:#fff;margin:3rem 0 1.2rem;display:flex;align-items:center;gap:.6rem;}
+.sp-voices-title::before{content:'';width:16px;height:3px;background:var(--yellow);border-radius:2px;}
+.sp-voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.sp-voice{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1.1rem 1.2rem;position:relative;}
+.sp-voice::before{content:'"';position:absolute;top:.3rem;right:.9rem;font-family:'Bebas Neue',sans-serif;font-size:2.6rem;color:rgba(255,255,255,.1);line-height:1;}
+.sp-voice-course{font-size:.65rem;font-weight:900;letter-spacing:.12em;margin-bottom:.5rem;}
+.sp-voice-text{font-size:.85rem;color:rgba(255,255,255,.9);line-height:1.75;}
+.sp-voice-meta{font-size:.7rem;color:rgba(255,255,255,.4);margin-top:.7rem;letter-spacing:.06em;}
+.sp-voice.v-a .sp-voice-course{color:#ff6b78;}
+.sp-voice.v-b .sp-voice-course{color:#6bb2ff;}
+.sp-voice.v-c .sp-voice-course{color:#5ee39b;}
+.sp-voice.v-d .sp-voice-course{color:#ffa040;}
+@media (max-width:900px){ .sp-voices{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:600px){
+  .sp-voices{grid-template-columns:1fr;}
+  .sp-bar-row{grid-template-columns:104px 1fr;gap:.7rem;}
+  .sp-bar-name{font-size:.75rem;}
+  .sp-bar-track{height:32px;}
+}
+
+/* --- ストロングポイント：プログラム案内 --- */
+.sp-principles{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem;}
+.sp-principle{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:.55rem 1.2rem .55rem .7rem;font-size:.85rem;font-weight:700;color:#fff;}
+.sp-principle .ic{width:26px;height:26px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
+
+.sp-course-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:2.2rem;}
+.sp-course-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;overflow:hidden;}
+.sp-course-head{padding:.85rem .9rem;display:flex;align-items:center;gap:.6rem;color:#fff;}
+.sp-course-head .letter{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;flex-shrink:0;}
+.sp-course-head .name{font-size:.82rem;font-weight:900;line-height:1.25;}
+.sp-course-head .name span{display:block;font-size:.6rem;font-weight:600;color:rgba(255,255,255,.5);letter-spacing:.08em;}
+.sp-course-a .letter,.sp-course-a{border-top:3px solid #D91B2A;}
+.sp-course-a .letter{background:linear-gradient(120deg,#D91B2A,#ff5a68);}
+.sp-course-b{border-top:3px solid #1565C0;}
+.sp-course-b .letter{background:linear-gradient(120deg,#1565C0,#4a9eff);}
+.sp-course-c{border-top:3px solid #27AE60;}
+.sp-course-c .letter{background:linear-gradient(120deg,#27AE60,#5ee39b);}
+.sp-course-d{border-top:3px solid #E65100;}
+.sp-course-d .letter{background:linear-gradient(120deg,#E65100,#ffa040);}
+.sp-course-list{list-style:none;padding:.2rem .9rem .9rem;display:flex;flex-direction:column;gap:5px;}
+.sp-course-list li{font-size:.78rem;color:rgba(255,255,255,.78);display:flex;gap:6px;line-height:1.5;}
+.sp-course-list .num{flex-shrink:0;color:var(--yellow);font-weight:900;font-size:.7rem;}
+.sp-course-note{font-size:.68rem;color:rgba(255,255,255,.4);padding:0 .9rem .8rem;}
+
+.sp-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:1.6rem;}
+.sp-info-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:.9rem 1.05rem;display:flex;align-items:center;gap:.7rem;}
+.sp-info-card .ic{font-size:1.3rem;flex-shrink:0;}
+.sp-info-card .label{font-size:.65rem;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+.sp-info-card .value{font-size:.86rem;font-weight:800;color:#fff;margin-top:2px;line-height:1.35;}
+
+.sp-submit-note{margin-top:1.6rem;background:rgba(245,192,0,.08);border:1px solid rgba(245,192,0,.3);border-radius:12px;padding:.9rem 1.15rem;font-size:.82rem;color:rgba(255,255,255,.85);line-height:1.8;}
+.sp-submit-note b{color:var(--yellow);}
+
+.sp-results-pending{margin-top:2.6rem;padding-top:2.4rem;border-top:1px dashed rgba(255,255,255,.15);}
+.sp-pending-note{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;color:rgba(255,255,255,.55);}
+.sp-pending-note .dot{width:7px;height:7px;border-radius:50%;background:var(--yellow);animation:spPulse 1.6s ease-in-out infinite;}
+@keyframes spPulse{0%,100%{opacity:.4;}50%{opacity:1;}}
+
+@media (max-width:900px){ .sp-course-grid{grid-template-columns:repeat(2,1fr);} .sp-info-grid{grid-template-columns:1fr;} }
+@media (max-width:600px){ .sp-course-grid{grid-template-columns:1fr;} }
+
 /* DIVIDER */
 .div-stripe{height:5px;background:linear-gradient(90deg,var(--red-dark),var(--red),var(--yellow),var(--red),var(--red-dark));background-size:300% auto;animation:shimmer 5s linear infinite;}
 
@@ -1694,15 +1779,105 @@ section > .si{position:relative;z-index:1;}
 
 <div class="div-stripe"></div>
 
-<!-- PARTICLE MORPH SECTION -->
-<section class="pmorph-section" id="spirit" aria-label="矢作SCの想い">
-  <canvas id="pmorphCanvas"></canvas>
-  <div class="pmorph-caption">
-    <div class="pmorph-eyebrow">OUR SPIRIT</div>
-    <div class="pmorph-text">触れてみてください。<br class="pmorph-br">何度崩れても、また立ち上がる。それが矢作SCの子どもたちです。</div>
+<!-- ============================================================
+     STRONG POINT PROGRAM 案内 ＋ 結果（結果は8/8集計後に公開）
+     ★★★ 8/8の回答集計後、下記のデータを差し替えてください ★★★
+     ① 回答総数（sp-total の数字）
+     ② 各コースの人数（data-count と表示の数字）
+     ③ 子どもたちの声（sp-voice ブロック）
+     ④ 準備ができたら sp-results-wrap の style="display:none" を削除し、
+        sp-results-pending（集計待ちの表示）のブロックを削除してください
+     ============================================================ -->
+<!-- ============================================================
+     STRONG POINT PROGRAM 案内 ＋ 結果
+============================================================ -->
+<section class="sp-section" id="strongpoint">
+  <div class="si">
+    <div class="sec-eyebrow" style="color:var(--yellow);">Strong Point Program 2026</div>
+    <div class="sec-title">君だけの、<span style="color:var(--yellow);">武器を見つけよう。</span></div>
+    <p class="sp-lead">
+      「うまい選手」ではなく「武器を持った選手」になろう。<br>
+      自分の強み（ストロングポイント）を伸ばしたい、探ってみたい——新たな挑戦に取り組みます。<br>
+      コース選択は自由。「自分で考え、選択、行動」してみましょう。
+    </p>
+
+    <!-- ▼▼ PDF埋め込み表示エリア ▼▼ -->
+    <div style="margin-top: 2.5rem; margin-bottom: 3.5rem;">
+      <iframe src="ストロングポイントプログラム.pdf" width="100%" height="600" style="border: none; border-radius: 12px; background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+        <p style="color: #fff;">お使いのブラウザはPDFの埋め込み表示に対応していません。<br><a href="ストロングポイントプログラム.pdf" target="_blank" style="color: var(--yellow);">こちらからPDFをダウンロードしてご覧ください。</a></p>
+      </iframe>
+      <!-- スマホなどで上手く表示されない場合のための予備リンク -->
+      <div style="text-align: center; margin-top: 15px;">
+        <a href="ストロングポイントプログラム.pdf" target="_blank" style="display: inline-block; color: var(--yellow); font-size: 0.9rem; text-decoration: underline;">📄 PDFを別タブで開く / ダウンロード</a>
+      </div>
+    </div>
+    <!-- ▲▲ PDF埋め込み表示エリア ここまで ▲▲ -->
+
+    <!-- ▼▼ 結果パート（公開状態） ▼▼ -->
+    <div class="sp-results-wrap" id="spResultsWrap">
+      <!-- ① 回答総数 -->
+      <div class="sp-total">
+        <span class="n" id="spTotal">--</span>
+        <span class="t">名が挑戦を選択</span>
+      </div>
+
+      <!-- ② コース別の選択人数 -->
+      <!-- data-count="0" の数字と、<span class="v">0名</span> の数字を実際の結果に変更してください -->
+      <div class="sp-bars" id="spBars">
+        <div class="sp-bar-row sp-a">
+          <div class="sp-bar-label">
+            <div class="sp-bar-letter">A</div>
+            <div class="sp-bar-name">テクニック<span>TECHNIQUE</span></div>
+          </div>
+          <div class="sp-bar-track"><div class="sp-bar-fill" data-count="0"><span class="v">0名</span></div></div>
+        </div>
+        <div class="sp-bar-row sp-b">
+          <div class="sp-bar-label">
+            <div class="sp-bar-letter">B</div>
+            <div class="sp-bar-name">フィジカル<span>PHYSICAL</span></div>
+          </div>
+          <div class="sp-bar-track"><div class="sp-bar-fill" data-count="0"><span class="v">0名</span></div></div>
+        </div>
+        <div class="sp-bar-row sp-c">
+          <div class="sp-bar-label">
+            <div class="sp-bar-letter">C</div>
+            <div class="sp-bar-name">個人戦術<span>TACTICS</span></div>
+          </div>
+          <div class="sp-bar-track"><div class="sp-bar-fill" data-count="0"><span class="v">0名</span></div></div>
+        </div>
+        <div class="sp-bar-row sp-d">
+          <div class="sp-bar-label">
+            <div class="sp-bar-letter">D</div>
+            <div class="sp-bar-name">GK<span>GOALKEEPER</span></div>
+          </div>
+          <div class="sp-bar-track"><div class="sp-bar-fill" data-count="0"><span class="v">0名</span></div></div>
+        </div>
+      </div>
+
+      <!-- ③ 子どもたちの声 -->
+      <div class="sp-voices-title">選んだ理由（子どもたちの声）</div>
+      <div class="sp-voices">
+        <div class="sp-voice v-a">
+          <div class="sp-voice-course">A ／ テクニック</div>
+          <div class="sp-voice-text">（ここに子どもが書いた理由を入れます）</div>
+          <div class="sp-voice-meta">◯年生</div>
+        </div>
+        <div class="sp-voice v-b">
+          <div class="sp-voice-course">B ／ フィジカル</div>
+          <div class="sp-voice-text">（ここに子どもが書いた理由を入れます）</div>
+          <div class="sp-voice-meta">◯年生</div>
+        </div>
+        <div class="sp-voice v-c">
+          <div class="sp-voice-course">C ／ 個人戦術</div>
+          <div class="sp-voice-text">（ここに子どもが書いた理由を入れます）</div>
+          <div class="sp-voice-meta">◯年生</div>
+        </div>
+      </div>
+    </div>
+    <!-- ▲▲ 結果パート ここまで ▲▲ -->
+
   </div>
 </section>
-
 <div class="div-stripe"></div>
 
 <!-- FINAL CTA -->
@@ -1872,6 +2047,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     join:      {en:'JOIN US',   label:'入団方法'},
     faq:       {en:'FAQ',       label:'FAQ'},
     dreams:    {en:'DREAMS',    label:'ぼくたちの夢'},
+    strongpoint:{en:'STRONG POINT', label:'ストロングポイント', light:true},
     contact:   {en:'CONTACT',   label:'体験申込'}
     // spirit（OUR SPIRIT／パーティクル演出）は、粒子が作る文字と
     // 視覚的に競合するため意図的に対象外にしています
@@ -1938,6 +2114,47 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     });
   }, {threshold:.25});
   io.observe(el);
+})();
+</script>
+<script>
+// ======= STRONG POINT PROGRAM 結果グラフ =======
+(function(){
+  var bars = document.getElementById('spBars');
+  if(!bars) return;
+  var fills = bars.querySelectorAll('.sp-bar-fill');
+  if(!fills.length) return;
+
+  // 最大値を基準に幅を算出
+  var values = Array.prototype.map.call(fills, function(f){
+    return parseInt(f.dataset.count, 10) || 0;
+  });
+  var max = Math.max.apply(null, values);
+  var total = values.reduce(function(a,b){ return a+b; }, 0);
+
+  // 回答総数を自動計算して表示
+  var totalEl = document.getElementById('spTotal');
+  if(totalEl) totalEl.textContent = total > 0 ? total : '--';
+
+  function draw(){
+    fills.forEach(function(f, i){
+      var v = values[i];
+      var pct = (max > 0) ? Math.max((v / max) * 100, v > 0 ? 12 : 0) : 0;
+      f.style.width = pct + '%';
+      var label = f.querySelector('.v');
+      if(label) label.textContent = v + '名';
+    });
+  }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ draw(); io.unobserve(e.target); }
+      });
+    }, {threshold:.25});
+    io.observe(bars);
+  } else {
+    draw();
+  }
 })();
 </script>
 <script>
