@@ -731,6 +731,61 @@ section > .si{position:relative;z-index:1;}
 .sp-flyer-dl{display:flex;align-items:center;justify-content:center;gap:8px;max-width:640px;margin:1.3rem auto 0;background:var(--yellow);color:#111;font-size:.88rem;font-weight:900;padding:.9rem 1.5rem;border-radius:100px;text-decoration:none;transition:transform .2s,box-shadow .2s;}
 .sp-flyer-dl:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,192,0,.35);}
 
+/* --- ストロングポイント：結果発表 --- */
+.sp-results{max-width:900px;margin:3.5rem auto 0;}
+.sp-results-head{text-align:center;margin-bottom:2.2rem;}
+.sp-results-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,192,0,.1);border:1px solid rgba(245,192,0,.35);border-radius:100px;padding:.5rem 1.3rem;font-size:.75rem;font-weight:900;color:var(--yellow);letter-spacing:.08em;}
+.sp-results-total{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,4.5rem);color:#fff;line-height:1;margin-top:.9rem;}
+.sp-results-total span{font-size:1.1rem;color:rgba(255,255,255,.6);font-family:'Noto Sans JP',sans-serif;margin-left:.5rem;}
+
+.sp-block-title{font-size:.95rem;font-weight:900;color:#fff;margin:2.6rem 0 1.1rem;display:flex;align-items:center;gap:.6rem;}
+.sp-block-title::before{content:'';width:16px;height:3px;background:var(--yellow);border-radius:2px;flex-shrink:0;}
+
+/* メインの横棒グラフ（全学年） */
+.sp-mainbar-row{display:grid;grid-template-columns:120px 1fr 52px;gap:.9rem;align-items:center;margin-bottom:.85rem;}
+.sp-mainbar-label{display:flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:800;color:#fff;}
+#spWishBars .sp-mainbar-row{grid-template-columns:168px 1fr 52px;}
+.sp-mainbar-label-text{display:flex;flex-direction:column;gap:1px;line-height:1.3;}
+.sp-mainbar-label-text .main{font-weight:800;color:#fff;}
+.sp-mainbar-label-text .sub{font-size:.63rem;font-weight:600;color:rgba(255,255,255,.42);white-space:normal;}
+.sp-mainbar-label .dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;}
+.sp-mainbar-track{background:rgba(255,255,255,.07);border-radius:100px;height:30px;overflow:hidden;}
+.sp-mainbar-fill{height:100%;border-radius:100px;width:0;transition:width 1.4s cubic-bezier(.16,1,.3,1);}
+.sp-mainbar-pct{font-size:.8rem;font-weight:900;color:#fff;text-align:right;}
+.sp-c-tech{background:linear-gradient(90deg,#D91B2A,#ff5a68);} .dot.sp-c-tech{background:#D91B2A;}
+.sp-c-phys{background:linear-gradient(90deg,#1565C0,#4a9eff);} .dot.sp-c-phys{background:#1565C0;}
+.sp-c-tact{background:linear-gradient(90deg,#27AE60,#5ee39b);} .dot.sp-c-tact{background:#27AE60;}
+.sp-c-gk{background:linear-gradient(90deg,#E65100,#ffa040);} .dot.sp-c-gk{background:#E65100;}
+
+/* 学年別ミニグラフ */
+.sp-grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.sp-grade-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:1.1rem 1.2rem;}
+.sp-grade-name{font-size:.85rem;font-weight:900;color:#fff;margin-bottom:.2rem;}
+.sp-grade-total{font-size:.68rem;color:rgba(255,255,255,.5);margin-bottom:.9rem;}
+.sp-grade-mini-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.55rem;}
+.sp-grade-mini-row:last-child{margin-bottom:0;}
+.sp-grade-mini-label{width:56px;font-size:.68rem;color:rgba(255,255,255,.6);flex-shrink:0;}
+.sp-grade-mini-track{flex:1;background:rgba(255,255,255,.07);border-radius:100px;height:14px;overflow:hidden;}
+.sp-grade-mini-fill{height:100%;border-radius:100px;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1);}
+.sp-grade-mini-val{width:22px;font-size:.7rem;font-weight:800;color:#fff;text-align:right;flex-shrink:0;}
+
+/* テクニックコース内訳 */
+.sp-tech-note{font-size:.78rem;color:rgba(255,255,255,.55);margin-bottom:1.2rem;line-height:1.7;}
+.sp-tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.sp-tech-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:1.2rem .9rem;text-align:center;}
+.sp-tech-card.highlight{background:rgba(217,27,42,.1);border-color:rgba(217,27,42,.4);}
+.sp-tech-num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--yellow);line-height:1;}
+.sp-tech-card.highlight .sp-tech-num{color:#ff5a68;}
+.sp-tech-name{font-size:.72rem;color:rgba(255,255,255,.75);margin-top:.4rem;font-weight:700;line-height:1.4;}
+
+@media (max-width:900px){ .sp-grade-grid{grid-template-columns:1fr;} .sp-tech-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:600px){ .sp-mainbar-row{grid-template-columns:88px 1fr 40px;gap:.6rem;} .sp-mainbar-label{font-size:.72rem;} #spWishBars .sp-mainbar-row{grid-template-columns:118px 1fr 40px;} .sp-mainbar-label-text .sub{font-size:.58rem;} }
+
+/* --- 川崎竜聖選手 特別講演イベント --- */
+.event-section{background:linear-gradient(135deg,#0D1B4B 0%,#162660 55%,#1a1a2e 100%);padding:5rem 1.5rem;position:relative;overflow:hidden;}
+.event-section .sec-title,.event-lead{color:#fff;}
+.event-lead{font-size:.9rem;color:rgba(255,255,255,.72);max-width:640px;margin-top:.5rem;line-height:1.85;}
+
 /* DIVIDER */
 .div-stripe{height:5px;background:linear-gradient(90deg,var(--red-dark),var(--red),var(--yellow),var(--red),var(--red-dark));background-size:300% auto;animation:shimmer 5s linear infinite;}
 
@@ -1568,6 +1623,32 @@ section > .si{position:relative;z-index:1;}
 
 <div class="div-stripe"></div>
 
+<!-- ============================================================
+     Fリーガー川崎竜聖選手 特別講演イベント（2026.8.18）
+     ============================================================ -->
+<section class="event-section" id="ryusei-event">
+  <div class="si">
+    <div class="sec-eyebrow" style="color:var(--yellow);">Special Event</div>
+    <div class="sec-title">Fリーガー川崎竜聖選手<br>から<span style="color:var(--yellow);">学ぼう！</span></div>
+    <p class="event-lead">
+      プロの世界で活躍する川崎竜聖選手が、矢作SCの子どもたちに向けて特別講演！<br>
+      夢に向かって努力することの大切さ、目標を実現するための考え方、そして今の自分にできることを一緒に学びます。
+    </p>
+
+    <div class="sp-flyer-frame">
+      <picture>
+        <source srcset="images/ryusei_event_2026.webp" type="image/webp">
+        <img src="images/ryusei_event_2026.jpg" alt="Fリーガー川崎竜聖選手から学ぼう！特別講演のご案内" loading="lazy" decoding="async">
+      </picture>
+    </div>
+    <a class="sp-flyer-dl" href="images/ryusei_event_2026.pdf" target="_blank" rel="noopener noreferrer">
+      📄 PDFをダウンロード・印刷する
+    </a>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
 <!-- SCHEDULE -->
 <section class="sch-section" id="schedule">
   <div class="si">
@@ -1723,6 +1804,106 @@ section > .si{position:relative;z-index:1;}
     <a class="sp-flyer-dl" href="images/sp_flyer_2026.pdf" target="_blank" rel="noopener noreferrer">
       📄 PDFをダウンロード・印刷する
     </a>
+
+    <!-- ============================================================
+         集計結果発表（2026.8.16 集計）
+         ============================================================ -->
+    <div class="sp-results">
+      <div class="sp-results-head">
+        <div class="sp-results-badge">📊 集計結果発表 2026.8.16</div>
+        <div class="sp-results-total" id="spResultsTotal" data-total="70">0<span>名が挑戦を選択</span></div>
+      </div>
+
+      <!-- 全学年：コース別内訳 -->
+      <div class="sp-block-title">コース選択（全学年）</div>
+      <div id="spMainBars">
+        <div class="sp-mainbar-row">
+          <div class="sp-mainbar-label"><span class="dot sp-c-tech"></span>テクニック</div>
+          <div class="sp-mainbar-track"><div class="sp-mainbar-fill sp-c-tech" data-count="41"></div></div>
+          <div class="sp-mainbar-pct">41名</div>
+        </div>
+        <div class="sp-mainbar-row">
+          <div class="sp-mainbar-label"><span class="dot sp-c-phys"></span>フィジカル</div>
+          <div class="sp-mainbar-track"><div class="sp-mainbar-fill sp-c-phys" data-count="10"></div></div>
+          <div class="sp-mainbar-pct">10名</div>
+        </div>
+        <div class="sp-mainbar-row">
+          <div class="sp-mainbar-label"><span class="dot sp-c-tact"></span>個人戦術</div>
+          <div class="sp-mainbar-track"><div class="sp-mainbar-fill sp-c-tact" data-count="13"></div></div>
+          <div class="sp-mainbar-pct">13名</div>
+        </div>
+        <div class="sp-mainbar-row">
+          <div class="sp-mainbar-label"><span class="dot sp-c-gk"></span>GK</div>
+          <div class="sp-mainbar-track"><div class="sp-mainbar-fill sp-c-gk" data-count="6"></div></div>
+          <div class="sp-mainbar-pct">6名</div>
+        </div>
+      </div>
+
+      <!-- 学年別内訳 -->
+      <div class="sp-block-title">学年別の選択傾向</div>
+      <div class="sp-grade-grid" id="spGradeGrid">
+        <div class="sp-grade-card">
+          <div class="sp-grade-name">U-8</div>
+          <div class="sp-grade-total">全26名が回答</div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">テクニック</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-tech" data-count="18"></div></div><div class="sp-grade-mini-val">18</div></div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">フィジカル</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-phys" data-count="2"></div></div><div class="sp-grade-mini-val">2</div></div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">個人戦術</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-tact" data-count="2"></div></div><div class="sp-grade-mini-val">2</div></div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">GK</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-gk" data-count="4"></div></div><div class="sp-grade-mini-val">4</div></div>
+        </div>
+        <div class="sp-grade-card">
+          <div class="sp-grade-name">U-10</div>
+          <div class="sp-grade-total">全24名が回答</div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">テクニック</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-tech" data-count="14"></div></div><div class="sp-grade-mini-val">14</div></div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">フィジカル</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-phys" data-count="2"></div></div><div class="sp-grade-mini-val">2</div></div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">個人戦術</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-tact" data-count="6"></div></div><div class="sp-grade-mini-val">6</div></div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">GK</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-gk" data-count="2"></div></div><div class="sp-grade-mini-val">2</div></div>
+        </div>
+        <div class="sp-grade-card">
+          <div class="sp-grade-name">U-12</div>
+          <div class="sp-grade-total">全20名が回答</div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">テクニック</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-tech" data-count="9"></div></div><div class="sp-grade-mini-val">9</div></div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">フィジカル</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-phys" data-count="6"></div></div><div class="sp-grade-mini-val">6</div></div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">個人戦術</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-tact" data-count="5"></div></div><div class="sp-grade-mini-val">5</div></div>
+          <div class="sp-grade-mini-row"><div class="sp-grade-mini-label">GK</div><div class="sp-grade-mini-track"><div class="sp-grade-mini-fill sp-c-gk" data-count="0"></div></div><div class="sp-grade-mini-val">0</div></div>
+        </div>
+      </div>
+
+      <!-- テクニックコースの種目別内訳 -->
+      <div class="sp-block-title">テクニックコースの種目別内訳</div>
+      <p class="sp-tech-note">テクニックコースを選んだ41名のうち、約7割が「パス・シュート」を選択しました。</p>
+      <div class="sp-tech-grid">
+        <div class="sp-tech-card"><div class="sp-tech-num">3</div><div class="sp-tech-name">リフティング</div></div>
+        <div class="sp-tech-card"><div class="sp-tech-num">3</div><div class="sp-tech-name">コントロール</div></div>
+        <div class="sp-tech-card highlight"><div class="sp-tech-num">28</div><div class="sp-tech-name">パス・シュート</div></div>
+        <div class="sp-tech-card"><div class="sp-tech-num">7</div><div class="sp-tech-name">ドリブル・ターン</div></div>
+      </div>
+
+      <!-- 子どもたちの想いや願い -->
+      <div class="sp-block-title">子どもたちの想いや願い</div>
+      <p class="sp-tech-note">コースを選んだ理由を4つに分類。半数以上が「憧れの選手に近づきたい」という前向きな理由を選びました。</p>
+      <div id="spWishBars">
+        <div class="sp-mainbar-row">
+          <div class="sp-mainbar-label"><span class="dot sp-c-tech"></span><div class="sp-mainbar-label-text"><div class="main">こうなりたい</div><div class="sub">憧れの選手に近づきたい</div></div></div>
+          <div class="sp-mainbar-track"><div class="sp-mainbar-fill sp-c-tech" data-count="46"></div></div>
+          <div class="sp-mainbar-pct">46名</div>
+        </div>
+        <div class="sp-mainbar-row">
+          <div class="sp-mainbar-label"><span class="dot sp-c-tact"></span><div class="sp-mainbar-label-text"><div class="main">乗りこえたい</div><div class="sub">苦手なプレーを克服したい</div></div></div>
+          <div class="sp-mainbar-track"><div class="sp-mainbar-fill sp-c-tact" data-count="21"></div></div>
+          <div class="sp-mainbar-pct">21名</div>
+        </div>
+        <div class="sp-mainbar-row">
+          <div class="sp-mainbar-label"><span class="dot sp-c-phys"></span><div class="sp-mainbar-label-text"><div class="main">楽しみたい</div><div class="sub">新しい挑戦を楽しみたい</div></div></div>
+          <div class="sp-mainbar-track"><div class="sp-mainbar-fill sp-c-phys" data-count="1"></div></div>
+          <div class="sp-mainbar-pct">1名</div>
+        </div>
+        <div class="sp-mainbar-row">
+          <div class="sp-mainbar-label"><span class="dot sp-c-gk"></span><div class="sp-mainbar-label-text"><div class="main">事前準備</div><div class="sub">合宿に向けて準備しておきたい</div></div></div>
+          <div class="sp-mainbar-track"><div class="sp-mainbar-fill sp-c-gk" data-count="1"></div></div>
+          <div class="sp-mainbar-pct">1名</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1901,6 +2082,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     course:    {en:'CATEGORY',  label:'カテゴリー'},
     results:   {en:'RESULTS',   label:'実績'},
     ob:        {en:'GRADUATE',  label:'OBの活躍', light:true},
+    'ryusei-event': {en:'SPECIAL EVENT', label:'川崎竜聖選手 講演会', light:true},
     schedule:  {en:'SCHEDULE',  label:'練習情報'},
     price:     {en:'PRICE',     label:'費用'},
     join:      {en:'JOIN US',   label:'入団方法'},
@@ -1924,7 +2106,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   });
 
   // ドットナビ（主要セクションのみ）
-  var NAV_IDS = ['about','news','philosophy','coach','results','ob','schedule','price','join','dreams','contact'];
+  var NAV_IDS = ['about','news','philosophy','coach','results','ob','ryusei-event','schedule','price','join','dreams','contact'];
   var nav = document.createElement('nav');
   nav.className = 'dot-nav';
   nav.setAttribute('aria-label','ページ内ナビゲーション');
@@ -1973,6 +2155,77 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     });
   }, {threshold:.25});
   io.observe(el);
+})();
+</script>
+<script>
+// ======= STRONG POINT 結果発表グラフ =======
+(function(){
+  var results = document.getElementById('spResultsTotal');
+  if(!results) return;
+
+  function drawMainBars(){
+    ['#spMainBars', '#spWishBars'].forEach(function(sel){
+      var container = document.querySelector(sel);
+      if(!container) return;
+      var fills = container.querySelectorAll('.sp-mainbar-fill');
+      var values = Array.prototype.map.call(fills, function(f){ return parseInt(f.dataset.count,10)||0; });
+      var max = Math.max.apply(null, values);
+      fills.forEach(function(f){
+        var v = parseInt(f.dataset.count,10)||0;
+        f.style.width = (max>0 ? Math.max((v/max)*100, v>0?6:0) : 0) + '%';
+      });
+    });
+  }
+
+  function drawGradeBars(){
+    var cards = document.querySelectorAll('#spGradeGrid .sp-grade-card');
+    cards.forEach(function(card){
+      var fills = card.querySelectorAll('.sp-grade-mini-fill');
+      var values = Array.prototype.map.call(fills, function(f){ return parseInt(f.dataset.count,10)||0; });
+      var max = Math.max.apply(null, values);
+      fills.forEach(function(f){
+        var v = parseInt(f.dataset.count,10)||0;
+        f.style.width = (max>0 ? Math.max((v/max)*100, v>0?8:0) : 0) + '%';
+      });
+    });
+  }
+
+  function countUp(){
+    var target = parseInt(results.dataset.total,10) || 0;
+    var dur = 1100, t0 = null;
+    var label = results.querySelector('span');
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts-t0)/dur, 1);
+      p = 1 - Math.pow(1-p, 3);
+      results.firstChild.textContent = Math.round(target*p);
+      if(p < 1) requestAnimationFrame(step);
+      else results.firstChild.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function reveal(){
+    drawMainBars();
+    drawGradeBars();
+    if(prefersReduced){
+      results.firstChild.textContent = results.dataset.total;
+    } else {
+      countUp();
+    }
+  }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ reveal(); io.unobserve(e.target); }
+      });
+    }, {threshold:.2});
+    io.observe(document.querySelector('.sp-results'));
+  } else {
+    reveal();
+  }
 })();
 </script>
 <script>
