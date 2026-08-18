@@ -786,6 +786,51 @@ section > .si{position:relative;z-index:1;}
 .event-section .sec-title,.event-lead{color:#fff;}
 .event-lead{font-size:.9rem;color:rgba(255,255,255,.72);max-width:640px;margin-top:.5rem;line-height:1.85;}
 
+.event-report-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(39,174,96,.14);border:1px solid rgba(39,174,96,.4);border-radius:100px;padding:.45rem 1.2rem;font-size:.75rem;font-weight:900;color:#5ee39b;letter-spacing:.06em;margin-bottom:1rem;}
+
+/* 当日フォトギャラリー */
+.event-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:2rem;}
+.event-gallery figure{margin:0;border-radius:12px;overflow:hidden;position:relative;box-shadow:0 4px 16px rgba(0,0,0,.3);}
+.event-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .45s ease;}
+.event-gallery figure:hover img{transform:scale(1.06);}
+@media (max-width:900px){ .event-gallery{grid-template-columns:repeat(3,1fr);} }
+@media (max-width:600px){ .event-gallery{grid-template-columns:repeat(2,1fr);gap:8px;} }
+
+/* 当日の学び */
+.event-talk-title{font-size:1rem;font-weight:900;color:#fff;margin:3rem 0 1.2rem;display:flex;align-items:center;gap:.6rem;}
+.event-talk-title::before{content:'';width:16px;height:3px;background:var(--yellow);border-radius:2px;flex-shrink:0;}
+.event-talk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.event-talk-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:1.3rem 1.3rem;}
+.event-talk-card-title{font-size:.88rem;font-weight:900;color:var(--yellow);margin-bottom:.5rem;line-height:1.4;}
+.event-talk-card-desc{font-size:.8rem;color:rgba(255,255,255,.78);line-height:1.8;}
+@media (max-width:900px){ .event-talk-grid{grid-template-columns:1fr;} }
+
+/* 質問コーナー */
+.event-qa-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:1.6rem 1.7rem;margin-top:1.4rem;}
+.event-qa-lead{font-size:.82rem;color:rgba(255,255,255,.65);margin-bottom:1.1rem;line-height:1.7;}
+.event-qa-list{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem 1.6rem;padding:0;margin:0;}
+.event-qa-list li{font-size:.8rem;color:rgba(255,255,255,.85);line-height:1.6;display:flex;gap:8px;}
+.event-qa-list .q-mark{color:var(--yellow);font-weight:900;flex-shrink:0;}
+@media (max-width:700px){ .event-qa-list{grid-template-columns:1fr;} }
+
+/* --- ギャラリー ライトボックス --- */
+.event-gallery figure{cursor:pointer;}
+.lightbox-overlay{position:fixed;inset:0;background:rgba(5,5,8,.94);z-index:3000;display:none;align-items:center;justify-content:center;padding:3rem 1.2rem;opacity:0;transition:opacity .25s ease;}
+.lightbox-overlay.show{display:flex;}
+.lightbox-overlay.in{opacity:1;}
+.lightbox-img-wrap{position:relative;max-width:min(92vw,980px);max-height:86vh;}
+.lightbox-img-wrap img{max-width:100%;max-height:86vh;display:block;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.lightbox-close{position:absolute;top:-3px;right:-3px;transform:translate(50%,-50%);width:40px;height:40px;border-radius:50%;background:#fff;color:#111;border:none;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.4);}
+.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.lightbox-nav:hover{background:rgba(255,255,255,.28);}
+.lightbox-prev{left:16px;}
+.lightbox-next{right:16px;}
+.lightbox-count{position:absolute;bottom:-2.1rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font-size:.78rem;letter-spacing:.06em;white-space:nowrap;}
+@media (max-width:640px){
+  .lightbox-nav{width:40px;height:40px;font-size:1.15rem;}
+  .lightbox-prev{left:6px;} .lightbox-next{right:6px;}
+}
+
 /* DIVIDER */
 .div-stripe{height:5px;background:linear-gradient(90deg,var(--red-dark),var(--red),var(--yellow),var(--red),var(--red-dark));background-size:300% auto;animation:shimmer 5s linear infinite;}
 
@@ -1624,25 +1669,72 @@ section > .si{position:relative;z-index:1;}
 <div class="div-stripe"></div>
 
 <!-- ============================================================
-     Fリーガー川崎竜聖選手 特別講演イベント（2026.8.18）
+     Fリーガー川崎竜聖選手 特別講演 開催報告（2026.8.18 開催）
      ============================================================ -->
 <section class="event-section" id="ryusei-event">
   <div class="si">
-    <div class="sec-eyebrow" style="color:var(--yellow);">Special Event</div>
-    <div class="sec-title">Fリーガー川崎竜聖選手<br>から<span style="color:var(--yellow);">学ぼう！</span></div>
+    <div class="event-report-badge">開催報告 2026.8.18</div>
+    <div class="sec-title">Fリーガー川崎竜聖選手<br>特別講演を<span style="color:var(--yellow);">開催しました！</span></div>
     <p class="event-lead">
-      プロの世界で活躍する川崎竜聖選手が、矢作SCの子どもたちに向けて特別講演！<br>
-      夢に向かって努力することの大切さ、目標を実現するための考え方、そして今の自分にできることを一緒に学びます。
+      矢作SC卒団生でFリーガーの川崎竜聖選手をお迎えし、4・5・6年生を対象に特別講演を行いました。<br>
+      夢に向かって努力することの大切さ、目標を実現するための考え方を、選手自身の経験を交えて語っていただきました。
     </p>
 
-    <div class="sp-flyer-frame">
-      <picture>
-        <source srcset="images/ryusei_event_2026.webp" type="image/webp">
-        <img src="images/ryusei_event_2026.jpg" alt="Fリーガー川崎竜聖選手から学ぼう！特別講演のご案内" loading="lazy" decoding="async">
-      </picture>
+    <!-- 当日の様子（写真ギャラリー） -->
+    <div class="event-gallery">
+      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_01.jpg" alt="川崎竜聖選手の講演を聞く子どもたち"></figure>
+      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_02.jpg" alt="講演する川崎竜聖選手"></figure>
+      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_03.jpg" alt="サインをする川崎竜聖選手"></figure>
+      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_04.jpg" alt="子どもたちにサインする川崎竜聖選手"></figure>
+      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_05.jpg" alt="川崎竜聖選手のユニフォーム"></figure>
+      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_06.jpg" alt="講演を聞く子どもたち"></figure>
+      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_07.jpg" alt="川崎竜聖選手と矢作SCの子どもたち"></figure>
+      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_08.jpg" alt="川崎竜聖選手と矢作SCの子どもたち集合写真"></figure>
     </div>
-    <a class="sp-flyer-dl" href="images/ryusei_event_2026.pdf" target="_blank" rel="noopener noreferrer">
-      📄 PDFをダウンロード・印刷する
+
+    <!-- 当日の学び -->
+    <div class="event-talk-title">講演で伝えてくれたこと</div>
+    <div class="event-talk-grid">
+      <div class="event-talk-card">
+        <div class="event-talk-card-title">あいさつと感謝の気持ち</div>
+        <div class="event-talk-card-desc">高校生で親元を離れ、知り合いのいない寮生活を送った経験。あいさつが人との繋がりを作ってくれたこと、人との会話やコミュニケーションの大切さを教えてくれました。</div>
+      </div>
+      <div class="event-talk-card">
+        <div class="event-talk-card-title">一度あきらめかけた夢</div>
+        <div class="event-talk-card-desc">3年前、応援してくれていたお母様との別れを経験。天国のお母さんに喜んでもらいたいという想いが、あきらめかけたプロの夢を掴む力になったことを語ってくれました。</div>
+      </div>
+      <div class="event-talk-card">
+        <div class="event-talk-card-title">夢を叶えるために大切なこと</div>
+        <div class="event-talk-card-desc">ボールとたくさん触れ合い「友達になる」こと。目標を持って練習に取り組むこと。物より、友達や仲間との触れ合いを大切にすること。</div>
+      </div>
+    </div>
+
+    <!-- 質問コーナー -->
+    <div class="event-talk-title">子どもたちからの質問コーナー</div>
+    <div class="event-qa-box">
+      <p class="event-qa-lead">講演後は質問タイム。12個もの質問が飛び交い、あっという間の1時間でした。</p>
+      <ul class="event-qa-list">
+        <li><span class="q-mark">Q.</span>プロサッカー選手に憧れた年齢は？</li>
+        <li><span class="q-mark">Q.</span>Fリーグでのポジションは？</li>
+        <li><span class="q-mark">Q.</span>ケガは完治しましたか？</li>
+        <li><span class="q-mark">Q.</span>身体の大きい選手にはどう対応する？</li>
+        <li><span class="q-mark">Q.</span>Fリーグでのポジションはきついですか？</li>
+        <li><span class="q-mark">Q.</span>少年時代にGKからフィールドになった理由は？</li>
+        <li><span class="q-mark">Q.</span>学校の成績はどうでしたか？</li>
+        <li><span class="q-mark">Q.</span>Jr.ユース（ロンドリーナ）を選んだ理由は？</li>
+        <li><span class="q-mark">Q.</span>リフティングがうまくなる方法は？</li>
+        <li><span class="q-mark">Q.</span>シュートを強くするには？</li>
+        <li><span class="q-mark">Q.</span>ロングキックの蹴り方は？</li>
+        <li><span class="q-mark">Q.</span>GKで声が出ないとき、出せるようにするには？</li>
+      </ul>
+    </div>
+
+    <p style="font-size:.85rem;color:rgba(255,255,255,.55);margin-top:2.2rem;line-height:1.8;">
+      川崎竜聖選手、貴重なお話をありがとうございました！矢作SCの子どもたちにとって、忘れられない一日になりました。
+    </p>
+
+    <a class="sp-flyer-dl" href="images/ryusei_event_2026.pdf" target="_blank" rel="noopener noreferrer" style="margin-top:1.6rem;">
+      当日の案内チラシを見る
     </a>
   </div>
 </section>
@@ -2069,6 +2161,17 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 </a>
 <!-- トップに戻る -->
 <button class="to-top" id="toTop" aria-label="ページトップへ戻る" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ライトボックス -->
+<div class="lightbox-overlay" id="lightboxOverlay" aria-hidden="true">
+  <div class="lightbox-img-wrap">
+    <img id="lightboxImg" src="" alt="">
+    <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">✕</button>
+    <div class="lightbox-count" id="lightboxCount"></div>
+  </div>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="前の写真">‹</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="次の写真">›</button>
+</div>
 <script>
 // ======= SECTION BG WORDS + DOT NAV =======
 (function(){
@@ -2082,7 +2185,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     course:    {en:'CATEGORY',  label:'カテゴリー'},
     results:   {en:'RESULTS',   label:'実績'},
     ob:        {en:'GRADUATE',  label:'OBの活躍', light:true},
-    'ryusei-event': {en:'SPECIAL EVENT', label:'川崎竜聖選手 講演会', light:true},
+    'ryusei-event': {en:'EVENT REPORT', label:'川崎竜聖選手 講演会レポート', light:true},
     schedule:  {en:'SCHEDULE',  label:'練習情報'},
     price:     {en:'PRICE',     label:'費用'},
     join:      {en:'JOIN US',   label:'入団方法'},
@@ -2141,6 +2244,74 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     if(!ticking){ ticking = true; requestAnimationFrame(updateActive); }
   }, {passive:true});
   updateActive();
+})();
+</script>
+<script>
+// ======= GALLERY LIGHTBOX =======
+(function(){
+  var galleries = document.querySelectorAll('.event-gallery');
+  if(!galleries.length) return;
+
+  var overlay = document.getElementById('lightboxOverlay');
+  var imgEl = document.getElementById('lightboxImg');
+  var countEl = document.getElementById('lightboxCount');
+  var closeBtn = document.getElementById('lightboxClose');
+  var prevBtn = document.getElementById('lightboxPrev');
+  var nextBtn = document.getElementById('lightboxNext');
+  if(!overlay) return;
+
+  var items = [];   // { src, alt }
+  var current = 0;
+
+  galleries.forEach(function(gallery){
+    var imgs = gallery.querySelectorAll('img');
+    imgs.forEach(function(img){
+      var idx = items.length;
+      items.push({ src: img.currentSrc || img.src, alt: img.alt || '' });
+      var fig = img.closest('figure') || img;
+      fig.setAttribute('tabindex', '0');
+      fig.setAttribute('role', 'button');
+      fig.setAttribute('aria-label', '写真を拡大表示');
+      fig.addEventListener('click', function(){ open(idx); });
+      fig.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(idx); }
+      });
+    });
+  });
+
+  function render(){
+    var it = items[current];
+    imgEl.src = it.src;
+    imgEl.alt = it.alt;
+    countEl.textContent = (current+1) + ' / ' + items.length;
+  }
+  function open(idx){
+    current = idx;
+    render();
+    overlay.classList.add('show');
+    requestAnimationFrame(function(){ overlay.classList.add('in'); });
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    overlay.classList.remove('in');
+    document.body.style.overflow = '';
+    setTimeout(function(){ overlay.classList.remove('show'); }, 220);
+  }
+  function next(){ current = (current+1) % items.length; render(); }
+  function prev(){ current = (current-1+items.length) % items.length; render(); }
+
+  closeBtn.addEventListener('click', close);
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(!overlay.classList.contains('show')) return;
+    if(e.key === 'Escape') close();
+    if(e.key === 'ArrowRight') next();
+    if(e.key === 'ArrowLeft') prev();
+  });
 })();
 </script>
 <script>
