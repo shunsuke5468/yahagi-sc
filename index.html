@@ -892,6 +892,103 @@ section > .si{position:relative;z-index:1;}
   div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr) !important;}
   .note-cards-grid{grid-template-columns:1fr !important;}
 }
+
+/* ============================================================
+   FX2：構造に合わせた動き（練習ライブ／会費シミュレーター／入団ステップ／実績／見出しマーカー）
+   ============================================================ */
+/* 見出しマーカー：表示されたら黄色いラインが引かれる */
+.sec-title .hl{background-image:linear-gradient(transparent 62%, rgba(245,192,0,.45) 62%);background-repeat:no-repeat;background-size:0% 100%;transition:background-size .9s cubic-bezier(.16,1,.3,1) .25s;}
+.sec-title.in .hl,.sec-title:not(.reveal) .hl{background-size:100% 100%;}
+
+/* 入団ステップ：順に組み上がる */
+.fx-steps .step-circle{transform:scale(.55);opacity:.35;filter:grayscale(1);transition:transform .5s cubic-bezier(.3,1.5,.5,1),opacity .4s,filter .4s;}
+.fx-steps .step-line{transform:scaleY(0);transform-origin:top;transition:transform .5s ease .25s;}
+.fx-steps .step-title,.fx-steps .step-desc{opacity:0;transform:translateX(-14px);transition:opacity .5s ease .1s,transform .5s cubic-bezier(.16,1,.3,1) .1s;}
+.fx-steps .step-item.on .step-circle{transform:none;opacity:1;filter:none;}
+.fx-steps .step-item.on .step-line{transform:none;}
+.fx-steps .step-item.on .step-title,.fx-steps .step-item.on .step-desc{opacity:1;transform:none;}
+.fx-steps .step-item.on .step-circle::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:3px solid var(--red);animation:stepRing .7s ease-out both;}
+@keyframes stepRing{from{transform:scale(.7);opacity:.9}to{transform:scale(1.5);opacity:0}}
+
+/* 実績メダル */
+.fx-medal{position:relative;overflow:hidden;opacity:0;transform:translateY(-24px) rotate(-3deg);transition:opacity .5s ease,transform .7s cubic-bezier(.3,1.4,.5,1);}
+.fx-medal.on{opacity:1;transform:none;}
+.fx-medal::after{content:'';position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-18deg);pointer-events:none;}
+.fx-medal.on::after{animation:medalShine 1.1s ease .6s both;}
+@keyframes medalShine{to{left:130%}}
+
+@media (prefers-reduced-motion: reduce){
+  .sec-title .hl{transition:none;background-size:100% 100%;}
+  .fx-steps .step-circle,.fx-steps .step-line,.fx-steps .step-title,.fx-steps .step-desc,.fx-medal{opacity:1 !important;transform:none !important;filter:none !important;transition:none !important;}
+  .fx-medal::after{animation:none !important;}
+}
+
+/* ============================================================
+   HERO（トップ）リニューアル：マッチデーポスター風
+   ============================================================ */
+.hero-overlay{background:
+  linear-gradient(100deg,rgba(110,4,12,.86) 0%,rgba(150,8,18,.62) 38%,rgba(20,4,6,.18) 72%,rgba(0,0,0,.05) 100%),
+  linear-gradient(0deg,rgba(0,0,0,.45) 0%,transparent 35%);}
+.hv{padding:4.2rem 2rem 4.6rem;}
+.hv-pitch{position:absolute;right:-120px;top:50%;width:520px;height:520px;transform:translateY(-50%);pointer-events:none;z-index:-1;}
+.hv-side{position:absolute;right:.4rem;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:'Inter',sans-serif;font-size:11px;font-weight:800;letter-spacing:.35em;color:rgba(255,255,255,.45);pointer-events:none;}
+
+.hv-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:1.3rem;}
+.hv-tag{display:inline-block;background:var(--yellow);color:#111;font-size:12px;font-weight:900;letter-spacing:.14em;padding:6px 14px 6px 12px;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%);padding-right:22px;}
+.hv-loc{font-size:12px;font-weight:800;letter-spacing:.14em;color:#fff;border-bottom:2px solid rgba(255,255,255,.5);padding-bottom:2px;}
+
+.hv-title{display:flex;flex-direction:column;gap:.1em;margin-bottom:1.3rem;font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1.08;text-shadow:0 3px 18px rgba(0,0,0,.35);}
+.hv-l{display:block;overflow:hidden;padding:.04em 0;}
+.hv-l > span{display:inline-block;}
+.hv-l:first-child{font-size:clamp(1.9rem,5.4vw,3.8rem);}
+.hv-big{font-size:clamp(2.9rem,9.6vw,6.6rem);line-height:1.02;}
+.hv-big i{font-style:normal;color:var(--yellow);position:relative;display:inline-block;}
+.hv-big i::after{content:'';position:absolute;left:.04em;right:.04em;bottom:.04em;height:.14em;background:var(--red);z-index:-1;transform-origin:left;border-radius:2px;}
+.hv-s{font-size:clamp(1.05rem,2.6vw,1.6rem);font-weight:800;letter-spacing:.04em;margin-top:.35em;}
+.hv-s em{font-style:normal;color:var(--yellow);}
+
+.hv-sub{font-size:clamp(.88rem,1.7vw,1.05rem);color:rgba(255,255,255,.92);line-height:1.9;max-width:580px;margin-bottom:1.6rem;padding-left:14px;border-left:3px solid var(--yellow);text-shadow:0 1px 6px rgba(0,0,0,.45);}
+.hv-sub b{color:var(--yellow);font-weight:900;}
+
+.hv-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:720px;margin-bottom:1.8rem;background:rgba(8,8,14,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.16);border-radius:16px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.3);}
+.hv-cell{padding:.9rem 1rem .85rem;position:relative;}
+.hv-cell + .hv-cell{border-left:1px solid rgba(255,255,255,.12);}
+.hv-k{font-family:'Inter',sans-serif;font-size:10px;font-weight:800;letter-spacing:.22em;color:rgba(255,255,255,.5);}
+.hv-n{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.3rem,5.4vw,3.2rem);line-height:1;color:#fff;letter-spacing:.03em;margin-top:.25rem;white-space:nowrap;font-variant-numeric:tabular-nums;}
+.hv-n small{font-family:'Noto Sans JP',sans-serif;font-size:.9rem;font-weight:800;margin-left:3px;color:rgba(255,255,255,.85);}
+.hv-n-jp{font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:clamp(1.7rem,3.8vw,2.3rem);line-height:1.38;}
+.hv-j{font-size:12px;font-weight:700;color:rgba(255,255,255,.85);margin-top:.35rem;letter-spacing:.06em;}
+.hv-free{background:var(--red);}
+.hv-free .hv-k{color:var(--yellow);}
+.hv-free .hv-n{color:var(--yellow);}
+.hv-free::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow);}
+
+.hv-btns .btn{border-radius:100px;padding:16px 30px;}
+.hv-btns .btn-yellow{font-size:1rem;}
+.hv-btns .btn-yellow::before{content:'⚽';font-size:1rem;}
+
+/* 登場アニメーション（JSで .hv-pre → .hv-go。JSが動かない時はそのまま表示） */
+.hv.hv-pre .hv-l > span{transform:translateY(110%);}
+.hv.hv-pre .hv-a{opacity:0;transform:translateY(18px);}
+.hv.hv-pre .hv-big i::after{transform:scaleX(0);}
+.hv.hv-go .hv-l > span{transform:none;transition:transform .9s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--d) * 120ms);}
+.hv.hv-go .hv-a{opacity:1;transform:none;transition:opacity .7s ease,transform .8s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--d) * 120ms + 100ms);}
+.hv.hv-go .hv-big i::after{transform:none;transition:transform .7s cubic-bezier(.16,1,.3,1) .75s;}
+
+@media (max-width:1100px){ .hv-side{display:none;} }
+@media (max-width:760px){
+  .hv{padding:2.4rem 1.2rem 3.2rem;}
+  .hv-pitch{right:-220px;width:440px;height:440px;opacity:.7;}
+  .hv-board{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .hv-cell:nth-child(3){border-left:none;}
+  .hv-cell:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12);}
+  .hv-btns{flex-direction:column;align-items:stretch;}
+  .hv-btns .btn{width:100%;}
+}
+@media (prefers-reduced-motion: reduce){
+  .hv .hv-l > span,.hv .hv-a,.hv .hv-big i::after{transform:none !important;opacity:1 !important;transition:none !important;}
+}
+.hero{overflow-x:clip;}
 </style>
 </head>
 <body>
@@ -1028,25 +1125,36 @@ section > .si{position:relative;z-index:1;}
     </div>
   </div>
   <div class="hero-overlay"></div>
-  <div class="hero-inner">
+  <div class="hero-inner hv" id="heroInner">
     <img class="hero-logo" style="display:none;" src="images/logo_transparent.png" alt="YAHAGI SC">
-    <div class="hero-badge">⚽ 小田原市・矢作地区 2026年度 団員募集</div>
-    <div class="hero-title">
-      サッカーが、<span class="yel">心をつくる。</span><br>
-      強く、<span class="yel">やさしく、</span>自分らしく。
+    <svg class="hv-pitch" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="3"/><circle cx="200" cy="200" r="6" fill="rgba(255,255,255,.3)"/><line x1="200" y1="0" x2="200" y2="400" stroke="rgba(255,255,255,.18)" stroke-width="3"/></svg>
+    <div class="hv-side" aria-hidden="true">SINCE 1974 — ODAWARA — YAHAGI SC</div>
+
+    <div class="hv-top hv-a" style="--d:0">
+      <span class="hv-tag">2026年度 団員募集</span>
+      <span class="hv-loc">⚽ 小田原市・矢作地区</span>
     </div>
-    <div class="hero-sub" style="max-width:600px;">
+
+    <div class="hv-title">
+      <span class="hv-l"><span style="--d:1">サッカーが、</span></span>
+      <span class="hv-l hv-big"><span style="--d:2"><i>心をつくる。</i></span></span>
+      <span class="hv-l hv-s"><span style="--d:3">強く、<em>やさしく、</em>自分らしく。</span></span>
+    </div>
+
+    <div class="hv-sub hv-a" style="--d:4">
       創設50年の矢作SCが大切にするのは、技術だけじゃない。<br>
-      <span style="color:var(--yellow);font-weight:900;font-size:clamp(1.1em,4vw,1.6em);">オンリーワン</span>の指導で、自分で考え切り拓く<span style="color:var(--yellow);font-weight:900;">「創造力（クリエイティビティ）」</span>を育てます。
+      <b>オンリーワン</b>の指導で、自分で考え切り拓く<b>「創造力（クリエイティビティ）」</b>を育てます。
     </div>
+
     <!-- ⚠️ 団員数「70名」は3箇所（ヒーロー・入団の流れ・最終CTA）に記載。更新時は全て揃えること -->
-    <div class="hero-stats">
-      <div class="hstat"><div class="hstat-num"><span class="cnum" data-count="1974">1974</span></div><div class="hstat-l">創設年</div></div>
-      <div class="hstat"><div class="hstat-num"><span class="cnum" data-count="70">70</span><span class="hstat-u">名</span></div><div class="hstat-l">の仲間</div></div>
-      <div class="hstat"><div class="hstat-num" style="white-space:nowrap;"><span class="cnum" data-count="2500" data-comma="1">2,500</span><span class="hstat-u">円</span></div><div class="hstat-l">月会費</div></div>
-      <div class="hstat hstat-free"><div class="hstat-num">無料</div><div class="hstat-l">キッズ教室 体験参加</div></div>
+    <div class="hv-board hv-a" style="--d:5">
+      <div class="hv-cell"><div class="hv-k">EST.</div><div class="hv-n"><span class="cnum" data-count="1974">1974</span></div><div class="hv-j">創設年</div></div>
+      <div class="hv-cell"><div class="hv-k">MEMBERS</div><div class="hv-n"><span class="cnum" data-count="70">70</span><small>名</small></div><div class="hv-j">の仲間</div></div>
+      <div class="hv-cell"><div class="hv-k">MONTHLY</div><div class="hv-n"><span class="cnum" data-count="2500" data-comma="1">2,500</span><small>円</small></div><div class="hv-j">月会費</div></div>
+      <div class="hv-cell hv-free"><div class="hv-k">FREE TRIAL</div><div class="hv-n hv-n-jp">無料</div><div class="hv-j">キッズ教室 体験参加</div></div>
     </div>
-    <div class="hero-btns">
+
+    <div class="hero-btns hv-btns hv-a" style="--d:6">
       <a href="#contact" class="btn btn-yellow">無料体験に参加する</a>
       <a href="#coach" class="btn btn-white">コーチ紹介を見る</a>
     </div>
@@ -2898,6 +3006,99 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
       el.addEventListener('click', function(){ track('Facebookリンク'); });
     });
   });
+})();
+</script>
+<script>
+// ======= HERO 登場アニメーション（イントロ後に開始） =======
+(function(){
+  var hv = document.getElementById('heroInner');
+  if(!hv) return;
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(rm) return;
+  hv.classList.add('hv-pre');
+  var intro = document.getElementById('intro');
+  var introOn = intro && intro.style.display !== 'none' && !document.body.classList.contains('intro-seen');
+  setTimeout(function(){
+    hv.classList.add('hv-go');
+    hv.classList.remove('hv-pre');
+  }, introOn ? 4300 : 120);
+})();
+</script>
+
+<script>
+// ======= FX2：構造に合わせた動き =======
+(function(){
+  var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function onView(el, fn, th){
+    if(!el) return;
+    if(!('IntersectionObserver' in window)){ fn(); return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ fn(); io.unobserve(e.target); } });
+    }, {threshold: th || .3});
+    io.observe(el);
+  }
+  function countTo(el, to, dur, fmt){
+    fmt = fmt || function(n){ return String(n); };
+    var from = parseInt((el.dataset.v || '0'), 10) || 0;
+    el.dataset.v = to;
+    if(RM || from === to){ el.textContent = fmt(to); return; }
+    var t0 = null;
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts - t0) / (dur || 900), 1); p = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(Math.round(from + (to - from) * p));
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // ---------- ③ 入団4ステップ：順に組み上がる ----------
+  (function(){
+    var list = document.querySelector('#join .step-list');
+    if(!list || RM || !('IntersectionObserver' in window)) return;
+    list.classList.add('fx-steps');
+    var items = list.querySelectorAll('.step-item');
+    var shown = 0;
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var idx = Array.prototype.indexOf.call(items, e.target);
+        // 前のステップから順番に点灯させる
+        for(var i = shown; i <= idx; i++){
+          (function(el, k){ setTimeout(function(){ el.classList.add('on'); }, k * 280); })(items[i], i - shown);
+        }
+        shown = Math.max(shown, idx + 1);
+        io.unobserve(e.target);
+      });
+    }, {threshold:.6, rootMargin:'0px 0px -10% 0px'});
+    items.forEach(function(it){ io.observe(it); });
+  })();
+
+  // ---------- ④ 実績：メダルが落ちてきて数字が増える ----------
+  (function(){
+    var sec = document.getElementById('results');
+    if(!sec) return;
+    var cards = [];
+    sec.querySelectorAll('.si > div').forEach(function(g){
+      if(/repeat\(3/.test(g.getAttribute('style') || '')) cards = g.children;
+    });
+    if(!cards.length) return;
+    var nums = [];
+    Array.prototype.forEach.call(cards, function(c){
+      c.classList.add('fx-medal');
+      var n = c.children[1];
+      if(n && /^\d+$/.test(n.textContent.trim())){ nums.push({el:n, to:parseInt(n.textContent, 10)}); n.textContent = '0'; }
+    });
+    if(RM){ Array.prototype.forEach.call(cards, function(c){ c.classList.add('on'); }); nums.forEach(function(x){ x.el.textContent = x.to; }); return; }
+    onView(cards[0].parentNode, function(){
+      Array.prototype.forEach.call(cards, function(c, i){
+        setTimeout(function(){
+          c.classList.add('on');
+          if(nums[i]) countTo(nums[i].el, nums[i].to, 1000);
+        }, i * 180);
+      });
+    }, .35);
+  })();
 })();
 </script>
 </body>
