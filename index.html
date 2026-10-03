@@ -836,6 +836,175 @@ section > .si{position:relative;z-index:1;}
 .event-dl-link::after{content:'→';transition:transform .2s;}
 .event-dl-link:hover::after{transform:translateX(3px);}
 
+/* --- スポーツ中継風（安全・健康／FANTASISTA 共通） --- */
+.bc-section{background:#0b0b0f;padding:5rem 1.5rem;position:relative;overflow:hidden;}
+.bc-section::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 4px);pointer-events:none;}
+.bc-lead{font-size:.9rem;color:rgba(255,255,255,.65);max-width:640px;margin-top:.5rem;line-height:1.8;}
+.bc-wrap{margin-top:2.4rem;background:#111116;border:1px solid rgba(255,255,255,.08);border-radius:6px;overflow:hidden;overflow:clip;box-shadow:0 24px 60px rgba(0,0,0,.45);position:relative;}
+.bc-topbar{display:flex;align-items:stretch;height:44px;background:#000;border-bottom:3px solid var(--red);}
+.bc-tag{display:flex;align-items:center;flex-shrink:0;padding:0 1.6rem 0 1rem;background:var(--red);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.08em;clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%);}
+.bc-topbar-title{display:flex;align-items:center;min-width:0;padding:0 1rem;color:#fff;font-weight:900;font-size:.82rem;letter-spacing:.12em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.bc-topbar-right{margin-left:auto;flex-shrink:0;display:flex;align-items:center;gap:8px;padding:0 1rem 0 1.6rem;background:var(--yellow);color:#111;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;clip-path:polygon(14px 0,100% 0,100% 100%,0 100%);}
+.bc-rec{width:8px;height:8px;border-radius:50%;background:var(--red);animation:bcBlink 1.4s ease-in-out infinite;}
+@keyframes bcBlink{0%,100%{opacity:1}50%{opacity:.2}}
+.bc-tab{font-family:inherit;cursor:pointer;border:none;background:none;color:#fff;text-align:left;position:relative;}
+.bc-tab:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px;}
+.bc-tab::after{content:'';position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--yellow);}
+.bc-tab.active.running::after{animation:bcProgress var(--bc-dur,7s) linear forwards;}
+@keyframes bcProgress{from{width:0}to{width:100%}}
+.bc-panel{display:none;position:relative;overflow:hidden;}
+.bc-panel.active{display:block;animation:bcWipe .6s cubic-bezier(.16,1,.3,1);}
+@keyframes bcWipe{from{opacity:.2;clip-path:inset(0 0 0 100%);}to{opacity:1;clip-path:inset(0 0 0 0);}}
+@keyframes bcRow{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:none}}
+@keyframes bcSlide{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:none}}
+
+/* 安全・健康 */
+.bc-safety .bc-body{display:grid;grid-template-columns:300px minmax(0,1fr);}
+.bc-lineup-wrap,.bc-stage{min-width:0;}
+.bc-lineup-wrap{background:#0d0d11;border-right:1px solid rgba(255,255,255,.08);}
+.bc-lineup-head{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:.2em;color:rgba(255,255,255,.45);padding:.8rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.08);}
+.bc-lineup{display:flex;flex-direction:column;}
+.bc-lineup .bc-tab{display:flex;align-items:center;gap:14px;padding:.85rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.06);transition:background .25s;}
+.bc-lineup .bc-tab:hover{background:rgba(255,255,255,.05);}
+.bc-tab-num{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;line-height:1;color:rgba(255,255,255,.35);width:34px;flex-shrink:0;transition:color .25s;}
+.bc-tab-text{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.bc-tab-title{font-size:.9rem;font-weight:800;line-height:1.3;}
+.bc-tab-sub{font-size:.58rem;letter-spacing:.14em;color:rgba(255,255,255,.4);font-weight:700;}
+.bc-lineup .bc-tab.active{background:linear-gradient(90deg,var(--red),#a80f1b);box-shadow:inset 5px 0 0 var(--yellow);}
+.bc-lineup .bc-tab.active .bc-tab-num{color:var(--yellow);}
+.bc-lineup .bc-tab.active .bc-tab-sub{color:rgba(255,255,255,.75);}
+.bc-safety .bc-panel{padding:2.2rem 2.4rem 2.6rem;min-height:440px;background:radial-gradient(ellipse at 85% 15%,rgba(217,27,42,.25),transparent 60%),repeating-linear-gradient(115deg,rgba(255,255,255,.025) 0 2px,transparent 2px 14px);}
+.bc-panel-bignum{position:absolute;right:1rem;bottom:-2.8rem;font-family:'Bebas Neue',sans-serif;font-size:15rem;line-height:1;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.08);pointer-events:none;}
+.bc-panel-icon{position:absolute;right:2rem;top:1.6rem;width:150px;height:150px;pointer-events:none;}
+.bc-panel-en{position:relative;font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.22em;color:var(--yellow);}
+.bc-lower-third{position:relative;display:inline-flex;flex-direction:column;margin-top:.7rem;max-width:100%;}
+.bc-lt-title{background:#fff;color:#111;font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:900;line-height:1.2;padding:.45rem 2.2rem .45rem 1rem;border-left:6px solid var(--red);clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%);}
+.bc-lt-sub{align-self:flex-start;background:var(--red);color:#fff;font-size:.78rem;font-weight:800;letter-spacing:.04em;padding:.35rem 1.6rem .35rem 1rem;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 100%,0 100%);}
+.bc-panel.active .bc-lt-title{animation:bcSlide .55s cubic-bezier(.16,1,.3,1) .1s both;}
+.bc-panel.active .bc-lt-sub{animation:bcSlide .55s cubic-bezier(.16,1,.3,1) .2s both;}
+.bc-points-label{position:relative;margin-top:2rem;font-family:'Bebas Neue',sans-serif;letter-spacing:.2em;font-size:.95rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:.7rem;max-width:620px;}
+.bc-points-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.12);}
+.bc-points{position:relative;list-style:none;margin:.6rem 0 0;padding:0;max-width:620px;}
+.bc-points li{display:flex;gap:14px;align-items:baseline;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.9);font-size:.95rem;line-height:1.6;}
+.bc-pt-num{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;color:var(--yellow);flex-shrink:0;width:28px;}
+.bc-panel.active .bc-points li{animation:bcRow .5s cubic-bezier(.16,1,.3,1) both;}
+.bc-panel.active .bc-points li:nth-child(1){animation-delay:.25s;}
+.bc-panel.active .bc-points li:nth-child(2){animation-delay:.33s;}
+.bc-panel.active .bc-points li:nth-child(3){animation-delay:.41s;}
+
+/* FANTASISTA */
+.bc-fanta{margin-top:0;}
+.bc-medal-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid rgba(255,255,255,.08);}
+.bc-medal{display:flex;flex-direction:column;gap:4px;padding:1rem 1.2rem 1.15rem;border-right:1px solid rgba(255,255,255,.08);border-top:4px solid var(--m);transition:background .25s;}
+.bc-medal:last-child{border-right:none;}
+.bc-medal:hover{background:rgba(255,255,255,.04);}
+.bc-medal-rank{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;line-height:1;letter-spacing:.06em;color:var(--m);}
+.bc-medal-ja{font-size:.8rem;font-weight:800;}
+.bc-medal-meta{font-size:.68rem;color:rgba(255,255,255,.5);font-weight:700;letter-spacing:.04em;}
+.bc-medal.active{background:linear-gradient(135deg,var(--m),var(--m2));color:var(--mt);}
+.bc-medal.active .bc-medal-rank{color:var(--mt);}
+.bc-medal.active .bc-medal-meta{color:var(--mt);opacity:.75;}
+.bc-medal::after{background:#fff;}
+.bc-fanta .bc-panel{padding:1.6rem 1.8rem 1.8rem;background:repeating-linear-gradient(115deg,rgba(255,255,255,.02) 0 2px,transparent 2px 14px);}
+.bc-trials{display:flex;flex-direction:column;gap:12px;}
+.bc-trial{display:grid;grid-template-columns:96px 170px 1fr;background:#0b0b0f;border:1px solid rgba(255,255,255,.08);border-left:5px solid var(--m);}
+.bc-panel.active .bc-trial{animation:bcRow .5s cubic-bezier(.16,1,.3,1) both;}
+.bc-panel.active .bc-trial:nth-child(2){animation-delay:.08s;}
+.bc-panel.active .bc-trial:nth-child(3){animation-delay:.16s;}
+.bc-trial-label{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.08em;color:#fff;border-right:1px solid rgba(255,255,255,.08);}
+.bc-score{display:flex;align-items:baseline;justify-content:center;gap:4px;padding:.6rem .8rem;background:#000;border-right:1px solid rgba(255,255,255,.08);}
+.bc-score-num{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;line-height:1;color:var(--yellow);text-shadow:0 0 18px rgba(245,192,0,.35);letter-spacing:.04em;font-variant-numeric:tabular-nums;}
+.bc-score-unit{font-size:.95rem;font-weight:900;color:var(--yellow);}
+.bc-trial-info{padding:.8rem 1.1rem;display:flex;flex-direction:column;justify-content:center;gap:3px;}
+.bc-trial-title{font-size:1rem;font-weight:900;color:#fff;}
+.bc-trial-detail{font-size:.8rem;color:rgba(255,255,255,.62);line-height:1.6;}
+.bc-award{margin-top:1.2rem;display:flex;align-items:center;flex-wrap:wrap;}
+.bc-award-label{background:var(--m);color:var(--mt);font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.12em;padding:.4rem 1.4rem .4rem .9rem;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);}
+.bc-award-text{background:#fff;color:#111;font-weight:900;font-size:.85rem;padding:.45rem 1.4rem .45rem 1.4rem;margin-left:-8px;clip-path:polygon(12px 0,100% 0,calc(100% - 12px) 100%,0 100%);}
+
+@media (max-width:860px){
+  .bc-safety .bc-body{grid-template-columns:minmax(0,1fr);}
+  .bc-lineup-wrap{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);}
+  .bc-lineup-head{display:none;}
+  .bc-lineup{flex-direction:row;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .bc-lineup::-webkit-scrollbar{display:none;}
+  .bc-lineup .bc-tab{flex:0 0 auto;padding:.75rem 1rem;gap:8px;border-bottom:none;border-right:1px solid rgba(255,255,255,.06);}
+  .bc-lineup .bc-tab.active{box-shadow:inset 0 -4px 0 var(--yellow);}
+  .bc-tab-sub{display:none;}
+  .bc-tab-num{font-size:1.3rem;width:auto;}
+  .bc-tab-title{font-size:.82rem;white-space:nowrap;}
+  .bc-safety .bc-panel{padding:1.6rem 1.3rem 2rem;min-height:0;}
+  .bc-panel-bignum{font-size:9rem;bottom:-1.6rem;}
+  .bc-panel-icon{width:96px;height:96px;right:1rem;top:1.1rem;}
+  .bc-points li{font-size:.88rem;}
+}
+@media (max-width:600px){
+  .bc-topbar{height:40px;}
+  .bc-tag{font-size:.95rem;padding:0 1.2rem 0 .8rem;}
+  .bc-topbar-title{font-size:.68rem;letter-spacing:.06em;padding:0 .6rem;}
+  .bc-topbar-right{font-size:1rem;padding:0 .8rem 0 1.3rem;}
+  .bc-medal{padding:.75rem .6rem .85rem;}
+  .bc-medal-rank{font-size:1.35rem;}
+  .bc-medal-ja{display:none;}
+  .bc-medal-meta{font-size:.6rem;}
+  .bc-fanta .bc-panel{padding:1.1rem 1rem 1.3rem;}
+  .bc-trial{grid-template-columns:72px 1fr;grid-template-areas:"label score" "info info";}
+  .bc-trial-label{grid-area:label;font-size:1.15rem;}
+  .bc-score{grid-area:score;justify-content:flex-start;padding-left:1rem;border-right:none;}
+  .bc-score-num{font-size:2.5rem;}
+  .bc-trial-info{grid-area:info;border-top:1px solid rgba(255,255,255,.08);}
+  .bc-award{flex-direction:column;align-items:flex-start;}
+  .bc-award-text{font-size:.75rem;margin-left:0;}
+}
+@media (prefers-reduced-motion: reduce){
+  .bc-rec,.bc-panel.active,.bc-panel.active .bc-lt-title,.bc-panel.active .bc-lt-sub,.bc-panel.active .bc-points li,.bc-panel.active .bc-trial,.bc-tab.active.running::after{animation:none;}
+}
+
+/* コーチ紹介（カテゴリー別タブ） */
+.bc-tabs4{grid-template-columns:repeat(4,1fr);}
+.bc-coach{margin-top:2.2rem;}
+.bc-coach .bc-panel{padding:1.6rem;background:repeating-linear-gradient(115deg,rgba(255,255,255,.02) 0 2px,transparent 2px 14px);}
+@media (max-width:600px){ .bc-coach .bc-panel{padding:1rem;} }
+
+/* カテゴリー（年齢・学年別タブ） */
+.bc-course{margin-top:2rem;}
+.bc-cat-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);min-height:420px;}
+.bc-cat-photo{position:relative;overflow:hidden;min-height:420px;background:#000;}
+.bc-cat-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.bc-cat-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.75) 100%),linear-gradient(135deg,var(--m) 0%,transparent 70%);opacity:.85;}
+.bc-panel.active .bc-cat-photo img{animation:bcZoom 8s ease-out both;}
+@keyframes bcZoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+.bc-cat-photo-label{position:absolute;left:1.4rem;bottom:1.2rem;z-index:1;display:flex;flex-direction:column;gap:.3rem;}
+.bc-cat-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,9vw,6.5rem);line-height:.85;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.5);}
+.bc-cat-age{align-self:flex-start;background:var(--yellow);color:#111;font-weight:900;font-size:.8rem;padding:.3rem 1rem .3rem .8rem;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%);}
+.bc-cat-info,.bc-cat-side{position:relative;padding:2rem 2.2rem 2.2rem;}
+.bc-cat-info{background:radial-gradient(ellipse at 90% 10%,rgba(217,27,42,.18),transparent 60%),repeating-linear-gradient(115deg,rgba(255,255,255,.022) 0 2px,transparent 2px 14px);}
+.bc-cat-side{background:#0d0d11;border-right:1px solid rgba(255,255,255,.08);}
+.bc-cat-stat{margin-top:1rem;}
+.bc-cat-stat-inline{display:flex;align-items:center;gap:1rem;margin-top:1.6rem;}
+.bc-cat-stat-label{font-size:.75rem;font-weight:800;letter-spacing:.08em;color:rgba(255,255,255,.65);}
+.bc-cat-score{display:inline-flex;margin-top:.4rem;border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:.4rem 1.1rem;}
+.bc-cat-stat-inline .bc-cat-score{margin-top:0;}
+.bc-cat-stat-cap{font-size:.78rem;color:rgba(255,255,255,.6);margin-top:.5rem;}
+.bc-cat-text{font-size:.85rem;color:rgba(255,255,255,.78);line-height:1.85;margin:1rem 0 0;}
+.bc-cat-text strong{color:var(--yellow);}
+.bc-moves{display:flex;flex-wrap:wrap;gap:8px;margin-top:.8rem;}
+.bc-moves span{font-size:.95rem;font-weight:900;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);padding:.4rem 1rem;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);}
+.bc-moves span.hl{background:var(--red);border-color:var(--red);}
+.bc-info-table{display:grid;grid-template-columns:auto 1fr;margin:.6rem 0 0;max-width:620px;}
+.bc-info-table dt,.bc-info-table dd{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.08);margin:0;}
+.bc-info-table dt{font-family:inherit;font-size:.78rem;font-weight:900;color:var(--yellow);padding-right:1.2rem;}
+.bc-info-table dd{font-size:.9rem;color:rgba(255,255,255,.9);line-height:1.6;}
+.bc-info-table dd span{font-size:.78rem;color:rgba(255,255,255,.55);}
+.bc-course .bc-points li{font-size:.9rem;}
+@media (max-width:860px){
+  .bc-cat-grid{grid-template-columns:minmax(0,1fr);min-height:0;}
+  .bc-cat-photo{min-height:230px;}
+  .bc-cat-side{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);}
+  .bc-cat-info,.bc-cat-side{padding:1.5rem 1.3rem 1.8rem;}
+}
+@media (prefers-reduced-motion: reduce){ .bc-panel.active .bc-cat-photo img{animation:none;} }
+
 /* DIVIDER */
 .div-stripe{height:5px;background:linear-gradient(90deg,var(--red-dark),var(--red),var(--yellow),var(--red),var(--red-dark));background-size:300% auto;animation:shimmer 5s linear infinite;}
 
@@ -1364,117 +1533,142 @@ section > .si{position:relative;z-index:1;}
 <div class="div-stripe"></div>
 
 <!-- SAFETY & HEALTH -->
-<section style="background:var(--off);padding:5rem 1.5rem;" id="safety">
+<section class="bc-section" id="safety">
   <div class="si">
-    <div class="sec-eyebrow">Safety &amp; Health</div>
-    <div class="sec-title">安心して預けられる、<span class="hl">子どもの安全・健康への取り組み</span></div>
-    <p style="font-size:.9rem;color:var(--text2);max-width:640px;margin-top:.5rem;line-height:1.8;">
+    <div class="sec-eyebrow" style="color:var(--yellow);">Safety &amp; Health</div>
+    <div class="sec-title" style="color:#fff;">安心して預けられる、<span style="color:var(--yellow);">子どもの安全・健康への取り組み</span></div>
+    <p class="bc-lead">
       競技力の向上だけでなく、子どもたちの安全・健康を守るための取り組みを積極的に行っています。
       地域の専門機関と連携した講座・講習を定期的に開催しています。
     </p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2.5rem;align-items:stretch;">
-
-      <!-- 熱中症 -->
-      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-        <div style="background:linear-gradient(135deg,#D91B2A,#A80F1B);padding:1.8rem 1.6rem;position:relative;overflow:hidden;">
-          <svg viewBox="0 0 100 100" style="position:absolute;top:50%;right:-6px;transform:translateY(-50%);width:130px;height:130px;pointer-events:none;"><g fill="#fff" opacity=".2"><circle cx="50" cy="50" r="20"/></g><g stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".2"><line x1="50" y1="14" x2="50" y2="24"/><line x1="50" y1="76" x2="50" y2="86"/><line x1="14" y1="50" x2="24" y2="50"/><line x1="76" y1="50" x2="86" y2="50"/><line x1="25" y1="25" x2="32" y2="32"/><line x1="68" y1="68" x2="75" y2="75"/><line x1="25" y1="75" x2="32" y2="68"/><line x1="68" y1="32" x2="75" y2="25"/></g></svg>
-          <div style="font-size:10px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.6);margin-bottom:.5rem;">HEATSTROKE PREVENTION</div>
-          <div style="font-size:1.35rem;font-weight:900;color:#fff;line-height:1.3;">熱中症講座</div>
-          <div style="margin-top:.6rem;display:inline-block;background:rgba(255,255,255,.15);border-radius:100px;padding:3px 12px;font-size:.72rem;color:#fff;font-weight:700;letter-spacing:.08em;">間中記念御幸の浜リハビリテーション病院</div>
+    <div class="bc-wrap bc-safety" id="safetyTabs" data-auto="7000">
+      <div class="bc-topbar">
+        <span class="bc-tag">YAHAGI SC</span>
+        <span class="bc-topbar-title">SAFETY &amp; HEALTH PROGRAM</span>
+        <span class="bc-topbar-right"><span class="bc-rec" aria-hidden="true"></span><span data-bc-clock>01 / 06</span></span>
+      </div>
+      <div class="bc-body">
+        <div class="bc-lineup-wrap">
+          <div class="bc-lineup-head">PROGRAM LINEUP</div>
+          <div class="bc-lineup" role="tablist" aria-label="安全・健康への取り組み">
+          <button type="button" class="bc-tab active" role="tab" id="bc-s-tab-heat" aria-controls="bc-s-heat" aria-selected="true" tabindex="0" data-clock="01 / 06">
+            <span class="bc-tab-num">01</span>
+            <span class="bc-tab-text"><span class="bc-tab-title">熱中症講座</span><span class="bc-tab-sub">HEATSTROKE PREVENTION</span></span>
+          </button>
+          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-body" aria-controls="bc-s-body" aria-selected="false" tabindex="-1" data-clock="02 / 06">
+            <span class="bc-tab-num">02</span>
+            <span class="bc-tab-text"><span class="bc-tab-title">体のメンテナンス</span><span class="bc-tab-sub">BODY MAINTENANCE</span></span>
+          </button>
+          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-aed" aria-controls="bc-s-aed" aria-selected="false" tabindex="-1" data-clock="03 / 06">
+            <span class="bc-tab-num">03</span>
+            <span class="bc-tab-text"><span class="bc-tab-title">AED講習</span><span class="bc-tab-sub">AED &amp; CPR TRAINING</span></span>
+          </button>
+          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-food" aria-controls="bc-s-food" aria-selected="false" tabindex="-1" data-clock="04 / 06">
+            <span class="bc-tab-num">04</span>
+            <span class="bc-tab-text"><span class="bc-tab-title">スポーツ栄養学</span><span class="bc-tab-sub">SPORTS NUTRITION</span></span>
+          </button>
+          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-community" aria-controls="bc-s-community" aria-selected="false" tabindex="-1" data-clock="05 / 06">
+            <span class="bc-tab-num">05</span>
+            <span class="bc-tab-text"><span class="bc-tab-title">社会貢献活動</span><span class="bc-tab-sub">COMMUNITY CONTRIBUTION</span></span>
+          </button>
+          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-promise" aria-controls="bc-s-promise" aria-selected="false" tabindex="-1" data-clock="06 / 06">
+            <span class="bc-tab-num">06</span>
+            <span class="bc-tab-text"><span class="bc-tab-title">私たちの約束</span><span class="bc-tab-sub">OUR COMMITMENT</span></span>
+          </button>
+          </div>
         </div>
-        <div style="padding:1.3rem 1.4rem;">
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:var(--red);flex-shrink:0;">▶</span><span>医療の専門職による本格的な熱中症対策講座</span></li>
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:var(--red);flex-shrink:0;">▶</span><span>症状の見分け方・応急処置の方法を学ぶ</span></li>
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:var(--red);flex-shrink:0;">▶</span><span>保護者・コーチ対象の実践的な内容</span></li>
-          </ul>
+        <div class="bc-stage">
+          <div class="bc-panel active" role="tabpanel" id="bc-s-heat" aria-labelledby="bc-s-tab-heat">
+            <div class="bc-panel-bignum" aria-hidden="true">01</div>
+            <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><g fill="#fff" opacity=".22"><circle cx="50" cy="50" r="20"/></g><g stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".22"><line x1="50" y1="14" x2="50" y2="24"/><line x1="50" y1="76" x2="50" y2="86"/><line x1="14" y1="50" x2="24" y2="50"/><line x1="76" y1="50" x2="86" y2="50"/><line x1="25" y1="25" x2="32" y2="32"/><line x1="68" y1="68" x2="75" y2="75"/><line x1="25" y1="75" x2="32" y2="68"/><line x1="68" y1="32" x2="75" y2="25"/></g></svg>
+            <div class="bc-panel-en">HEATSTROKE PREVENTION</div>
+            <div class="bc-lower-third">
+              <div class="bc-lt-title">熱中症講座</div>
+              <div class="bc-lt-sub">間中記念御幸の浜リハビリテーション病院</div>
+            </div>
+            <div class="bc-points-label">KEY POINTS</div>
+            <ol class="bc-points">
+              <li><span class="bc-pt-num">01</span><span>医療の専門職による本格的な熱中症対策講座</span></li>
+              <li><span class="bc-pt-num">02</span><span>症状の見分け方・応急処置の方法を学ぶ</span></li>
+              <li><span class="bc-pt-num">03</span><span>保護者・コーチ対象の実践的な内容</span></li>
+            </ol>
+          </div>
+          <div class="bc-panel" role="tabpanel" id="bc-s-body" aria-labelledby="bc-s-tab-body">
+            <div class="bc-panel-bignum" aria-hidden="true">02</div>
+            <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><g fill="#fff" opacity=".22"><rect x="20" y="44" width="14" height="12" rx="3"/><rect x="66" y="44" width="14" height="12" rx="3"/><rect x="30" y="40" width="10" height="20" rx="4"/><rect x="60" y="40" width="10" height="20" rx="4"/><rect x="38" y="46" width="24" height="8" rx="4"/></g></svg>
+            <div class="bc-panel-en">BODY MAINTENANCE</div>
+            <div class="bc-lower-third">
+              <div class="bc-lt-title">体のメンテナンス</div>
+              <div class="bc-lt-sub">曽我接骨院</div>
+            </div>
+            <div class="bc-points-label">KEY POINTS</div>
+            <ol class="bc-points">
+              <li><span class="bc-pt-num">01</span><span>接骨院の先生による体のケア・ストレッチ指導</span></li>
+              <li><span class="bc-pt-num">02</span><span>怪我の予防・疲労回復のセルフケア方法</span></li>
+              <li><span class="bc-pt-num">03</span><span>成長期の子どもの体の正しい使い方</span></li>
+            </ol>
+          </div>
+          <div class="bc-panel" role="tabpanel" id="bc-s-aed" aria-labelledby="bc-s-tab-aed">
+            <div class="bc-panel-bignum" aria-hidden="true">03</div>
+            <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" opacity=".22" d="M50 82C30 68 18 56 18 42c0-11 8-18 17-18 7 0 12 4 15 9 3-5 8-9 15-9 9 0 17 7 17 18 0 14-12 26-32 40z"/><path stroke="#fff" stroke-width="3.5" fill="none" stroke-linejoin="round" opacity=".55" d="M24 50h12l5-10 8 18 5-12 4 6h14"/></svg>
+            <div class="bc-panel-en">AED &amp; CPR TRAINING</div>
+            <div class="bc-lower-third">
+              <div class="bc-lt-title">AED講習</div>
+              <div class="bc-lt-sub">消防署と連携</div>
+            </div>
+            <div class="bc-points-label">KEY POINTS</div>
+            <ol class="bc-points">
+              <li><span class="bc-pt-num">01</span><span>消防署の協力によるAED使用方法の実習</span></li>
+              <li><span class="bc-pt-num">02</span><span>心肺蘇生法（CPR）の実践トレーニング</span></li>
+              <li><span class="bc-pt-num">03</span><span>いざというときに動ける保護者・スタッフを育成</span></li>
+            </ol>
+          </div>
+          <div class="bc-panel" role="tabpanel" id="bc-s-food" aria-labelledby="bc-s-tab-food">
+            <div class="bc-panel-bignum" aria-hidden="true">04</div>
+            <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" opacity=".22" d="M50 30c-5-12-18-14-26-9C15 27 12 42 18 58c5 14 18 26 32 30 14-4 27-16 32-30 6-16 3-31-6-37-8-5-21-3-26 9z"/><path stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".55" d="M50 30V16c0-4 4-8 9-8"/></svg>
+            <div class="bc-panel-en">SPORTS NUTRITION</div>
+            <div class="bc-lower-third">
+              <div class="bc-lt-title">スポーツ栄養学</div>
+              <div class="bc-lt-sub">間中記念御幸の浜リハビリテーション病院</div>
+            </div>
+            <div class="bc-points-label">KEY POINTS</div>
+            <ol class="bc-points">
+              <li><span class="bc-pt-num">01</span><span>成長過程に必要な食事の栄養バランスを学ぶ</span></li>
+              <li><span class="bc-pt-num">02</span><span>試合前・中・後の効果的な栄養補給方法</span></li>
+              <li><span class="bc-pt-num">03</span><span>食事でパフォーマンスと回復力を高める</span></li>
+            </ol>
+          </div>
+          <div class="bc-panel" role="tabpanel" id="bc-s-community" aria-labelledby="bc-s-tab-community">
+            <div class="bc-panel-bignum" aria-hidden="true">05</div>
+            <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" opacity=".22" d="M50 84C32 72 20 60 16 47c-3-10 4-19 13-17 6 1 9 6 9 6s3-5 9-6c9-2 16 7 13 17"/><path fill="#fff" opacity=".3" d="M62 50c8 0 14 5 14 12s-6 12-14 12-14-5-14-12 6-12 14-12z"/></svg>
+            <div class="bc-panel-en">COMMUNITY CONTRIBUTION</div>
+            <div class="bc-lower-third">
+              <div class="bc-lt-title">社会貢献活動</div>
+              <div class="bc-lt-sub">地域とともに育つクラブ</div>
+            </div>
+            <div class="bc-points-label">KEY POINTS</div>
+            <ol class="bc-points">
+              <li><span class="bc-pt-num">01</span><span>クリーンアップ活動：学校グランド周辺のごみ拾いを月一回実施</span></li>
+              <li><span class="bc-pt-num">02</span><span>子どもたちが地域への感謝と責任感を育む機会に</span></li>
+              <li><span class="bc-pt-num">03</span><span>サッカーを通じて人として大切なことを学ぶ</span></li>
+            </ol>
+          </div>
+          <div class="bc-panel" role="tabpanel" id="bc-s-promise" aria-labelledby="bc-s-tab-promise">
+            <div class="bc-panel-bignum" aria-hidden="true">06</div>
+            <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" opacity=".22" d="M50 14l30 11v22c0 19-13 32-30 38-17-6-30-19-30-38V25z"/><path stroke="#fff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".6" d="M38 50l8 8 16-16"/></svg>
+            <div class="bc-panel-en">OUR COMMITMENT</div>
+            <div class="bc-lower-third">
+              <div class="bc-lt-title">私たちの約束</div>
+              <div class="bc-lt-sub">矢作サッカークラブの理念</div>
+            </div>
+            <div class="bc-points-label">KEY POINTS</div>
+            <ol class="bc-points">
+              <li><span class="bc-pt-num">01</span><span>「サッカーを通じて、子どもたちの命と健康を守る」</span></li>
+              <li><span class="bc-pt-num">02</span><span>グラウンドの内外で子どもたちが安心して活動できる環境づくりに取り組んでいます。</span></li>
+            </ol>
+          </div>
         </div>
       </div>
-
-      <!-- 体のメンテナンス -->
-      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-        <div style="background:linear-gradient(135deg,#1565C0,#0D47A1);padding:1.8rem 1.6rem;position:relative;overflow:hidden;">
-          <svg viewBox="0 0 100 100" style="position:absolute;top:50%;right:-6px;transform:translateY(-50%);width:130px;height:130px;pointer-events:none;"><g fill="#fff" opacity=".2"><rect x="20" y="44" width="14" height="12" rx="3"/><rect x="66" y="44" width="14" height="12" rx="3"/><rect x="30" y="40" width="10" height="20" rx="4"/><rect x="60" y="40" width="10" height="20" rx="4"/><rect x="38" y="46" width="24" height="8" rx="4"/></g></svg>
-          <div style="font-size:10px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.6);margin-bottom:.5rem;">BODY MAINTENANCE</div>
-          <div style="font-size:1.35rem;font-weight:900;color:#fff;line-height:1.3;">体のメンテナンス</div>
-          <div style="margin-top:.6rem;display:inline-block;background:rgba(255,255,255,.15);border-radius:100px;padding:3px 12px;font-size:.72rem;color:#fff;font-weight:700;letter-spacing:.08em;">曽我接骨院</div>
-        </div>
-        <div style="padding:1.3rem 1.4rem;">
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#1565C0;flex-shrink:0;">▶</span><span>接骨院の先生による体のケア・ストレッチ指導</span></li>
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#1565C0;flex-shrink:0;">▶</span><span>怪我の予防・疲労回復のセルフケア方法</span></li>
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#1565C0;flex-shrink:0;">▶</span><span>成長期の子どもの体の正しい使い方</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- AED講習 -->
-      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-        <div style="background:linear-gradient(135deg,#27AE60,#1B7A43);padding:1.8rem 1.6rem;position:relative;overflow:hidden;">
-          <svg viewBox="0 0 100 100" style="position:absolute;top:50%;right:-6px;transform:translateY(-50%);width:130px;height:130px;pointer-events:none;"><path fill="#fff" opacity=".2" d="M50 82C30 68 18 56 18 42c0-11 8-18 17-18 7 0 12 4 15 9 3-5 8-9 15-9 9 0 17 7 17 18 0 14-12 26-32 40z"/><path stroke="#fff" stroke-width="3.5" fill="none" stroke-linejoin="round" opacity=".5" d="M24 50h12l5-10 8 18 5-12 4 6h14"/></svg>
-          <div style="font-size:10px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.6);margin-bottom:.5rem;">AED &amp; CPR TRAINING</div>
-          <div style="font-size:1.35rem;font-weight:900;color:#fff;line-height:1.3;">AED講習</div>
-          <div style="margin-top:.6rem;display:inline-block;background:rgba(255,255,255,.15);border-radius:100px;padding:3px 12px;font-size:.72rem;color:#fff;font-weight:700;letter-spacing:.08em;">消防署と連携</div>
-        </div>
-        <div style="padding:1.3rem 1.4rem;">
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#27AE60;flex-shrink:0;">▶</span><span>消防署の協力によるAED使用方法の実習</span></li>
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#27AE60;flex-shrink:0;">▶</span><span>心肺蘇生法（CPR）の実践トレーニング</span></li>
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#27AE60;flex-shrink:0;">▶</span><span>いざというときに動ける保護者・スタッフを育成</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- スポーツ栄養学 -->
-      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-        <div style="background:linear-gradient(135deg,#E65100,#BF360C);padding:1.8rem 1.6rem;position:relative;overflow:hidden;">
-          <svg viewBox="0 0 100 100" style="position:absolute;top:50%;right:-6px;transform:translateY(-50%);width:130px;height:130px;pointer-events:none;"><path fill="#fff" opacity=".2" d="M50 30c-5-12-18-14-26-9C15 27 12 42 18 58c5 14 18 26 32 30 14-4 27-16 32-30 6-16 3-31-6-37-8-5-21-3-26 9z"/><path stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".5" d="M50 30V16c0-4 4-8 9-8"/></svg>
-          <div style="font-size:10px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.6);margin-bottom:.5rem;">SPORTS NUTRITION</div>
-          <div style="font-size:1.35rem;font-weight:900;color:#fff;line-height:1.3;">スポーツ栄養学</div>
-          <div style="margin-top:.6rem;display:inline-block;background:rgba(255,255,255,.15);border-radius:100px;padding:3px 12px;font-size:.72rem;color:#fff;font-weight:700;letter-spacing:.08em;">間中記念御幸の浜リハビリテーション病院</div>
-        </div>
-        <div style="padding:1.3rem 1.4rem;">
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#E65100;flex-shrink:0;">▶</span><span>成長過程に必要な食事の栄養バランスを学ぶ</span></li>
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#E65100;flex-shrink:0;">▶</span><span>試合前・中・後の効果的な栄養補給方法</span></li>
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#E65100;flex-shrink:0;">▶</span><span>食事でパフォーマンスと回復力を高める</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 社会貢献活動 -->
-      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-        <div style="background:linear-gradient(135deg,#6A1B9A,#4A148C);padding:1.8rem 1.6rem;position:relative;overflow:hidden;">
-          <svg viewBox="0 0 100 100" style="position:absolute;top:50%;right:-6px;transform:translateY(-50%);width:130px;height:130px;pointer-events:none;"><path fill="#fff" opacity=".2" d="M50 84C32 72 20 60 16 47c-3-10 4-19 13-17 6 1 9 6 9 6s3-5 9-6c9-2 16 7 13 17"/><path fill="#fff" opacity=".28" d="M62 50c8 0 14 5 14 12s-6 12-14 12-14-5-14-12 6-12 14-12z"/><path stroke="#6A1B9A" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" d="M56 62l4 4 8-8"/></svg>
-          <div style="font-size:10px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.6);margin-bottom:.5rem;">COMMUNITY CONTRIBUTION</div>
-          <div style="font-size:1.35rem;font-weight:900;color:#fff;line-height:1.3;">社会貢献活動</div>
-          <div style="margin-top:.6rem;display:inline-block;background:rgba(255,255,255,.15);border-radius:100px;padding:3px 12px;font-size:.72rem;color:#fff;font-weight:700;letter-spacing:.08em;">地域とともに育つクラブ</div>
-        </div>
-        <div style="padding:1.3rem 1.4rem;">
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#6A1B9A;flex-shrink:0;">▶</span><span>クリーンアップ活動：学校グランド周辺のごみ拾いを月一回実施</span></li>
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#6A1B9A;flex-shrink:0;">▶</span><span>子どもたちが地域への感謝と責任感を育む機会に</span></li>
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:#6A1B9A;flex-shrink:0;">▶</span><span>サッカーを通じて人として大切なことを学ぶ</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- メッセージカード -->
-      <div style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-        <div style="background:linear-gradient(135deg,#0D1B4B,#162660);padding:1.8rem 1.6rem;position:relative;overflow:hidden;">
-          <svg viewBox="0 0 100 100" style="position:absolute;top:50%;right:-6px;transform:translateY(-50%);width:130px;height:130px;pointer-events:none;"><path fill="#fff" opacity=".2" d="M50 14l30 11v22c0 19-13 32-30 38-17-6-30-19-30-38V25z"/><path stroke="#fff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".55" d="M38 50l8 8 16-16"/></svg>
-          <div style="font-size:10px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.5);margin-bottom:.5rem;">OUR COMMITMENT</div>
-          <div style="font-size:1.35rem;font-weight:900;color:#fff;line-height:1.3;">私たちの約束</div>
-          <div style="margin-top:.6rem;display:inline-block;background:rgba(255,255,255,.15);border-radius:100px;padding:3px 12px;font-size:.72rem;color:#fff;font-weight:700;letter-spacing:.08em;">矢作サッカークラブの理念</div>
-        </div>
-        <div style="padding:1.3rem 1.4rem;">
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:7px;">
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:var(--red);flex-shrink:0;">▶</span><span>「サッカーを通じて、子どもたちの命と健康を守る」</span></li>
-            <li style="font-size:.82rem;color:var(--text2);display:flex;gap:8px;line-height:1.55;"><span style="color:var(--red);flex-shrink:0;">▶</span><span>グラウンドの内外で子どもたちが安心して活動できる環境づくりに取り組んでいます。</span></li>
-          </ul>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1510,59 +1704,75 @@ section > .si{position:relative;z-index:1;}
     <!-- ノートの内容 -->
     <!-- FANTASISTA 全幅カード -->
     <div style="margin-top:2.5rem;">
-      <div style="background:var(--off);border-radius:14px;border-top:4px solid var(--yellow);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.4rem 1.4rem 1.2rem;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.3rem;">LIFTING TRIAL</div>
-        <div style="font-size:1.05rem;font-weight:900;color:var(--text);margin-bottom:1rem;">目指せ FANTASISTA！</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:start;">
-
-          <!-- ブロンズ列 -->
-          <div style="display:flex;flex-direction:column;gap:6px;">
-            <div style="background:#fff;border-radius:8px;padding:.65rem .9rem;border-left:3px solid #cd7f32;">
-              <div style="font-size:.8rem;font-weight:700;color:var(--text);">🥉 ブロンズ（銅賞）</div>
-              <div style="font-size:.7rem;color:var(--text3);margin-top:.15rem;">表彰状受賞</div>
-            </div>
-            <div style="background:#f8f8f8;border-radius:6px;padding:.55rem .8rem;">
-              <div style="font-size:.72rem;font-weight:700;color:var(--red);margin-bottom:.2rem;">トライ-1</div>
-              <div style="font-size:.7rem;color:var(--text2);line-height:1.6;">とにかく100回<br>基準なし</div>
-            </div>
-          </div>
-
-          <!-- シルバー列 -->
-          <div style="display:flex;flex-direction:column;gap:6px;">
-            <div style="background:#fff;border-radius:8px;padding:.65rem .9rem;border-left:3px solid #aaa;">
-              <div style="font-size:.8rem;font-weight:700;color:var(--text);">🥈 シルバー（銀賞）</div>
-              <div style="font-size:.7rem;color:var(--text3);margin-top:.15rem;">メダル受賞</div>
-            </div>
-            <div style="background:#f8f8f8;border-radius:6px;padding:.55rem .8rem;">
-              <div style="font-size:.72rem;font-weight:700;color:var(--red);margin-bottom:.2rem;">トライ-2</div>
-              <div style="font-size:.7rem;color:var(--text2);line-height:1.6;">200回繰り返し<br>右→左→右→左<br>＊ボールの高さはへその位置</div>
-            </div>
-            <div style="background:#f8f8f8;border-radius:6px;padding:.55rem .8rem;">
-              <div style="font-size:.72rem;font-weight:700;color:var(--red);margin-bottom:.2rem;">トライ-3</div>
-              <div style="font-size:.7rem;color:var(--text2);line-height:1.6;">ジグザグ 15M<br>大パイロン11個（1.5M間隔）<br>右→左→右→左の繰り返し</div>
-            </div>
-          </div>
-
-          <!-- ゴールド列 -->
-          <div style="display:flex;flex-direction:column;gap:6px;">
-            <div style="background:var(--yellow-l);border-radius:8px;padding:.65rem .9rem;border:1px solid rgba(245,192,0,.5);border-left:3px solid var(--yellow);">
-              <div style="font-size:.8rem;font-weight:700;color:var(--text);">🥇 ゴールド（金賞）</div>
-              <div style="font-size:.7rem;color:var(--text3);margin-top:.15rem;">メダル受賞</div>
-            </div>
-            <div style="background:#f8f8f8;border-radius:6px;padding:.55rem .8rem;">
-              <div style="font-size:.72rem;font-weight:700;color:var(--red);margin-bottom:.2rem;">トライ-4</div>
-              <div style="font-size:.7rem;color:var(--text2);line-height:1.6;">300回繰り返し<br>右→左→右→左<br>＊ボールの高さはへその位置</div>
-            </div>
-            <div style="background:#f8f8f8;border-radius:6px;padding:.55rem .8rem;">
-              <div style="font-size:.72rem;font-weight:700;color:var(--red);margin-bottom:.2rem;">トライ-5</div>
-              <div style="font-size:.7rem;color:var(--text2);line-height:1.6;">ジグザグ 30M<br>大パイロン21個（1.5M間隔）<br>右→左→右→左の繰り返し</div>
-            </div>
-            <div style="background:#f8f8f8;border-radius:6px;padding:.55rem .8rem;">
-              <div style="font-size:.72rem;font-weight:700;color:var(--red);margin-bottom:.2rem;">トライ-6</div>
-              <div style="font-size:.7rem;color:var(--text2);line-height:1.6;">30回繰り返し<br>足→頭→腿の繰り返し<br>足・腿は左右自由に使える</div>
+      <div class="bc-wrap bc-fanta" id="fantaTabs" data-auto="8000">
+        <div class="bc-topbar">
+          <span class="bc-tag">LIFTING TRIAL</span>
+          <span class="bc-topbar-title">目指せ FANTASISTA！</span>
+          <span class="bc-topbar-right"><span class="bc-rec" aria-hidden="true"></span><span data-bc-clock>BRONZE</span></span>
+        </div>
+        <div class="bc-medal-tabs" role="tablist" aria-label="FANTASISTA ランク">
+        <button type="button" class="bc-tab bc-medal active" role="tab" id="bc-f-tab-bronze" aria-controls="bc-f-bronze" aria-selected="true" tabindex="0" data-clock="BRONZE" style="--m:#CD7F32;--m2:#8C5523;--mt:#fff;">
+          <span class="bc-medal-rank">BRONZE</span>
+          <span class="bc-medal-ja">ブロンズ（銅賞）</span>
+          <span class="bc-medal-meta">TRY 1 ／ 表彰状</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-f-tab-silver" aria-controls="bc-f-silver" aria-selected="false" tabindex="-1" data-clock="SILVER" style="--m:#D3D3D3;--m2:#8E8E8E;--mt:#111;">
+          <span class="bc-medal-rank">SILVER</span>
+          <span class="bc-medal-ja">シルバー（銀賞）</span>
+          <span class="bc-medal-meta">TRY 2–3 ／ メダル</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-f-tab-gold" aria-controls="bc-f-gold" aria-selected="false" tabindex="-1" data-clock="GOLD" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
+          <span class="bc-medal-rank">GOLD</span>
+          <span class="bc-medal-ja">ゴールド（金賞）</span>
+          <span class="bc-medal-meta">TRY 4–6 ／ メダル</span>
+        </button>
+        </div>
+        <div class="bc-stage">
+        <div class="bc-panel active" role="tabpanel" id="bc-f-bronze" aria-labelledby="bc-f-tab-bronze" style="--m:#CD7F32;--m2:#8C5523;--mt:#fff;">
+          <div class="bc-trials">
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-1</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="100">100</span><span class="bc-score-unit">回</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">とにかく100回</div><div class="bc-trial-detail">基準なし</div></div>
             </div>
           </div>
-
+          <div class="bc-award"><span class="bc-award-label">ALL CLEAR</span><span class="bc-award-text">ブロンズ（銅賞） ── 表彰状受賞</span></div>
+        </div>
+        <div class="bc-panel" role="tabpanel" id="bc-f-silver" aria-labelledby="bc-f-tab-silver" style="--m:#D3D3D3;--m2:#8E8E8E;--mt:#111;">
+          <div class="bc-trials">
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-2</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="200">200</span><span class="bc-score-unit">回</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">200回繰り返し</div><div class="bc-trial-detail">右→左→右→左<br>＊ボールの高さはへその位置</div></div>
+            </div>
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-3</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="15">15</span><span class="bc-score-unit">M</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">ジグザグ 15M</div><div class="bc-trial-detail">大パイロン11個（1.5M間隔）<br>右→左→右→左の繰り返し</div></div>
+            </div>
+          </div>
+          <div class="bc-award"><span class="bc-award-label">ALL CLEAR</span><span class="bc-award-text">シルバー（銀賞） ── メダル受賞</span></div>
+        </div>
+        <div class="bc-panel" role="tabpanel" id="bc-f-gold" aria-labelledby="bc-f-tab-gold" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
+          <div class="bc-trials">
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-4</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="300">300</span><span class="bc-score-unit">回</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">300回繰り返し</div><div class="bc-trial-detail">右→左→右→左<br>＊ボールの高さはへその位置</div></div>
+            </div>
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-5</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="30">30</span><span class="bc-score-unit">M</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">ジグザグ 30M</div><div class="bc-trial-detail">大パイロン21個（1.5M間隔）<br>右→左→右→左の繰り返し</div></div>
+            </div>
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-6</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="30">30</span><span class="bc-score-unit">回</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">30回繰り返し</div><div class="bc-trial-detail">足→頭→腿の繰り返し<br>足・腿は左右自由に使える</div></div>
+            </div>
+          </div>
+          <div class="bc-award"><span class="bc-award-label">ALL CLEAR</span><span class="bc-award-text">ゴールド（金賞） ── メダル受賞</span></div>
+        </div>
         </div>
       </div>
 
@@ -1606,37 +1816,71 @@ section > .si{position:relative;z-index:1;}
     <p style="font-size:.9rem;color:var(--text2);max-width:600px;margin-top:.5rem;">
       1974年の創設以来培われてきた指導理念のもと、コーチ陣が一人ひとりのお子さまに向き合います。
     </p>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:1.25rem;">
-      <span style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:7px 16px;font-size:.82rem;font-weight:700;color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.04);"><span style="width:9px;height:9px;border-radius:50%;background:#D91B2A;"></span>運営・統括 4名</span>
-      <span style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:7px 16px;font-size:.82rem;font-weight:700;color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.04);"><span style="width:9px;height:9px;border-radius:50%;background:#1565C0;"></span>U-12スタッフ 7名</span>
-      <span style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:7px 16px;font-size:.82rem;font-weight:700;color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.04);"><span style="width:9px;height:9px;border-radius:50%;background:#27AE60;"></span>U-10スタッフ 5名</span>
-      <span style="display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:7px 16px;font-size:.82rem;font-weight:700;color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.04);"><span style="width:9px;height:9px;border-radius:50%;background:#E65100;"></span>U-8スタッフ 4名</span>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2.5rem;">
-      <!-- スタッフ -->
+    <div class="bc-wrap bc-coach" id="coachTabs" data-auto="0">
+      <div class="bc-topbar">
+        <span class="bc-tag">YAHAGI SC</span>
+        <span class="bc-topbar-title">COACH &amp; STAFF</span>
+        <span class="bc-topbar-right"><span class="bc-rec" aria-hidden="true"></span><span data-bc-clock>STAFF</span></span>
+      </div>
+      <div class="bc-medal-tabs bc-tabs4" role="tablist" aria-label="コーチ・スタッフのカテゴリー">
+        <button type="button" class="bc-tab bc-medal active" role="tab" id="bc-c-tab-staff" aria-controls="bc-c-staff" aria-selected="true" tabindex="0" data-clock="STAFF" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
+          <span class="bc-medal-rank">STAFF</span>
+          <span class="bc-medal-ja">運営・統括</span>
+          <span class="bc-medal-meta">4名</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u12" aria-controls="bc-c-u12" aria-selected="false" tabindex="-1" data-clock="U-12" style="--m:#1565C0;--m2:#0D47A1;--mt:#fff;">
+          <span class="bc-medal-rank">U-12</span>
+          <span class="bc-medal-ja">U-12スタッフ</span>
+          <span class="bc-medal-meta">6名</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u10" aria-controls="bc-c-u10" aria-selected="false" tabindex="-1" data-clock="U-10" style="--m:#27AE60;--m2:#1B7A43;--mt:#fff;">
+          <span class="bc-medal-rank">U-10</span>
+          <span class="bc-medal-ja">U-10スタッフ</span>
+          <span class="bc-medal-meta">4名</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u8" aria-controls="bc-c-u8" aria-selected="false" tabindex="-1" data-clock="U-8" style="--m:#E65100;--m2:#BF360C;--mt:#fff;">
+          <span class="bc-medal-rank">U-8</span>
+          <span class="bc-medal-ja">U-8スタッフ</span>
+          <span class="bc-medal-meta">5名</span>
+        </button>
+      </div>
+      <div class="bc-stage">
+        <div class="bc-panel bc-coach-panel active" role="tabpanel" id="bc-c-staff" aria-labelledby="bc-c-tab-staff" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#D91B2A;">顧問</div><div class="coach-name">渋谷 芳美</div><div class="coach-name-en">YOSHIMI SHIBUYA</div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kouno.jpg" alt="河野 浩二" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">相談役・育成指導統括</div><div class="coach-name">河野 浩二</div><div class="coach-name-en">KOJI KOUNO</div><div class="coach-lic"><span>救命技能認定</span><span>スポーツ少年団指導者</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kusaka.jpg" alt="日下 研一" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">総監督・U-8&キッズ監督</div><div class="coach-name">日下 研一</div><div class="coach-name-en">KENICHI KUSAKA</div><div class="coach-lic"><span>JFA公認4級審判員</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_hayasaka.jpg" alt="早坂 浩明" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">クラブ代表・U-10監督</div><div class="coach-name">早坂 浩明</div><div class="coach-name-en">HIROAKI HAYASAKA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span><span>クラブウェルフェアオフィサー</span><span>小田原サッカー協会 運営部役員</span></div></div></div>
-      <!-- U-12 -->
+          </div>
+        </div>
+        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u12" aria-labelledby="bc-c-tab-u12" style="--m:#1565C0;--m2:#0D47A1;--mt:#fff;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_morohoshi.jpg" alt="諸星 達也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12監督</div><div class="coach-name">諸星 達也</div><div class="coach-name-en">TATSUYA MOROHOSHI</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_t.jpg" alt="柏木 誉史" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">柏木 誉史</div><div class="coach-name-en">TAKAFUMI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span><span>クラブウェルフェアオフィサー</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_seto.jpg" alt="瀬戸 俊明" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">瀬戸 俊明</div><div class="coach-name-en">TOSHIAKI SETO</div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_takahashi.jpg" alt="高橋 富康" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">高橋 富康</div><div class="coach-name-en">TOMIYASU TAKAHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_shimoda.jpg" alt="下田 翔也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">下田 翔也</div><div class="coach-name-en">SHOYA SHIMODA</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>JFA公認4級審判員</span><span>JFA公認キッズリーダー</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_isozaki.jpg" alt="磯﨑 幸二" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">磯﨑 幸二</div><div class="coach-name-en">KOJI ISOZAKI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>小田原サッカー協会 技術部役員</span></div></div></div>
-      <!-- U-10 -->
+          </div>
+        </div>
+        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u10" aria-labelledby="bc-c-tab-u10" style="--m:#27AE60;--m2:#1B7A43;--mt:#fff;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_ueda.jpg" alt="植田 健" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">植田 健</div><div class="coach-name-en">KEN UEDA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>赤十字ベーシックライフサポーター</span></div></div></div>
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">赤松 歩</div><div class="coach-name-en">AYUMU AKAMATSU</div><div class="coach-lic"><span>JFA公認4級審判員</span></div></div></div>
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">田中 祐也</div><div class="coach-name-en">YUYA TANAKA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">遠藤 匠</div><div class="coach-name-en">TAKUMI ENDO</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span></div></div></div>
-      <!-- U-8 -->
+          </div>
+        </div>
+        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u8" aria-labelledby="bc-c-tab-u8" style="--m:#E65100;--m2:#BF360C;--mt:#fff;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kinoe.jpg" alt="甲 淳一" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ・GK担当</div><div class="coach-name">甲 淳一</div><div class="coach-name-en">JUNICHI KINOE</div></div></div>
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">三橋 義昭</div><div class="coach-name-en">YOSHIAKI MITSUHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_tokunaga.jpg" alt="徳永 哲和" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">徳永 哲和</div><div class="coach-name-en">YOSHIKAZU TOKUNAGA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_tomo.jpg" alt="柏木 知之" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
-      <!-- U-8アシスタント -->
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8アシスタントコーチ</div><div class="coach-name">髙山 侑樹</div><div class="coach-name-en">YUKI TAKAYAMA</div><div class="coach-lic"><span>救命技能認定</span></div></div></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1648,104 +1892,147 @@ section > .si{position:relative;z-index:1;}
   <div class="si">
     <div class="sec-eyebrow">Category</div>
     <div class="sec-title">年齢・学年別<span class="yl">3つのカテゴリー</span></div>
-    <div class="course-grid">
-      <!-- U-8 -->
-      <div class="course-card">
-        <div class="course-top"><picture><source srcset="images/gallery_event_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="U-8"></picture><div class="course-top-overlay" style="background:rgba(217,27,42,.55);"><div class="course-cat">U-8</div><div class="course-age">1〜2年生</div></div></div>
-        <div class="course-body"><div class="course-name">低学年チーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>ボールタッチ・リフティング基礎</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：25点</span></li><li><span class="c-dot">▶</span><span>基礎練習＆サッカーの楽しさを学びます！</span></li></ul></div>
+    <div class="bc-wrap bc-course" id="courseTabs" data-auto="0">
+      <div class="bc-topbar">
+        <span class="bc-tag">YAHAGI SC</span>
+        <span class="bc-topbar-title">CATEGORY</span>
+        <span class="bc-topbar-right"><span class="bc-rec" aria-hidden="true"></span><span data-bc-clock>KIDS</span></span>
       </div>
-      <!-- U-10 -->
-      <div class="course-card">
-        <div class="course-top"><picture><source srcset="images/gallery_trophy.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_trophy.JPG" alt="U-10"></picture><div class="course-top-overlay" style="background:rgba(180,110,0,.6);"><div class="course-cat" style="color:var(--yellow);">U-10</div><div class="course-age" style="color:rgba(255,255,255,.9);">3〜4年生</div></div></div>
-        <div class="course-body" style="border-top:3px solid var(--yellow);"><div class="course-name">中学年チーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>基本＋実践技術を習得</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：35点</span></li><li><span class="c-dot">▶</span><span>2025年度 優勝・準優勝多数</span></li><li><span class="c-dot">▶</span><span>対人練習・パス・フォーメーション</span></li></ul></div>
+      <div class="bc-medal-tabs bc-tabs4" role="tablist" aria-label="年齢・学年別カテゴリー">
+        <button type="button" class="bc-tab bc-medal active" role="tab" id="bc-k-tab-kids" aria-controls="bc-k-kids" aria-selected="true" tabindex="0" data-clock="KIDS" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
+          <span class="bc-medal-rank">KIDS</span>
+          <span class="bc-medal-ja">キッズ教室</span>
+          <span class="bc-medal-meta">幼児〜年長</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u8" aria-controls="bc-k-u8" aria-selected="false" tabindex="-1" data-clock="U-8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
+          <span class="bc-medal-rank">U-8</span>
+          <span class="bc-medal-ja">低学年チーム</span>
+          <span class="bc-medal-meta">1〜2年生</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u10" aria-controls="bc-k-u10" aria-selected="false" tabindex="-1" data-clock="U-10" style="--m:#B46E00;--m2:#7A4A00;--mt:#fff;">
+          <span class="bc-medal-rank">U-10</span>
+          <span class="bc-medal-ja">中学年チーム</span>
+          <span class="bc-medal-meta">3〜4年生</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u12" aria-controls="bc-k-u12" aria-selected="false" tabindex="-1" data-clock="U-12" style="--m:#3566D6;--m2:#1F3A8A;--mt:#fff;">
+          <span class="bc-medal-rank">U-12</span>
+          <span class="bc-medal-ja">高学年チーム</span>
+          <span class="bc-medal-meta">5〜6年生</span>
+        </button>
       </div>
-      <!-- U-12 -->
-      <div class="course-card">
-        <div class="course-top"><picture><source srcset="images/hero_bg.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/hero_bg.JPG" alt="U-12"></picture><div class="course-top-overlay" style="background:rgba(13,27,62,.6);"><div class="course-cat">U-12</div><div class="course-age">5〜6年生</div></div></div>
-        <div class="course-body"><div class="course-name">高学年チーム</div><ul class="course-list"><li><span class="c-dot">▶</span><span>実践技術・チーム戦術を完成</span></li><li><span class="c-dot">▶</span><span>スキルテスト目標：40点以上</span></li><li><span class="c-dot">▶</span><span>県選手権・協会主催大会参加</span></li><li><span class="c-dot">▶</span><span>GK専門コーチ在籍</span></li></ul></div>
-      </div>
-    </div>
-
-    <!-- ★ キッズサッカー教室 セクション -->
-    <div style="margin-top:3.5rem;background:linear-gradient(135deg,#fff8f8 0%,#fff4e0 100%);border-radius:22px;border:2px solid rgba(217,27,42,.12);overflow:hidden;">
-
-      <!-- ヘッダー帯 -->
-      <div style="background:linear-gradient(90deg,var(--red-dark),var(--red));padding:1.2rem 2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:#fff;line-height:1;letter-spacing:.04em;">KIDS</div>
-        <div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.7);">SOCCER CLASS</div>
-          <div style="font-size:1.1rem;font-weight:900;color:#fff;letter-spacing:.05em;">キッズサッカー教室</div>
-        </div>
-        <div style="margin-left:auto;background:rgba(255,255,255,.2);border-radius:100px;padding:5px 16px;font-size:.78rem;font-weight:800;color:#fff;letter-spacing:.08em;white-space:nowrap;">幼児〜年長</div>
-      </div>
-
-      <!-- コンテンツ -->
-      <div class="kids-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:2rem;">
-
-        <!-- 左：プレゴールデンエイジ説明 -->
-        <div style="display:flex;flex-direction:column;gap:1rem;">
-          <div>
-            <div style="display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;font-size:11px;font-weight:900;letter-spacing:.15em;padding:4px 14px;border-radius:100px;margin-bottom:.75rem;">プレゴールデンエイジ（5〜8歳）</div>
-            <p style="font-size:.88rem;color:var(--text2);line-height:1.85;margin:0;">
-              脳や神経系が急速に発達し、<strong style="color:var(--text);">成人の約80%に達する</strong>この時期。多種多様な動作をたくさん経験することが何より大切です。
-            </p>
-          </div>
-
-          <!-- 動作キーワード -->
-          <div style="background:#fff;border-radius:14px;padding:1.2rem;box-shadow:0 2px 12px rgba(0,0,0,.06);">
-            <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.85rem;">あらゆる動きを経験</div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px;">
-              <span style="font-size:1rem;font-weight:900;color:var(--text);background:var(--red-pale);padding:8px 18px;border-radius:100px;border:1.5px solid rgba(217,27,42,.2);">走る</span>
-              <span style="font-size:1rem;font-weight:900;color:var(--text);background:var(--red-pale);padding:8px 18px;border-radius:100px;border:1.5px solid rgba(217,27,42,.2);">跳ぶ</span>
-              <span style="font-size:1rem;font-weight:900;color:var(--text);background:var(--red-pale);padding:8px 18px;border-radius:100px;border:1.5px solid rgba(217,27,42,.2);">転がる</span>
-              <span style="font-size:1rem;font-weight:900;color:var(--text);background:var(--red-pale);padding:8px 18px;border-radius:100px;border:1.5px solid rgba(217,27,42,.2);">投げる</span>
-              <span style="font-size:1rem;font-weight:900;color:#fff;background:var(--red);padding:8px 18px;border-radius:100px;border:1.5px solid var(--red);">蹴る</span>
+      <div class="bc-stage">
+        <div class="bc-panel active" role="tabpanel" id="bc-k-kids" aria-labelledby="bc-k-tab-kids" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
+          <div class="bc-cat-grid">
+            <div class="bc-cat-side">
+              <div class="bc-panel-en">PRE-GOLDEN AGE</div>
+              <div class="bc-cat-stat">
+                <div class="bc-cat-stat-label">脳や神経系の発達</div>
+                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="80">80</span><span class="bc-score-unit">%</span></div>
+                <div class="bc-cat-stat-cap">プレゴールデンエイジ（5〜8歳）は、脳や神経系が急速に発達し、成人の約80%に達する時期です。</div>
+              </div>
+              <p class="bc-cat-text">多種多様な動作をたくさん経験することが何より大切です。</p>
+              <div class="bc-points-label">あらゆる動きを経験</div>
+              <div class="bc-moves"><span>走る</span><span>跳ぶ</span><span>転がる</span><span>投げる</span><span class="hl">蹴る</span></div>
+              <p class="bc-cat-text">全身を動かす楽しさを知ることで<strong>神経回路のネットワーク</strong>が形成され、あらゆる動きを習得しやすい土台が育まれます。</p>
+            </div>
+            <div class="bc-cat-info">
+              <div class="bc-panel-en">SOCCER CLASS</div>
+              <div class="bc-lower-third">
+                <div class="bc-lt-title">キッズサッカー教室</div>
+                <div class="bc-lt-sub">幼児〜年長</div>
+              </div>
+              <div class="bc-points-label">CLASS INFO</div>
+              <dl class="bc-info-table">
+                <dt>練習日</dt><dd>土日祝　11:00〜12:00<br><span>夏時間 10:00〜11:00（7〜9月）</span></dd>
+                <dt>場所</dt><dd>矢作小学校グラウンド</dd>
+                <dt>対象</dt><dd>幼児（年少〜年長）</dd>
+                <dt>体験</dt><dd>無料・道具不要・当日OK</dd>
+              </dl>
+              <div class="bc-points-label">PROGRAM</div>
+              <ol class="bc-points">
+                <li><span class="bc-pt-num">01</span><span>多種多様な動き遊びで運動神経を育てる</span></li>
+                <li><span class="bc-pt-num">02</span><span>ボールに慣れる・サッカーの楽しさを体験</span></li>
+                <li><span class="bc-pt-num">03</span><span>元気な挨拶・礼儀・友達づくり</span></li>
+              </ol>
             </div>
           </div>
-
-          <div style="background:rgba(217,27,42,.07);border-left:3px solid var(--red);border-radius:0 10px 10px 0;padding:.9rem 1.1rem;">
-            <p style="font-size:.83rem;color:var(--text);line-height:1.8;margin:0;">全身を動かす楽しさを知ることで<strong>神経回路のネットワーク</strong>が形成され、あらゆる動きを習得しやすい土台が育まれます。</p>
+        </div>
+        <div class="bc-panel" role="tabpanel" id="bc-k-u8" aria-labelledby="bc-k-tab-u8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
+          <div class="bc-cat-grid">
+            <div class="bc-cat-photo">
+              <picture><source srcset="images/gallery_event_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="U-8"></picture>
+              <div class="bc-cat-photo-label"><span class="bc-cat-big">U-8</span><span class="bc-cat-age">1〜2年生</span></div>
+            </div>
+            <div class="bc-cat-info">
+              <div class="bc-panel-en">LOWER GRADES</div>
+              <div class="bc-lower-third">
+                <div class="bc-lt-title">低学年チーム</div>
+                <div class="bc-lt-sub">1〜2年生</div>
+              </div>
+              <div class="bc-cat-stat bc-cat-stat-inline">
+                <div class="bc-cat-stat-label">スキルテスト目標</div>
+                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="25">25</span><span class="bc-score-unit">点</span></div>
+              </div>
+              <div class="bc-points-label">KEY POINTS</div>
+              <ol class="bc-points">
+                <li><span class="bc-pt-num">01</span><span>ボールタッチ・リフティング基礎</span></li>
+                <li><span class="bc-pt-num">02</span><span>基礎練習＆サッカーの楽しさを学びます！</span></li>
+              </ol>
+            </div>
           </div>
         </div>
-
-        <!-- 右：クラス情報 -->
-        <div style="display:flex;flex-direction:column;gap:1rem;">
-          <div style="background:#fff;border-radius:16px;padding:1.4rem;box-shadow:0 4px 16px rgba(0,0,0,.08);">
-            <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.75rem;">CLASS INFO</div>
-            <ul style="list-style:none;display:flex;flex-direction:column;gap:.7rem;">
-              <li style="display:flex;align-items:flex-start;gap:8px;font-size:.86rem;color:var(--text2);line-height:1.6;">
-                <span style="color:var(--red);flex-shrink:0;font-weight:700;">●</span>
-                <span><strong style="color:var(--text);">練習日：</strong>土日祝　11:00〜12:00<br><span style="color:var(--text2);font-size:.92em;">夏時間 10:00〜11:00（7〜9月）</span></span>
-              </li>
-              <li style="display:flex;align-items:flex-start;gap:8px;font-size:.86rem;color:var(--text2);line-height:1.6;">
-                <span style="color:var(--red);flex-shrink:0;font-weight:700;">●</span>
-                <span><strong style="color:var(--text);">場所：</strong>矢作小学校グラウンド</span>
-              </li>
-              <li style="display:flex;align-items:flex-start;gap:8px;font-size:.86rem;color:var(--text2);line-height:1.6;">
-                <span style="color:var(--red);flex-shrink:0;font-weight:700;">●</span>
-                <span><strong style="color:var(--text);">対象：</strong>幼児（年少〜年長）</span>
-              </li>
-              <li style="display:flex;align-items:flex-start;gap:8px;font-size:.86rem;color:var(--text2);line-height:1.6;">
-                <span style="color:var(--red);flex-shrink:0;font-weight:700;">●</span>
-                <span><strong style="color:var(--text);">体験：</strong>無料・道具不要・当日OK</span>
-              </li>
-            </ul>
-          </div>
-
-          <div style="background:#fff;border-radius:16px;padding:1.4rem;box-shadow:0 4px 16px rgba(0,0,0,.08);">
-            <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.75rem;">PROGRAM</div>
-            <ul style="list-style:none;display:flex;flex-direction:column;gap:.55rem;">
-              <li style="display:flex;gap:8px;font-size:.85rem;color:var(--text2);line-height:1.55;"><span style="color:var(--red);flex-shrink:0;">▶</span><span>多種多様な動き遊びで運動神経を育てる</span></li>
-              <li style="display:flex;gap:8px;font-size:.85rem;color:var(--text2);line-height:1.55;"><span style="color:var(--red);flex-shrink:0;">▶</span><span>ボールに慣れる・サッカーの楽しさを体験</span></li>
-              <li style="display:flex;gap:8px;font-size:.85rem;color:var(--text2);line-height:1.55;"><span style="color:var(--red);flex-shrink:0;">▶</span><span>元気な挨拶・礼儀・友達づくり</span></li>
-            </ul>
+        <div class="bc-panel" role="tabpanel" id="bc-k-u10" aria-labelledby="bc-k-tab-u10" style="--m:#B46E00;--m2:#7A4A00;--mt:#fff;">
+          <div class="bc-cat-grid">
+            <div class="bc-cat-photo">
+              <picture><source srcset="images/gallery_trophy.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_trophy.JPG" alt="U-10"></picture>
+              <div class="bc-cat-photo-label"><span class="bc-cat-big">U-10</span><span class="bc-cat-age">3〜4年生</span></div>
+            </div>
+            <div class="bc-cat-info">
+              <div class="bc-panel-en">MIDDLE GRADES</div>
+              <div class="bc-lower-third">
+                <div class="bc-lt-title">中学年チーム</div>
+                <div class="bc-lt-sub">3〜4年生</div>
+              </div>
+              <div class="bc-cat-stat bc-cat-stat-inline">
+                <div class="bc-cat-stat-label">スキルテスト目標</div>
+                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="35">35</span><span class="bc-score-unit">点</span></div>
+              </div>
+              <div class="bc-points-label">KEY POINTS</div>
+              <ol class="bc-points">
+                <li><span class="bc-pt-num">01</span><span>基本＋実践技術を習得</span></li>
+                <li><span class="bc-pt-num">02</span><span>2025年度 優勝・準優勝多数</span></li>
+                <li><span class="bc-pt-num">03</span><span>対人練習・パス・フォーメーション</span></li>
+              </ol>
+            </div>
           </div>
         </div>
-
+        <div class="bc-panel" role="tabpanel" id="bc-k-u12" aria-labelledby="bc-k-tab-u12" style="--m:#3566D6;--m2:#1F3A8A;--mt:#fff;">
+          <div class="bc-cat-grid">
+            <div class="bc-cat-photo">
+              <picture><source srcset="images/hero_bg.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/hero_bg.JPG" alt="U-12"></picture>
+              <div class="bc-cat-photo-label"><span class="bc-cat-big">U-12</span><span class="bc-cat-age">5〜6年生</span></div>
+            </div>
+            <div class="bc-cat-info">
+              <div class="bc-panel-en">UPPER GRADES</div>
+              <div class="bc-lower-third">
+                <div class="bc-lt-title">高学年チーム</div>
+                <div class="bc-lt-sub">5〜6年生</div>
+              </div>
+              <div class="bc-cat-stat bc-cat-stat-inline">
+                <div class="bc-cat-stat-label">スキルテスト目標</div>
+                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="40">40</span><span class="bc-score-unit">点以上</span></div>
+              </div>
+              <div class="bc-points-label">KEY POINTS</div>
+              <ol class="bc-points">
+                <li><span class="bc-pt-num">01</span><span>実践技術・チーム戦術を完成</span></li>
+                <li><span class="bc-pt-num">02</span><span>県選手権・協会主催大会参加</span></li>
+                <li><span class="bc-pt-num">03</span><span>GK専門コーチ在籍</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- /キッズセクション -->
-
   </div>
 </section>
 
@@ -2372,7 +2659,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   var MAP = {
     news:      {en:'NEWS',      label:'お知らせ'},
     philosophy:{en:'PHILOSOPHY',label:'クラブについて', light:true},
-    safety:    {en:'SAFETY',    label:'安全への取り組み'},
+    safety:    {en:'SAFETY',    label:'安全への取り組み', light:true},
     onlyone:   {en:'ONLY ONE',  label:'オンリーワンノート'},
     coach:     {en:'COACH',     label:'コーチ紹介'},
     course:    {en:'CATEGORY',  label:'カテゴリー'},
@@ -2437,6 +2724,97 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     if(!ticking){ ticking = true; requestAnimationFrame(updateActive); }
   }, {passive:true});
   updateActive();
+})();
+</script>
+<script>
+// ======= スポーツ中継風タブ（安全・健康／FANTASISTA 共通） =======
+(function(){
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function initBroadcast(wrap){
+    var tabs = Array.prototype.slice.call(wrap.querySelectorAll('[role="tab"]'));
+    if(!tabs.length) return;
+    var panels = tabs.map(function(t){ return document.getElementById(t.getAttribute('aria-controls')); });
+    var clock = wrap.querySelector('[data-bc-clock]');
+    var autoAttr = wrap.getAttribute('data-auto');
+    var DUR = autoAttr === '0' ? 0 : (parseInt(autoAttr, 10) || 7000);
+    wrap.style.setProperty('--bc-dur', (DUR/1000) + 's');
+    var current = 0, timer = null, touched = false, inView = false, firstView = true;
+
+    function countUp(panel){
+      if(!panel) return;
+      panel.querySelectorAll('[data-n]').forEach(function(el){
+        var target = parseInt(el.getAttribute('data-n'), 10) || 0;
+        if(prefersReduced){ el.textContent = target; return; }
+        var t0 = null;
+        function step(ts){
+          if(!t0) t0 = ts;
+          var p = Math.min((ts - t0) / 750, 1);
+          p = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(target * p);
+          if(p < 1) requestAnimationFrame(step); else el.textContent = target;
+        }
+        requestAnimationFrame(step);
+      });
+    }
+    function clearRunning(){ tabs.forEach(function(t){ t.classList.remove('running'); }); }
+    function activate(i, focus){
+      current = (i + tabs.length) % tabs.length;
+      tabs.forEach(function(t, k){
+        var on = k === current;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.setAttribute('tabindex', on ? '0' : '-1');
+      });
+      panels.forEach(function(p, k){ if(p) p.classList.toggle('active', k === current); });
+      clearRunning();
+      var t = tabs[current];
+      if(clock) clock.textContent = t.getAttribute('data-clock') || '';
+      if(focus) t.focus();
+      var list = t.parentElement;
+      if(list.scrollWidth > list.clientWidth){
+        list.scrollTo({left: t.offsetLeft - 8, behavior: prefersReduced ? 'auto' : 'smooth'});
+      }
+      countUp(panels[current]);
+      schedule();
+    }
+    function schedule(){
+      clearTimeout(timer);
+      if(!DUR || prefersReduced || touched || !inView || document.hidden) return;
+      var t = tabs[current];
+      clearRunning(); void t.offsetWidth; t.classList.add('running');
+      timer = setTimeout(function(){ activate(current + 1, false); }, DUR);
+    }
+    function stopAuto(){ touched = true; clearTimeout(timer); clearRunning(); }
+
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){ stopAuto(); activate(i, false); });
+      t.addEventListener('keydown', function(e){
+        var k = e.key, next = null;
+        if(k === 'ArrowDown' || k === 'ArrowRight') next = current + 1;
+        if(k === 'ArrowUp' || k === 'ArrowLeft') next = current - 1;
+        if(k === 'Home') next = 0;
+        if(k === 'End') next = tabs.length - 1;
+        if(next !== null){ e.preventDefault(); stopAuto(); activate(next, true); }
+      });
+    });
+    panels.forEach(function(p){ if(p) p.addEventListener('pointerdown', stopAuto); });
+
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          inView = e.isIntersecting;
+          if(inView){
+            if(firstView){ firstView = false; countUp(panels[current]); }
+            schedule();
+          } else { clearTimeout(timer); clearRunning(); }
+        });
+      }, {threshold:.3}).observe(wrap);
+    }
+    document.addEventListener('visibilitychange', function(){
+      if(document.hidden){ clearTimeout(timer); clearRunning(); } else schedule();
+    });
+  }
+  document.querySelectorAll('.bc-wrap').forEach(initBroadcast);
 })();
 </script>
 <script>
@@ -2869,8 +3247,8 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   // 各セクション内の主要要素に reveal クラスを自動付与
   var selectors = [
     '.sec-title','.sec-eyebrow',
-    '.course-card','.coach-card','.phil-card','.faq-item','.sch-card',
-    '#course .kids-grid','#ob .si > div','#safety .safety-grid > *'
+    '.coach-card','.phil-card','.faq-item','.sch-card','#course .bc-wrap',
+    '#ob .si > div','#safety .bc-wrap','#onlyone .bc-fanta'
   ];
   var targets = [];
   selectors.forEach(function(sel){
