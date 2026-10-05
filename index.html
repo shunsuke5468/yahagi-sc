@@ -1562,6 +1562,23 @@ section > .si{position:relative;z-index:1;}
 @media (prefers-reduced-motion: reduce){
   .bc-kids .kd-move,.bc-kids .kd-ball,.bc-kids .kd-cloud,.bc-kids .bc-cat-score::before{animation:none;}
 }
+
+/* ===== 安全・健康：タブごとのテーマカラー ===== */
+.bc-safety .bc-lineup .bc-tab .bc-tab-num{color:var(--cl);opacity:.85;}
+@media (hover:hover){ .bc-safety .bc-lineup .bc-tab:not(.active):hover{background:linear-gradient(90deg,var(--glow),transparent 80%);} }
+.bc-safety .bc-lineup .bc-tab.active{background:linear-gradient(90deg,var(--c),var(--c2));color:var(--ct);box-shadow:inset 5px 0 0 var(--cl);}
+.bc-safety .bc-lineup .bc-tab.active .bc-tab-num{color:var(--ct);opacity:.7;}
+.bc-safety .bc-lineup .bc-tab.active .bc-tab-sub{color:var(--ct);opacity:.75;}
+.bc-safety .bc-tab::after{background:var(--ct);opacity:.85;}
+.bc-safety .bc-panel{background:radial-gradient(ellipse at 85% 15%,var(--glow),transparent 60%),repeating-linear-gradient(115deg,rgba(255,255,255,.025) 0 2px,transparent 2px 14px);}
+.bc-safety .bc-panel::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--c),transparent);}
+.bc-safety .bc-panel-en{color:var(--cl);}
+.bc-safety .bc-lt-title{border-left-color:var(--c);}
+.bc-safety .bc-lt-sub{background:var(--c);color:var(--ct);}
+.bc-safety .bc-pt-num{color:var(--cl);}
+@media (max-width:860px){
+  .bc-safety .bc-lineup .bc-tab.active{box-shadow:inset 0 -4px 0 var(--cl);}
+}
 </style>
 </head>
 <body>
@@ -1897,34 +1914,34 @@ section > .si{position:relative;z-index:1;}
         <div class="bc-lineup-wrap">
           <div class="bc-lineup-head">PROGRAM LINEUP</div>
           <div class="bc-lineup" role="tablist" aria-label="安全・健康への取り組み">
-          <button type="button" class="bc-tab active" role="tab" id="bc-s-tab-heat" aria-controls="bc-s-heat" aria-selected="true" tabindex="0" data-clock="01 / 06">
+          <button type="button" class="bc-tab active" role="tab" id="bc-s-tab-heat" style="--c:#D32F2F;--c2:#9A1B1B;--cl:#FF6F61;--ct:#fff;--glow:rgba(211,47,47,.30);" aria-controls="bc-s-heat" aria-selected="true" tabindex="0" data-clock="01 / 06">
             <span class="bc-tab-num">01</span>
             <span class="bc-tab-text"><span class="bc-tab-title">熱中症講座</span><span class="bc-tab-sub">HEATSTROKE PREVENTION</span></span>
           </button>
-          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-body" aria-controls="bc-s-body" aria-selected="false" tabindex="-1" data-clock="02 / 06">
+          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-body" style="--c:#1976D2;--c2:#0D47A1;--cl:#64B5FF;--ct:#fff;--glow:rgba(25,118,210,.32);" aria-controls="bc-s-body" aria-selected="false" tabindex="-1" data-clock="02 / 06">
             <span class="bc-tab-num">02</span>
             <span class="bc-tab-text"><span class="bc-tab-title">体のメンテナンス</span><span class="bc-tab-sub">BODY MAINTENANCE</span></span>
           </button>
-          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-aed" aria-controls="bc-s-aed" aria-selected="false" tabindex="-1" data-clock="03 / 06">
+          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-aed" style="--c:#1C8246;--c2:#11592F;--cl:#5EE39B;--ct:#fff;--glow:rgba(46,173,91,.26);" aria-controls="bc-s-aed" aria-selected="false" tabindex="-1" data-clock="03 / 06">
             <span class="bc-tab-num">03</span>
             <span class="bc-tab-text"><span class="bc-tab-title">AED講習</span><span class="bc-tab-sub">AED &amp; CPR TRAINING</span></span>
           </button>
-          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-food" aria-controls="bc-s-food" aria-selected="false" tabindex="-1" data-clock="04 / 06">
+          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-food" style="--c:#FB8C00;--c2:#E65100;--cl:#FFB04D;--ct:#111;--glow:rgba(251,140,0,.28);" aria-controls="bc-s-food" aria-selected="false" tabindex="-1" data-clock="04 / 06">
             <span class="bc-tab-num">04</span>
             <span class="bc-tab-text"><span class="bc-tab-title">スポーツ栄養学</span><span class="bc-tab-sub">SPORTS NUTRITION</span></span>
           </button>
-          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-community" aria-controls="bc-s-community" aria-selected="false" tabindex="-1" data-clock="05 / 06">
+          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-community" style="--c:#8E44AD;--c2:#5E2085;--cl:#C792FF;--ct:#fff;--glow:rgba(142,68,173,.32);" aria-controls="bc-s-community" aria-selected="false" tabindex="-1" data-clock="05 / 06">
             <span class="bc-tab-num">05</span>
             <span class="bc-tab-text"><span class="bc-tab-title">社会貢献活動</span><span class="bc-tab-sub">COMMUNITY CONTRIBUTION</span></span>
           </button>
-          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-promise" aria-controls="bc-s-promise" aria-selected="false" tabindex="-1" data-clock="06 / 06">
+          <button type="button" class="bc-tab" role="tab" id="bc-s-tab-promise" style="--c:#F5C000;--c2:#C79A00;--cl:#FFD84D;--ct:#111;--glow:rgba(245,192,0,.24);" aria-controls="bc-s-promise" aria-selected="false" tabindex="-1" data-clock="06 / 06">
             <span class="bc-tab-num">06</span>
             <span class="bc-tab-text"><span class="bc-tab-title">私たちの約束</span><span class="bc-tab-sub">OUR COMMITMENT</span></span>
           </button>
           </div>
         </div>
         <div class="bc-stage">
-          <div class="bc-panel active" role="tabpanel" id="bc-s-heat" aria-labelledby="bc-s-tab-heat">
+          <div class="bc-panel active" role="tabpanel" id="bc-s-heat" style="--c:#D32F2F;--c2:#9A1B1B;--cl:#FF6F61;--ct:#fff;--glow:rgba(211,47,47,.30);" aria-labelledby="bc-s-tab-heat">
             <div class="bc-panel-bignum" aria-hidden="true">01</div>
             <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><g fill="#fff" opacity=".22"><circle cx="50" cy="50" r="20"/></g><g stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".22"><line x1="50" y1="14" x2="50" y2="24"/><line x1="50" y1="76" x2="50" y2="86"/><line x1="14" y1="50" x2="24" y2="50"/><line x1="76" y1="50" x2="86" y2="50"/><line x1="25" y1="25" x2="32" y2="32"/><line x1="68" y1="68" x2="75" y2="75"/><line x1="25" y1="75" x2="32" y2="68"/><line x1="68" y1="32" x2="75" y2="25"/></g></svg>
             <div class="bc-panel-en">HEATSTROKE PREVENTION</div>
@@ -1939,7 +1956,7 @@ section > .si{position:relative;z-index:1;}
               <li><span class="bc-pt-num">03</span><span>保護者・コーチ対象の実践的な内容</span></li>
             </ol>
           </div>
-          <div class="bc-panel" role="tabpanel" id="bc-s-body" aria-labelledby="bc-s-tab-body">
+          <div class="bc-panel" role="tabpanel" id="bc-s-body" style="--c:#1976D2;--c2:#0D47A1;--cl:#64B5FF;--ct:#fff;--glow:rgba(25,118,210,.32);" aria-labelledby="bc-s-tab-body">
             <div class="bc-panel-bignum" aria-hidden="true">02</div>
             <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><g fill="#fff" opacity=".22"><rect x="20" y="44" width="14" height="12" rx="3"/><rect x="66" y="44" width="14" height="12" rx="3"/><rect x="30" y="40" width="10" height="20" rx="4"/><rect x="60" y="40" width="10" height="20" rx="4"/><rect x="38" y="46" width="24" height="8" rx="4"/></g></svg>
             <div class="bc-panel-en">BODY MAINTENANCE</div>
@@ -1954,7 +1971,7 @@ section > .si{position:relative;z-index:1;}
               <li><span class="bc-pt-num">03</span><span>成長期の子どもの体の正しい使い方</span></li>
             </ol>
           </div>
-          <div class="bc-panel" role="tabpanel" id="bc-s-aed" aria-labelledby="bc-s-tab-aed">
+          <div class="bc-panel" role="tabpanel" id="bc-s-aed" style="--c:#1C8246;--c2:#11592F;--cl:#5EE39B;--ct:#fff;--glow:rgba(46,173,91,.26);" aria-labelledby="bc-s-tab-aed">
             <div class="bc-panel-bignum" aria-hidden="true">03</div>
             <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" opacity=".22" d="M50 82C30 68 18 56 18 42c0-11 8-18 17-18 7 0 12 4 15 9 3-5 8-9 15-9 9 0 17 7 17 18 0 14-12 26-32 40z"/><path stroke="#fff" stroke-width="3.5" fill="none" stroke-linejoin="round" opacity=".55" d="M24 50h12l5-10 8 18 5-12 4 6h14"/></svg>
             <div class="bc-panel-en">AED &amp; CPR TRAINING</div>
@@ -1969,7 +1986,7 @@ section > .si{position:relative;z-index:1;}
               <li><span class="bc-pt-num">03</span><span>いざというときに動ける保護者・スタッフを育成</span></li>
             </ol>
           </div>
-          <div class="bc-panel" role="tabpanel" id="bc-s-food" aria-labelledby="bc-s-tab-food">
+          <div class="bc-panel" role="tabpanel" id="bc-s-food" style="--c:#FB8C00;--c2:#E65100;--cl:#FFB04D;--ct:#111;--glow:rgba(251,140,0,.28);" aria-labelledby="bc-s-tab-food">
             <div class="bc-panel-bignum" aria-hidden="true">04</div>
             <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" opacity=".22" d="M50 30c-5-12-18-14-26-9C15 27 12 42 18 58c5 14 18 26 32 30 14-4 27-16 32-30 6-16 3-31-6-37-8-5-21-3-26 9z"/><path stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".55" d="M50 30V16c0-4 4-8 9-8"/></svg>
             <div class="bc-panel-en">SPORTS NUTRITION</div>
@@ -1984,7 +2001,7 @@ section > .si{position:relative;z-index:1;}
               <li><span class="bc-pt-num">03</span><span>食事でパフォーマンスと回復力を高める</span></li>
             </ol>
           </div>
-          <div class="bc-panel" role="tabpanel" id="bc-s-community" aria-labelledby="bc-s-tab-community">
+          <div class="bc-panel" role="tabpanel" id="bc-s-community" style="--c:#8E44AD;--c2:#5E2085;--cl:#C792FF;--ct:#fff;--glow:rgba(142,68,173,.32);" aria-labelledby="bc-s-tab-community">
             <div class="bc-panel-bignum" aria-hidden="true">05</div>
             <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" opacity=".22" d="M50 84C32 72 20 60 16 47c-3-10 4-19 13-17 6 1 9 6 9 6s3-5 9-6c9-2 16 7 13 17"/><path fill="#fff" opacity=".3" d="M62 50c8 0 14 5 14 12s-6 12-14 12-14-5-14-12 6-12 14-12z"/></svg>
             <div class="bc-panel-en">COMMUNITY CONTRIBUTION</div>
@@ -1999,7 +2016,7 @@ section > .si{position:relative;z-index:1;}
               <li><span class="bc-pt-num">03</span><span>サッカーを通じて人として大切なことを学ぶ</span></li>
             </ol>
           </div>
-          <div class="bc-panel" role="tabpanel" id="bc-s-promise" aria-labelledby="bc-s-tab-promise">
+          <div class="bc-panel" role="tabpanel" id="bc-s-promise" style="--c:#F5C000;--c2:#C79A00;--cl:#FFD84D;--ct:#111;--glow:rgba(245,192,0,.24);" aria-labelledby="bc-s-tab-promise">
             <div class="bc-panel-bignum" aria-hidden="true">06</div>
             <svg class="bc-panel-icon" viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" opacity=".22" d="M50 14l30 11v22c0 19-13 32-30 38-17-6-30-19-30-38V25z"/><path stroke="#fff" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".6" d="M38 50l8 8 16-16"/></svg>
             <div class="bc-panel-en">OUR COMMITMENT</div>
