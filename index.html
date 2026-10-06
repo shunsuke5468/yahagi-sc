@@ -1655,6 +1655,60 @@ section > .si{position:relative;z-index:1;}
   .bc-cat-visual .bc-cat-big{font-size:clamp(4rem,20vw,5.6rem);}
 }
 @media (prefers-reduced-motion: reduce){ .bc-panel.active .bc-cat-visual .bc-cat-photo-label{animation:none;} }
+
+/* ===== U-8・U-10・U-12：スポーツ誌風×作戦ボード ===== */
+.bc-panel.bc-mag{background:#fff;color:#1d1d1d;overflow:hidden;}
+.bc-mag::before{content:'';position:absolute;left:-12%;top:-30%;width:53%;height:160%;background:var(--u);transform:rotate(12deg);z-index:0;}
+.bc-mag .bc-cat-grid{position:relative;z-index:1;min-height:0;align-items:center;}
+.mg-visual{position:relative;padding:2rem 1.6rem 2.2rem 2rem;}
+.mg-label{display:flex;align-items:baseline;gap:.8rem;margin-bottom:1rem;}
+.mg-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(4.4rem,8vw,6.6rem);line-height:.85;color:#fff;letter-spacing:.01em;text-shadow:4px 4px 0 rgba(0,0,0,.14);}
+.mg-age{font-size:.85rem;font-weight:900;color:var(--ut);background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.6);padding:.2rem .8rem;border-radius:100px;}
+.bc-mag[style*="--ut:#111"] .mg-age{background:rgba(255,255,255,.75);border-color:#fff;}
+.mg-board{position:relative;background:radial-gradient(ellipse at 30% 25%,rgba(255,255,255,.08),transparent 60%),#1F4D3A;border:9px solid #8B5A2B;border-radius:8px;box-shadow:0 14px 28px rgba(0,0,0,.25),inset 0 0 30px rgba(0,0,0,.25);transform:rotate(-2.5deg);}
+.mg-board svg{display:block;width:100%;height:auto;}
+.mg-tray{position:absolute;left:12%;right:12%;bottom:-17px;height:9px;background:#6E4520;border-radius:0 0 4px 4px;display:flex;gap:10px;justify-content:flex-end;padding-right:14px;}
+.mg-tray i{display:block;width:26px;height:6px;margin-top:-4px;border-radius:3px;background:#fff;}
+.mg-tray i:nth-child(2){background:#FFE27A;}.mg-tray i:nth-child(3){background:#FFB3C1;}
+.mg-board .ck{fill:none;stroke:#fff;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;opacity:.92;}
+.mg-board .ck-run{stroke:#FFE27A;stroke-dasharray:none;}
+.mg-board .ck-shot{stroke:#FFE27A;stroke-width:4;}
+.mg-board .ck-t{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.16em;fill:#FFE27A;opacity:.95;}
+.mg-board .ck-cone path{fill:none;stroke:#FFB347;stroke-width:3;stroke-linejoin:round;}
+.mg-board .ck-ball{fill:none;stroke:#fff;stroke-width:2.6;}
+.mg-board .ck-p circle{fill:none;stroke:#FFE27A;stroke-width:3;}
+.mg-board .ck-line{fill:none;stroke:#fff;stroke-width:2;opacity:.45;}
+.mg-board .ck-x path{fill:none;stroke:#FFB3C1;stroke-width:3;stroke-linecap:round;}
+.mg-board .ck-o circle{fill:#FFE27A;}
+.bc-panel.active .mg-board .chalk-draw{stroke-dasharray:1;stroke-dashoffset:1;animation:chalkDraw .9s cubic-bezier(.45,0,.2,1) forwards;animation-delay:var(--d,0s);}
+@keyframes chalkDraw{to{stroke-dashoffset:0}}
+.bc-panel.active .mg-board{animation:mgIn .6s cubic-bezier(.34,1.4,.64,1) both;}
+@keyframes mgIn{from{opacity:0;transform:rotate(-6deg) translateY(16px)}to{opacity:1;transform:rotate(-2.5deg)}}
+/* 右側：雑誌風の情報 */
+.bc-mag .bc-cat-info{background:none;padding:2.2rem 2.4rem 2.4rem 2.6rem;}
+.bc-mag .bc-panel-en{display:block;font-size:.9rem;letter-spacing:.26em;color:var(--ud);}
+.bc-mag .bc-lower-third{display:block;margin-top:.5rem;}
+.bc-mag .bc-lt-title{display:block;background:none;border:none;clip-path:none;padding:0;color:#111;font-size:clamp(2rem,3.6vw,2.8rem);line-height:1.15;letter-spacing:-.01em;}
+.bc-mag .bc-lt-title::before{content:'';display:block;width:44px;height:5px;background:var(--u);margin-bottom:.7rem;}
+.bc-mag .bc-lt-sub{display:inline-block;margin-top:.7rem;background:var(--u);color:var(--ut);clip-path:none;border-radius:2px;padding:.25rem .9rem;font-size:.82rem;}
+.bc-mag .bc-cat-stat-inline{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1.6rem;padding:.9rem 0;border-top:2px solid #111;border-bottom:1px solid #e6e6e6;}
+.bc-mag .bc-cat-stat-label{color:#444;font-size:.85rem;letter-spacing:.06em;}
+.bc-mag .bc-cat-score{border:none;background:none;padding:0;}
+.bc-mag .bc-score-num{color:var(--ud);text-shadow:none;font-size:3.4rem;}
+.bc-mag .bc-score-unit{color:var(--ud);}
+.bc-mag .bc-points-label{color:#888;margin-top:1.4rem;}
+.bc-mag .bc-points-label::after{background:#e6e6e6;}
+.bc-mag .bc-points li{color:#222;border-bottom-color:#eee;font-weight:700;}
+.bc-mag .bc-pt-num{color:var(--ud);}
+@media (max-width:860px){
+  .bc-mag::before{left:-20%;top:-60px;width:140%;height:330px;transform:rotate(-6deg);}
+  .mg-visual{padding:1.4rem 1.4rem 1.6rem;}
+  .mg-label{margin-bottom:.8rem;}
+  .bc-mag .bc-cat-info{padding:1.2rem 1.3rem 2rem;}
+}
+@media (prefers-reduced-motion: reduce){
+  .bc-panel.active .mg-board,.bc-panel.active .mg-board .chalk-draw{animation:none;stroke-dashoffset:0;}
+}
 </style>
 </head>
 <body>
@@ -2399,11 +2453,18 @@ section > .si{position:relative;z-index:1;}
           </div>
           <svg class="kd-grass" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C150 10 300 70 450 40 C600 10 750 70 900 40 C1050 10 1150 55 1200 40 L1200 80 L0 80 Z" fill="#7BC96F"/><path d="M0 56 C200 34 350 80 600 56 C850 32 1000 78 1200 56 L1200 80 L0 80 Z" fill="#5DB55A"/></svg>
         </div>
-        <div class="bc-panel bc-u8" role="tabpanel" id="bc-k-u8" aria-labelledby="bc-k-tab-u8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
+        <div class="bc-panel bc-mag" role="tabpanel" id="bc-k-u8" style="--u:#D91B2A;--ud:#B3121F;--ut:#fff;" aria-labelledby="bc-k-tab-u8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
           <div class="bc-cat-grid">
-            <div class="bc-cat-photo bc-cat-visual" aria-hidden="true">
-              <svg class="cv-deco" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true"><g fill="#F5C000"><path d="M60 70l7 15 16 2-12 11 3 16-14-8-14 8 3-16-12-11 16-2z"/><path d="M330 300l5 11 12 1-9 8 2 12-10-6-10 6 2-12-9-8 12-1z"/></g><g fill="#F7A6AD"><path d="M340 80l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/><path d="M70 320l4 8 9 1-6 6 1 9-8-4-8 4 1-9-6-6 9-1z"/></g><g fill="#D91B2A" opacity=".35"><circle cx="300" cy="40" r="6"/><circle cx="40" cy="200" r="5"/><circle cx="370" cy="200" r="4"/><circle cx="200" cy="370" r="5"/></g></svg>
-              <div class="bc-cat-photo-label"><span class="bc-cat-big">U-8</span><span class="bc-cat-age">1〜2年生</span></div>
+            <div class="mg-visual">
+              <div class="mg-label" aria-hidden="true"><span class="mg-big">U-8</span><span class="mg-age">1〜2年生</span></div>
+              <div class="mg-board" aria-hidden="true">
+                <svg viewBox="0 0 320 220"><defs><marker id="mk-u8" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><text class="ck-t" x="16" y="28">BALL TOUCH</text>
+<g class="ck-cone"><path d="M66 172 l9 -20 9 20z"/><path d="M126 172 l9 -20 9 20z"/><path d="M186 172 l9 -20 9 20z"/><path d="M246 172 l9 -20 9 20z"/></g>
+<path class="ck chalk-draw" style="--d:.15s" pathLength="1" marker-end="url(#mk-u8)" d="M36 150 C60 118 96 118 104 150 S140 182 164 150 S200 118 224 150 S262 182 292 140"/>
+<circle class="ck-ball" cx="36" cy="150" r="8"/>
+<path class="ck chalk-draw" style="--d:.9s" pathLength="1" d="M248 70 q12 -26 24 0 M262 92 q10 -22 20 0"/><circle class="ck-ball" cx="266" cy="104" r="7"/></svg>
+                <div class="mg-tray"><i></i><i></i><i></i></div>
+              </div>
             </div>
             <div class="bc-cat-info">
               <div class="bc-panel-en">LOWER GRADES</div>
@@ -2423,11 +2484,20 @@ section > .si{position:relative;z-index:1;}
             </div>
           </div>
         </div>
-        <div class="bc-panel bc-u10" role="tabpanel" id="bc-k-u10" aria-labelledby="bc-k-tab-u10" style="--m:#B46E00;--m2:#7A4A00;--mt:#fff;">
+        <div class="bc-panel bc-mag" role="tabpanel" id="bc-k-u10" style="--u:#E07800;--ud:#9A5200;--ut:#111;" aria-labelledby="bc-k-tab-u10" style="--m:#B46E00;--m2:#7A4A00;--mt:#fff;">
           <div class="bc-cat-grid">
-            <div class="bc-cat-photo bc-cat-visual" aria-hidden="true">
-              <svg class="cv-deco" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true"><g stroke="#fff" stroke-linecap="round" opacity=".28"><path d="M-20 90 L180 40" stroke-width="10"/><path d="M-20 140 L120 105" stroke-width="5"/><path d="M220 360 L420 310" stroke-width="10"/><path d="M280 380 L420 345" stroke-width="5"/></g><circle cx="335" cy="85" r="26" fill="none" stroke="#fff" stroke-width="5" opacity=".5"/><path d="M335 64l13 10-5 15h-16l-5-15z" fill="#fff" opacity=".5"/></svg>
-              <div class="bc-cat-photo-label"><span class="bc-cat-big">U-10</span><span class="bc-cat-age">3〜4年生</span></div>
+            <div class="mg-visual">
+              <div class="mg-label" aria-hidden="true"><span class="mg-big">U-10</span><span class="mg-age">3〜4年生</span></div>
+              <div class="mg-board" aria-hidden="true">
+                <svg viewBox="0 0 320 220"><defs><marker id="mk-u10" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><text class="ck-t" x="16" y="28">PASS &amp; MOVE</text>
+<g class="ck-p"><circle cx="70" cy="166" r="12"/><circle cx="250" cy="166" r="12"/><circle cx="160" cy="66" r="12"/></g>
+<path class="ck chalk-draw" style="--d:.15s" pathLength="1" marker-end="url(#mk-u10)" d="M86 166 L230 166"/>
+<path class="ck chalk-draw" style="--d:.55s" pathLength="1" marker-end="url(#mk-u10)" d="M242 152 L172 80"/>
+<path class="ck chalk-draw" style="--d:.95s" pathLength="1" marker-end="url(#mk-u10)" d="M148 80 L80 150"/>
+<path class="ck ck-run chalk-draw" style="--d:1.35s" pathLength="1" marker-end="url(#mk-u10)" d="M58 186 Q20 140 54 104"/>
+<circle class="ck-ball" cx="104" cy="166" r="7"/></svg>
+                <div class="mg-tray"><i></i><i></i><i></i></div>
+              </div>
             </div>
             <div class="bc-cat-info">
               <div class="bc-panel-en">MIDDLE GRADES</div>
@@ -2442,17 +2512,25 @@ section > .si{position:relative;z-index:1;}
               <div class="bc-points-label">KEY POINTS</div>
               <ol class="bc-points">
                 <li><span class="bc-pt-num">01</span><span>基本＋実践技術を習得</span></li>
-                <li><span class="bc-pt-num">02</span><span>2025年度 優勝・準優勝多数</span></li>
-                <li><span class="bc-pt-num">03</span><span>対人練習・パス・フォーメーション</span></li>
+                <li><span class="bc-pt-num">02</span><span>対人練習・パス・フォーメーション</span></li>
               </ol>
             </div>
           </div>
         </div>
-        <div class="bc-panel bc-u12" role="tabpanel" id="bc-k-u12" aria-labelledby="bc-k-tab-u12" style="--m:#3566D6;--m2:#1F3A8A;--mt:#fff;">
+        <div class="bc-panel bc-mag" role="tabpanel" id="bc-k-u12" style="--u:#2E5FD0;--ud:#1F44A0;--ut:#fff;" aria-labelledby="bc-k-tab-u12" style="--m:#3566D6;--m2:#1F3A8A;--mt:#fff;">
           <div class="bc-cat-grid">
-            <div class="bc-cat-photo bc-cat-visual" aria-hidden="true">
-              <svg class="cv-deco" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2" opacity=".18"><rect x="20" y="20" width="360" height="360"/><line x1="20" y1="200" x2="380" y2="200"/><circle cx="200" cy="200" r="56"/><rect x="120" y="20" width="160" height="62"/><rect x="160" y="20" width="80" height="24"/><rect x="120" y="318" width="160" height="62"/><rect x="160" y="356" width="80" height="24"/></g><circle cx="200" cy="200" r="4" fill="#fff" opacity=".35"/></svg>
-              <div class="bc-cat-photo-label"><span class="bc-cat-big">U-12</span><span class="bc-cat-age">5〜6年生</span></div>
+            <div class="mg-visual">
+              <div class="mg-label" aria-hidden="true"><span class="mg-big">U-12</span><span class="mg-age">5〜6年生</span></div>
+              <div class="mg-board" aria-hidden="true">
+                <svg viewBox="0 0 320 220"><defs><marker id="mk-u12" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><text class="ck-t" x="16" y="28">TEAM TACTICS</text>
+<g class="ck-line"><rect x="22" y="40" width="276" height="166"/><path d="M110 40 L110 76 L210 76 L210 40 M140 40 L140 52 L180 52 L180 40 M22 206"/><path d="M110 206 A50 50 0 0 1 210 206"/></g>
+<g class="ck-x"><path d="M114 104 l10 10 m0 -10 l-10 10"/><path d="M196 104 l10 10 m0 -10 l-10 10"/><path d="M155 76 l10 10 m0 -10 l-10 10"/></g>
+<g class="ck-o"><circle cx="90" cy="182" r="7"/><circle cx="230" cy="182" r="7"/><circle cx="70" cy="140" r="7"/><circle cx="160" cy="150" r="7"/><circle cx="250" cy="140" r="7"/><circle cx="160" cy="104" r="7"/></g>
+<path class="ck chalk-draw" style="--d:.15s" pathLength="1" marker-end="url(#mk-u12)" d="M168 146 L240 138"/>
+<path class="ck chalk-draw" style="--d:.55s" pathLength="1" marker-end="url(#mk-u12)" d="M244 132 L170 106"/>
+<path class="ck ck-shot chalk-draw" style="--d:.95s" pathLength="1" marker-end="url(#mk-u12)" d="M160 96 L160 56"/></svg>
+                <div class="mg-tray"><i></i><i></i><i></i></div>
+              </div>
             </div>
             <div class="bc-cat-info">
               <div class="bc-panel-en">UPPER GRADES</div>
