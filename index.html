@@ -1798,7 +1798,7 @@ section > .si{position:relative;z-index:1;}
 @media (prefers-reduced-motion: reduce){ .bc-panel.active .sf-clip{animation:none;} }
 
 /* ===== コーチ紹介：白地×色帯×雑誌風プロフィールカード（HTMLは変更せずCSSのみ） ===== */
-#bc-c-staff{--md:#B3121F;} #bc-c-u12{--md:#0D47A1;} #bc-c-u10{--md:#1B7A43;} #bc-c-u8{--md:#B45300;}
+#bc-c-staff{--md:#8A6A00;} #bc-c-u8{--md:#B3121F;} #bc-c-u10{--md:#9A5200;} #bc-c-u12{--md:#1F44A0;}
 .bc-coach .bc-panel{position:relative;overflow:hidden;padding:1.8rem;
   background:repeating-linear-gradient(115deg,rgba(0,0,0,.018) 0 2px,transparent 2px 16px),#F2F3F5;}
 .bc-coach .bc-panel::before{content:'';position:absolute;left:-12%;top:-140px;width:48%;height:420px;background:var(--m);transform:rotate(12deg);opacity:.95;}
@@ -1832,6 +1832,41 @@ section > .si{position:relative;z-index:1;}
   .bc-coach .bc-panel{padding:1.1rem;}
   .bc-coach .bc-panel::before{left:-20%;top:-160px;width:140%;height:300px;transform:rotate(-6deg);}
 }
+
+/* ===== カテゴリー（U-8〜U-12）：黒板は右上・文字の後ろに（安全・健康と同じ配置） ===== */
+.bc-mag::before{left:-14%;width:42%;}
+.bc-mag .bc-cat-grid{grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);min-height:400px;}
+.mg-visual{position:static;display:flex;align-items:center;padding:2rem 1rem 2rem 1.8rem;}
+.mg-label{flex-direction:column;align-items:flex-start;gap:.7rem;margin:0;}
+.mg-big{font-size:clamp(4.8rem,8.6vw,7rem);}
+.mg-board{position:absolute;top:1.3rem;right:1.4rem;width:260px;z-index:0;transform:rotate(6deg);border-width:6px;box-shadow:0 10px 20px rgba(0,0,0,.22),inset 0 0 20px rgba(0,0,0,.25);}
+.mg-tray{bottom:-12px;height:6px;gap:6px;padding-right:8px;}
+.mg-tray i{width:16px;height:4px;margin-top:-3px;}
+.bc-panel.active .mg-board{animation:mgIn2 .6s cubic-bezier(.34,1.4,.64,1) both;}
+@keyframes mgIn2{from{opacity:0;transform:rotate(14deg) translateY(-10px)}to{opacity:1;transform:rotate(6deg)}}
+.bc-mag .bc-cat-info{position:relative;z-index:1;padding:2.4rem 2.2rem 2.4rem 1.6rem;}
+@media (max-width:1100px) and (min-width:861px){
+  .bc-mag .bc-cat-grid{grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);}
+  .bc-mag::before{left:-18%;width:43%;}
+  .mg-big{font-size:4.4rem;}
+  .mg-board{width:205px;}
+  .bc-mag .bc-cat-info{padding-left:2.8rem;}
+}
+@media (max-width:860px){
+  .bc-mag .bc-cat-grid{grid-template-columns:minmax(0,1fr);min-height:0;}
+  .bc-mag::before{left:-20%;top:-60px;width:140%;height:190px;transform:rotate(-6deg);}
+  .mg-visual{padding:1.3rem 1.3rem .6rem;}
+  .mg-label{flex-direction:column;align-items:flex-start;gap:.5rem;}
+  .mg-big{font-size:3.6rem;}
+  .mg-board{width:min(168px,40vw);top:.9rem;right:.9rem;border-width:5px;}
+  .bc-mag .bc-cat-info{padding:2.4rem 1.3rem 2rem;}
+}
+@media (prefers-reduced-motion: reduce){ .bc-panel.active .mg-board{animation:none;} }
+
+@media (min-width:1101px){ .bc-mag .bc-cat-stat-inline{margin-top:3.4rem;} }
+@media (max-width:1100px) and (min-width:861px){ .bc-mag .bc-cat-stat-inline{margin-top:2.2rem;} }
+
+@media (max-width:370px){ .mg-big{font-size:3.1rem;} }
 </style>
 </head>
 <body>
@@ -2510,29 +2545,29 @@ section > .si{position:relative;z-index:1;}
         <span class="bc-topbar-right"><span class="bc-rec" aria-hidden="true"></span><span data-bc-clock>STAFF</span></span>
       </div>
       <div class="bc-medal-tabs bc-tabs4" role="tablist" aria-label="コーチ・スタッフのカテゴリー">
-        <button type="button" class="bc-tab bc-medal active" role="tab" id="bc-c-tab-staff" aria-controls="bc-c-staff" aria-selected="true" tabindex="0" data-clock="STAFF" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
+        <button type="button" class="bc-tab bc-medal active" role="tab" id="bc-c-tab-staff" aria-controls="bc-c-staff" aria-selected="true" tabindex="0" data-clock="STAFF" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
           <span class="bc-medal-rank">STAFF</span>
           <span class="bc-medal-ja">運営・統括</span>
           <span class="bc-medal-meta">4名</span>
         </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u12" aria-controls="bc-c-u12" aria-selected="false" tabindex="-1" data-clock="U-12" style="--m:#1565C0;--m2:#0D47A1;--mt:#fff;">
-          <span class="bc-medal-rank">U-12</span>
-          <span class="bc-medal-ja">U-12スタッフ</span>
-          <span class="bc-medal-meta">6名</span>
-        </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u10" aria-controls="bc-c-u10" aria-selected="false" tabindex="-1" data-clock="U-10" style="--m:#27AE60;--m2:#1B7A43;--mt:#fff;">
-          <span class="bc-medal-rank">U-10</span>
-          <span class="bc-medal-ja">U-10スタッフ</span>
-          <span class="bc-medal-meta">4名</span>
-        </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u8" aria-controls="bc-c-u8" aria-selected="false" tabindex="-1" data-clock="U-8" style="--m:#E65100;--m2:#BF360C;--mt:#fff;">
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u8" aria-controls="bc-c-u8" aria-selected="false" tabindex="-1" data-clock="U-8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
           <span class="bc-medal-rank">U-8</span>
           <span class="bc-medal-ja">U-8スタッフ</span>
           <span class="bc-medal-meta">5名</span>
         </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u10" aria-controls="bc-c-u10" aria-selected="false" tabindex="-1" data-clock="U-10" style="--m:#E07800;--m2:#A85A00;--mt:#111;">
+          <span class="bc-medal-rank">U-10</span>
+          <span class="bc-medal-ja">U-10スタッフ</span>
+          <span class="bc-medal-meta">4名</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u12" aria-controls="bc-c-u12" aria-selected="false" tabindex="-1" data-clock="U-12" style="--m:#2E5FD0;--m2:#1F44A0;--mt:#fff;">
+          <span class="bc-medal-rank">U-12</span>
+          <span class="bc-medal-ja">U-12スタッフ</span>
+          <span class="bc-medal-meta">6名</span>
+        </button>
       </div>
       <div class="bc-stage">
-        <div class="bc-panel bc-coach-panel active" role="tabpanel" id="bc-c-staff" aria-labelledby="bc-c-tab-staff" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
+        <div class="bc-panel bc-coach-panel active" role="tabpanel" id="bc-c-staff" aria-labelledby="bc-c-tab-staff" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#D91B2A;">顧問</div><div class="coach-name">渋谷 芳美</div><div class="coach-name-en">YOSHIMI SHIBUYA</div></div></div>
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kouno.jpg" alt="河野 浩二" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">相談役・育成指導統括</div><div class="coach-name">河野 浩二</div><div class="coach-name-en">KOJI KOUNO</div><div class="coach-lic"><span>救命技能認定</span><span>スポーツ少年団指導者</span></div></div></div>
@@ -2540,17 +2575,16 @@ section > .si{position:relative;z-index:1;}
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_hayasaka.jpg" alt="早坂 浩明" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">クラブ代表・U-10監督</div><div class="coach-name">早坂 浩明</div><div class="coach-name-en">HIROAKI HAYASAKA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span><span>クラブウェルフェアオフィサー</span><span>小田原サッカー協会 運営部役員</span></div></div></div>
           </div>
         </div>
-        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u12" aria-labelledby="bc-c-tab-u12" style="--m:#1565C0;--m2:#0D47A1;--mt:#fff;">
+        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u8" aria-labelledby="bc-c-tab-u8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_morohoshi.jpg" alt="諸星 達也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12監督</div><div class="coach-name">諸星 達也</div><div class="coach-name-en">TATSUYA MOROHOSHI</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_t.jpg" alt="柏木 誉史" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">柏木 誉史</div><div class="coach-name-en">TAKAFUMI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span><span>クラブウェルフェアオフィサー</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_seto.jpg" alt="瀬戸 俊明" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">瀬戸 俊明</div><div class="coach-name-en">TOSHIAKI SETO</div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_takahashi.jpg" alt="高橋 富康" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">高橋 富康</div><div class="coach-name-en">TOMIYASU TAKAHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_shimoda.jpg" alt="下田 翔也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">下田 翔也</div><div class="coach-name-en">SHOYA SHIMODA</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>JFA公認4級審判員</span><span>JFA公認キッズリーダー</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_isozaki.jpg" alt="磯﨑 幸二" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">磯﨑 幸二</div><div class="coach-name-en">KOJI ISOZAKI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>小田原サッカー協会 技術部役員</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kinoe.jpg" alt="甲 淳一" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ・GK担当</div><div class="coach-name">甲 淳一</div><div class="coach-name-en">JUNICHI KINOE</div></div></div>
+      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">三橋 義昭</div><div class="coach-name-en">YOSHIAKI MITSUHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_tokunaga.jpg" alt="徳永 哲和" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">徳永 哲和</div><div class="coach-name-en">YOSHIKAZU TOKUNAGA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_tomo.jpg" alt="柏木 知之" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8アシスタントコーチ</div><div class="coach-name">髙山 侑樹</div><div class="coach-name-en">YUKI TAKAYAMA</div><div class="coach-lic"><span>救命技能認定</span></div></div></div>
           </div>
         </div>
-        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u10" aria-labelledby="bc-c-tab-u10" style="--m:#27AE60;--m2:#1B7A43;--mt:#fff;">
+        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u10" aria-labelledby="bc-c-tab-u10" style="--m:#E07800;--m2:#A85A00;--mt:#111;">
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_ueda.jpg" alt="植田 健" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">植田 健</div><div class="coach-name-en">KEN UEDA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>赤十字ベーシックライフサポーター</span></div></div></div>
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">赤松 歩</div><div class="coach-name-en">AYUMU AKAMATSU</div><div class="coach-lic"><span>JFA公認4級審判員</span></div></div></div>
@@ -2558,13 +2592,14 @@ section > .si{position:relative;z-index:1;}
       <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">遠藤 匠</div><div class="coach-name-en">TAKUMI ENDO</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span></div></div></div>
           </div>
         </div>
-        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u8" aria-labelledby="bc-c-tab-u8" style="--m:#E65100;--m2:#BF360C;--mt:#fff;">
+        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u12" aria-labelledby="bc-c-tab-u12" style="--m:#2E5FD0;--m2:#1F44A0;--mt:#fff;">
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kinoe.jpg" alt="甲 淳一" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ・GK担当</div><div class="coach-name">甲 淳一</div><div class="coach-name-en">JUNICHI KINOE</div></div></div>
-      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">三橋 義昭</div><div class="coach-name-en">YOSHIAKI MITSUHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_tokunaga.jpg" alt="徳永 哲和" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">徳永 哲和</div><div class="coach-name-en">YOSHIKAZU TOKUNAGA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_tomo.jpg" alt="柏木 知之" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8アシスタントコーチ</div><div class="coach-name">髙山 侑樹</div><div class="coach-name-en">YUKI TAKAYAMA</div><div class="coach-lic"><span>救命技能認定</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_morohoshi.jpg" alt="諸星 達也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12監督</div><div class="coach-name">諸星 達也</div><div class="coach-name-en">TATSUYA MOROHOSHI</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_t.jpg" alt="柏木 誉史" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">柏木 誉史</div><div class="coach-name-en">TAKAFUMI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span><span>クラブウェルフェアオフィサー</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_seto.jpg" alt="瀬戸 俊明" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">瀬戸 俊明</div><div class="coach-name-en">TOSHIAKI SETO</div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_takahashi.jpg" alt="高橋 富康" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">高橋 富康</div><div class="coach-name-en">TOMIYASU TAKAHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_shimoda.jpg" alt="下田 翔也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">下田 翔也</div><div class="coach-name-en">SHOYA SHIMODA</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>JFA公認4級審判員</span><span>JFA公認キッズリーダー</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_isozaki.jpg" alt="磯﨑 幸二" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">磯﨑 幸二</div><div class="coach-name-en">KOJI ISOZAKI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>小田原サッカー協会 技術部役員</span></div></div></div>
           </div>
         </div>
       </div>
@@ -2596,12 +2631,12 @@ section > .si{position:relative;z-index:1;}
           <span class="bc-medal-ja">低学年チーム</span>
           <span class="bc-medal-meta">1〜2年生</span>
         </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u10" aria-controls="bc-k-u10" aria-selected="false" tabindex="-1" data-clock="U-10" style="--m:#B46E00;--m2:#7A4A00;--mt:#fff;">
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u10" aria-controls="bc-k-u10" aria-selected="false" tabindex="-1" data-clock="U-10" style="--m:#E07800;--m2:#A85A00;--mt:#111;">
           <span class="bc-medal-rank">U-10</span>
           <span class="bc-medal-ja">中学年チーム</span>
           <span class="bc-medal-meta">3〜4年生</span>
         </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u12" aria-controls="bc-k-u12" aria-selected="false" tabindex="-1" data-clock="U-12" style="--m:#3566D6;--m2:#1F3A8A;--mt:#fff;">
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u12" aria-controls="bc-k-u12" aria-selected="false" tabindex="-1" data-clock="U-12" style="--m:#2E5FD0;--m2:#1F44A0;--mt:#fff;">
           <span class="bc-medal-rank">U-12</span>
           <span class="bc-medal-ja">高学年チーム</span>
           <span class="bc-medal-meta">5〜6年生</span>
