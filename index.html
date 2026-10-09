@@ -1867,6 +1867,180 @@ section > .si{position:relative;z-index:1;}
 @media (max-width:1100px) and (min-width:861px){ .bc-mag .bc-cat-stat-inline{margin-top:2.2rem;} }
 
 @media (max-width:370px){ .mg-big{font-size:3.1rem;} }
+
+
+/* ===================================================================
+   RED ENERGY テーマ　第1段階：土台（色・文字・見出し・ボタン・メニュー・テロップ・追従ボタン・フッター）
+   赤 #D91B2A ／ 黄 #F5C000 ／ 黒 #111 ／ 白。見出しは太い斜体、ボタンは斜め＋黒い影
+   =================================================================== */
+/* メニュー */
+.nav{background:#fff;border-bottom:4px solid var(--red);box-shadow:0 4px 0 rgba(0,0,0,.08);-webkit-backdrop-filter:none;backdrop-filter:none;}
+.nav-logo-text{font-style:italic;font-size:.82rem;}
+.nav-logo-text span{font-style:italic;color:var(--red);}
+.nav-link{color:#111;font-weight:900;border-radius:0;}
+.nav-link:hover,.nav-link.active{color:var(--red);background:none;box-shadow:inset 0 -3px 0 var(--red);}
+.nav-cta{background:var(--yellow);color:#111;border-radius:0;font-style:italic;transform:skewX(-12deg);box-shadow:4px 4px 0 #111;padding:.55rem 1.3rem;margin-left:.9rem;transition:transform .15s,box-shadow .15s;}
+.nav-cta:hover{background:#FFD21F;transform:skewX(-12deg) translate(-2px,-2px);box-shadow:6px 6px 0 #111;}
+/* 流れるテロップ */
+.ticker{background:#111;border-bottom:3px solid var(--yellow);}
+.ticker-item{font-weight:900;font-style:italic;letter-spacing:.08em;font-size:12px;}
+.ticker-star{color:var(--yellow);}
+/* セクション見出し */
+.sec-eyebrow{font-family:inherit;font-style:italic;font-weight:900;letter-spacing:.24em;font-size:13px;}
+.sec-eyebrow::before{width:24px;height:5px;border-radius:0;transform:skewX(-24deg);}
+.sec-title{font-style:italic;font-weight:900;letter-spacing:-.03em;font-size:clamp(1.75rem,3.9vw,2.9rem);line-height:1.18;}
+.sec-title .hl{color:var(--red);background-image:linear-gradient(transparent 64%,rgba(245,192,0,.6) 64%);}
+/* ボタン（斜め＋黒い影） */
+.btn{border-radius:0 !important;font-style:italic;font-weight:900;transform:skewX(-10deg);transition:transform .15s,box-shadow .15s,background .2s;}
+.btn-yellow{background:var(--yellow);color:#111;box-shadow:5px 5px 0 #111;animation:none;}
+.btn-yellow:hover{transform:skewX(-10deg) translate(-2px,-2px);box-shadow:8px 8px 0 #111;}
+.btn-white{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;border:2.5px solid #fff;color:#fff;}
+.btn-white:hover{background:#fff;color:#111;transform:skewX(-10deg);}
+/* 追従ボタン（LINEだと分かるよう緑のまま、形をそろえる） */
+.float-cta{border-radius:6px;font-style:italic;font-weight:900;box-shadow:4px 4px 0 #111;}
+/* トップへ戻る */
+.to-top{border-radius:0;background:#111;box-shadow:3px 3px 0 var(--yellow);}
+/* フッター */
+.footer{background:#111;border-top:6px solid var(--red);}
+.footer-brand-name{font-style:italic;}
+.footer-col-title{color:var(--yellow);font-style:italic;font-weight:900;letter-spacing:.14em;}
+@media (prefers-reduced-motion: reduce){ .nav-cta,.btn{transition:none;} }
+
+/* ===== RED ENERGY 第1段階（仕上げ） ===== */
+/* セクション間の区切り：赤・黄・黒の斜めストライプ */
+.div-stripe{height:10px;background:repeating-linear-gradient(115deg,var(--red) 0 22px,var(--yellow) 22px 30px,#111 30px 38px);background-size:auto;animation:none;}
+/* 背景の大きな英字も斜体に */
+.sec-bg-word{font-style:italic;-webkit-text-stroke-color:rgba(217,27,42,.09);}
+.sec-bg-word.light{-webkit-text-stroke-color:rgba(255,255,255,.09);}
+/* スマホのメニュー */
+.mobile-menu{border-bottom:4px solid var(--red);box-shadow:0 10px 0 rgba(0,0,0,.06);}
+.mobile-menu a{font-weight:900;font-style:italic;color:#111;border-radius:0;border-left:4px solid transparent;}
+.mobile-menu a:hover{background:none;color:var(--red);border-left-color:var(--red);}
+.mobile-menu .m-cta{background:var(--yellow);color:#111;border-radius:0;border-left:none;transform:skewX(-10deg);box-shadow:5px 5px 0 #111;margin:.8rem .4rem 0;}
+.mobile-menu .m-cta:hover{background:#FFD21F;color:#111;}
+.hamburger span{background:#111;border-radius:0;height:3px;}
+/* フッター */
+.footer::before{content:'';position:absolute;left:0;right:0;top:0;height:10px;background:repeating-linear-gradient(115deg,var(--yellow) 0 22px,transparent 22px 44px);opacity:.9;}
+.footer-brand-name{font-size:1.15rem;font-weight:900;color:#fff;}
+.footer-brand-sub{color:rgba(255,255,255,.6);}
+.footer-col-item{color:rgba(255,255,255,.72);}
+.footer-col-item a:hover{color:var(--yellow) !important;}
+.footer-bottom{border-top-color:rgba(255,255,255,.14);color:rgba(255,255,255,.45);}
+/* 読み込み中の進行バー */
+.scroll-progress{background:linear-gradient(90deg,var(--red),var(--yellow));}
+
+/* メニュー：項目が多いので幅の制限を外して詰める。収まらない幅では「≡」メニューに */
+.nav-inner{max-width:none;padding:0 clamp(1rem,2.2vw,2rem);}
+.nav-link{padding:.5rem .42rem;font-size:.72rem;}
+.nav-cta{margin-left:.7rem;}
+@media (max-width:1240px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+}
+
+/* ===== RED ENERGY 第2段階：ヒーロー最後の画面 ＝ 赤い斜めの帯＋黄色のライン ===== */
+.hm-scene picture{position:absolute;left:0;top:0;transition:left .9s cubic-bezier(.16,1,.3,1),width .9s cubic-bezier(.16,1,.3,1),height .9s cubic-bezier(.16,1,.3,1);overflow:hidden;}
+.hm-shade::before{content:'';position:absolute;inset:0;opacity:0;background:var(--yellow);}
+.is-final .hm-shade{background:none;}
+.is-final .hm-shade::before,.is-final .hm-shade::after{opacity:1;}
+.is-final .hm-shade::after{background:repeating-linear-gradient(115deg,rgba(255,255,255,.055) 0 2px,transparent 2px 15px),linear-gradient(100deg,#C8101F 0%,#D91B2A 60%);}
+@keyframes slabIn{from{transform:translateX(-102%)}to{transform:none}}
+.is-final .hm-shade::before{animation:slabIn .8s cubic-bezier(.16,1,.3,1) .1s both;}
+.is-final .hm-shade::after{animation:slabIn .9s cubic-bezier(.16,1,.3,1) both;}
+
+/* 文字まわり */
+.is-final .hm-title{font-style:italic;text-shadow:3px 3px 0 rgba(0,0,0,.2);}
+.is-final .hm-t2{color:var(--yellow);}
+.is-final .hm-t2::after{background:linear-gradient(90deg,#fff 70%,rgba(255,255,255,0));}
+.is-final .hm-t3 em{color:#FFE27A;}
+.is-final .hm-tag{background:#111;color:var(--yellow);clip-path:none;transform:skewX(-12deg);padding:.4rem 1.1rem;box-shadow:3px 3px 0 rgba(0,0,0,.25);}
+.is-final .hm-loc{color:#fff;border-bottom-color:rgba(255,255,255,.7);}
+.is-final .hm-sub{text-shadow:none;border-left-color:var(--yellow);}
+.is-final .hm-sub b{color:#FFE27A;}
+.is-final .hm-replay{background:#111;border-color:#111;}
+.is-final .hm-replay:hover{background:#333;}
+/* 数字ボード：黒地に黄色の小見出し */
+.hm-board{background:#111;border:none;border-radius:0;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:6px 6px 0 rgba(0,0,0,.28);}
+.hm-cell{border-right-color:rgba(255,255,255,.14);}
+.hm-k{color:var(--yellow);}
+.hm-n{font-style:italic;}
+.hm-j{color:rgba(255,255,255,.8);}
+
+/* PC：写真は右側に寄せ、赤い帯が主役を隠さないように */
+@media (min-width:861px){
+  .hero-movie{--sl-top:62%;--sl-bot:50%;--sl-y:4%;}
+  .is-final .hm-scene picture{left:34%;width:66%;height:100%;}
+  .is-final .hm-scene img{object-position:var(--fxf,50% 50%);}
+  .is-final .hm-shade::after{clip-path:polygon(0 0,var(--sl-top) 0,var(--sl-bot) 100%,0 100%);}
+  .is-final .hm-shade::before{clip-path:polygon(0 0,calc(var(--sl-top) + var(--sl-y)) 0,calc(var(--sl-bot) + var(--sl-y)) 100%,0 100%);}
+  .hm-inner{width:min(600px,45%);}
+}
+@media (min-width:861px) and (max-width:1400px){ .hero-movie{--sl-top:67%;--sl-bot:56%;} }
+@media (min-width:861px) and (max-width:1000px){ .hm-n{font-size:1.2rem;} .hm-cell{padding:.55rem .6rem;} .hm-n-jp{font-size:1.1rem;} }
+/* スマホ：上に写真、下に赤い斜めの帯（文字用） */
+@media (max-width:860px){
+  .hero-movie{--sl-n:340px;}
+  .is-final .hm-scene picture{width:100%;height:calc(100% - var(--sl-n) + 30px);}
+  .is-final .hm-shade::after{clip-path:polygon(0 calc(100% - var(--sl-n)),100% calc(100% - var(--sl-n) - 38px),100% 100%,0 100%);}
+  .is-final .hm-shade::before{clip-path:polygon(0 calc(100% - var(--sl-n) - 12px),100% calc(100% - var(--sl-n) - 50px),100% 100%,0 100%);}
+  .hm-inner{background:#111;border-top:5px solid var(--yellow);}
+}
+@media (prefers-reduced-motion: reduce){
+  .is-final .hm-shade::before,.is-final .hm-shade::after{animation:none;}
+  .hm-scene picture{transition:none;}
+}
+
+/* PC：最後の画面で、写真ごとに主役が帯にかからない位置へ */
+@media (min-width:861px){
+  .hm-scene[data-en="RUN"]{--fxf:0% 50%;}
+  .hm-scene[data-en="KICK"]{--fxf:15% 50%;}
+  .hm-scene[data-en="CHALLENGE"]{--fxf:0% 50%;}
+  .hm-scene[data-en="WIN"]{--fxf:0% 50%;}
+  .hm-scene[data-en="ONE TEAM"]{--fxf:10% 50%;}
+}
+.is-final .hm-title{text-shadow:3px 3px 0 rgba(0,0,0,.28);}
+
+/* ===== RED ENERGY 第3段階：中心のセクション（安全・健康／オンリーワンノート／コーチ紹介／カテゴリー） ===== */
+/* 背景：赤・白・赤のストライプ・赤 を交互に */
+#safety.bc-section,#course.course-section{
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,.055) 0 2px,transparent 2px 18px),linear-gradient(135deg,#C8101F 0%,#D91B2A 55%,#C8101F 100%);}
+#safety.bc-section::before{background:none;}
+#onlyone{background:repeating-linear-gradient(115deg,#fff 0 28px,#FAFAFA 28px 56px) !important;}
+.coach-section{background:repeating-linear-gradient(115deg,#fff 0 22px,#FBECEC 22px 44px);}
+/* 赤い背景の見出し */
+#safety .sec-eyebrow,#course .sec-eyebrow{color:#FFEB99 !important;}
+#safety .sec-eyebrow::before,#course .sec-eyebrow::before{background:var(--yellow);}
+#safety .sec-title,#course .sec-title{color:#fff !important;text-shadow:3px 3px 0 rgba(0,0,0,.18);}
+#safety .sec-title .hl,#course .sec-title .hl{color:var(--yellow);background-image:none;}
+#safety .bc-lead{color:rgba(255,255,255,.94);}
+#safety .sec-bg-word,#course .sec-bg-word{-webkit-text-stroke-color:rgba(255,255,255,.16);}
+/* 中継風の枠：黒い太枠＋黒いオフセットの影（角なし） */
+.bc-wrap{border:3px solid #111;border-radius:0;box-shadow:10px 10px 0 #111;}
+.bc-topbar{border-bottom:4px solid var(--yellow);}
+.bc-topbar-title{font-style:italic;}
+.bc-tab{font-style:italic;}
+/* オンリーワンノート：行動目標カード・ノートカード */
+#onlyone .goal-h{font-style:italic;font-size:1.25rem;letter-spacing:-.01em;display:inline-block;background:#111;color:#fff;padding:.3rem 1.2rem .3rem .9rem;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);transform:none;}
+#onlyone .goal-card,#onlyone .note-card{background:#fff !important;border:3px solid #111;border-top:8px solid var(--red) !important;border-radius:0 !important;box-shadow:6px 6px 0 #111 !important;transition:transform .15s,box-shadow .15s;}
+#onlyone .goal-card:hover,#onlyone .note-card:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 #111 !important;}
+#onlyone .goal-card img{background:#fff !important;}
+#onlyone .note-card > div:nth-child(1){font-style:italic;font-weight:900 !important;letter-spacing:.18em !important;}
+#onlyone .note-card > div:nth-child(2){font-style:italic;font-size:1.1rem !important;font-weight:900;}
+#onlyone .note-card > div:nth-child(3){color:#333 !important;}
+@media (max-width:860px){
+  .bc-wrap{box-shadow:6px 6px 0 #111;}
+  #onlyone .goal-card,#onlyone .note-card{box-shadow:4px 4px 0 #111 !important;}
+}
+@media (prefers-reduced-motion: reduce){ #onlyone .goal-card,#onlyone .note-card{transition:none;} }
+/* 見出しの改行を整える（1文字だけ次の行に落ちるのを防ぐ） */
+.sec-title .hl,.sec-title .yl,#safety .sec-title span{display:inline-block;}  /* 強調部分を一塊にして、単語の途中で折り返さない */
+@media (max-width:480px){
+  #safety .sec-title{font-size:1.4rem;}
+  .bc-topbar-title{font-size:.6rem;letter-spacing:.02em;padding:0 .4rem;white-space:normal;line-height:1.2;overflow:visible;text-overflow:clip;}
+  .bc-tag{font-size:.8rem;padding:0 .9rem 0 .55rem;}
+  .bc-topbar-right{font-size:.9rem;padding:0 .55rem 0 1rem;gap:5px;}
+}
+.bc-lead,.sec-title + p{text-wrap:pretty;}
 </style>
 </head>
 <body>
@@ -2409,15 +2583,15 @@ section > .si{position:relative;z-index:1;}
 
     <!-- 3つの行動目標 -->
     <div style="margin-top:2.5rem;">
-      <h3 style="font-size:1.1rem;font-weight:900;color:var(--red);margin-bottom:1.2rem;letter-spacing:.02em;">3つの行動目標</h3>
+      <h3 class="goal-h" style="font-size:1.1rem;font-weight:900;color:var(--red);margin-bottom:1.2rem;letter-spacing:.02em;">3つの行動目標</h3>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-        <div style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
+        <div class="goal-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
           <picture><source srcset="images/goal_aisatsu.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/goal_aisatsu.jpg" alt="げんきなあいさつ" style="width:100%;height:180px;object-fit:contain;background:#f5f5f5;"></picture>
         </div>
-        <div style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
+        <div class="goal-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
           <picture><source srcset="images/goal_respect.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/goal_respect.jpg" alt="リスペクト" style="width:100%;height:180px;object-fit:contain;background:#f5f5f5;"></picture>
         </div>
-        <div style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
+        <div class="goal-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
           <picture><source srcset="images/goal_best.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/goal_best.jpg" alt="ベストをつくす" style="width:100%;height:180px;object-fit:contain;background:#f5f5f5;"></picture>
         </div>
       </div>
@@ -2502,21 +2676,21 @@ section > .si{position:relative;z-index:1;}
       <div class="note-cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;">
 
         <!-- ストロングポイント -->
-        <div style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
+        <div class="note-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
           <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.5rem;">STRONG POINT</div>
           <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:.5rem;">ストロングポイント</div>
           <div style="font-size:.8rem;color:var(--text2);line-height:1.65;">自分の得意なこと・好きなこと・強みを見つけ、書き記す自己発見シート。家族や友人にも聞いてみよう！</div>
         </div>
 
         <!-- ほめほめノート -->
-        <div style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
+        <div class="note-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
           <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.5rem;">PRAISE NOTE</div>
           <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:.5rem;">ほめほめノート</div>
           <div style="font-size:.8rem;color:var(--text2);line-height:1.65;">コーチからほめられたことを記録。ほめられた感想と次の目標を自分で考え、前向きな気持ちを育てます。</div>
         </div>
 
         <!-- 自分の夢や目標 -->
-        <div style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
+        <div class="note-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
           <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.5rem;">MY DREAM</div>
           <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:.5rem;">自分の夢や目標</div>
           <div style="font-size:.8rem;color:var(--text2);line-height:1.65;">将来の夢・卒団までの目標・そのために大切なことを3つ考えて書く。夢へ向かう力を育てます。</div>
