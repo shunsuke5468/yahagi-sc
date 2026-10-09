@@ -17,6 +17,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="apple-touch-icon.png">
 <link rel="shortcut icon" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#D91B2A">
 <title>矢作サッカークラブ | 小田原市の少年サッカー Since 1974</title>
 
 <!-- SEO -->
@@ -2041,7 +2042,155 @@ section > .si{position:relative;z-index:1;}
   .bc-topbar-right{font-size:.9rem;padding:0 .55rem 0 1rem;gap:5px;}
 }
 .bc-lead,.sec-title + p{text-wrap:pretty;}
+
+/* ===== RED ENERGY 第4段階：残りのセクション ===== */
+/* --- 背景：赤 / 黒 / 白 / 黄 を交互に --- */
+#ryusei-event.event-section,#price.price-section{
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,.055) 0 2px,transparent 2px 18px),linear-gradient(135deg,#C8101F 0%,#D91B2A 55%,#C8101F 100%);}
+#philosophy.phil-section,#strongpoint.sp-flyer-section,#ob{
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,transparent 2px 18px),radial-gradient(ellipse at 0% 100%,rgba(217,27,42,.22),transparent 55%),#111 !important;}
+.results-section{background:repeating-linear-gradient(115deg,#fff 0 28px,#FAFAFA 28px 56px);}
+section[style*="#f9f9f9"]{background:#fff !important;}
+.steps-section{background:repeating-linear-gradient(115deg,#fff 0 22px,#FBECEC 22px 44px);}
+.faq-section{background:repeating-linear-gradient(115deg,#fff 0 28px,#FAFAFA 28px 56px);}
+#dreams.dreams-section{background:repeating-linear-gradient(115deg,#FFD21F 0 28px,#F5C000 28px 56px) !important;}
+/* 赤い背景の見出し・説明 */
+#ryusei-event .sec-title,#price .sec-title{color:#fff !important;text-shadow:3px 3px 0 rgba(0,0,0,.18);}
+#ryusei-event .sec-title span,#price .sec-title span{color:var(--yellow);background-image:none;}
+#price .sec-eyebrow{color:#FFEB99 !important;}
+#price .sec-eyebrow::before{background:var(--yellow);}
+.event-lead{color:rgba(255,255,255,.95);}
+#ryusei-event .sec-bg-word,#price .sec-bg-word{-webkit-text-stroke-color:rgba(255,255,255,.16);}
+/* 黄色の背景 */
+#dreams .sec-eyebrow{color:#111 !important;}
+#dreams .sec-eyebrow::before{background:var(--red);}
+#dreams .sec-bg-word{-webkit-text-stroke-color:rgba(0,0,0,.09);}
+/* --- お知らせ --- */
+#news-list > div{border-bottom:3px solid #111 !important;}
+#news-list > div > div:nth-child(1){font-style:italic;color:#111 !important;font-weight:900 !important;}
+#news-list > div > div:nth-child(2){border-radius:0 !important;font-style:italic;transform:skewX(-10deg);box-shadow:3px 3px 0 #111;}
+#news-list > div > div:nth-child(3) > div:first-child{font-weight:900 !important;}
+/* --- 理念 --- */
+.phil-card{border-radius:0;border:2px solid rgba(255,255,255,.2);border-left:6px solid var(--red);background:rgba(255,255,255,.05);}
+.phil-title{font-style:italic;font-weight:900;font-size:1rem;}
+/* --- 実績 --- */
+.trophy-img{border-radius:0;border:3px solid #111;box-shadow:8px 8px 0 #111;}
+.results-section div[style*="repeat(3,minmax(80px"] > div{border-radius:0 !important;border-width:3px !important;box-shadow:6px 6px 0 #111 !important;}
+.results-section div[style*="repeat(3,minmax(80px"] > div > div:nth-child(2){font-style:italic;}
+.results-section div[style*="red-pale"]{border-radius:0 !important;border-left:6px solid var(--red);text-align:left !important;background:#fff !important;box-shadow:4px 4px 0 #111;}
+/* --- OBの活躍 --- */
+#ob [style*="border-radius"]{border-radius:0 !important;}
+#ob [style*="border-radius:20px"]{border:3px solid #fff;box-shadow:8px 8px 0 var(--red) !important;}
+#ob [style*="rgba(5,10,40"]{background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.1) 100%) !important;}
+#ob [style*="font-size:2.4rem"]{font-style:italic;}
+/* --- 講演会レポート --- */
+.event-talk-card{background:#111;border:3px solid #111;border-radius:0;box-shadow:6px 6px 0 rgba(0,0,0,.35);}
+.event-qa-box{background:#111;border:3px solid #111;border-radius:0;box-shadow:8px 8px 0 rgba(0,0,0,.35);}
+.event-gallery figure{border-radius:0;border:3px solid #fff;box-shadow:5px 5px 0 rgba(0,0,0,.4);}
+.event-report-badge{border-radius:0;background:#111;border:none;color:var(--yellow);font-style:italic;transform:skewX(-10deg);padding:.45rem 1.3rem;}
+.event-dl-link{border-radius:0;background:#111;border:none;font-style:italic;transform:skewX(-10deg);box-shadow:4px 4px 0 rgba(0,0,0,.35);}
+.event-talk-title,.event-talk-card-title{font-style:italic;}
+/* --- 練習情報 --- */
+.sch-card{background:#fff;border:3px solid #111;border-radius:0;box-shadow:6px 6px 0 #111;transition:transform .15s,box-shadow .15s;}
+.sch-card:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 #111;}
+.sch-card.hl{background:var(--yellow-l);border-color:#111;box-shadow:6px 6px 0 var(--red);}
+.sch-title,.sch-type{font-style:italic;}
+.sch-card [style*="border-radius"]{border-radius:0 !important;}
+/* --- 費用 --- */
+.price-card{background:#111;border:3px solid #111;border-radius:0;box-shadow:8px 8px 0 rgba(0,0,0,.3);-webkit-backdrop-filter:none;backdrop-filter:none;}
+.price-card.main{background:#fff;}
+.price-num{font-style:italic;}
+/* --- SNS --- */
+section[style*="#f9f9f9"] a[style*="border-radius:100px"]{border-radius:0 !important;font-style:italic;font-weight:900 !important;transform:skewX(-10deg);box-shadow:4px 4px 0 #111;}
+/* --- 入団方法 --- */
+.step-circle{border-radius:6px !important;background:#111 !important;color:var(--yellow) !important;font-style:italic;box-shadow:4px 4px 0 var(--red) !important;}
+.step-title{font-style:italic;font-weight:900;}
+.step-item{border-bottom:2px solid rgba(0,0,0,.12);}
+.step-line{background:linear-gradient(var(--red),transparent);border-radius:0;}
+/* --- FAQ --- */
+.faq-item{background:#fff;border:3px solid #111;border-radius:0;box-shadow:5px 5px 0 #111;}
+.faq-q{font-weight:900;}
+.faq-qb{font-style:italic;}
+/* --- ぼくたちの夢 --- */
+.dream-bubble{border-width:3px !important;border-radius:0 !important;box-shadow:5px 5px 0 #111 !important;}
+/* --- ストロングポイント --- */
+.sp-grade-card,.sp-tech-card{border-radius:0;border:2px solid rgba(255,255,255,.25);background:rgba(255,255,255,.05);box-shadow:5px 5px 0 var(--red);}
+.sp-flyer-frame{border-radius:0;border:3px solid #fff;box-shadow:8px 8px 0 var(--red);}
+.sp-results-badge{border-radius:0;font-style:italic;transform:skewX(-10deg);}
+.sp-flyer-dl{border-radius:0;font-style:italic;transform:skewX(-10deg);box-shadow:5px 5px 0 var(--red);}
+.sp-mainbar-track{border-radius:0;}
+/* --- 最後の申込 --- */
+.final-ov{background:linear-gradient(135deg,rgba(200,16,31,.84),rgba(110,0,10,.66));}
+.final-title{font-style:italic;text-shadow:3px 3px 0 rgba(0,0,0,.3);}
+.line-btn{border-radius:0;font-style:italic;transform:skewX(-10deg);box-shadow:5px 5px 0 #111;}
+@media (max-width:860px){
+  .sch-card,.faq-item,.trophy-img{box-shadow:4px 4px 0 #111;}
+  .event-qa-box,.price-card{box-shadow:5px 5px 0 rgba(0,0,0,.3);}
+  .results-section div[style*="repeat(3,minmax(80px"] > div{box-shadow:4px 4px 0 #111 !important;}
+  #ob [style*="border-radius:20px"]{box-shadow:5px 5px 0 var(--red) !important;}
+  .sp-flyer-frame{box-shadow:5px 5px 0 var(--red);}
+}
+/* --- 写真ギャラリー（スライド） --- */
+section.section[style*="var(--off)"]{background:#fff !important;}
+section.section[style*="var(--off)"] div[style*="border-radius:20px"]{border-radius:0 !important;border:3px solid #111;box-shadow:8px 8px 0 #111 !important;}
+@media (max-width:860px){ section.section[style*="var(--off)"] div[style*="border-radius:20px"]{box-shadow:5px 5px 0 #111 !important;} }
+@media (prefers-reduced-motion: reduce){ .sch-card{transition:none;} }
+
+/* ===== RED ENERGY 第5段階：仕上げ ===== */
+/* ドットナビ：どの背景色の上でも見えるように（白い点＋黒いふち／現在地は黄色） */
+.dot-nav a{background:#fff;box-shadow:0 0 0 2px rgba(17,17,17,.6);}
+.dot-nav a:hover{background:var(--yellow);transform:scale(1.3);}
+.dot-nav a.active{background:var(--yellow);transform:scale(1.45);box-shadow:0 0 0 3px #111;}
+/* キーボード操作の目印：全リンク・ボタンに（黒の線＋黄色の縁で、白・赤・黒・黄のどの背景でも見える） */
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #111;outline-offset:2px;box-shadow:0 0 0 6px var(--yellow);}
+/* 画面外のセクションでは、動き続けるアニメーションを止めて端末の負荷を減らす */
+.is-offscreen,.is-offscreen *,.is-offscreen *::before,.is-offscreen *::after{animation-play-state:paused !important;}
+
+/* --- 読みやすさの調整（コントラスト） --- */
+/* LINEボタン：緑の上は黒文字に（白文字だと 2.3:1 だった） */
+.float-cta,.line-btn{color:#111;}
+.final-inner{text-shadow:0 1px 8px rgba(80,0,10,.55);}
+.final-note,.final-inner p[style*="rgba(255,255,255"]{color:rgba(255,255,255,.95) !important;}
+/* 赤い背景の小見出し */
+#safety .sec-eyebrow,#course .sec-eyebrow,#price .sec-eyebrow{color:#FFF3BF !important;}
+/* ヒーローの FREE TRIAL */
+.hm-free .hm-k,.hm-free .hm-j{color:#fff;}
+/* お知らせの読み込み失敗・空の文 */
+#news-list > div[style*="text-align:center"]{color:#555 !important;}
+/* 安全・健康／コーチの小さな英字 */
+.bc-tab-sub{color:rgba(255,255,255,.66);}
+.bc-coach .coach-name-en{color:#666b73;}
+.bc-safety .sf-mag .bc-points-label,.bc-mag .bc-points-label{color:#666;}
+/* 暗いタブの上の「U-8」「U-12」：明るい赤・青に（選択中は従来どおり） */
+#bc-k-tab-u8:not(.active) .bc-medal-rank,#bc-c-tab-u8:not(.active) .bc-medal-rank{color:#FF6B76;}
+#bc-k-tab-u12:not(.active) .bc-medal-rank,#bc-c-tab-u12:not(.active) .bc-medal-rank{color:#7FA1FF;}
+/* ブロンズの「ALL CLEAR」：銅色の上は黒文字に */
+#bc-f-tab-bronze,#bc-f-bronze{--mt:#111 !important;}
+/* オンリーワン「3つの行動目標」のタグ */
+#onlyone .goal-h{color:var(--yellow) !important;}
+/* キッズのラベル・バブル：白文字が読める濃さに */
+.bc-kids .bc-panel-en{background:#BD5800;box-shadow:0 3px 0 #8A3F00;}
+.bc-kids .bc-cat-info .bc-panel-en{background:#1C78B5;box-shadow:0 3px 0 #125A8A;}
+.bc-kids .bc-info-table dt{background:#1C78B5;}
+.bc-kids .bc-info-table > div:nth-child(2) dt{background:#2D854B;}
+.bc-kids .bc-info-table > div:nth-child(3) dt{background:#B85A00;}
+.bc-kids .bc-points li:nth-child(2) .bc-pt-num{background:#1C78B5;box-shadow:0 3px 0 #125A8A;}
+.bc-kids .bc-points li:nth-child(3) .bc-pt-num{background:#2D854B;box-shadow:0 3px 0 #1D6638;}
+.bc-kids .kd-move:nth-child(1){--c:#D63B3B;--c2:#A82A2A;}
+.bc-kids .kd-move:nth-child(2){--c:#B85A00;--c2:#8A4200;}
+.bc-kids .kd-move:nth-child(3){--c:#2D854B;--c2:#1D6638;}
+.bc-kids .kd-move:nth-child(4){--c:#1F6FC4;--c2:#164F8F;}
+.bc-kids .bc-cat-text strong{color:#B84300;}
+/* 実績の「3位」、OBの下の文字、講演会のお礼文、練習情報の補足 */
+.results-section div[style*="repeat(3,minmax(80px"] > div:nth-child(3) > div:first-child{color:#8A5316 !important;}
+#ob [style*="rgba(255,255,255,.4)"]{color:rgba(255,255,255,.72) !important;}
+#ryusei-event [style*="rgba(255,255,255,.55)"]{color:#fff !important;}
+#schedule .sch-card [style*="rgba(255,255,255,.9)"]{color:#fff !important;}
+
+/* 最後の申込の背景写真：近づくまで読み込まない（最初の表示を軽くする） */
+#contact:not(.is-near) .final-bg{background-image:none !important;}
 </style>
+<noscript><style>#contact .final-bg{background-image:image-set(url('images/hero_bg.webp') type('image/webp'), url('images/hero_bg.JPG') type('image/jpeg')) !important;}</style></noscript>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -2273,7 +2422,7 @@ section > .si{position:relative;z-index:1;}
       <div style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.12);">
         <div id="pg-slides" style="display:flex;transition:transform .5s ease;">
           <div style="min-width:100%;position:relative;">
-            <picture><source srcset="images/gallery_kawasaki_01.webp" type="image/webp"><img src="images/gallery_kawasaki_01.jpg" alt="サッカースクール集合" fetchpriority="high" decoding="async" style="width:100%;height:520px;object-fit:cover;object-position:left center;display:block;"></picture>
+            <picture><source srcset="images/gallery_kawasaki_01.webp" type="image/webp"><img loading="lazy" src="images/gallery_kawasaki_01.jpg" alt="サッカースクール集合" decoding="async" style="width:100%;height:520px;object-fit:cover;object-position:left center;display:block;"></picture>
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.5));padding:2rem 1.8rem 1.4rem;">
               <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">SOCCER SCHOOL</div>
               <div style="color:#fff;font-size:1rem;font-weight:800;">川崎竜聖選手によるサッカースクール開校</div>
@@ -2330,9 +2479,39 @@ section > .si{position:relative;z-index:1;}
             if(d) d.style.background=i===cur?'var(--red)':'#ccc';
           }
         }
-        window.pgSlide=function(dir){cur=(cur+dir+total)%total;update();reset();};
-        window.pgGoTo=function(n){cur=n;update();reset();};
-        function reset(){clearInterval(timer);timer=setInterval(function(){cur=(cur+1)%total;update();},4500);}
+        window.pgSlide=function(dir){if(window.pgRelease)window.pgRelease();cur=(cur+dir+total)%total;update();reset();};
+        window.pgGoTo=function(n){if(window.pgRelease)window.pgRelease();cur=n;update();reset();};
+        var visible=false;
+        function reset(){clearInterval(timer);if(!visible) return;timer=setInterval(function(){cur=(cur+1)%total;update();},4500);}
+        // 画面に入っている間だけ自動で進める（見ていない間に、写真を先に読み込まないように）
+        var host=document.getElementById('pg-slides');
+        // ギャラリーの写真は、近づくまで読み込みを保留する（横に並んだスライドを、ブラウザが「近い」と判断して先に読み込むのを防ぐ）
+        var held=[];
+        function hold(){
+          if(!host || !('IntersectionObserver' in window)) return;
+          [].slice.call(host.querySelectorAll('source,img')).forEach(function(el){
+            ['srcset','src'].forEach(function(a){
+              var v=el.getAttribute(a);
+              if(v){ el.setAttribute('data-hold-'+a,v); el.removeAttribute(a); }
+            });
+            held.push(el);
+          });
+        }
+        function release(){
+          held.forEach(function(el){
+            ['srcset','src'].forEach(function(a){
+              var v=el.getAttribute('data-hold-'+a);
+              if(v){ el.setAttribute(a,v); el.removeAttribute('data-hold-'+a); }
+            });
+          });
+          held=[];
+        }
+        hold();
+        window.pgRelease=release;
+        if(host && 'IntersectionObserver' in window){
+          new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ release(); o.disconnect(); } },{rootMargin:'400px 0px'}).observe(host.parentElement);
+          new IntersectionObserver(function(es){ visible=es[0].isIntersecting; reset(); },{threshold:.15}).observe(host.parentElement);
+        } else { visible=true; }
         reset();
       })();
       </script>
@@ -2970,7 +3149,7 @@ section > .si{position:relative;z-index:1;}
       地元地域の大会はもちろん、県内のさまざまな大会に出場しています。<br>
       2025年度も多くの大会で好成績を収めることができました。
     </p>
-    <picture><source srcset="images/gallery_team_all.webp" type="image/webp"><img class="trophy-img" src="images/gallery_team_all.JPG" alt="獲得トロフィー一覧"></picture>
+    <picture><source srcset="images/gallery_team_all.webp" type="image/webp"><img loading="lazy" decoding="async" class="trophy-img" src="images/gallery_team_all.JPG" alt="獲得トロフィー一覧"></picture>
     <div style="display:grid;grid-template-columns:repeat(3,minmax(80px,1fr));gap:8px;margin-bottom:2rem;">
       <div style="background:#fff;border:2px solid var(--red);border-radius:14px;padding:1rem .5rem;text-align:center;box-shadow:0 4px 20px rgba(217,27,42,.1);"><div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--red);text-transform:uppercase;margin-bottom:.5rem;">優勝</div><div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--red);line-height:1;">10</div><div style="font-size:.85rem;font-weight:700;color:var(--text2);">回</div></div>
       <div style="background:#fff;border:2px solid #888;border-radius:14px;padding:1rem .5rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);"><div style="font-size:11px;font-weight:700;letter-spacing:.2em;color:#666;text-transform:uppercase;margin-bottom:.5rem;">準優勝</div><div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;color:#666;line-height:1;">11</div><div style="font-size:.85rem;font-weight:700;color:var(--text2);">回</div></div>
@@ -3741,6 +3920,21 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 })();
 </script>
 <script>
+// ======= 画面外のセクションはアニメーションを止める（省電力） =======
+(function(){
+  if(!('IntersectionObserver' in window)){ var c0=document.getElementById('contact'); if(c0) c0.classList.add('is-near'); return; }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ e.target.classList.toggle('is-offscreen', !e.isIntersecting); });
+  }, {rootMargin:'160px 0px'});
+  document.querySelectorAll('section').forEach(function(s){ io.observe(s); });
+  // 最後の申込の背景写真は、近づいたら読み込む
+  var contact=document.getElementById('contact');
+  if(contact){
+    new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ contact.classList.add('is-near'); o.disconnect(); } },{rootMargin:'1200px 0px'}).observe(contact);
+  }
+})();
+</script>
+<script>
 // ======= GALLERY LIGHTBOX =======
 (function(){
   var galleries = document.querySelectorAll('.event-gallery');
@@ -4297,7 +4491,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   var box = document.getElementById('news-list');
   if(!box) return;
 
-  var catColor = { 'お知らせ':'#27AE60', '大会結果':'#1565C0', '休講':'#E65100', '中止':'#E65100', '重要':'#D91B2A', 'イベント':'#7B2D8E' };
+  var catColor = { 'お知らせ':'#1B7A43', '大会結果':'#1565C0', '休講':'#BF360C', '中止':'#BF360C', '重要':'#D91B2A', 'イベント':'#7B2D8E' };
 
   function fmtDate(s){
     var d = new Date(s);
