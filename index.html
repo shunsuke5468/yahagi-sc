@@ -2047,7 +2047,7 @@ section > .si{position:relative;z-index:1;}
 /* --- 背景：赤 / 黒 / 白 / 黄 を交互に --- */
 #ryusei-event.event-section,#price.price-section{
   background:repeating-linear-gradient(115deg,rgba(255,255,255,.055) 0 2px,transparent 2px 18px),linear-gradient(135deg,#C8101F 0%,#D91B2A 55%,#C8101F 100%);}
-#philosophy.phil-section,#strongpoint.sp-flyer-section,#ob{
+#philosophy.phil-section,#strongpoint.sp-flyer-section{
   background:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,transparent 2px 18px),radial-gradient(ellipse at 0% 100%,rgba(217,27,42,.22),transparent 55%),#111 !important;}
 .results-section{background:repeating-linear-gradient(115deg,#fff 0 28px,#FAFAFA 28px 56px);}
 section[style*="#f9f9f9"]{background:#fff !important;}
@@ -2079,10 +2079,6 @@ section[style*="#f9f9f9"]{background:#fff !important;}
 .results-section div[style*="repeat(3,minmax(80px"] > div > div:nth-child(2){font-style:italic;}
 .results-section div[style*="red-pale"]{border-radius:0 !important;border-left:6px solid var(--red);text-align:left !important;background:#fff !important;box-shadow:4px 4px 0 #111;}
 /* --- OBの活躍 --- */
-#ob [style*="border-radius"]{border-radius:0 !important;}
-#ob [style*="border-radius:20px"]{border:3px solid #fff;box-shadow:8px 8px 0 var(--red) !important;}
-#ob [style*="rgba(5,10,40"]{background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.1) 100%) !important;}
-#ob [style*="font-size:2.4rem"]{font-style:italic;}
 /* --- 講演会レポート --- */
 .event-talk-card{background:#111;border:3px solid #111;border-radius:0;box-shadow:6px 6px 0 rgba(0,0,0,.35);}
 .event-qa-box{background:#111;border:3px solid #111;border-radius:0;box-shadow:8px 8px 0 rgba(0,0,0,.35);}
@@ -2127,7 +2123,6 @@ section[style*="#f9f9f9"] a[style*="border-radius:100px"]{border-radius:0 !impor
   .sch-card,.faq-item,.trophy-img{box-shadow:4px 4px 0 #111;}
   .event-qa-box,.price-card{box-shadow:5px 5px 0 rgba(0,0,0,.3);}
   .results-section div[style*="repeat(3,minmax(80px"] > div{box-shadow:4px 4px 0 #111 !important;}
-  #ob [style*="border-radius:20px"]{box-shadow:5px 5px 0 var(--red) !important;}
   .sp-flyer-frame{box-shadow:5px 5px 0 var(--red);}
 }
 /* --- 写真ギャラリー（スライド） --- */
@@ -2183,14 +2178,120 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .bc-kids .bc-cat-text strong{color:#B84300;}
 /* 実績の「3位」、OBの下の文字、講演会のお礼文、練習情報の補足 */
 .results-section div[style*="repeat(3,minmax(80px"] > div:nth-child(3) > div:first-child{color:#8A5316 !important;}
-#ob [style*="rgba(255,255,255,.4)"]{color:rgba(255,255,255,.72) !important;}
 #ryusei-event [style*="rgba(255,255,255,.55)"]{color:#fff !important;}
 #schedule .sch-card [style*="rgba(255,255,255,.9)"]{color:#fff !important;}
 
 /* 最後の申込の背景写真：近づくまで読み込まない（最初の表示を軽くする） */
 #contact:not(.is-near) .final-bg{background-image:none !important;}
+/* ===== OBの活躍：ベルマーレカラー（川崎竜聖選手） ===== */
+#ob.ob-bm{--bm-green:#009346;--bm-gd:#00803D;--bm-navy:#032A64;--bm-nd:#021B45;--bm-lime:#C6F163;--bm-limed:#70BC2F;
+  position:relative;overflow:hidden;padding:5rem 1.5rem;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 18px),linear-gradient(168deg,#007A3A 0%,#007748 24%,#0A4C8F 56%,#032A64 100%);}
+#ob .si{position:relative;z-index:1;}
+#ob .sec-eyebrow{color:#E9FFB0 !important;}
+#ob .sec-eyebrow::before{background:var(--bm-lime);}
+#ob .sec-title{color:#fff !important;text-shadow:3px 3px 0 rgba(2,27,69,.45);}
+#ob .sec-title span{color:var(--bm-lime);display:inline-block;}
+#ob .sec-bg-word{-webkit-text-stroke-color:rgba(255,255,255,.14);}
+.ob-lead{font-size:.95rem;color:#fff;margin-top:.6rem;line-height:1.8;max-width:640px;}
+
+/* 選手紹介（名前・背番号・全身） */
+.ob-stage{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:stretch;margin-top:2.2rem;min-height:600px;}
+.ob-copy{position:relative;z-index:3;display:flex;flex-direction:column;justify-content:center;padding:1.5rem 0;color:#fff;}
+.ob-tag{align-self:flex-start;background:var(--bm-lime);color:var(--bm-navy);font-weight:900;font-style:italic;font-size:.82rem;letter-spacing:.12em;padding:.4rem 1.3rem .4rem .9rem;transform:skewX(-12deg);box-shadow:3px 3px 0 rgba(2,27,69,.55);}
+.ob-grad{margin-top:1.1rem;font-weight:900;font-style:italic;font-size:.85rem;letter-spacing:.3em;}
+.ob-name{font-size:clamp(4.6rem,9.6vw,8.8rem);line-height:.94;font-weight:900;font-style:italic;letter-spacing:-.025em;margin:.1em 0 .05em;text-shadow:6px 6px 0 rgba(2,27,69,.55);}
+.ob-name span{display:block;}
+.ob-en{font-weight:900;font-style:italic;font-size:clamp(1.15rem,2.5vw,2.2rem);letter-spacing:.07em;line-height:1.2;color:transparent;-webkit-text-stroke:1.5px #fff;paint-order:stroke fill;}
+.ob-plate{display:inline-flex;align-self:flex-start;align-items:center;gap:1rem;margin-top:1.6rem;background:var(--bm-navy);border-left:8px solid var(--bm-lime);padding:.6rem 1.8rem .6rem 1.1rem;clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%);}
+.ob-plate img{height:74px;width:auto;margin:-16px -10px -16px -14px;}
+.ob-plate b{font-weight:900;font-style:italic;font-size:1.05rem;letter-spacing:.04em;border-left:2px solid rgba(255,255,255,.4);padding-left:1rem;white-space:nowrap;}
+.ob-plate b em{font-style:italic;color:var(--bm-lime);margin-right:.35em;}
+.ob-fig{position:relative;min-height:560px;overflow:hidden;}
+.ob-fig::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 55% 58%,rgba(198,241,99,.30),transparent 62%);}
+.ob-no{position:absolute;right:0;top:-2%;font-size:clamp(13rem,25vw,23rem);line-height:.82;font-weight:900;font-style:italic;color:transparent;-webkit-text-stroke:3px rgba(255,255,255,.3);pointer-events:none;user-select:none;}
+.ob-player{position:absolute;right:14%;bottom:-3%;height:108%;z-index:2;display:block;}
+.ob-player img{height:100%;width:auto;max-width:none;filter:drop-shadow(0 20px 26px rgba(2,27,69,.6));}
+#ob .shonan-logo{top:auto;bottom:1.4rem;right:auto;left:0;width:46%;max-width:210px;filter:drop-shadow(0 0 10px rgba(198,241,99,.5));}
+#ob .shonan-logo img{animation:obGlow 3.6s ease-in-out infinite;}
+@keyframes obGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(198,241,99,.3))}50%{filter:drop-shadow(0 0 16px rgba(198,241,99,.85))}}
+
+/* チーム・プロフィール・経歴 */
+.ob-body{margin-top:2.4rem;display:grid;gap:1.8rem;}
+.ob-team{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 2rem;background:var(--bm-navy);border:3px solid #fff;box-shadow:8px 8px 0 var(--bm-lime);padding:1.1rem 1.6rem;color:#fff;}
+.ob-team .lab{font-weight:900;font-style:italic;font-size:.72rem;letter-spacing:.22em;color:var(--bm-lime);}
+.ob-team .club{font-weight:900;font-style:italic;font-size:clamp(1.15rem,2.2vw,1.55rem);line-height:1.4;}
+.ob-team .season{margin-left:auto;font-size:.88rem;font-weight:700;}
+.ob-profile{background:#fff;border:3px solid var(--bm-navy);box-shadow:8px 8px 0 var(--bm-lime);padding:1.2rem 1.6rem 1.5rem;color:var(--bm-navy);}
+.ob-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:1.6rem;margin:0;}
+.ob-item{margin:0;padding:.85rem .6rem .9rem 0;border-top:3px solid var(--bm-navy);}
+.ob-item dt{font-weight:900;font-style:italic;font-size:.82rem;letter-spacing:.08em;color:#00743A;}
+.ob-item dd{margin:.1rem 0 0;font-weight:900;font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.4;color:var(--bm-navy);}
+.ob-item dd .nb{display:inline-block;}
+.ob-item dd small{font-size:.6em;font-weight:900;color:#3a4a6a;margin:0 .1em;}
+.ob-item dd small.sub{display:block;font-size:.58em;margin:.1rem 0 0;font-weight:700;}
+.ob-career{margin-top:.4rem;}
+.ob-crow{display:grid;grid-template-columns:7.2rem 1fr;gap:1rem;padding:1.1rem 0;border-top:3px solid var(--bm-navy);}
+.ob-clabel{font-weight:900;font-style:italic;font-size:.95rem;color:#00743A;padding-top:.5rem;}
+.ob-steps{list-style:none;display:flex;flex-wrap:wrap;gap:.9rem 1.7rem;margin:0;padding:0;}
+.ob-step{position:relative;background:#fff;border:3px solid var(--bm-navy);box-shadow:4px 4px 0 var(--bm-navy);padding:.7rem 1rem .75rem;min-width:10.5rem;max-width:17rem;color:var(--bm-navy);}
+.ob-step:not(:last-child)::after{content:'▶';position:absolute;right:-1.4rem;top:50%;transform:translateY(-50%);color:var(--bm-green);font-size:.9rem;}
+.ob-step i{display:inline-block;font-style:italic;font-weight:900;font-size:.66rem;letter-spacing:.14em;background:var(--bm-lime);color:var(--bm-navy);padding:.05rem .6rem;margin-bottom:.3rem;}
+.ob-step b{display:block;font-weight:900;font-size:.95rem;line-height:1.4;}
+.ob-step span{display:block;font-size:.74rem;line-height:1.5;margin-top:.2rem;color:#3a4a6a;}
+.ob-start{background:#F1FFC9;}
+.ob-now{background:var(--bm-navy);color:#fff;}
+.ob-now span{color:#fff;}
+
+/* 写真・メッセージ・ボタン */
+.ob-photos{display:grid;grid-template-columns:1.5fr 1fr;grid-template-rows:1fr 1fr;gap:14px;margin-top:2.6rem;height:clamp(300px,36vw,430px);}
+.ob-photo{margin:0;border:3px solid #fff;box-shadow:6px 6px 0 var(--bm-nd);overflow:hidden;background:var(--bm-nd);min-height:0;}
+.ob-photo.main{grid-row:1 / 3;}
+.ob-photo picture,.ob-photo img{display:block;width:100%;height:100%;}
+.ob-photo img{object-fit:cover;}
+.ob-msg{margin-top:2.6rem;display:grid;gap:1.4rem;}
+.ob-msg > p:first-child{max-width:46rem;font-size:clamp(.95rem,1.5vw,1.05rem);line-height:2;font-weight:700;color:#fff;border-left:6px solid var(--bm-lime);padding:.2rem 0 .2rem 1.2rem;}
+.ob-links{display:flex;flex-wrap:wrap;gap:1.1rem 1.4rem;}
+.ob-btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:900;font-style:italic;font-size:.9rem;text-decoration:none;padding:.8rem 1.6rem;transform:skewX(-12deg);box-shadow:5px 5px 0 rgba(2,27,69,.65);transition:transform .15s,box-shadow .15s;}
+.ob-btn:hover{transform:skewX(-12deg) translate(-2px,-2px);box-shadow:7px 7px 0 rgba(2,27,69,.65);}
+.ob-btn svg{flex-shrink:0;}
+.ob-btn.lime{background:var(--bm-lime);color:var(--bm-navy);}
+.ob-btn.white{background:#fff;color:var(--bm-navy);}
+.ob-btn.ig{background:linear-gradient(135deg,#D4430F,#C2185B 55%,#6A1B9A);color:#fff;}
+.ob-foot{font-size:.8rem;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.9);}
+.ob-note{font-size:.74rem;line-height:1.8;color:rgba(255,255,255,.88);}
+
+@media (max-width:1000px){
+  .ob-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .ob-crow{grid-template-columns:1fr;gap:.3rem;}
+}
+@media (max-width:860px){
+  #ob.ob-bm{padding:4rem 1.2rem;}
+  .ob-stage{grid-template-columns:minmax(0,1fr);min-height:0;margin-top:1.6rem;}
+  .ob-fig{order:-1;min-height:clamp(380px,100vw,500px);}
+  .ob-no{left:50%;right:auto;transform:translateX(-50%);top:-1%;font-size:clamp(12rem,62vw,21rem);}
+  .ob-player{right:auto;left:50%;transform:translateX(-50%);height:106%;bottom:-2%;}
+  #ob .shonan-logo{left:-.3rem;bottom:1rem;width:34%;max-width:150px;}
+  .ob-copy{padding:1.4rem 0 .4rem;}
+  .ob-name{font-size:clamp(4.6rem,25vw,7.4rem);}
+  .ob-plate{max-width:100%;padding-right:1.4rem;}
+  .ob-plate img{height:58px;margin:-12px -8px -12px -10px;}
+  .ob-plate b{font-size:.92rem;padding-left:.8rem;}
+  .ob-team{padding:1rem 1.1rem;box-shadow:5px 5px 0 var(--bm-lime);}
+  .ob-team .season{margin-left:0;}
+  .ob-profile{padding:1rem 1.1rem 1.2rem;box-shadow:5px 5px 0 var(--bm-lime);}
+  .ob-steps{flex-direction:column;gap:1.5rem;}
+  .ob-step{min-width:0;max-width:none;width:100%;box-shadow:3px 3px 0 var(--bm-navy);}
+  .ob-step:not(:last-child)::after{content:'▼';right:auto;left:50%;top:auto;bottom:-1.5rem;transform:translateX(-50%);}
+  .ob-photos{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto;}
+  .ob-photo.main{grid-column:1 / 3;grid-row:auto;aspect-ratio:3/2;}
+  .ob-photo:not(.main){aspect-ratio:4/3;}
+  .ob-photo{box-shadow:4px 4px 0 var(--bm-nd);}
+}
+@media (prefers-reduced-motion: reduce){ #ob .shonan-logo img{animation:none;} .ob-btn{transition:none;} }
 </style>
-<noscript><style>#contact .final-bg{background-image:image-set(url('images/hero_bg.webp') type('image/webp'), url('images/hero_bg.JPG') type('image/jpeg')) !important;}</style></noscript>
+<noscript><style>#contact .final-bg{background-image:image-set(url('images/hero_bg.webp') type('image/webp'), url('images/hero_bg.JPG') type('image/jpeg')) !important;}
+</style></noscript>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -3162,78 +3263,89 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 <div class="div-stripe"></div>
 
 <!-- OB ACHIEVEMENT -->
-<section style="background:linear-gradient(135deg,#0D1B4B 0%,#162660 60%,#1a1a2e 100%);padding:5rem 1.5rem;position:relative;overflow:hidden;" id="ob">
-  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,18vw,14rem);color:rgba(255,255,255,.03);white-space:nowrap;pointer-events:none;letter-spacing:.02em;">YAHAGI SC</div>
-  <div class="si" style="position:relative;z-index:1;">
-    <div class="sec-eyebrow" style="color:var(--yellow);">🏆 OBの活躍</div>
-    <div class="sec-title" style="color:#fff;">卒団生が、<span style="color:var(--yellow);">プロの舞台へ。</span></div>
-    <p style="font-size:.88rem;color:rgba(255,255,255,.75);margin-top:.5rem;line-height:1.8;max-width:640px;">
-      矢作サッカークラブで育った選手が、トップリーグへの切符を手にしました。
-    </p>
+<section class="ob-bm" id="ob">
+  <div class="si">
+    <div class="ob-head">
+      <div class="sec-eyebrow">🏆 OBの活躍</div>
+      <div class="sec-title">卒団生が、<span>プロの舞台へ。</span></div>
+      <p class="ob-lead">矢作サッカークラブで育った選手が、トップリーグへの切符を手にしました。</p>
+    </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;align-items:start;">
-
-      <!-- テキストエリア（選手画像をバックイメージに） -->
-      <div style="position:relative;border-radius:20px;overflow:hidden;min-height:460px;box-shadow:0 16px 48px rgba(0,0,0,.5);">
-        <!-- 選手画像（背景） -->
-        <picture><source srcset="images/ob_kawasaki_player.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_player.PNG" alt="川崎竜聖選手"
-          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;"></picture>
-        <!-- グラデーション オーバーレイ（読みやすくする） -->
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,40,.88) 0%,rgba(5,10,40,.55) 45%,rgba(5,10,40,.12) 100%);"></div>
+    <!-- 選手紹介（参考：湘南ベルマーレフットサルクラブ 選手紹介ページの構成） -->
+    <div class="ob-stage">
+      <div class="ob-copy">
+        <div class="ob-tag">2026 トップチーム登録</div>
+        <div class="ob-grad">GRADUATE</div>
+        <div class="ob-name"><span>川崎</span> <span>竜聖</span></div>
+        <div class="ob-en" aria-hidden="true">RYUSEI KAWASAKI</div>
+        <div class="ob-plate"><img loading="lazy" decoding="async" src="images/shonan_mousin_white.png" alt="湘南の猛進" width="1050" height="600"><b><em>No.62</em>川崎 竜聖</b></div>
+      </div>
+      <div class="ob-fig">
+        <div class="ob-no" aria-hidden="true">62</div>
         <!-- 湘南の猛進 ロゴ（グロー演出） -->
         <div class="shonan-logo" id="shonanLogo" aria-hidden="true">
           <img loading="lazy" decoding="async" src="images/shonan_mousin_white.png" alt="">
         </div>
-        <!-- テキストコンテンツ -->
-        <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:1.1rem;padding:1.5rem 1.5rem 1.75rem;justify-content:flex-end;height:100%;box-sizing:border-box;min-height:460px;">
-          <div style="display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--text);font-size:11px;font-weight:900;letter-spacing:.18em;padding:5px 16px;border-radius:100px;width:fit-content;">2026 トップチーム登録</div>
-
-          <div>
-            <div style="font-size:.78rem;font-weight:700;letter-spacing:.25em;color:rgba(255,255,255,.5);margin-bottom:.4rem;">GRADUATE</div>
-            <div style="font-size:2.4rem;font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.01em;">川崎 竜聖</div>
-            <div style="font-size:.85rem;color:rgba(255,255,255,.55);letter-spacing:.15em;margin-top:.3rem;">RYUSEI KAWASAKI</div>
-          </div>
-
-          <div style="width:40px;height:3px;background:var(--yellow);border-radius:2px;"></div>
-
-          <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:1.2rem 1.4rem;">
-            <div style="font-size:.72rem;font-weight:700;letter-spacing:.2em;color:var(--yellow);margin-bottom:.5rem;">PROFESSIONAL TEAM</div>
-            <div style="font-size:1.15rem;font-weight:900;color:#fff;line-height:1.4;">湘南ベルマーレ<br>フットサルクラブ</div>
-            <div style="font-size:.8rem;color:rgba(255,255,255,.65);margin-top:.5rem;">2026シーズン　トップチーム登録</div>
-          </div>
-
-          <div style="background:rgba(255,255,255,.06);border-left:3px solid var(--yellow);border-radius:0 10px 10px 0;padding:1rem 1.2rem;">
-            <div style="font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.9;">矢作サッカークラブで育った仲間が、プロの舞台へ羽ばたきました。竜聖くん、おめでとうございます！クラブ全員で応援しています。</div>
-          </div>
-
-          <!-- Instagram リンク -->
-          <a href="https://www.instagram.com/kawaryuuuuuuu?igsh=MXVzY2U5N3c4anVtcg==" target="_blank" rel="noopener noreferrer"
-            style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;font-size:.82rem;font-weight:800;letter-spacing:.06em;padding:10px 18px;border-radius:100px;text-decoration:none;width:fit-content;box-shadow:0 4px 16px rgba(188,24,136,.4);transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            Instagram をフォローする
-          </a>
-
-          <div style="font-size:.75rem;color:rgba(255,255,255,.4);letter-spacing:.08em;">矢作サッカークラブ　卒団生</div>
-        </div>
+        <picture class="ob-player"><source srcset="images/ob_kawasaki_player.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_player.PNG" alt="川崎竜聖選手" width="528" height="1428"></picture>
       </div>
-
-      <!-- 写真エリア -->
-      <div style="display:flex;flex-direction:column;gap:12px;" id="ob-section-photos">
-        <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4);">
-          <picture><source srcset="images/ob_kawasaki_03.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_03.JPG" alt="川崎竜聖 全体集合" class="ob-img-main" style="width:100%;height:260px;object-fit:cover;display:block;"></picture>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <div style="border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.4);">
-            <picture><source srcset="images/ob_kawasaki_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_01.JPG" alt="川崎竜聖 花束" class="ob-img-sub" style="width:100%;height:160px;object-fit:cover;object-position:top;display:block;"></picture>
-          </div>
-          <div style="border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.4);">
-            <picture><source srcset="images/ob_kawasaki_02.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_02.JPG" alt="川崎竜聖 子どもたちと" class="ob-img-sub" style="width:100%;height:160px;object-fit:cover;display:block;"></picture>
-          </div>
-        </div>
-      </div>
-      
     </div>
 
+    <div class="ob-body">
+      <div class="ob-team">
+        <div>
+          <div class="lab">PROFESSIONAL TEAM</div>
+          <div class="club">湘南ベルマーレ<br>フットサルクラブ</div>
+        </div>
+        <div class="season">2026シーズン　トップチーム登録</div>
+      </div>
+
+      <div class="ob-profile">
+        <dl class="ob-grid">
+          <div class="ob-item"><dt>出身地</dt><dd><span class="nb">神奈川県</span><span class="nb">小田原市</span></dd></div>
+          <div class="ob-item"><dt>身長 / 体重</dt><dd>165<small>cm</small> / 64<small>kg</small></dd></div>
+          <div class="ob-item"><dt>血液型</dt><dd>A型</dd></div>
+          <div class="ob-item"><dt>生年月日</dt><dd>2003/02/17</dd></div>
+          <div class="ob-item"><dt>利き足</dt><dd>右</dd></div>
+          <div class="ob-item"><dt>ポジション</dt><dd>FP<small class="sub">フィールドプレーヤー</small></dd></div>
+        </dl>
+        <div class="ob-career">
+          <div class="ob-crow">
+            <div class="ob-clabel">サッカー歴</div>
+            <ol class="ob-steps">
+              <li class="ob-step ob-start"><i>START</i><b>矢作SC</b></li>
+              <li class="ob-step"><b>P.S.T.C.LONDRINA JY</b></li>
+              <li class="ob-step"><b>四国学院大学香川西高校</b></li>
+            </ol>
+          </div>
+          <div class="ob-crow">
+            <div class="ob-clabel">フットサル歴</div>
+            <ol class="ob-steps">
+              <li class="ob-step"><b>S.B.F.C.LONDRINA</b></li>
+              <li class="ob-step"><i>2025.10</i><b>JFA・Fリーグ<br>特別指定選手に認定</b><span>所属元：湘南ベルマーレフットサルクラブ<wbr>ロンドリーナ</span></li>
+              <li class="ob-step ob-now"><i>NOW</i><b>湘南ベルマーレ<br>フットサルクラブ</b><span>2026シーズン トップチーム登録</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ob-photos">
+      <figure class="ob-photo main"><picture><source srcset="images/ob_kawasaki_03.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_03.JPG" alt="川崎竜聖 全体集合"></picture></figure>
+      <figure class="ob-photo"><picture><source srcset="images/ob_kawasaki_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_01.JPG" alt="川崎竜聖 花束"></picture></figure>
+      <figure class="ob-photo"><picture><source srcset="images/ob_kawasaki_02.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/ob_kawasaki_02.JPG" alt="川崎竜聖 子どもたちと"></picture></figure>
+    </div>
+
+    <div class="ob-msg">
+      <p>矢作サッカークラブで育った仲間が、プロの舞台へ羽ばたきました。竜聖くん、おめでとうございます！クラブ全員で応援しています。</p>
+      <div class="ob-links">
+        <a class="ob-btn ig" href="https://www.instagram.com/kawaryuuuuuuu?igsh=MXVzY2U5N3c4anVtcg==" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> Instagram をフォローする</a>
+        <a class="ob-btn lime" href="#ryusei-event">特別講演の開催報告を見る →</a>
+        <!-- 公式の選手ページのURLが分かったら、下のリンクを差し替えてください -->
+        <a class="ob-btn white" href="https://www.bellmare-futsal.com/" target="_blank" rel="noopener noreferrer">公式サイトを見る →</a>
+      </div>
+      <div class="ob-foot">矢作サッカークラブ　卒団生</div>
+      <p class="ob-note">※ プロフィールは、湘南ベルマーレ フットサルクラブ公式サイトおよびJFA（日本サッカー協会）の発表に基づいています。内容は変更される場合があります。</p>
+    </div>
   </div>
 </section>
 
