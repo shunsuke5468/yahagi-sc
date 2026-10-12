@@ -2210,11 +2210,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .ob-fig{position:relative;min-height:560px;overflow:hidden;}
 .ob-fig::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 55% 58%,rgba(198,241,99,.30),transparent 62%);}
 .ob-no{position:absolute;right:0;top:-2%;font-size:clamp(13rem,25vw,23rem);line-height:.82;font-weight:900;font-style:italic;color:transparent;-webkit-text-stroke:3px rgba(255,255,255,.3);pointer-events:none;user-select:none;}
-.ob-player{position:absolute;right:14%;bottom:-3%;height:108%;z-index:2;display:block;}
-.ob-player img{height:100%;width:auto;max-width:none;filter:drop-shadow(0 20px 26px rgba(2,27,69,.6));}
-#ob .shonan-logo{top:auto;bottom:1.4rem;right:auto;left:0;width:46%;max-width:210px;filter:drop-shadow(0 0 10px rgba(198,241,99,.5));}
-#ob .shonan-logo img{animation:obGlow 3.6s ease-in-out infinite;}
-@keyframes obGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(198,241,99,.3))}50%{filter:drop-shadow(0 0 16px rgba(198,241,99,.85))}}
+.ob-player{position:absolute;right:14%;bottom:-3%;height:108%;aspect-ratio:528/1428;width:auto;z-index:2;display:block;}
+.ob-player::after{content:'';position:absolute;left:30%;right:2%;bottom:2.5%;height:4.5%;background:radial-gradient(ellipse at center,rgba(2,27,69,.6),transparent 70%);z-index:-1;}
+.ob-player img{display:block;width:100%;height:100%;}
+#ob .shonan-logo{top:auto;bottom:1.4rem;right:auto;left:0;width:46%;max-width:210px;filter:none;}
+#ob .shonan-logo img{animation:obGlow 3.6s ease-in-out infinite;filter:none;}
+@keyframes obGlow{0%,100%{opacity:.55}50%{opacity:1}}  /* 光の効果(filter)は使わず、明るさの変化だけで発光を表現（iPhoneでの表示崩れ対策） */
 
 /* チーム・プロフィール・経歴 */
 .ob-body{margin-top:2.4rem;display:grid;gap:1.8rem;}
@@ -2267,16 +2268,22 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 }
 @media (max-width:860px){
   #ob.ob-bm{padding:4rem 1.2rem;}
-  .ob-stage{grid-template-columns:minmax(0,1fr);min-height:0;margin-top:1.6rem;}
-  .ob-fig{order:-1;min-height:clamp(380px,100vw,500px);}
-  .ob-no{left:50%;right:auto;transform:translateX(-50%);top:-1%;font-size:clamp(12rem,62vw,21rem);}
-  .ob-player{right:auto;left:50%;transform:translateX(-50%);height:106%;bottom:-2%;}
-  #ob .shonan-logo{left:-.3rem;bottom:1rem;width:34%;max-width:150px;}
-  .ob-copy{padding:1.4rem 0 .4rem;}
-  .ob-name{font-size:clamp(4.6rem,25vw,7.4rem);}
-  .ob-plate{max-width:100%;padding-right:1.4rem;}
-  .ob-plate img{height:58px;margin:-12px -8px -12px -10px;}
+  /* 選手紹介：1枚のカード（名前は左、選手は右、下に名前プレート） */
+  .ob-stage{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);grid-template-rows:auto auto auto 1fr auto;min-height:0;margin-top:1.6rem;position:relative;overflow:hidden;border:3px solid #fff;box-shadow:6px 6px 0 var(--bm-lime);background:linear-gradient(172deg,rgba(2,27,69,.18) 0%,rgba(2,27,69,.5) 100%);}
+  .ob-copy{display:contents;}
+  .ob-fig{grid-column:1 / 3;grid-row:1 / 5;order:0;position:relative;min-height:clamp(430px,112vw,540px);overflow:visible;z-index:1;}
+  .ob-fig::before{inset:0;}
+  .ob-no{left:auto;right:-3%;transform:none;top:3%;font-size:clamp(9.5rem,46vw,15.5rem);}
+  .ob-player{right:0;left:auto;transform:none;bottom:0;height:97%;}
+  #ob .shonan-logo{display:none;}  /* スマホは、下の名前プレートに同じロゴがあるため、薄い飾りは出さない */
+  .ob-tag{grid-column:1 / 3;grid-row:1;z-index:3;justify-self:start;margin:1rem 0 0 1rem;font-size:.74rem;white-space:nowrap;}
+  .ob-grad{grid-column:1;grid-row:2;z-index:3;margin:.7rem 0 0 1rem;font-size:.74rem;}
+  .ob-name{grid-column:1;grid-row:3;z-index:3;margin:0 0 0 1rem;font-size:clamp(3.4rem,22vw,6rem);white-space:nowrap;text-shadow:4px 4px 0 rgba(2,27,69,.55);}
+  .ob-en{grid-column:1;grid-row:4;align-self:start;z-index:3;margin:.5rem 0 0 1rem;font-size:clamp(.95rem,5vw,1.5rem);line-height:1.25;}
+  .ob-plate{grid-column:1 / 3;grid-row:5;z-index:3;width:100%;max-width:none;margin:0;gap:.8rem;align-self:stretch;border-left:0;border-top:4px solid var(--bm-lime);clip-path:none;padding:.5rem 1rem;box-shadow:none;}
+  .ob-plate img{height:50px;margin:-9px -6px -9px -8px;}
   .ob-plate b{font-size:.92rem;padding-left:.8rem;}
+  .ob-body{margin-top:2rem;}
   .ob-team{padding:1rem 1.1rem;box-shadow:5px 5px 0 var(--bm-lime);}
   .ob-team .season{margin-left:0;}
   .ob-profile{padding:1rem 1.1rem 1.2rem;box-shadow:5px 5px 0 var(--bm-lime);}
@@ -2288,6 +2295,18 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
   .ob-photo:not(.main){aspect-ratio:4/3;}
   .ob-photo{box-shadow:4px 4px 0 var(--bm-nd);}
 }
+/* タブレット（600〜860px）：カードが横に広がるので、名前と選手を大きくして、空きすぎないように */
+@media (min-width:600px) and (max-width:860px){
+  .ob-fig{min-height:clamp(560px,78vw,660px);}
+  .ob-name{font-size:clamp(6rem,14vw,8.4rem);}
+  .ob-en{font-size:clamp(1.3rem,3.4vw,2rem);}
+  .ob-tag{font-size:.9rem;}
+  .ob-grad{font-size:.9rem;}
+  .ob-plate img{height:64px;}
+  .ob-plate b{font-size:1.05rem;}
+}
+/* iPhoneで、動く要素に影の効果(filter)を掛けると四角い板が出る不具合の予防（キッズの弾むボール） */
+.bc-kids .kd-ball{filter:none;}
 @media (prefers-reduced-motion: reduce){ #ob .shonan-logo img{animation:none;} .ob-btn{transition:none;} }
 </style>
 <noscript><style>#contact .final-bg{background-image:image-set(url('images/hero_bg.webp') type('image/webp'), url('images/hero_bg.JPG') type('image/jpeg')) !important;}
