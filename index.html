@@ -2308,6 +2308,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 /* iPhoneで、動く要素に影の効果(filter)を掛けると四角い板が出る不具合の予防（キッズの弾むボール） */
 .bc-kids .kd-ball{filter:none;}
 @media (prefers-reduced-motion: reduce){ #ob .shonan-logo img{animation:none;} .ob-btn{transition:none;} }
+
+/* ===== 講演会：トップページは短い紹介にして、詳しくは別ページへ ===== */
+.ev-teaser{margin-top:2rem;}
+.ev-photos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+.ev-photo{display:block;border:3px solid #fff;box-shadow:5px 5px 0 rgba(0,0,0,.4);overflow:hidden;background:#111;transition:transform .15s,box-shadow .15s;}
+.ev-photo:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(0,0,0,.4);}
+.ev-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;transition:transform .45s ease;}
+.ev-photo:hover img{transform:scale(1.06);}
+.ev-chips{display:flex;flex-wrap:wrap;gap:.7rem 1rem;margin-top:1.6rem;}
+.ev-chips span{background:#111;color:var(--yellow);font-weight:900;font-style:italic;font-size:.82rem;letter-spacing:.04em;padding:.35rem 1.2rem .35rem .9rem;transform:skewX(-12deg);box-shadow:3px 3px 0 rgba(0,0,0,.28);}
+.ev-btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.8rem;background:var(--yellow);color:#111;font-weight:900;font-style:italic;font-size:1rem;text-decoration:none;padding:.95rem 2.2rem;transform:skewX(-12deg);box-shadow:6px 6px 0 #111;transition:transform .15s,box-shadow .15s;}
+.ev-btn:hover{transform:skewX(-12deg) translate(-2px,-2px);box-shadow:9px 9px 0 #111;}
+@media (max-width:900px){ .ev-photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;} .ev-photo{box-shadow:4px 4px 0 rgba(0,0,0,.4);} }
+@media (max-width:480px){ .ev-btn{width:100%;justify-content:center;} }
+@media (prefers-reduced-motion: reduce){ .ev-photo,.ev-photo img,.ev-btn{transition:none;} }
 </style>
 <noscript><style>#contact .final-bg{background-image:image-set(url('images/hero_bg.webp') type('image/webp'), url('images/hero_bg.JPG') type('image/jpeg')) !important;}
 </style></noscript>
@@ -3358,7 +3373,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
       <p>矢作サッカークラブで育った仲間が、プロの舞台へ羽ばたきました。竜聖くん、おめでとうございます！クラブ全員で応援しています。</p>
       <div class="ob-links">
         <a class="ob-btn ig" href="https://www.instagram.com/kawaryuuuuuuu?igsh=MXVzY2U5N3c4anVtcg==" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> Instagram をフォローする</a>
-        <a class="ob-btn lime" href="#ryusei-event">特別講演の開催報告を見る →</a>
+        <a class="ob-btn lime" href="ryusei-event.html">特別講演の開催報告を見る →</a>
         <!-- 公式の選手ページのURLが分かったら、下のリンクを差し替えてください -->
         <a class="ob-btn white" href="https://www.bellmare-futsal.com/" target="_blank" rel="noopener noreferrer">公式サイトを見る →</a>
       </div>
@@ -3383,62 +3398,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
       夢に向かって努力することの大切さ、目標を実現するための考え方を、選手自身の経験を交えて語っていただきました。
     </p>
 
-    <!-- 当日の様子（写真ギャラリー） -->
-    <div class="event-gallery">
-      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_01.jpg" alt="川崎竜聖選手の講演を聞く子どもたち"></figure>
-      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_02.jpg" alt="講演する川崎竜聖選手"></figure>
-      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_03.jpg" alt="サインをする川崎竜聖選手"></figure>
-      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_04.jpg" alt="子どもたちにサインする川崎竜聖選手"></figure>
-      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_05.jpg" alt="川崎竜聖選手のユニフォーム"></figure>
-      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_06.jpg" alt="講演を聞く子どもたち"></figure>
-      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_07.jpg" alt="川崎竜聖選手と矢作SCの子どもたち"></figure>
-      <figure><img loading="lazy" decoding="async" src="images/event_ryusei_08.jpg" alt="川崎竜聖選手と矢作SCの子どもたち集合写真"></figure>
-    </div>
-
-    <!-- 当日の学び -->
-    <div class="event-talk-title">講演で伝えてくれたこと</div>
-    <div class="event-talk-grid">
-      <div class="event-talk-card">
-        <div class="event-talk-card-title">あいさつと感謝の気持ち</div>
-        <div class="event-talk-card-desc">高校生で親元を離れ、知り合いのいない寮生活を送った経験。あいさつが人との繋がりを作ってくれたこと、人との会話やコミュニケーションの大切さを教えてくれました。</div>
+    <!-- 詳しい開催報告は、別ページ（ryusei-event.html）に移しました -->
+    <div class="ev-teaser">
+      <div class="ev-photos">
+        <a class="ev-photo" href="ryusei-event.html"><img loading="lazy" decoding="async" src="images/event_ryusei_02.jpg" alt="講演する川崎竜聖選手" width="1000" height="750"></a>
+        <a class="ev-photo" href="ryusei-event.html"><img loading="lazy" decoding="async" src="images/event_ryusei_08.jpg" alt="川崎竜聖選手と矢作SCの子どもたち集合写真" width="1000" height="750"></a>
+        <a class="ev-photo" href="ryusei-event.html"><img loading="lazy" decoding="async" src="images/event_ryusei_01.jpg" alt="川崎竜聖選手の講演を聞く子どもたち" width="1000" height="750"></a>
+        <a class="ev-photo" href="ryusei-event.html"><img loading="lazy" decoding="async" src="images/event_ryusei_04.jpg" alt="子どもたちにサインする川崎竜聖選手" width="1000" height="750"></a>
       </div>
-      <div class="event-talk-card">
-        <div class="event-talk-card-title">一度あきらめかけた夢</div>
-        <div class="event-talk-card-desc">3年前、応援してくれていたお母様との別れを経験。天国のお母さんに喜んでもらいたいという想いが、あきらめかけたプロの夢を掴む力になったことを語ってくれました。</div>
-      </div>
-      <div class="event-talk-card">
-        <div class="event-talk-card-title">夢を叶えるために大切なこと</div>
-        <div class="event-talk-card-desc">ボールとたくさん触れ合い「友達になる」こと。目標を持って練習に取り組むこと。物より、友達や仲間との触れ合いを大切にすること。</div>
-      </div>
+      <div class="ev-chips"><span>当日の写真 8枚</span><span>講演で伝えてくれたこと</span><span>質問コーナー 12問</span></div>
+      <a class="ev-btn" href="ryusei-event.html">開催報告をすべて見る →</a>
     </div>
-
-    <!-- 質問コーナー -->
-    <div class="event-talk-title">子どもたちからの質問コーナー</div>
-    <div class="event-qa-box">
-      <p class="event-qa-lead">講演後は質問タイム。12個もの質問が飛び交い、あっという間の1時間でした。</p>
-      <ul class="event-qa-list">
-        <li><span class="q-mark">Q.</span>プロサッカー選手に憧れた年齢は？</li>
-        <li><span class="q-mark">Q.</span>Fリーグでのポジションは？</li>
-        <li><span class="q-mark">Q.</span>ケガは完治しましたか？</li>
-        <li><span class="q-mark">Q.</span>身体の大きい選手にはどう対応する？</li>
-        <li><span class="q-mark">Q.</span>Fリーグでのポジションはきついですか？</li>
-        <li><span class="q-mark">Q.</span>少年時代にGKからフィールドになった理由は？</li>
-        <li><span class="q-mark">Q.</span>学校の成績はどうでしたか？</li>
-        <li><span class="q-mark">Q.</span>Jr.ユース（ロンドリーナ）を選んだ理由は？</li>
-        <li><span class="q-mark">Q.</span>リフティングがうまくなる方法は？</li>
-        <li><span class="q-mark">Q.</span>シュートを強くするには？</li>
-        <li><span class="q-mark">Q.</span>ロングキックの蹴り方は？</li>
-        <li><span class="q-mark">Q.</span>GKで声が出ないとき、出せるようにするには？</li>
-      </ul>
-    </div>
-
-    <p style="font-size:.85rem;color:rgba(255,255,255,.55);margin-top:2.2rem;line-height:1.8;">
-      川崎竜聖選手、貴重なお話をありがとうございました！矢作SCの子どもたちにとって、忘れられない一日になりました。
-    </p>
-
-    <a class="event-dl-link" href="images/ryusei_event_2026.pdf" target="_blank" rel="noopener noreferrer">
-      当日の案内チラシを見る
-    </a>
   </div>
 </section>
 
