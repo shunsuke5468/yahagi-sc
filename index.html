@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="preload" href="fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="images/hero.webp" type="image/webp">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1KP9SBKM1"></script>
@@ -2327,6 +2328,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 /* ===== OBの活躍：ベルマーレ フットサルのロゴを背景に（左下） ===== */
 .ob-stage::before{content:'';position:absolute;z-index:0;left:39%;bottom:1.8rem;width:116px;height:180px;background:url('images/bellmare_futsal_logo.png') center/contain no-repeat;opacity:.55;pointer-events:none;}
 @media (max-width:860px){ .ob-stage::before{left:1rem;bottom:4.2rem;width:82px;height:127px;opacity:.6;} }
+/* ===== 自前の書体（英数字のみ・2026-10） ===== */
+@font-face{font-family:'Bebas Neue';src:url('fonts/bebas-neue.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00B7,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;}
+@font-face{font-family:'Inter';src:url('fonts/inter-600-800.woff2') format('woff2');font-weight:600 800;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00B7,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;}
+/* 本文は今まで通り端末のゴシック体（Interは見出し用の小さな英字だけに使う） */
+body{font-family:'Noto Sans JP',sans-serif;}
 </style>
 <noscript><style>#contact .final-bg{background-image:image-set(url('images/hero_bg.webp') type('image/webp'), url('images/hero_bg.JPG') type('image/jpeg')) !important;}
 </style></noscript>
