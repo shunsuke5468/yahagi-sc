@@ -3659,6 +3659,8 @@ try {
   var seenAt = parseInt(localStorage.getItem('introSeenAt') || '0', 10);
   introSeen = seenAt > 0 && (Date.now() - seenAt) < INTRO_SKIP_DAYS * 24 * 60 * 60 * 1000;
 } catch(e) {}
+// 確認用：URLの最後に ?intro を付けると、7日以内でも必ず再生する
+try { if (/[?&]intro\b/.test(location.search)) introSeen = false; } catch(e) {}
 
 if (prefersReduced || introSeen) {
   // イントロを即時スキップ
