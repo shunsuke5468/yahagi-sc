@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-<link rel="preload" href="fonts/bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="images/hero.webp" type="image/webp">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1KP9SBKM1"></script>
@@ -153,158 +153,74 @@ body.intro-seen #intro { display: none !important; }
 .to-top.show{opacity:1;transform:translateY(0);pointer-events:auto;}
 .to-top:hover{background:var(--red);}
 @media (max-width:600px){ .to-top{left:12px;bottom:12px;width:42px;height:42px;} }
-#intro {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: #0d0d0d;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  animation: introExit 0.8s cubic-bezier(0.7,0,1,1) 3.8s forwards;
-  pointer-events: none;
-}
-@keyframes introExit {
-  0%   { clip-path: inset(0 0 0 0); }
-  100% { clip-path: inset(0 0 100% 0); }
-}
-.intro-rays {
-  position: absolute;
-  inset: 0;
-  background: repeating-conic-gradient(
-    from 0deg at 50% 50%,
-    rgba(200,0,0,0.07) 0deg 9deg,
-    transparent 9deg 18deg
-  );
-  opacity: 0;
-  animation: introRaysIn 0.5s ease 1.8s forwards;
-}
-@keyframes introRaysIn { to { opacity: 1; } }
-
-#intro-ball-wrap {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  animation: introBallFly 1.5s cubic-bezier(0.16,1,0.3,1) 0.2s both;
-  filter: drop-shadow(0 20px 60px rgba(220,0,0,0.6))
-          drop-shadow(0 0 40px rgba(255,80,80,0.3));
-}
-@keyframes introBallFly {
-  0%   { transform: scale(0.04) translateY(140vh) rotate(-900deg); opacity: 0; }
-  50%  { opacity: 1; }
-  80%  { transform: scale(1.12) translateY(-25px) rotate(-40deg); }
-  90%  { transform: scale(0.96) translateY(8px) rotate(-10deg); }
-  100% { transform: scale(1.0) translateY(0px) rotate(0deg); }
-}
-.intro-ball-svg {
-  width: 180px;
-  height: 180px;
-  animation: introBallSpin 0.6s linear 0.2s 3;
-}
-@keyframes introBallSpin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-.intro-impact-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 3px solid #cc0000;
-  opacity: 0;
-  animation: introRingOut 0.6s ease-out 1.6s forwards;
-}
-.intro-impact-ring:nth-child(2) {
-  border-color: #ffffff;
-  animation: introRingOut 0.7s ease-out 1.65s forwards;
-}
-@keyframes introRingOut {
-  0%   { transform: scale(1); opacity: 0.9; }
-  100% { transform: scale(4); opacity: 0; }
-}
-#intro-flash {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(255,60,60,0.5) 0%, transparent 60%);
-  opacity: 0;
-  animation: introFlashBurst 0.4s ease-out 1.6s forwards;
-}
-@keyframes introFlashBurst {
-  0%   { opacity: 0; }
-  25%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-#intro-logo-wrap {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 16px;
-  opacity: 0;
-  animation: introLogoIn 0.8s cubic-bezier(0.16,1,0.3,1) 1.75s forwards;
-}
-#intro-logo-img {
-  width: clamp(100px, 25vw, 160px);
-  height: auto;
-  filter:
-    drop-shadow(0 0 18px rgba(220,0,0,0.9))
-    drop-shadow(0 0 40px rgba(220,0,0,0.5))
-    drop-shadow(0 6px 20px rgba(0,0,0,0.6));
-  animation: introLogoPulse 1.8s ease-in-out 2.6s infinite;
-}
-@keyframes introLogoIn {
-  from { opacity: 0; transform: scale(0.6) translateY(-10px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
-}
-@keyframes introLogoPulse {
-  0%, 100% { filter: drop-shadow(0 0 18px rgba(220,0,0,0.9)) drop-shadow(0 0 40px rgba(220,0,0,0.5)) drop-shadow(0 6px 20px rgba(0,0,0,0.6)); }
-  50%       { filter: drop-shadow(0 0 28px rgba(255,80,80,1))  drop-shadow(0 0 60px rgba(220,0,0,0.8)) drop-shadow(0 6px 20px rgba(0,0,0,0.6)); }
-}
-
-#intro-text-block {
-  position: relative;
-  text-align: center;
-  margin-top: 36px;
-  opacity: 0;
-  animation: introTextIn 0.7s cubic-bezier(0.16,1,0.3,1) 1.7s forwards;
-}
-@keyframes introTextIn {
-  from { opacity: 0; transform: translateY(24px) scale(0.96); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-.intro-team-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(4rem, 18vw, 9rem);
-  letter-spacing: 0.06em;
-  color: #ffffff;
-  line-height: 0.9;
-  text-shadow: 0 0 40px rgba(220,0,0,0.8), 0 0 80px rgba(220,0,0,0.4);
-}
-.intro-deco-line {
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #cc0000, #ffffff, #cc0000, transparent);
-  margin: 14px auto;
-  animation: introLineExpand 0.5s ease 2.0s forwards;
-  box-shadow: 0 0 12px #cc0000;
-}
-@keyframes introLineExpand { to { width: 100%; } }
-.intro-sub-text {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(1rem, 4vw, 1.8rem);
-  letter-spacing: 0.5em;
-  color: rgba(255,255,255,0.7);
-  margin-top: 10px;
-  text-transform: uppercase;
-  text-align: center;
-  display: block;
-  padding-left: 0.5em;
-}
-.intro-particle {
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 10000;
-}
+:root{--op-black:#0d0d0d;}
+/* ============================================================
+   OPENING（2026-10 刷新：蹴り込み→YAHAGI→斜めに割れて登場）
+   ============================================================ */
+#intro{position:fixed;inset:0;z-index:9999;overflow:hidden;pointer-events:auto;cursor:pointer;}
+#intro .op-half{position:absolute;inset:0;background:var(--op-black);}
+#intro .op-a{clip-path:polygon(0 0,100% 0,100% 38%,0 62%);}
+#intro .op-b{clip-path:polygon(0 62%,100% 38%,100% 100%,0 100%);}
+#intro.go .op-a{animation:opOutA .7s cubic-bezier(.7,0,.2,1) 3.15s forwards;}
+#intro.go .op-b{animation:opOutB .7s cubic-bezier(.7,0,.2,1) 3.15s forwards;}
+@keyframes opOutA{to{transform:translate(-30%,-110%);}}
+@keyframes opOutB{to{transform:translate(30%,110%);}}
+#intro .op-cut{position:absolute;left:-10%;right:-10%;top:50%;height:6px;margin-top:-3px;background:var(--yellow);transform:rotate(-13deg) scaleX(0);opacity:0;}
+#intro.go .op-cut{animation:opCut .35s cubic-bezier(.2,.8,.2,1) 2.95s forwards;}
+@keyframes opCut{0%{opacity:1;transform:rotate(-13deg) scaleX(0)}100%{opacity:1;transform:rotate(-13deg) scaleX(1)}}
+#intro .op-stage{position:absolute;inset:0;}
+#intro.go .op-stage{animation:opShake .45s linear .62s, opFade .25s ease 3.1s forwards;}
+@keyframes opShake{0%,100%{transform:none}15%{transform:translate(-9px,6px) rotate(-.6deg)}30%{transform:translate(8px,-7px) rotate(.5deg)}45%{transform:translate(-6px,-4px)}60%{transform:translate(5px,5px)}80%{transform:translate(-2px,2px)}}
+@keyframes opFade{to{opacity:0}}
+/* 斜めの赤い帯が走る */
+#intro .op-slash{position:absolute;left:-30%;width:160%;height:34vh;top:33vh;background:var(--red);transform:rotate(-13deg) translateX(-110%);}
+#intro .op-slash.s2{height:2.2vh;top:68vh;background:var(--yellow);}
+#intro .op-slash.s3{height:1.2vh;top:29vh;background:#fff;}
+#intro.go .op-slash{animation:opSlash .5s cubic-bezier(.16,1,.3,1) .05s forwards;}
+#intro.go .op-slash.s2{animation-delay:.18s}
+#intro.go .op-slash.s3{animation-delay:.26s}
+@keyframes opSlash{to{transform:rotate(-13deg) translateX(0)}}
+/* スピード線 */
+#intro .op-lines{position:absolute;inset:-20%;transform:rotate(-13deg);opacity:0;
+  background:repeating-linear-gradient(0deg,transparent 0 22px,rgba(255,255,255,.07) 22px 24px,transparent 24px 61px,rgba(255,209,0,.08) 61px 62px);}
+#intro.go .op-lines{animation:opLines 3s linear .3s forwards;}
+@keyframes opLines{0%{opacity:0;background-position:0 0}10%{opacity:1}100%{opacity:1;background-position:-2600px 0}}
+#intro .op-lines{background-size:100% 140px;}
+/* ボールが蹴り込まれる */
+#intro .op-ball{position:absolute;left:50%;top:50%;width:min(30vw,150px);aspect-ratio:1;margin:calc(min(30vw,150px)/-2) 0 0 calc(min(30vw,150px)/-2);opacity:0;}
+#intro .op-ball svg{width:100%;height:100%;display:block;}
+#intro.go .op-ball{animation:opBall .62s cubic-bezier(.5,0,.75,0) .02s forwards;}
+@keyframes opBall{0%{opacity:1;transform:translate(-75vw,60vh) scale(.35) rotate(-720deg)}100%{opacity:1;transform:translate(0,0) scale(1.15) rotate(0)}}
+#intro.go .op-ball{animation:opBall .6s cubic-bezier(.5,0,.75,0) .02s forwards, opBallHit .5s cubic-bezier(.2,.8,.2,1) .62s forwards;}
+@keyframes opBallHit{0%{opacity:1;transform:scale(1.15)}100%{opacity:0;transform:scale(6)}}
+/* 着弾の閃光と輪 */
+#intro .op-flash{position:absolute;inset:0;background:#fff;opacity:0;}
+#intro.go .op-flash{animation:opFlash .38s ease-out .62s;}
+@keyframes opFlash{0%{opacity:.95}100%{opacity:0}}
+#intro .op-ring{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border:6px solid var(--yellow);border-radius:50%;opacity:0;}
+#intro .op-ring.r2{border-color:#fff;border-width:3px;}
+#intro.go .op-ring{animation:opRing .7s cubic-bezier(.16,1,.3,1) .62s forwards;}
+#intro.go .op-ring.r2{animation-delay:.72s}
+@keyframes opRing{0%{opacity:1;transform:scale(.3)}100%{opacity:0;transform:scale(7)}}
+/* 文字 */
+#intro .op-txt{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%) rotate(-6deg);text-align:center;color:#fff;}
+#intro .op-big{font-family:'Bebas Neue',sans-serif;font-style:italic;font-size:min(37vw,15rem);line-height:.82;letter-spacing:.01em;display:flex;justify-content:center;white-space:nowrap;}
+#intro .op-big span{display:inline-block;opacity:0;text-shadow:.06em .06em 0 var(--op-black);}
+#intro.go .op-big span{animation:opSlam .42s cubic-bezier(.2,1.4,.4,1) forwards;animation-delay:calc(.7s + var(--i)*.07s);}
+@keyframes opSlam{0%{opacity:0;transform:translate(.9em,-.2em) scale(2.6) skewX(-14deg);filter:blur(6px)}60%{opacity:1;filter:none}100%{opacity:1;transform:none}}
+#intro .op-sc{font-family:'Bebas Neue',sans-serif;font-style:italic;font-size:min(17vw,7rem);line-height:.95;color:transparent;-webkit-text-stroke:2px var(--yellow);opacity:0;margin-top:-.08em;}
+#intro.go .op-sc{animation:opSc .5s cubic-bezier(.16,1,.3,1) 1.25s forwards;}
+@keyframes opSc{0%{opacity:0;transform:translateX(-40%)}100%{opacity:1;transform:none}}
+#intro .op-band{display:inline-block;margin-top:.9rem;background:var(--yellow);color:#111;font-weight:900;font-size:min(4.2vw,1.1rem);letter-spacing:.16em;padding:.5rem 1.6rem;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);opacity:0;}
+#intro .op-band b{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.25em;letter-spacing:.12em;margin-right:.6em;}
+#intro.go .op-band{animation:opBand .45s cubic-bezier(.16,1,.3,1) 1.6s forwards;}
+@keyframes opBand{0%{opacity:0;transform:translateX(60%) skewX(-20deg)}100%{opacity:1;transform:none}}
+/* エンブレムのスタンプ */
+#intro .op-logo{position:absolute;left:50%;top:calc(50% - min(37vw,15rem)*.82 - 1.4rem);width:min(30vw,140px);margin-left:calc(min(30vw,140px)/-2);transform:translateY(-50%);opacity:0;filter:drop-shadow(0 6px 0 rgba(0,0,0,.6));}
+#intro.go .op-logo{animation:opStamp .5s cubic-bezier(.2,1.6,.4,1) 1.9s forwards;}
+@keyframes opStamp{0%{opacity:0;transform:translateY(-50%) scale(3) rotate(-25deg)}100%{opacity:1;transform:translateY(-50%) scale(1) rotate(-6deg)}}
+#intro .op-skip{position:absolute;right:14px;top:calc(14px + env(safe-area-inset-top,0px));font:400 1rem 'Bebas Neue',sans-serif;letter-spacing:.2em;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.35);padding:.35rem .8rem;background:rgba(0,0,0,.35);}
+#intro.done{display:none;}
 
 /* ============================================================
    MAIN SITE STYLES
@@ -2329,8 +2245,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .ob-stage::before{content:'';position:absolute;z-index:0;left:39%;bottom:1.8rem;width:116px;height:180px;background:url('images/bellmare_futsal_logo.png') center/contain no-repeat;opacity:.55;pointer-events:none;}
 @media (max-width:860px){ .ob-stage::before{left:1rem;bottom:4.2rem;width:82px;height:127px;opacity:.6;} }
 /* ===== 自前の書体（英数字のみ・2026-10） ===== */
-@font-face{font-family:'Bebas Neue';src:url('fonts/bebas-neue.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00B7,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;}
-@font-face{font-family:'Inter';src:url('fonts/inter-600-800.woff2') format('woff2');font-weight:600 800;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00B7,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;}
+@font-face{font-family:'Bebas Neue';src:url('bebas-neue.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00B7,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;}
+@font-face{font-family:'Inter';src:url('inter-600-800.woff2') format('woff2');font-weight:600 800;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00B7,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;}
 /* 本文は今まで通り端末のゴシック体（Interは見出し用の小さな英字だけに使う） */
 body{font-family:'Noto Sans JP',sans-serif;}
 </style>
@@ -2343,51 +2259,23 @@ body{font-family:'Noto Sans JP',sans-serif;}
 <!-- ============================================================
      INTRO ANIMATION
      ============================================================ -->
-<div id="intro">
-  <div class="intro-rays"></div>
-  <div id="intro-flash"></div>
-  <div id="intro-ball-wrap">
-    <div class="intro-impact-ring"></div>
-    <div class="intro-impact-ring"></div>
-    <svg class="intro-ball-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="introBg" cx="38%" cy="32%" r="65%">
-          <stop offset="0%" stop-color="#ffffff"/>
-          <stop offset="55%" stop-color="#f0f0f0"/>
-          <stop offset="100%" stop-color="#c0c0c0"/>
-        </radialGradient>
-        <radialGradient id="introShine" cx="30%" cy="25%" r="38%">
-          <stop offset="0%" stop-color="rgba(255,255,255,0.95)"/>
-          <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-        </radialGradient>
-        <clipPath id="introClip"><circle cx="100" cy="100" r="94"/></clipPath>
-      </defs>
-      <circle cx="100" cy="100" r="95" fill="url(#introBg)"/>
-      <g clip-path="url(#introClip)" fill="#aa0000">
-        <polygon points="100,68 124,83 124,113 100,128 76,113 76,83"/>
-        <polygon points="100,5 118,32 82,32"/>
-        <polygon points="155,28 168,62 140,70 124,48"/>
-        <polygon points="45,28 60,48 44,70 32,62"/>
-        <polygon points="190,100 168,118 152,100 168,82"/>
-        <polygon points="10,100 32,82 48,100 32,118"/>
-        <polygon points="155,172 124,152 140,130 168,138"/>
-        <polygon points="45,172 32,138 60,130 76,152"/>
-        <polygon points="100,195 82,168 118,168"/>
-      </g>
-      <ellipse cx="72" cy="66" rx="22" ry="14"
-        fill="url(#introShine)" transform="rotate(-30,72,66)" opacity="0.9"/>
-      <circle cx="100" cy="100" r="94" fill="none" stroke="rgba(150,0,0,0.15)" stroke-width="2"/>
-    </svg>
-  </div>
-  <div id="intro-text-block">
-    <!-- ロゴエンブレム -->
-    <div id="intro-logo-wrap">
-      <img src="images/logo_transparent.png" alt="YAHAGI SC" id="intro-logo-img">
+<div id="intro" aria-hidden="true">
+  <div class="op-half op-a"></div><div class="op-half op-b"></div>
+  <div class="op-stage">
+    <div class="op-lines"></div>
+    <div class="op-slash"></div><div class="op-slash s2"></div><div class="op-slash s3"></div>
+    <div class="op-flash"></div>
+    <div class="op-ring"></div><div class="op-ring r2"></div>
+    <div class="op-ball"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="95" fill="#fff"/><g fill="#111"><polygon points="100,66 126,84 116,114 84,114 74,84"/><polygon points="100,6 120,22 112,40 88,40 80,22"/><polygon points="176,58 190,86 176,100 156,90 156,66"/><polygon points="24,58 44,66 44,90 24,100 10,86"/><polygon points="58,170 76,150 98,160 92,188 66,190"/><polygon points="142,170 134,190 108,188 102,160 124,150"/></g><circle cx="100" cy="100" r="94" fill="none" stroke="#111" stroke-width="4"/></svg></div>
+    <img class="op-logo" alt="" src="images/logo_transparent.png">
+    <div class="op-txt">
+      <div class="op-big"><span style="--i:0">Y</span><span style="--i:1">A</span><span style="--i:2">H</span><span style="--i:3">A</span><span style="--i:4">G</span><span style="--i:5">I</span></div>
+      <div class="op-sc">SOCCER CLUB</div>
+      <div class="op-band"><b>SINCE 1974</b>小田原・矢作</div>
     </div>
-    <div class="intro-team-name">YAHAGI</div>
-    <div class="intro-deco-line"></div>
-    <div class="intro-sub-text">Soccer Club</div>
   </div>
+  <div class="op-cut"></div>
+  <div class="op-skip">SKIP ›</div>
 </div>
 
 <!-- ============================================================
@@ -3779,42 +3667,23 @@ if (prefersReduced || introSeen) {
 } else {
   try { localStorage.setItem('introSeenAt', String(Date.now())); } catch(e) {}
 
-  // ======= INTRO PARTICLES =======
-  var introColors = ['#cc0000','#ff4444','#ffffff','#ffaaaa','#ff0000'];
-  setTimeout(function() {
-    for (let i = 0; i < 32; i++) {
-      const p = document.createElement('div');
-      p.className = 'intro-particle';
-      const size  = 4 + Math.random() * 9;
-      const angle = (i / 32) * Math.PI * 2;
-      const dist  = 80 + Math.random() * 140;
-      const vx    = Math.cos(angle) * dist;
-      const vy    = Math.sin(angle) * dist - 80;
-      Object.assign(p.style, {
-        width: size + 'px', height: size + 'px',
-        background: introColors[Math.floor(Math.random() * introColors.length)],
-        left: '50%', top: '42%',
-        borderRadius: Math.random() > 0.4 ? '50%' : '2px',
-        boxShadow: '0 0 8px #cc0000',
-      });
-      document.body.appendChild(p);
-      requestAnimationFrame(() => {
-        p.style.transition = `transform ${0.5 + Math.random()*0.4}s cubic-bezier(0.2,0,0.3,1), opacity 0.5s ease`;
-        p.style.opacity = '1';
-        p.style.transform = `translate(${vx}px, ${vy}px)`;
-        setTimeout(() => {
-          p.style.opacity = '0';
-          p.style.transform = `translate(${vx*2}px, ${vy*2 + 100}px)`;
-        }, 150);
-        setTimeout(() => p.remove(), 1000);
-      });
-    }
-  }, 1600);
-
-  // イントロ終了後に非表示
-  setTimeout(function() {
-    if (introEl) introEl.style.display = 'none';
-  }, 4700);
+  // ======= OPENING：書体の読み込みを最大0.4秒待ってから再生 =======
+  var introDone = false, introTimer;
+  window.yahagiIntroDone = false;
+  function endIntro(){
+    if (introDone) return; introDone = true; window.yahagiIntroDone = true;
+    clearTimeout(introTimer);
+    if (introEl) { introEl.classList.remove('go'); introEl.classList.add('done'); introEl.style.display = 'none'; }
+    document.dispatchEvent(new Event('yahagi:introdone'));
+  }
+  function startIntro(){
+    if (introDone || !introEl || introEl.classList.contains('go')) return;
+    introEl.classList.add('go');
+    introTimer = setTimeout(endIntro, 3900);
+  }
+  if (introEl) introEl.addEventListener('click', endIntro);  // タップでスキップ
+  try { document.fonts.load("1em 'Bebas Neue'").then(startIntro, startIntro); } catch(e) { startIntro(); }
+  setTimeout(startIntro, 400);
 }
 
 // ======= NAV SMOOTH SCROLL =======
@@ -4554,7 +4423,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     show(0);
     var intro = document.getElementById('intro');
     var introOn = intro && intro.style.display !== 'none' && !document.body.classList.contains('intro-seen');
-    setTimeout(play, introOn ? 4300 : 250);
+    if (introOn && !window.yahagiIntroDone) { var hmGo=false; var hmStart=function(){ if(hmGo) return; hmGo=true; setTimeout(play, 250); }; document.addEventListener('yahagi:introdone', hmStart); setTimeout(hmStart, 4300); } else { setTimeout(play, 250); }
   }
 })();
 </script>
@@ -4816,7 +4685,8 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   hv.classList.add('hv-pre');
   var intro = document.getElementById('intro');
   var introOn = intro && intro.style.display !== 'none' && !document.body.classList.contains('intro-seen');
-  setTimeout(function(){ hv.classList.add('hv-go'); hv.classList.remove('hv-pre'); }, introOn ? 4300 : 120);
+  var hvGo=function(){ hv.classList.add('hv-go'); hv.classList.remove('hv-pre'); };
+  if (introOn && !window.yahagiIntroDone) { document.addEventListener('yahagi:introdone', function(){ setTimeout(hvGo, 120); }); setTimeout(hvGo, 4300); } else { setTimeout(hvGo, 120); }
 
   // --- 光の粒（赤・黄・白がゆっくり上昇） ---
   var cv = document.createElement('canvas');

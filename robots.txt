@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yahagi-sc.pages.dev/sitemap.xml
