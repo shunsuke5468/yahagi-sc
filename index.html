@@ -2355,7 +2355,11 @@ body{font-family:'Noto Sans JP',sans-serif;}
       <div class="hm-scene" data-word="決める。" data-en="WIN" style="--fx:50% 50%;--fxm:50% 50%;">
         <picture><source srcset="images/gallery_team_all.webp" type="image/webp"><img src="images/gallery_team_all.JPG" alt="大会で獲得したトロフィー" loading="lazy" decoding="async"></picture>
       </div>
-      <div class="hm-scene on" data-word="つなぐ。" data-en="ONE TEAM" data-pos="top" style="--fx:50% 62%;--fxm:48% 50%;">
+      <div class="hm-scene" data-word="つなぐ。" data-en="ONE TEAM" style="--fx:50% 20%;--fxm:58% 40%;">
+        <picture><source srcset="images/hero-tsunagu.webp" type="image/webp"><img src="images/hero-tsunagu.jpg" alt="ボールに向かって構える選手" loading="lazy" decoding="async"></picture>
+      </div>
+      <!-- 最後の画面（集合写真）：言葉なし。ムービーの「つなぐ。」のあとにここへ切り替わる -->
+      <div class="hm-scene on" data-final="1" style="--fx:50% 62%;--fxm:48% 50%;">
         <picture><source srcset="images/hero.webp" type="image/webp"><img src="images/hero.JPG" alt="矢作サッカークラブの選手・コーチ・保護者の集合写真" decoding="async"></picture>
       </div>
     </div>
@@ -4350,6 +4354,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   var AMBIENT = 6500;        // 最後の画面での写真の切り替え間隔
   var KEY = 'yahagiHeroMovieSeen', DAYS = 3;
   var timer = null, idx = scenes.length - 1, mode = 'final', inView = true;
+  var WORDS = scenes.filter(function(s){ return s.hasAttribute('data-word'); }).length;  // 言葉のある場面の数（集合写真は除く）
   hero.style.setProperty('--hm-scene', (SCENE/1000) + 's');
 
   function pad(n){ return (n < 10 ? '0' : '') + n; }
@@ -4372,7 +4377,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   function playScene(i){
     clearTimeout(timer);
     show(i); setWord(i); flash(); setBars(i);
-    timer = setTimeout(function(){ (i + 1 < scenes.length) ? playScene(i + 1) : finish(true); }, SCENE);
+    timer = setTimeout(function(){ (i + 1 < WORDS) ? playScene(i + 1) : finish(true); }, SCENE);
   }
   function play(){
     mode = 'play';
