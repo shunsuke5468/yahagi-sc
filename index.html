@@ -3650,40 +3650,54 @@ body{font-family:'Noto Sans JP',sans-serif;}
 </footer>
 
 <script>
-// ======= INTRO: 7日間に1回のみ / reduced-motion はスキップ =======
+// ======= INTRO: 3日間に1回のみ / reduced-motion はスキップ =======
 var introEl = document.getElementById('intro');
 var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var introSeen = false;
-var INTRO_SKIP_DAYS = 7; // イントロを再表示するまでの日数
+var INTRO_SKIP_DAYS = 3; // イントロを再表示するまでの日数
 try {
   var seenAt = parseInt(localStorage.getItem('introSeenAt') || '0', 10);
   introSeen = seenAt > 0 && (Date.now() - seenAt) < INTRO_SKIP_DAYS * 24 * 60 * 60 * 1000;
 } catch(e) {}
-// 確認用：URLの最後に ?intro を付けると、7日以内でも必ず再生する
+// 確認用：URLの最後に ?intro を付けると、3日以内でも必ず再生する
 try { if (/[?&]intro\b/.test(location.search)) introSeen = false; } catch(e) {}
+
+// ======= OPENING の再生・終了（「もう一度見る」からも呼べるように共通化） =======
+var introDone = false, introTimer;
+window.yahagiIntroDone = false;
+function endIntro(){
+  if (introDone) return; introDone = true; window.yahagiIntroDone = true;
+  clearTimeout(introTimer);
+  if (introEl) { introEl.classList.remove('go'); introEl.classList.add('done'); introEl.style.display = 'none'; }
+  document.dispatchEvent(new Event('yahagi:introdone'));
+}
+function startIntro(){
+  if (introDone || !introEl || introEl.classList.contains('go')) return;
+  introEl.classList.add('go');
+  introTimer = setTimeout(endIntro, 3900);
+}
+if (introEl) introEl.addEventListener('click', endIntro);  // タップでスキップ
+// 「もう一度見る」用：オープニングを最初から再生（動きを減らす設定の人には出さない）
+window.yahagiReplayIntro = function(){
+  if (!introEl || prefersReduced) return false;
+  clearTimeout(introTimer);
+  introDone = false; window.yahagiIntroDone = false;
+  document.body.classList.remove('intro-seen');
+  introEl.classList.remove('done', 'go');
+  introEl.style.display = '';
+  void introEl.offsetWidth;  // アニメーションを最初からやり直す
+  startIntro();
+  return true;
+};
 
 if (prefersReduced || introSeen) {
   // イントロを即時スキップ
   document.body.classList.add('intro-seen');
   if (introEl) introEl.style.display = 'none';
+  introDone = true; window.yahagiIntroDone = true;
 } else {
   try { localStorage.setItem('introSeenAt', String(Date.now())); } catch(e) {}
-
-  // ======= OPENING：書体の読み込みを最大0.4秒待ってから再生 =======
-  var introDone = false, introTimer;
-  window.yahagiIntroDone = false;
-  function endIntro(){
-    if (introDone) return; introDone = true; window.yahagiIntroDone = true;
-    clearTimeout(introTimer);
-    if (introEl) { introEl.classList.remove('go'); introEl.classList.add('done'); introEl.style.display = 'none'; }
-    document.dispatchEvent(new Event('yahagi:introdone'));
-  }
-  function startIntro(){
-    if (introDone || !introEl || introEl.classList.contains('go')) return;
-    introEl.classList.add('go');
-    introTimer = setTimeout(endIntro, 3900);
-  }
-  if (introEl) introEl.addEventListener('click', endIntro);  // タップでスキップ
+  // 書体の読み込みを最大0.4秒待ってから再生
   try { document.fonts.load("1em 'Bebas Neue'").then(startIntro, startIntro); } catch(e) { startIntro(); }
   setTimeout(startIntro, 400);
 }
@@ -4334,7 +4348,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var SCENE = 2300;          // 1語あたりの表示時間
   var AMBIENT = 6500;        // 最後の画面での写真の切り替え間隔
-  var KEY = 'yahagiHeroMovieSeen', DAYS = 7;
+  var KEY = 'yahagiHeroMovieSeen', DAYS = 3;
   var timer = null, idx = scenes.length - 1, mode = 'final', inView = true;
   hero.style.setProperty('--hm-scene', (SCENE/1000) + 's');
 
@@ -4400,7 +4414,13 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   }
 
   if(skip) skip.addEventListener('click', function(){ finish(true); });
-  if(replay) replay.addEventListener('click', function(){ play(); });
+  if(replay) replay.addEventListener('click', function(){
+    // オープニング → ムービーの順でもう一度流す
+    if (window.yahagiReplayIntro && window.yahagiReplayIntro()) {
+      var once = function(){ document.removeEventListener('yahagi:introdone', once); setTimeout(play, 250); };
+      document.addEventListener('yahagi:introdone', once);
+    } else { play(); }
+  });
   bars.forEach(function(b){
     b.addEventListener('click', function(){ if(mode === 'play') playScene(parseInt(b.getAttribute('data-i'), 10)); });
   });
@@ -4413,7 +4433,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     }, {threshold:.25}).observe(hero);
   }
 
-  // 初回（7日以内に見ていない）だけムービーを再生。動きを減らす設定・再訪問時は最後の画面から
+  // 初回（3日以内に見ていない）だけムービーを再生。動きを減らす設定・再訪問時は最後の画面から
   var seen = 0;
   try{ seen = parseInt(localStorage.getItem(KEY), 10) || 0; }catch(e){}
   var recently = seen && (Date.now() - seen) < DAYS * 86400000;
