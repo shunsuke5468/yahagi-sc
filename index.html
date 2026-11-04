@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 <link rel="preload" href="bebas-neue.woff2" as="font" type="font/woff2" crossorigin>
@@ -2249,6 +2250,35 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 @font-face{font-family:'Inter';src:url('inter-600-800.woff2') format('woff2');font-weight:600 800;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0,U+00B7,U+00D7,U+2013-2014,U+2018-2019,U+201C-201D,U+2022,U+2026;}
 /* 本文は今まで通り端末のゴシック体（Interは見出し用の小さな英字だけに使う） */
 body{font-family:'Noto Sans JP',sans-serif;}
+/* ===== QUICK GUIDE（30秒でわかる矢作SC） ===== */
+.qk{background:var(--yellow);padding:3.2rem 1.2rem 3.4rem;position:relative;overflow:hidden;}
+.qk::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-13deg,transparent 0 38px,rgba(0,0,0,.035) 38px 40px);pointer-events:none;}
+.qk .si{position:relative;max-width:980px;margin:0 auto;}
+.qk .sec-eyebrow{color:#111 !important;font-family:'Bebas Neue',sans-serif;letter-spacing:.2em;font-size:1rem;}
+.qk-title{font-size:clamp(1.6rem,6.4vw,2.4rem);font-weight:900;font-style:italic;line-height:1.2;color:#111;margin:.2rem 0 1.3rem;}
+.qk-title span{display:inline-block;background:#111;color:#fff;padding:0 .45em;margin-left:.25em;transform:skewX(-8deg);}
+.qk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;}
+@media (min-width:800px){.qk-grid{grid-template-columns:repeat(4,1fr);gap:1rem;}}
+.qk-card{background:#fff;border:3px solid #111;box-shadow:5px 5px 0 #111;padding:.85rem .85rem .9rem;min-width:0;}
+.qk-k{display:inline-block;background:var(--red);color:#fff;font-weight:900;font-size:.72rem;letter-spacing:.12em;padding:.15rem .6rem;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);}
+.qk-v{font-weight:900;font-size:clamp(1.05rem,4.6vw,1.3rem);line-height:1.35;margin:.45rem 0 .35rem;color:#111;}
+.qk-v b{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.45em;color:var(--red);letter-spacing:.02em;}
+.qk-s{font-size:.74rem;line-height:1.55;color:#444;}
+.qk-free{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .8rem;margin:1.2rem 0 0;background:#111;color:#fff;padding:.75rem 1rem;border-left:8px solid var(--red);}
+.qk-free b{font-size:1.15rem;font-weight:900;font-style:italic;color:var(--yellow);}
+.qk-free span{font-size:.85rem;font-weight:700;}
+.qk-btns{display:flex;flex-wrap:wrap;gap:.7rem 1rem;align-items:center;margin-top:1.2rem;}
+.qk-line{display:inline-flex;align-items:center;justify-content:center;flex:1 1 100%;background:#06C755;color:#fff;font-weight:900;font-size:1.05rem;text-decoration:none;padding:1rem 1.2rem;border:3px solid #111;box-shadow:5px 5px 0 #111;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);}
+@media (min-width:800px){.qk-line{flex:0 0 auto;padding:1rem 2.4rem;}}
+.qk-link{color:#111;font-weight:800;font-size:.9rem;text-decoration:none;border-bottom:2px solid #111;padding-bottom:1px;}
+/* ===== GKコーチ COMING SOON カード ===== */
+.coach-card.gk-soon .gk-soon-ph{aspect-ratio:3/2;background:repeating-linear-gradient(-13deg,#111 0 22px,#1d1d1d 22px 44px);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.coach-card.gk-soon .gk-soon-ph::after{content:'';position:absolute;left:-10%;right:-10%;bottom:16%;height:5px;background:var(--yellow);transform:rotate(-8deg);}
+.gk-soon-in{position:relative;z-index:1;text-align:center;color:#fff;}
+.gk-glove{width:clamp(44px,14vw,64px);height:auto;color:var(--yellow);animation:gkPulse 1.8s ease-in-out infinite;}
+.gk-soon-big{font-family:'Bebas Neue',sans-serif;font-style:italic;font-size:clamp(1.6rem,7vw,2.3rem);letter-spacing:.08em;line-height:1;margin-top:.3rem;text-shadow:3px 3px 0 var(--red);}
+@keyframes gkPulse{0%,100%{transform:rotate(-8deg) scale(1)}50%{transform:rotate(4deg) scale(1.08)}}
+@media (prefers-reduced-motion:reduce){.gk-glove{animation:none;}}
 </style>
 <noscript><style>#contact .final-bg{background-image:image-set(url('images/hero_bg.webp') type('image/webp'), url('images/hero_bg.JPG') type('image/jpeg')) !important;}
 </style></noscript>
@@ -2291,16 +2321,11 @@ body{font-family:'Noto Sans JP',sans-serif;}
     </a>
     <div class="nav-links">
       <a class="nav-link" href="#news">お知らせ</a>
-      <a class="nav-link" href="#about">クラブについて</a>
-      <a class="nav-link" href="#coach">コーチ紹介</a>
       <a class="nav-link" href="#course">カテゴリー</a>
-      <a class="nav-link" href="#onlyone">オンリーワンノート</a>
-      <a class="nav-link" href="#safety">安全・健康への取り組み</a>
-      <a class="nav-link" href="#results">実績</a>
-      <a class="nav-link" href="#schedule">練習情報</a>
-      <a class="nav-link" href="#price">費用</a>
+      <a class="nav-link" href="#schedule">練習・費用</a>
       <a class="nav-link" href="#join">入団方法</a>
-      <a class="nav-link" href="#faq">FAQ</a>
+      <a class="nav-link" href="#coach">コーチ</a>
+      <a class="nav-link" href="#philosophy">クラブについて</a>
       <a class="nav-cta" href="#contact">⚽ 体験申込はこちら</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="メニュー">
@@ -2311,17 +2336,18 @@ body{font-family:'Noto Sans JP',sans-serif;}
 
 <!-- モバイルメニュー -->
 <div class="mobile-menu" id="mobileMenu">
+  <a href="#quick" class="m-link">30秒でわかる矢作SC</a>
   <a href="#news" class="m-link">お知らせ</a>
-  <a href="#about" class="m-link">クラブについて</a>
-  <a href="#coach" class="m-link">コーチ紹介</a>
   <a href="#course" class="m-link">カテゴリー</a>
-  <a href="#onlyone" class="m-link">オンリーワンノート</a>
-  <a href="#safety" class="m-link">安全・健康への取り組み</a>
-  <a href="#results" class="m-link">実績</a>
   <a href="#schedule" class="m-link">練習情報</a>
   <a href="#price" class="m-link">費用</a>
   <a href="#join" class="m-link">入団方法</a>
-  <a href="#faq" class="m-link">FAQ</a>
+  <a href="#faq" class="m-link">よくある質問</a>
+  <a href="#coach" class="m-link">コーチ紹介</a>
+  <a href="#philosophy" class="m-link">クラブについて</a>
+  <a href="#onlyone" class="m-link">オンリーワンノート</a>
+  <a href="#safety" class="m-link">安全・健康への取り組み</a>
+  <a href="#results" class="m-link">実績</a>
   <a href="#contact" class="m-cta">⚽ 体験申込はこちら</a>
 </div>
 
@@ -2436,6 +2462,30 @@ body{font-family:'Noto Sans JP',sans-serif;}
 
 <div class="div-stripe"></div>
 
+<!-- QUICK GUIDE：入会に必要な情報の要約（2026-10 情報設計の見直し） -->
+<section class="section qk" id="quick">
+  <div class="si">
+    <div class="qk-head">
+      <div class="sec-eyebrow">Quick Guide</div>
+      <h2 class="qk-title">30秒でわかる<span>矢作SC</span></h2>
+    </div>
+    <div class="qk-grid">
+      <div class="qk-card"><div class="qk-k">対象</div><div class="qk-v">幼児〜<br>小学6年生</div><div class="qk-s">KIDS／U-8／U-10／U-12</div></div>
+      <div class="qk-card"><div class="qk-k">練習日</div><div class="qk-v">土・日・祝<br><b>8:00</b>〜<b>11:00</b></div><div class="qk-s">キッズ教室は<span style="white-space:nowrap">11:00〜12:00</span><br>7〜9月は夏時間</div></div>
+      <div class="qk-card"><div class="qk-k">場所</div><div class="qk-v">矢作小学校<br>グランド</div><div class="qk-s">小田原市矢作227</div></div>
+      <div class="qk-card"><div class="qk-k">費用</div><div class="qk-v">月 <b>2,500</b>円</div><div class="qk-s">入団時 4,500円＋保険料<br>兄弟3人目以降 月1,500円</div></div>
+    </div>
+    <div class="qk-free"><b>体験は無料</b><span>道具不要・練習着でOK・当日見学OK</span></div>
+    <div class="qk-btns">
+      <a class="qk-line" href="https://lin.ee/nX8Ezjx5" target="_blank" rel="noopener noreferrer">LINEで体験を申し込む</a>
+      <a class="qk-link" href="#schedule">練習・費用をくわしく →</a>
+      <a class="qk-link" href="#join">入団までの4ステップ →</a>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
 <!-- NEWS / お知らせ -->
 <section class="section" id="news" style="padding-top:3rem;padding-bottom:3rem;">
   <div class="si">
@@ -2450,108 +2500,361 @@ body{font-family:'Noto Sans JP',sans-serif;}
 
 <div class="div-stripe"></div>
 
-<!-- PHOTO MAGAZINE -->
-<section class="section" style="background:var(--off);padding-bottom:3rem;">
+<!-- COURSES -->
+<section class="course-section" id="course">
   <div class="si">
-    <div class="sec-eyebrow">Photo Gallery</div>
-    <div class="sec-title">グラウンドに広がる<span class="hl">笑顔と情熱</span></div>
-    <div style="margin-top:2rem;position:relative;">
-      <div style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.12);">
-        <div id="pg-slides" style="display:flex;transition:transform .5s ease;">
-          <div style="min-width:100%;position:relative;">
-            <picture><source srcset="images/gallery_kawasaki_01.webp" type="image/webp"><img loading="lazy" src="images/gallery_kawasaki_01.jpg" alt="サッカースクール集合" decoding="async" style="width:100%;height:520px;object-fit:cover;object-position:left center;display:block;"></picture>
-            <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.5));padding:2rem 1.8rem 1.4rem;">
-              <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">SOCCER SCHOOL</div>
-              <div style="color:#fff;font-size:1rem;font-weight:800;">川崎竜聖選手によるサッカースクール開校</div>
+    <div class="sec-eyebrow">Category</div>
+    <div class="sec-title">年齢・学年別<span class="yl">4つのカテゴリー</span></div>
+    <div class="bc-wrap bc-course" id="courseTabs" data-auto="0">
+      <div class="bc-topbar">
+        <span class="bc-tag">YAHAGI SC</span>
+        <span class="bc-topbar-title">CATEGORY</span>
+        <span class="bc-topbar-right"><span class="bc-rec" aria-hidden="true"></span><span data-bc-clock>KIDS</span></span>
+      </div>
+      <div class="bc-medal-tabs bc-tabs4" role="tablist" aria-label="年齢・学年別カテゴリー">
+        <button type="button" class="bc-tab bc-medal active" role="tab" id="bc-k-tab-kids" aria-controls="bc-k-kids" aria-selected="true" tabindex="0" data-clock="KIDS" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
+          <span class="bc-medal-rank">KIDS</span>
+          <span class="bc-medal-ja">キッズ教室</span>
+          <span class="bc-medal-meta">幼児〜年長</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u8" aria-controls="bc-k-u8" aria-selected="false" tabindex="-1" data-clock="U-8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
+          <span class="bc-medal-rank">U-8</span>
+          <span class="bc-medal-ja">低学年チーム</span>
+          <span class="bc-medal-meta">1〜2年生</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u10" aria-controls="bc-k-u10" aria-selected="false" tabindex="-1" data-clock="U-10" style="--m:#E07800;--m2:#A85A00;--mt:#111;">
+          <span class="bc-medal-rank">U-10</span>
+          <span class="bc-medal-ja">中学年チーム</span>
+          <span class="bc-medal-meta">3〜4年生</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u12" aria-controls="bc-k-u12" aria-selected="false" tabindex="-1" data-clock="U-12" style="--m:#2E5FD0;--m2:#1F44A0;--mt:#fff;">
+          <span class="bc-medal-rank">U-12</span>
+          <span class="bc-medal-ja">高学年チーム</span>
+          <span class="bc-medal-meta">5〜6年生</span>
+        </button>
+      </div>
+      <div class="bc-stage">
+        <div class="bc-panel bc-kids active" role="tabpanel" id="bc-k-kids" aria-labelledby="bc-k-tab-kids" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
+          <svg class="kd-cloud" viewBox="0 0 120 60" aria-hidden="true"><path d="M30 52 a18 18 0 0 1 2-36 a24 24 0 0 1 44-4 a20 20 0 0 1 30 18 a14 14 0 0 1-4 22 Z" fill="#fff"/></svg>
+          <svg class="kd-ball" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#fff" stroke="#1d1d1d" stroke-width="3"/><path d="M32 20 L42 27 L38 39 L26 39 L22 27 Z" fill="#1d1d1d"/><path d="M32 3 L32 20 M42 27 L58 22 M38 39 L48 54 M26 39 L16 54 M22 27 L6 22" stroke="#1d1d1d" stroke-width="2.5" fill="none"/><path d="M24 4 L32 9 L40 4 M58 22 L60 32 L56 40 M48 54 L40 60 M16 54 L24 60 M6 22 L4 32 L8 40" stroke="#1d1d1d" stroke-width="2.5" fill="none" stroke-linejoin="round"/></svg>
+          <div class="bc-cat-grid">
+            <div class="bc-cat-side">
+              <div class="bc-panel-en">PRE-GOLDEN AGE</div>
+              <div class="bc-cat-stat">
+                <div class="bc-cat-stat-label">脳や神経系の発達</div>
+                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="80">80</span><span class="bc-score-unit">%</span></div>
+                <div class="bc-cat-stat-cap">プレゴールデンエイジ（5〜8歳）は、脳や神経系が急速に発達し、成人の約80%に達する時期です。</div>
+              </div>
+              <p class="bc-cat-text">多種多様な動作をたくさん経験することが何より大切です。</p>
+              <div class="bc-points-label">あらゆる動きを経験</div>
+              <div class="bc-moves"><span class="kd-move" style="--k:0"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="25" cy="7" r="4.2" fill="currentColor"/><path d="M23 12 L18 22 M21 15 L29 18 M21 15 L13 13 M18 22 L25 28 L23 35 M18 22 L12 29 L6 28"/></svg>走る</span><span class="kd-move" style="--k:1"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="6" r="4.2" fill="currentColor"/><path d="M20 11 L20 22 M20 14 L12 7 M20 14 L28 7 M20 22 L14 27 L16 33 M20 22 L26 27 L24 33"/><path d="M10 38 L30 38" opacity=".45"/></svg>跳ぶ</span><span class="kd-move" style="--k:2"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="13" cy="15" r="4.2" fill="currentColor"/><path d="M17 19 C21 31 33 29 32 18 M32 18 L25 12 M17 19 L23 24"/><path d="M6 31 C9 37 17 39 22 37" opacity=".45"/></svg>転がる</span><span class="kd-move" style="--k:3"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="13" cy="7" r="4.2" fill="currentColor"/><circle cx="32" cy="7" r="3.2" fill="currentColor"/><path d="M14 12 L16 23 M15 15 L22 10 L27 6 M15 16 L8 20 M16 23 L11 34 M16 23 L23 33"/></svg>投げる</span><span class="kd-move hl" style="--k:4"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="12" cy="7" r="4.2" fill="currentColor"/><circle cx="31" cy="29" r="4" fill="currentColor"/><path d="M13 12 L15 22 M14 15 L7 18 M14 15 L21 12 M15 22 L10 34 M15 22 L25 26"/></svg>蹴る</span></div>
+              <p class="bc-cat-text">全身を動かす楽しさを知ることで<strong>神経回路のネットワーク</strong>が形成され、あらゆる動きを習得しやすい土台が育まれます。</p>
+            </div>
+            <div class="bc-cat-info">
+              <div class="bc-panel-en">SOCCER CLASS</div>
+              <div class="bc-lower-third">
+                <div class="bc-lt-title">キッズサッカー教室</div>
+                <div class="bc-lt-sub">幼児〜年長</div>
+              </div>
+              <div class="bc-points-label">CLASS INFO</div>
+              <dl class="bc-info-table">
+                <div><dt>練習日</dt><dd>土日祝　11:00〜12:00<br><span>夏時間 10:00〜11:00（7〜9月）</span></dd></div>
+                <div><dt>場所</dt><dd>矢作小学校グラウンド</dd></div>
+                <div><dt>対象</dt><dd>幼児（年少〜年長）</dd></div>
+                <div><dt>体験</dt><dd>無料・道具不要・当日OK</dd></div>
+              </dl>
+              <div class="bc-points-label">PROGRAM</div>
+              <ol class="bc-points">
+                <li><span class="bc-pt-num">01</span><span>多種多様な動き遊びで運動神経を育てる</span></li>
+                <li><span class="bc-pt-num">02</span><span>ボールに慣れる・サッカーの楽しさを体験</span></li>
+                <li><span class="bc-pt-num">03</span><span>元気な挨拶・礼儀・友達づくり</span></li>
+              </ol>
             </div>
           </div>
-          <div style="min-width:100%;position:relative;">
-            <picture><source srcset="images/gallery_kawasaki_02.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_kawasaki_02.jpg" alt="サッカースクール練習" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
-            <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.5));padding:2rem 1.8rem 1.4rem;">
-              <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">SOCCER SCHOOL</div>
-              <div style="color:#fff;font-size:1rem;font-weight:800;">みんなの憧れ！指導の様子</div>
+          <svg class="kd-grass" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C150 10 300 70 450 40 C600 10 750 70 900 40 C1050 10 1150 55 1200 40 L1200 80 L0 80 Z" fill="#7BC96F"/><path d="M0 56 C200 34 350 80 600 56 C850 32 1000 78 1200 56 L1200 80 L0 80 Z" fill="#5DB55A"/></svg>
+        </div>
+        <div class="bc-panel bc-mag" role="tabpanel" id="bc-k-u8" style="--u:#D91B2A;--ud:#B3121F;--ut:#fff;" aria-labelledby="bc-k-tab-u8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
+          <div class="bc-cat-grid">
+            <div class="mg-visual">
+              <div class="mg-label" aria-hidden="true"><span class="mg-big">U-8</span><span class="mg-age">1〜2年生</span></div>
+              <div class="mg-board" aria-hidden="true">
+                <svg viewBox="0 0 320 220"><defs><marker id="mk-u8" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><text class="ck-t" x="16" y="28">BALL TOUCH</text>
+<g class="ck-cone"><path d="M66 172 l9 -20 9 20z"/><path d="M126 172 l9 -20 9 20z"/><path d="M186 172 l9 -20 9 20z"/><path d="M246 172 l9 -20 9 20z"/></g>
+<path class="ck chalk-draw" style="--d:.15s" pathLength="1" marker-end="url(#mk-u8)" d="M36 150 C60 118 96 118 104 150 S140 182 164 150 S200 118 224 150 S262 182 292 140"/>
+<circle class="ck-ball" cx="36" cy="150" r="8"/>
+<path class="ck chalk-draw" style="--d:.9s" pathLength="1" d="M248 70 q12 -26 24 0 M262 92 q10 -22 20 0"/><circle class="ck-ball" cx="266" cy="104" r="7"/></svg>
+                <div class="mg-tray"><i></i><i></i><i></i></div>
+              </div>
             </div>
-          </div>
-          <div style="min-width:100%;position:relative;">
-            <picture><source srcset="images/hero.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/hero.JPG" alt="全員集合" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
-            <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.5));padding:2rem 1.8rem 1.4rem;">
-              <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">TEAM PHOTO</div>
-              <div style="color:#fff;font-size:1rem;font-weight:800;">矢作SCファミリー全員集合！</div>
-            </div>
-          </div>
-          <div style="min-width:100%;position:relative;">
-            <picture><source srcset="images/gallery_event_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="BBQ大会" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
-            <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.5));padding:2rem 1.8rem 1.4rem;">
-              <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">EVENT</div>
-              <div style="color:#fff;font-size:1rem;font-weight:800;">🎉 BBQ・水鉄砲 大盛り上がり！</div>
-            </div>
-          </div>
-          <div style="min-width:100%;position:relative;">
-            <picture><source srcset="images/gallery_school_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_school_01.JPG" alt="キッズ教室" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
-            <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.5));padding:2rem 1.8rem 1.4rem;">
-              <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">KIDS CLASS</div>
-              <div style="color:#fff;font-size:1rem;font-weight:800;">👶 幼児も大歓迎！</div>
+            <div class="bc-cat-info">
+              <div class="bc-panel-en">LOWER GRADES</div>
+              <div class="bc-lower-third">
+                <div class="bc-lt-title">低学年チーム</div>
+                <div class="bc-lt-sub">1〜2年生</div>
+              </div>
+              <div class="bc-cat-stat bc-cat-stat-inline">
+                <div class="bc-cat-stat-label">スキルテスト目標</div>
+                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="25">25</span><span class="bc-score-unit">点</span></div>
+              </div>
+              <div class="bc-points-label">KEY POINTS</div>
+              <ol class="bc-points">
+                <li><span class="bc-pt-num">01</span><span>ボールタッチ・リフティング基礎</span></li>
+                <li><span class="bc-pt-num">02</span><span>基礎練習＆サッカーの楽しさを学びます！</span></li>
+              </ol>
             </div>
           </div>
         </div>
-        <button onclick="pgSlide(-1)" aria-label="前のスライド" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border:none;color:#fff;font-size:1.5rem;width:46px;height:46px;border-radius:50%;cursor:pointer;transition:background .2s;line-height:1;" onmouseover="this.style.background='rgba(255,255,255,.45)'" onmouseout="this.style.background='rgba(255,255,255,.25)'">‹</button>
-        <button onclick="pgSlide(1)" aria-label="次のスライド" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border:none;color:#fff;font-size:1.5rem;width:46px;height:46px;border-radius:50%;cursor:pointer;transition:background .2s;line-height:1;" onmouseover="this.style.background='rgba(255,255,255,.45)'" onmouseout="this.style.background='rgba(255,255,255,.25)'">›</button>
-        <div style="position:absolute;top:14px;right:16px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:100px;" id="pg-counter">1 / 5</div>
+        <div class="bc-panel bc-mag" role="tabpanel" id="bc-k-u10" style="--u:#E07800;--ud:#9A5200;--ut:#111;" aria-labelledby="bc-k-tab-u10" style="--m:#B46E00;--m2:#7A4A00;--mt:#fff;">
+          <div class="bc-cat-grid">
+            <div class="mg-visual">
+              <div class="mg-label" aria-hidden="true"><span class="mg-big">U-10</span><span class="mg-age">3〜4年生</span></div>
+              <div class="mg-board" aria-hidden="true">
+                <svg viewBox="0 0 320 220"><defs><marker id="mk-u10" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><text class="ck-t" x="16" y="28">PASS &amp; MOVE</text>
+<g class="ck-p"><circle cx="70" cy="166" r="12"/><circle cx="250" cy="166" r="12"/><circle cx="160" cy="66" r="12"/></g>
+<path class="ck chalk-draw" style="--d:.15s" pathLength="1" marker-end="url(#mk-u10)" d="M86 166 L230 166"/>
+<path class="ck chalk-draw" style="--d:.55s" pathLength="1" marker-end="url(#mk-u10)" d="M242 152 L172 80"/>
+<path class="ck chalk-draw" style="--d:.95s" pathLength="1" marker-end="url(#mk-u10)" d="M148 80 L80 150"/>
+<path class="ck ck-run chalk-draw" style="--d:1.35s" pathLength="1" marker-end="url(#mk-u10)" d="M58 186 Q20 140 54 104"/>
+<circle class="ck-ball" cx="104" cy="166" r="7"/></svg>
+                <div class="mg-tray"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="bc-cat-info">
+              <div class="bc-panel-en">MIDDLE GRADES</div>
+              <div class="bc-lower-third">
+                <div class="bc-lt-title">中学年チーム</div>
+                <div class="bc-lt-sub">3〜4年生</div>
+              </div>
+              <div class="bc-cat-stat bc-cat-stat-inline">
+                <div class="bc-cat-stat-label">スキルテスト目標</div>
+                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="35">35</span><span class="bc-score-unit">点</span></div>
+              </div>
+              <div class="bc-points-label">KEY POINTS</div>
+              <ol class="bc-points">
+                <li><span class="bc-pt-num">01</span><span>基本＋実践技術を習得</span></li>
+                <li><span class="bc-pt-num">02</span><span>対人練習・パス・フォーメーション</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="bc-panel bc-mag" role="tabpanel" id="bc-k-u12" style="--u:#2E5FD0;--ud:#1F44A0;--ut:#fff;" aria-labelledby="bc-k-tab-u12" style="--m:#3566D6;--m2:#1F3A8A;--mt:#fff;">
+          <div class="bc-cat-grid">
+            <div class="mg-visual">
+              <div class="mg-label" aria-hidden="true"><span class="mg-big">U-12</span><span class="mg-age">5〜6年生</span></div>
+              <div class="mg-board" aria-hidden="true">
+                <svg viewBox="0 0 320 220"><defs><marker id="mk-u12" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><text class="ck-t" x="16" y="28">TEAM TACTICS</text>
+<g class="ck-line"><rect x="22" y="40" width="276" height="166"/><path d="M110 40 L110 76 L210 76 L210 40 M140 40 L140 52 L180 52 L180 40 M22 206"/><path d="M110 206 A50 50 0 0 1 210 206"/></g>
+<g class="ck-x"><path d="M114 104 l10 10 m0 -10 l-10 10"/><path d="M196 104 l10 10 m0 -10 l-10 10"/><path d="M155 76 l10 10 m0 -10 l-10 10"/></g>
+<g class="ck-o"><circle cx="90" cy="182" r="7"/><circle cx="230" cy="182" r="7"/><circle cx="70" cy="140" r="7"/><circle cx="160" cy="150" r="7"/><circle cx="250" cy="140" r="7"/><circle cx="160" cy="104" r="7"/></g>
+<path class="ck chalk-draw" style="--d:.15s" pathLength="1" marker-end="url(#mk-u12)" d="M168 146 L240 138"/>
+<path class="ck chalk-draw" style="--d:.55s" pathLength="1" marker-end="url(#mk-u12)" d="M244 132 L170 106"/>
+<path class="ck ck-shot chalk-draw" style="--d:.95s" pathLength="1" marker-end="url(#mk-u12)" d="M160 96 L160 56"/></svg>
+                <div class="mg-tray"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="bc-cat-info">
+              <div class="bc-panel-en">UPPER GRADES</div>
+              <div class="bc-lower-third">
+                <div class="bc-lt-title">高学年チーム</div>
+                <div class="bc-lt-sub">5〜6年生</div>
+              </div>
+              <div class="bc-cat-stat bc-cat-stat-inline">
+                <div class="bc-cat-stat-label">スキルテスト目標</div>
+                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="40">40</span><span class="bc-score-unit">点以上</span></div>
+              </div>
+              <div class="bc-points-label">KEY POINTS</div>
+              <ol class="bc-points">
+                <li><span class="bc-pt-num">01</span><span>実践技術・チーム戦術を完成</span></li>
+                <li><span class="bc-pt-num">02</span><span>県選手権・協会主催大会参加</span></li>
+                <li><span class="bc-pt-num">03</span><span>GK専門コーチ在籍</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
       </div>
-      <div style="display:flex;justify-content:center;gap:8px;margin-top:1rem;" role="tablist" aria-label="フォトギャラリー">
-        <button id="pg-dot-0" aria-label="スライド1へ" onclick="pgGoTo(0)" style="width:10px;height:10px;border-radius:50%;border:none;background:var(--red);cursor:pointer;padding:0;transition:background .2s;"></button>
-        <button id="pg-dot-1" aria-label="スライド2へ" onclick="pgGoTo(1)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
-        <button id="pg-dot-2" aria-label="スライド3へ" onclick="pgGoTo(2)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
-        <button id="pg-dot-3" aria-label="スライド4へ" onclick="pgGoTo(3)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
-        <button id="pg-dot-4" aria-label="スライド5へ" onclick="pgGoTo(4)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- SCHEDULE -->
+<section class="sch-section" id="schedule">
+  <div class="si">
+    <div class="sec-eyebrow">Schedule</div>
+    <div class="sec-title">活動スケジュール</div>
+    <div class="sch-grid">
+      <div class="sch-card"><div class="sch-type">通常練習（全学年）</div><div class="sch-title">毎週 土・日・祝日</div><div class="sch-row"><span>時間</span><span>8:00〜11:00 / 夏時間 7:00〜10:00（7〜9月）</span></div><div class="sch-row"><span>場所</span><span>矢作小学校グランド（小田原市）</span></div><div class="sch-row"><span>服装</span><span>練習着・トレシューまたはスパイク</span></div><div class="sch-row"><span>持物</span><span>ボール・スネあて・タオル・水筒</span></div></div>
+      <div class="sch-card" style="border-color:var(--red);background:#fff;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:12px;right:12px;background:var(--red);color:#fff;font-size:11px;font-weight:900;letter-spacing:.15em;padding:5px 14px;border-radius:100px;box-shadow:0 3px 12px rgba(217,27,42,.4);">完全無料</div>
+        <div class="sch-type" style="color:var(--red);">キッズサッカー教室</div>
+        <div class="sch-title">毎週 土・日・祝日</div>
+        <div class="sch-row"><span>時間</span><span>11:00〜12:00（夏時間 10:00〜11:00／7〜9月）</span></div>
+        <div class="sch-row"><span>対象</span><span>幼児〜低学年</span></div>
+        <div style="margin-top:1rem;background:var(--red);border-radius:10px;padding:.85rem 1rem;text-align:center;">
+          <div style="font-size:1.4rem;font-weight:900;color:#fff;letter-spacing:.02em;">道具不要・申込不要</div>
+          <div style="font-size:.82rem;color:rgba(255,255,255,.9);margin-top:4px;">当日そのまま遊びに来てください！</div>
+        </div>
       </div>
-      <script>
-      (function(){
-        var cur=0,total=5,timer;
-        function update(){
-          document.getElementById('pg-slides').style.transform='translateX(-'+(cur*100)+'%)';
-          document.getElementById('pg-counter').textContent=(cur+1)+' / '+total;
-          for(var i=0;i<total;i++){
-            var d=document.getElementById('pg-dot-'+i);
-            if(d) d.style.background=i===cur?'var(--red)':'#ccc';
-          }
-        }
-        window.pgSlide=function(dir){if(window.pgRelease)window.pgRelease();cur=(cur+dir+total)%total;update();reset();};
-        window.pgGoTo=function(n){if(window.pgRelease)window.pgRelease();cur=n;update();reset();};
-        var visible=false;
-        function reset(){clearInterval(timer);if(!visible) return;timer=setInterval(function(){cur=(cur+1)%total;update();},4500);}
-        // 画面に入っている間だけ自動で進める（見ていない間に、写真を先に読み込まないように）
-        var host=document.getElementById('pg-slides');
-        // ギャラリーの写真は、近づくまで読み込みを保留する（横に並んだスライドを、ブラウザが「近い」と判断して先に読み込むのを防ぐ）
-        var held=[];
-        function hold(){
-          if(!host || !('IntersectionObserver' in window)) return;
-          [].slice.call(host.querySelectorAll('source,img')).forEach(function(el){
-            ['srcset','src'].forEach(function(a){
-              var v=el.getAttribute(a);
-              if(v){ el.setAttribute('data-hold-'+a,v); el.removeAttribute(a); }
-            });
-            held.push(el);
-          });
-        }
-        function release(){
-          held.forEach(function(el){
-            ['srcset','src'].forEach(function(a){
-              var v=el.getAttribute('data-hold-'+a);
-              if(v){ el.setAttribute(a,v); el.removeAttribute('data-hold-'+a); }
-            });
-          });
-          held=[];
-        }
-        hold();
-        window.pgRelease=release;
-        if(host && 'IntersectionObserver' in window){
-          new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ release(); o.disconnect(); } },{rootMargin:'400px 0px'}).observe(host.parentElement);
-          new IntersectionObserver(function(es){ visible=es[0].isIntersecting; reset(); },{threshold:.15}).observe(host.parentElement);
-        } else { visible=true; }
-        reset();
-      })();
-      </script>
+      <div class="sch-card"><div class="sch-type">朝練習（4年生以上）</div><div class="sch-title">月3回程度</div><div class="sch-row"><span>時間</span><span>7:00〜7:50</span></div><div class="sch-row"><span>場所</span><span>矢作小学校グランド</span></div><div class="sch-row"><span>雨天</span><span>6:20時点で雨なら中止・MGよりLINE連絡</span></div></div>
+      <div class="sch-card"><div class="sch-type">年間行事</div><div class="sch-title">充実のイベントカレンダー</div><div class="sch-row"><span>夏</span><span>夏合宿（御殿場 1泊2日）</span></div><div class="sch-row"><span>秋</span><span>全学年BBQ大会（いこいの森）</span></div><div class="sch-row"><span>冬</span><span>矢作カップ・初蹴り大会</span></div><div class="sch-row"><span>通年</span><span>全学年スキルテスト・FANTASISTA表彰</span></div></div>
+    </div>
+    <div style="margin-top:1.5rem;background:var(--off);border-radius:14px;padding:1rem 1.25rem;font-size:.82rem;color:var(--text2);line-height:1.85;border-left:3px solid var(--red);">
+      📌 <strong style="color:var(--text);">休日について</strong><br>
+      ゴールデンウィーク・夏休み・年末年始などの大型連休期間は基本的にお休みです。<br>
+      キッズサッカー教室は上記に加え、グラウンドの状況などにより休みになることがあります。<br>
+      詳細は各チームのマネージャーよりLINEでご連絡いたします。
+    </div>
+
+    <!-- アクセスマップ -->
+    <div style="margin-top:2.5rem;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:1rem;flex-wrap:wrap;">
+        <div style="font-size:1.05rem;font-weight:900;color:var(--text);">活動場所</div>
+        <div style="font-size:.85rem;color:var(--text2);">矢作小学校グラウンド</div>
+      </div>
+      <div style="font-size:.85rem;color:var(--text2);margin-bottom:1rem;display:flex;align-items:flex-start;gap:6px;">
+        <span style="color:var(--red);font-weight:700;flex-shrink:0;">📍</span>
+        <span>〒250-0873　神奈川県小田原市矢作227</span>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.12);border:1px solid var(--border);">
+        <iframe
+          src="https://www.google.com/maps?q=〒250-0873+神奈川県小田原市矢作227&output=embed"
+          width="100%" height="320" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="矢作小学校グラウンド 地図"></iframe>
+      </div>
+      <div style="text-align:center;margin-top:.85rem;">
+        <a href="https://www.google.com/maps/search/?api=1&query=〒250-0873+神奈川県小田原市矢作227" target="_blank" rel="noopener noreferrer"
+          style="display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:700;color:var(--red);text-decoration:none;">
+          Googleマップで開く →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- PRICE -->
+<section class="price-section" id="price">
+  <div class="price-inner">
+    <div class="sec-eyebrow" style="color:rgba(255,255,255,.55);">Fee</div>
+    <div class="sec-title" style="color:#fff;">費用・月会費の<span style="color:var(--yellow);">ご案内</span></div>
+    <div class="price-layout">
+      <div class="price-card main"><div class="price-lbl">月会費（毎月）</div><div class="price-amount"><div class="price-num">2,500</div><div class="price-unit">円 / 月</div></div><div class="price-note">兄弟3人目以降は月1,500円</div><ul class="price-list"><li><span class="chk-g">✓</span><span>土日祝の通常練習参加</span></li><li><span class="chk-g">✓</span><span>各種大会・試合参加</span></li><li><span class="chk-g">✓</span><span>育成プログラムによる指導</span></li><li><span class="chk-g">✓</span><span>スキルテスト・FANTASISTA表彰制度</span></li></ul></div>
+      <div class="price-card main"><div class="price-lbl">入団時（初回のみ）</div><div class="price-amount"><div class="price-num">4,500</div><div class="price-unit">円 ＋ 保険料</div></div><div class="price-note">スポーツ安全保険加入金（実費）別途</div><ul class="price-list"><li><span class="chk-y">⭐</span><span>スポーツ安全保険加入</span></li><li><span class="chk-y">⭐</span><span>サッカー協会登録</span></li><li><span class="chk-y">⭐</span><span>ユニフォームシャツ貸与（赤・黄緑）</span></li><li><span class="chk-y">⭐</span><span>ゴールキーパー用ユニフォーム貸与</span></li><li><span class="chk-y">⭐</span><span>入団のしおり・名簿登録</span></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- STEPS -->
+<section class="steps-section" id="join">
+  <div class="si">
+    <div class="sec-eyebrow">How to Join</div>
+    <div class="sec-title">入団まで<span class="hl">4ステップ</span></div>
+    <div class="step-list">
+      <div class="step-item"><div><div class="step-circle">1</div><div class="step-line"></div></div><div><div class="step-title">⚽ 体験練習に来てみよう！</div><div class="step-desc">道具不要・練習着でOK。土日祝の通常練習またはキッズ教室（11:00〜）に気軽にお越しください。</div></div></div>
+      <div class="step-item"><div><div class="step-circle">2</div><div class="step-line"></div></div><div><div class="step-title">📝 入団申込書を提出</div><div class="step-desc">保護者の方が署名・捺印の上ご提出ください。規約のご確認をお願いします。</div></div></div>
+      <div class="step-item"><div><div class="step-circle">3</div><div class="step-line"></div></div><div><div class="step-title">💰 入団金・保険料をお支払い</div><div class="step-desc">入団金4,500円＋スポーツ安全保険加入金をお支払いください。ユニフォームシャツは貸与されます。</div></div></div>
+      <div class="step-item"><div><div class="step-circle">4</div></div><div><div class="step-title">🎉 チームに合流・練習スタート！</div><div class="step-desc">70名の仲間とコーチ陣が笑顔で待っています！TimeTreeでスケジュール共有します。</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="si">
+    <div class="sec-eyebrow">FAQ</div>
+    <div class="sec-title">よくある<span class="hl">質問</span></div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>サッカー未経験・初心者でも入れますか？</span></div><div class="faq-a">もちろんです！幼児向けキッズ教室やU-8カテゴリーでは初めてボールに触れるお子さまも多数在籍。基礎から楽しく丁寧に指導します。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>少年団と習い事の掛け持ちはできますか？</span></div><div class="faq-a">できます。学校行事と重なる場合も柔軟に対応。休む際はマネージャーへ事前にご連絡ください。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>保護者の当番や役割はありますか？</span></div><div class="faq-a">基本的にはありませんが、試合会場までの送迎や試合の審判対応などのご協力をお願いしております。また各カテゴリーには<strong>マネージャー</strong>（主にカテゴリー監督との連絡窓口）をお願いしており、LINEでのスケジュール連絡などを担っていただいています。</div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>年度途中からの入団はできますか？</span></div><div class="faq-a">随時入団受付中です。まずは体験練習からお気軽にどうぞ！</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- COACH -->
+<section class="coach-section" id="coach">
+  <div class="coach-section-inner">
+    <div class="sec-eyebrow">Coach &amp; Staff</div>
+    <div class="sec-title">コーチ・<span class="hl">スタッフ紹介</span></div>
+    <p style="font-size:.9rem;color:var(--text2);max-width:600px;margin-top:.5rem;">
+      1974年の創設以来培われてきた指導理念のもと、コーチ陣が一人ひとりのお子さまに向き合います。
+    </p>
+    <div class="bc-wrap bc-coach" id="coachTabs" data-auto="0">
+      <div class="bc-topbar">
+        <span class="bc-tag">YAHAGI SC</span>
+        <span class="bc-topbar-title">COACH &amp; STAFF</span>
+        <span class="bc-topbar-right"><span class="bc-rec" aria-hidden="true"></span><span data-bc-clock>STAFF</span></span>
+      </div>
+      <div class="bc-medal-tabs bc-tabs4" role="tablist" aria-label="コーチ・スタッフのカテゴリー">
+        <button type="button" class="bc-tab bc-medal active" role="tab" id="bc-c-tab-staff" aria-controls="bc-c-staff" aria-selected="true" tabindex="0" data-clock="STAFF" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
+          <span class="bc-medal-rank">STAFF</span>
+          <span class="bc-medal-ja">運営・統括</span>
+          <span class="bc-medal-meta">4名</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u8" aria-controls="bc-c-u8" aria-selected="false" tabindex="-1" data-clock="U-8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
+          <span class="bc-medal-rank">U-8</span>
+          <span class="bc-medal-ja">U-8スタッフ</span>
+          <span class="bc-medal-meta">5名</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u10" aria-controls="bc-c-u10" aria-selected="false" tabindex="-1" data-clock="U-10" style="--m:#E07800;--m2:#A85A00;--mt:#111;">
+          <span class="bc-medal-rank">U-10</span>
+          <span class="bc-medal-ja">U-10スタッフ</span>
+          <span class="bc-medal-meta">4名</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u12" aria-controls="bc-c-u12" aria-selected="false" tabindex="-1" data-clock="U-12" style="--m:#2E5FD0;--m2:#1F44A0;--mt:#fff;">
+          <span class="bc-medal-rank">U-12</span>
+          <span class="bc-medal-ja">U-12スタッフ</span>
+          <span class="bc-medal-meta">6名</span>
+        </button>
+      </div>
+      <div class="bc-stage">
+        <div class="bc-panel bc-coach-panel active" role="tabpanel" id="bc-c-staff" aria-labelledby="bc-c-tab-staff" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#D91B2A;">顧問</div><div class="coach-name">渋谷 芳美</div><div class="coach-name-en">YOSHIMI SHIBUYA</div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kouno.jpg" alt="河野 浩二" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">相談役・育成指導統括</div><div class="coach-name">河野 浩二</div><div class="coach-name-en">KOJI KOUNO</div><div class="coach-lic"><span>救命技能認定</span><span>スポーツ少年団指導者</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kusaka.jpg" alt="日下 研一" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">総監督・U-8&キッズ監督</div><div class="coach-name">日下 研一</div><div class="coach-name-en">KENICHI KUSAKA</div><div class="coach-lic"><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_hayasaka.jpg" alt="早坂 浩明" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">クラブ代表・U-10監督</div><div class="coach-name">早坂 浩明</div><div class="coach-name-en">HIROAKI HAYASAKA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span><span>クラブウェルフェアオフィサー</span><span>小田原サッカー協会 運営部役員</span></div></div></div>
+      <!-- GKコーチ：就任予定（決まったら写真・名前に差し替え） -->
+      <div class="coach-card gk-soon"><div class="coach-avatar gk-soon-ph" style="padding:0;height:auto;" aria-hidden="true"><div class="gk-soon-in"><svg class="gk-glove" viewBox="0 0 64 64"><path d="M20 58V34c-3-2-6-6-6-10V14a3 3 0 0 1 6 0v8h1V8a3 3 0 0 1 6 0v13h1V5a3 3 0 0 1 6 0v16h1V8a3 3 0 0 1 6 0v18c2-3 4-5 6-5a3 3 0 0 1 2 5l-6 9c-1 3-3 5-5 6v17z" fill="currentColor"/><rect x="18" y="50" width="26" height="8" fill="#111"/></svg><div class="gk-soon-big">COMING SOON</div></div></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">GKコーチ（全学年）</div><div class="coach-name">近日公開</div><div class="coach-name-en">GOALKEEPER COACH</div><div class="coach-lic"><span>キーパー専門の指導がスタート予定</span></div></div></div>
+          </div>
+        </div>
+        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u8" aria-labelledby="bc-c-tab-u8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kinoe.jpg" alt="甲 淳一" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ・GK担当</div><div class="coach-name">甲 淳一</div><div class="coach-name-en">JUNICHI KINOE</div></div></div>
+      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">三橋 義昭</div><div class="coach-name-en">YOSHIAKI MITSUHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_tokunaga.jpg" alt="徳永 哲和" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">徳永 哲和</div><div class="coach-name-en">YOSHIKAZU TOKUNAGA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_tomo.jpg" alt="柏木 知之" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8アシスタントコーチ</div><div class="coach-name">髙山 侑樹</div><div class="coach-name-en">YUKI TAKAYAMA</div><div class="coach-lic"><span>救命技能認定</span></div></div></div>
+          </div>
+        </div>
+        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u10" aria-labelledby="bc-c-tab-u10" style="--m:#E07800;--m2:#A85A00;--mt:#111;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_ueda.jpg" alt="植田 健" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">植田 健</div><div class="coach-name-en">KEN UEDA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>赤十字ベーシックライフサポーター</span></div></div></div>
+      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">赤松 歩</div><div class="coach-name-en">AYUMU AKAMATSU</div><div class="coach-lic"><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">田中 祐也</div><div class="coach-name-en">YUYA TANAKA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">遠藤 匠</div><div class="coach-name-en">TAKUMI ENDO</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span></div></div></div>
+          </div>
+        </div>
+        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u12" aria-labelledby="bc-c-tab-u12" style="--m:#2E5FD0;--m2:#1F44A0;--mt:#fff;">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_morohoshi.jpg" alt="諸星 達也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12監督</div><div class="coach-name">諸星 達也</div><div class="coach-name-en">TATSUYA MOROHOSHI</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_t.jpg" alt="柏木 誉史" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">柏木 誉史</div><div class="coach-name-en">TAKAFUMI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span><span>クラブウェルフェアオフィサー</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_seto.jpg" alt="瀬戸 俊明" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">瀬戸 俊明</div><div class="coach-name-en">TOSHIAKI SETO</div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_takahashi.jpg" alt="高橋 富康" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">高橋 富康</div><div class="coach-name-en">TOMIYASU TAKAHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_shimoda.jpg" alt="下田 翔也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">下田 翔也</div><div class="coach-name-en">SHOYA SHIMODA</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>JFA公認4級審判員</span><span>JFA公認キッズリーダー</span></div></div></div>
+      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_isozaki.jpg" alt="磯﨑 幸二" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">磯﨑 幸二</div><div class="coach-name-en">KOJI ISOZAKI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>小田原サッカー協会 技術部役員</span></div></div></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2567,6 +2870,138 @@ body{font-family:'Noto Sans JP',sans-serif;}
       <div class="phil-card"><div class="phil-title">競技技能を磨く</div><div class="phil-desc">テクニック・フィジカル・個人戦術の3要素をバランスよく強化。必要な時に必要な技術を発揮できる選手を育てます。</div></div>
       <div class="phil-card"><div class="phil-title">心を育てる</div><div class="phil-desc">自主性・主体性・協調性・社会性・耐える心。「褒め育」指導で子どもの自信を引き出し、自分で考え行動できる力を養います。</div></div>
       <div class="phil-card"><div class="phil-title">仲間を尊重する</div><div class="phil-desc">最善の努力・相手へのリスペクト・元気な挨拶。サッカーを通じて仲間・相手・審判への感謝の気持ちを育てます。</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- ONLYONE NOTE -->
+<section style="background:#fffaf0;padding:5rem 1.5rem;" id="onlyone">
+  <div class="si">
+    <div class="sec-eyebrow">Only One Note</div>
+    <div class="sec-title">選手を育てる<span class="hl">オンリーワンノート</span></div>
+    <p style="font-size:.9rem;color:var(--text2);max-width:640px;margin-top:.5rem;line-height:1.8;">
+      すべての選手に「オンリーワンノート」を配布しています。<br>
+      技術だけでなく、心・思考・夢を育てる矢作SCオリジナルの育成プログラムです。
+    </p>
+
+    <!-- 3つの行動目標 -->
+    <div style="margin-top:2.5rem;">
+      <h3 class="goal-h" style="font-size:1.1rem;font-weight:900;color:var(--red);margin-bottom:1.2rem;letter-spacing:.02em;">3つの行動目標</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div class="goal-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
+          <picture><source srcset="images/goal_aisatsu.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/goal_aisatsu.jpg" alt="げんきなあいさつ" style="width:100%;height:180px;object-fit:contain;background:#f5f5f5;"></picture>
+        </div>
+        <div class="goal-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
+          <picture><source srcset="images/goal_respect.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/goal_respect.jpg" alt="リスペクト" style="width:100%;height:180px;object-fit:contain;background:#f5f5f5;"></picture>
+        </div>
+        <div class="goal-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
+          <picture><source srcset="images/goal_best.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/goal_best.jpg" alt="ベストをつくす" style="width:100%;height:180px;object-fit:contain;background:#f5f5f5;"></picture>
+        </div>
+      </div>
+    </div>
+
+    <!-- ノートの内容 -->
+    <!-- FANTASISTA 全幅カード -->
+    <div style="margin-top:2.5rem;">
+      <div class="bc-wrap bc-fanta" id="fantaTabs" data-auto="8000">
+        <div class="bc-topbar">
+          <span class="bc-tag">LIFTING TRIAL</span>
+          <span class="bc-topbar-title">目指せ FANTASISTA！</span>
+          <span class="bc-topbar-right"><span class="bc-rec" aria-hidden="true"></span><span data-bc-clock>BRONZE</span></span>
+        </div>
+        <div class="bc-medal-tabs" role="tablist" aria-label="FANTASISTA ランク">
+        <button type="button" class="bc-tab bc-medal active" role="tab" id="bc-f-tab-bronze" aria-controls="bc-f-bronze" aria-selected="true" tabindex="0" data-clock="BRONZE" style="--m:#CD7F32;--m2:#8C5523;--mt:#fff;">
+          <span class="bc-medal-rank">BRONZE</span>
+          <span class="bc-medal-ja">ブロンズ（銅賞）</span>
+          <span class="bc-medal-meta">TRY 1 ／ 表彰状</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-f-tab-silver" aria-controls="bc-f-silver" aria-selected="false" tabindex="-1" data-clock="SILVER" style="--m:#D3D3D3;--m2:#8E8E8E;--mt:#111;">
+          <span class="bc-medal-rank">SILVER</span>
+          <span class="bc-medal-ja">シルバー（銀賞）</span>
+          <span class="bc-medal-meta">TRY 2–3 ／ メダル</span>
+        </button>
+        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-f-tab-gold" aria-controls="bc-f-gold" aria-selected="false" tabindex="-1" data-clock="GOLD" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
+          <span class="bc-medal-rank">GOLD</span>
+          <span class="bc-medal-ja">ゴールド（金賞）</span>
+          <span class="bc-medal-meta">TRY 4–6 ／ メダル</span>
+        </button>
+        </div>
+        <div class="bc-stage">
+        <div class="bc-panel active" role="tabpanel" id="bc-f-bronze" aria-labelledby="bc-f-tab-bronze" style="--m:#CD7F32;--m2:#8C5523;--mt:#fff;">
+          <div class="bc-trials">
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-1</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="100">100</span><span class="bc-score-unit">回</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">とにかく100回</div><div class="bc-trial-detail">基準なし</div></div>
+            </div>
+          </div>
+          <div class="bc-award"><span class="bc-award-label">ALL CLEAR</span><span class="bc-award-text">ブロンズ（銅賞） ── 表彰状受賞</span></div>
+        </div>
+        <div class="bc-panel" role="tabpanel" id="bc-f-silver" aria-labelledby="bc-f-tab-silver" style="--m:#D3D3D3;--m2:#8E8E8E;--mt:#111;">
+          <div class="bc-trials">
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-2</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="200">200</span><span class="bc-score-unit">回</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">200回繰り返し</div><div class="bc-trial-detail">右→左→右→左<br>＊ボールの高さはへその位置</div></div>
+            </div>
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-3</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="15">15</span><span class="bc-score-unit">M</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">ジグザグ 15M</div><div class="bc-trial-detail">大パイロン11個（1.5M間隔）<br>右→左→右→左の繰り返し</div></div>
+            </div>
+          </div>
+          <div class="bc-award"><span class="bc-award-label">ALL CLEAR</span><span class="bc-award-text">シルバー（銀賞） ── メダル受賞</span></div>
+        </div>
+        <div class="bc-panel" role="tabpanel" id="bc-f-gold" aria-labelledby="bc-f-tab-gold" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
+          <div class="bc-trials">
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-4</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="300">300</span><span class="bc-score-unit">回</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">300回繰り返し</div><div class="bc-trial-detail">右→左→右→左<br>＊ボールの高さはへその位置</div></div>
+            </div>
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-5</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="30">30</span><span class="bc-score-unit">M</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">ジグザグ 30M</div><div class="bc-trial-detail">大パイロン21個（1.5M間隔）<br>右→左→右→左の繰り返し</div></div>
+            </div>
+            <div class="bc-trial">
+              <div class="bc-trial-label">TRY-6</div>
+              <div class="bc-score"><span class="bc-score-num" data-n="30">30</span><span class="bc-score-unit">回</span></div>
+              <div class="bc-trial-info"><div class="bc-trial-title">30回繰り返し</div><div class="bc-trial-detail">足→頭→腿の繰り返し<br>足・腿は左右自由に使える</div></div>
+            </div>
+          </div>
+          <div class="bc-award"><span class="bc-award-label">ALL CLEAR</span><span class="bc-award-text">ゴールド（金賞） ── メダル受賞</span></div>
+        </div>
+        </div>
+      </div>
+
+      <!-- 3枚のノートカード -->
+      <div class="note-cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;">
+
+        <!-- ストロングポイント -->
+        <div class="note-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.5rem;">STRONG POINT</div>
+          <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:.5rem;">ストロングポイント</div>
+          <div style="font-size:.8rem;color:var(--text2);line-height:1.65;">自分の得意なこと・好きなこと・強みを見つけ、書き記す自己発見シート。家族や友人にも聞いてみよう！</div>
+        </div>
+
+        <!-- ほめほめノート -->
+        <div class="note-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.5rem;">PRAISE NOTE</div>
+          <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:.5rem;">ほめほめノート</div>
+          <div style="font-size:.8rem;color:var(--text2);line-height:1.65;">コーチからほめられたことを記録。ほめられた感想と次の目標を自分で考え、前向きな気持ちを育てます。</div>
+        </div>
+
+        <!-- 自分の夢や目標 -->
+        <div class="note-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.5rem;">MY DREAM</div>
+          <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:.5rem;">自分の夢や目標</div>
+          <div style="font-size:.8rem;color:var(--text2);line-height:1.65;">将来の夢・卒団までの目標・そのために大切なことを3つ考えて書く。夢へ向かう力を育てます。</div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
@@ -2787,396 +3222,6 @@ body{font-family:'Noto Sans JP',sans-serif;}
 
 <div class="div-stripe"></div>
 
-<!-- ONLYONE NOTE -->
-<section style="background:#fffaf0;padding:5rem 1.5rem;" id="onlyone">
-  <div class="si">
-    <div class="sec-eyebrow">Only One Note</div>
-    <div class="sec-title">選手を育てる<span class="hl">オンリーワンノート</span></div>
-    <p style="font-size:.9rem;color:var(--text2);max-width:640px;margin-top:.5rem;line-height:1.8;">
-      すべての選手に「オンリーワンノート」を配布しています。<br>
-      技術だけでなく、心・思考・夢を育てる矢作SCオリジナルの育成プログラムです。
-    </p>
-
-    <!-- 3つの行動目標 -->
-    <div style="margin-top:2.5rem;">
-      <h3 class="goal-h" style="font-size:1.1rem;font-weight:900;color:var(--red);margin-bottom:1.2rem;letter-spacing:.02em;">3つの行動目標</h3>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-        <div class="goal-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
-          <picture><source srcset="images/goal_aisatsu.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/goal_aisatsu.jpg" alt="げんきなあいさつ" style="width:100%;height:180px;object-fit:contain;background:#f5f5f5;"></picture>
-        </div>
-        <div class="goal-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
-          <picture><source srcset="images/goal_respect.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/goal_respect.jpg" alt="リスペクト" style="width:100%;height:180px;object-fit:contain;background:#f5f5f5;"></picture>
-        </div>
-        <div class="goal-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);">
-          <picture><source srcset="images/goal_best.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/goal_best.jpg" alt="ベストをつくす" style="width:100%;height:180px;object-fit:contain;background:#f5f5f5;"></picture>
-        </div>
-      </div>
-    </div>
-
-    <!-- ノートの内容 -->
-    <!-- FANTASISTA 全幅カード -->
-    <div style="margin-top:2.5rem;">
-      <div class="bc-wrap bc-fanta" id="fantaTabs" data-auto="8000">
-        <div class="bc-topbar">
-          <span class="bc-tag">LIFTING TRIAL</span>
-          <span class="bc-topbar-title">目指せ FANTASISTA！</span>
-          <span class="bc-topbar-right"><span class="bc-rec" aria-hidden="true"></span><span data-bc-clock>BRONZE</span></span>
-        </div>
-        <div class="bc-medal-tabs" role="tablist" aria-label="FANTASISTA ランク">
-        <button type="button" class="bc-tab bc-medal active" role="tab" id="bc-f-tab-bronze" aria-controls="bc-f-bronze" aria-selected="true" tabindex="0" data-clock="BRONZE" style="--m:#CD7F32;--m2:#8C5523;--mt:#fff;">
-          <span class="bc-medal-rank">BRONZE</span>
-          <span class="bc-medal-ja">ブロンズ（銅賞）</span>
-          <span class="bc-medal-meta">TRY 1 ／ 表彰状</span>
-        </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-f-tab-silver" aria-controls="bc-f-silver" aria-selected="false" tabindex="-1" data-clock="SILVER" style="--m:#D3D3D3;--m2:#8E8E8E;--mt:#111;">
-          <span class="bc-medal-rank">SILVER</span>
-          <span class="bc-medal-ja">シルバー（銀賞）</span>
-          <span class="bc-medal-meta">TRY 2–3 ／ メダル</span>
-        </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-f-tab-gold" aria-controls="bc-f-gold" aria-selected="false" tabindex="-1" data-clock="GOLD" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
-          <span class="bc-medal-rank">GOLD</span>
-          <span class="bc-medal-ja">ゴールド（金賞）</span>
-          <span class="bc-medal-meta">TRY 4–6 ／ メダル</span>
-        </button>
-        </div>
-        <div class="bc-stage">
-        <div class="bc-panel active" role="tabpanel" id="bc-f-bronze" aria-labelledby="bc-f-tab-bronze" style="--m:#CD7F32;--m2:#8C5523;--mt:#fff;">
-          <div class="bc-trials">
-            <div class="bc-trial">
-              <div class="bc-trial-label">TRY-1</div>
-              <div class="bc-score"><span class="bc-score-num" data-n="100">100</span><span class="bc-score-unit">回</span></div>
-              <div class="bc-trial-info"><div class="bc-trial-title">とにかく100回</div><div class="bc-trial-detail">基準なし</div></div>
-            </div>
-          </div>
-          <div class="bc-award"><span class="bc-award-label">ALL CLEAR</span><span class="bc-award-text">ブロンズ（銅賞） ── 表彰状受賞</span></div>
-        </div>
-        <div class="bc-panel" role="tabpanel" id="bc-f-silver" aria-labelledby="bc-f-tab-silver" style="--m:#D3D3D3;--m2:#8E8E8E;--mt:#111;">
-          <div class="bc-trials">
-            <div class="bc-trial">
-              <div class="bc-trial-label">TRY-2</div>
-              <div class="bc-score"><span class="bc-score-num" data-n="200">200</span><span class="bc-score-unit">回</span></div>
-              <div class="bc-trial-info"><div class="bc-trial-title">200回繰り返し</div><div class="bc-trial-detail">右→左→右→左<br>＊ボールの高さはへその位置</div></div>
-            </div>
-            <div class="bc-trial">
-              <div class="bc-trial-label">TRY-3</div>
-              <div class="bc-score"><span class="bc-score-num" data-n="15">15</span><span class="bc-score-unit">M</span></div>
-              <div class="bc-trial-info"><div class="bc-trial-title">ジグザグ 15M</div><div class="bc-trial-detail">大パイロン11個（1.5M間隔）<br>右→左→右→左の繰り返し</div></div>
-            </div>
-          </div>
-          <div class="bc-award"><span class="bc-award-label">ALL CLEAR</span><span class="bc-award-text">シルバー（銀賞） ── メダル受賞</span></div>
-        </div>
-        <div class="bc-panel" role="tabpanel" id="bc-f-gold" aria-labelledby="bc-f-tab-gold" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
-          <div class="bc-trials">
-            <div class="bc-trial">
-              <div class="bc-trial-label">TRY-4</div>
-              <div class="bc-score"><span class="bc-score-num" data-n="300">300</span><span class="bc-score-unit">回</span></div>
-              <div class="bc-trial-info"><div class="bc-trial-title">300回繰り返し</div><div class="bc-trial-detail">右→左→右→左<br>＊ボールの高さはへその位置</div></div>
-            </div>
-            <div class="bc-trial">
-              <div class="bc-trial-label">TRY-5</div>
-              <div class="bc-score"><span class="bc-score-num" data-n="30">30</span><span class="bc-score-unit">M</span></div>
-              <div class="bc-trial-info"><div class="bc-trial-title">ジグザグ 30M</div><div class="bc-trial-detail">大パイロン21個（1.5M間隔）<br>右→左→右→左の繰り返し</div></div>
-            </div>
-            <div class="bc-trial">
-              <div class="bc-trial-label">TRY-6</div>
-              <div class="bc-score"><span class="bc-score-num" data-n="30">30</span><span class="bc-score-unit">回</span></div>
-              <div class="bc-trial-info"><div class="bc-trial-title">30回繰り返し</div><div class="bc-trial-detail">足→頭→腿の繰り返し<br>足・腿は左右自由に使える</div></div>
-            </div>
-          </div>
-          <div class="bc-award"><span class="bc-award-label">ALL CLEAR</span><span class="bc-award-text">ゴールド（金賞） ── メダル受賞</span></div>
-        </div>
-        </div>
-      </div>
-
-      <!-- 3枚のノートカード -->
-      <div class="note-cards-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;">
-
-        <!-- ストロングポイント -->
-        <div class="note-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.5rem;">STRONG POINT</div>
-          <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:.5rem;">ストロングポイント</div>
-          <div style="font-size:.8rem;color:var(--text2);line-height:1.65;">自分の得意なこと・好きなこと・強みを見つけ、書き記す自己発見シート。家族や友人にも聞いてみよう！</div>
-        </div>
-
-        <!-- ほめほめノート -->
-        <div class="note-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.5rem;">PRAISE NOTE</div>
-          <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:.5rem;">ほめほめノート</div>
-          <div style="font-size:.8rem;color:var(--text2);line-height:1.65;">コーチからほめられたことを記録。ほめられた感想と次の目標を自分で考え、前向きな気持ちを育てます。</div>
-        </div>
-
-        <!-- 自分の夢や目標 -->
-        <div class="note-card" style="background:var(--off);border-radius:14px;overflow:hidden;border-top:4px solid var(--red);box-shadow:0 4px 16px rgba(0,0,0,.06);padding:1.2rem 1.1rem;">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:.5rem;">MY DREAM</div>
-          <div style="font-size:.95rem;font-weight:900;color:var(--text);margin-bottom:.5rem;">自分の夢や目標</div>
-          <div style="font-size:.8rem;color:var(--text2);line-height:1.65;">将来の夢・卒団までの目標・そのために大切なことを3つ考えて書く。夢へ向かう力を育てます。</div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<div class="div-stripe"></div>
-
-<!-- COACH -->
-<section class="coach-section" id="coach">
-  <div class="coach-section-inner">
-    <div class="sec-eyebrow">Coach &amp; Staff</div>
-    <div class="sec-title">コーチ・<span class="hl">スタッフ紹介</span></div>
-    <p style="font-size:.9rem;color:var(--text2);max-width:600px;margin-top:.5rem;">
-      1974年の創設以来培われてきた指導理念のもと、コーチ陣が一人ひとりのお子さまに向き合います。
-    </p>
-    <div class="bc-wrap bc-coach" id="coachTabs" data-auto="0">
-      <div class="bc-topbar">
-        <span class="bc-tag">YAHAGI SC</span>
-        <span class="bc-topbar-title">COACH &amp; STAFF</span>
-        <span class="bc-topbar-right"><span class="bc-rec" aria-hidden="true"></span><span data-bc-clock>STAFF</span></span>
-      </div>
-      <div class="bc-medal-tabs bc-tabs4" role="tablist" aria-label="コーチ・スタッフのカテゴリー">
-        <button type="button" class="bc-tab bc-medal active" role="tab" id="bc-c-tab-staff" aria-controls="bc-c-staff" aria-selected="true" tabindex="0" data-clock="STAFF" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
-          <span class="bc-medal-rank">STAFF</span>
-          <span class="bc-medal-ja">運営・統括</span>
-          <span class="bc-medal-meta">4名</span>
-        </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u8" aria-controls="bc-c-u8" aria-selected="false" tabindex="-1" data-clock="U-8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
-          <span class="bc-medal-rank">U-8</span>
-          <span class="bc-medal-ja">U-8スタッフ</span>
-          <span class="bc-medal-meta">5名</span>
-        </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u10" aria-controls="bc-c-u10" aria-selected="false" tabindex="-1" data-clock="U-10" style="--m:#E07800;--m2:#A85A00;--mt:#111;">
-          <span class="bc-medal-rank">U-10</span>
-          <span class="bc-medal-ja">U-10スタッフ</span>
-          <span class="bc-medal-meta">4名</span>
-        </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-c-tab-u12" aria-controls="bc-c-u12" aria-selected="false" tabindex="-1" data-clock="U-12" style="--m:#2E5FD0;--m2:#1F44A0;--mt:#fff;">
-          <span class="bc-medal-rank">U-12</span>
-          <span class="bc-medal-ja">U-12スタッフ</span>
-          <span class="bc-medal-meta">6名</span>
-        </button>
-      </div>
-      <div class="bc-stage">
-        <div class="bc-panel bc-coach-panel active" role="tabpanel" id="bc-c-staff" aria-labelledby="bc-c-tab-staff" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#D91B2A;">顧問</div><div class="coach-name">渋谷 芳美</div><div class="coach-name-en">YOSHIMI SHIBUYA</div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kouno.jpg" alt="河野 浩二" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">相談役・育成指導統括</div><div class="coach-name">河野 浩二</div><div class="coach-name-en">KOJI KOUNO</div><div class="coach-lic"><span>救命技能認定</span><span>スポーツ少年団指導者</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kusaka.jpg" alt="日下 研一" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">総監督・U-8&キッズ監督</div><div class="coach-name">日下 研一</div><div class="coach-name-en">KENICHI KUSAKA</div><div class="coach-lic"><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_hayasaka.jpg" alt="早坂 浩明" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#D91B2A;">クラブ代表・U-10監督</div><div class="coach-name">早坂 浩明</div><div class="coach-name-en">HIROAKI HAYASAKA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span><span>クラブウェルフェアオフィサー</span><span>小田原サッカー協会 運営部役員</span></div></div></div>
-          </div>
-        </div>
-        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u8" aria-labelledby="bc-c-tab-u8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kinoe.jpg" alt="甲 淳一" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ・GK担当</div><div class="coach-name">甲 淳一</div><div class="coach-name-en">JUNICHI KINOE</div></div></div>
-      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">三橋 義昭</div><div class="coach-name-en">YOSHIAKI MITSUHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_tokunaga.jpg" alt="徳永 哲和" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">徳永 哲和</div><div class="coach-name-en">YOSHIKAZU TOKUNAGA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_tomo.jpg" alt="柏木 知之" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#E65100;">U-8コーチ</div><div class="coach-name">柏木 知之</div><div class="coach-name-en">TOMOYUKI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#E65100;">U-8アシスタントコーチ</div><div class="coach-name">髙山 侑樹</div><div class="coach-name-en">YUKI TAKAYAMA</div><div class="coach-lic"><span>救命技能認定</span></div></div></div>
-          </div>
-        </div>
-        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u10" aria-labelledby="bc-c-tab-u10" style="--m:#E07800;--m2:#A85A00;--mt:#111;">
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_ueda.jpg" alt="植田 健" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">植田 健</div><div class="coach-name-en">KEN UEDA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>赤十字ベーシックライフサポーター</span></div></div></div>
-      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">赤松 歩</div><div class="coach-name-en">AYUMU AKAMATSU</div><div class="coach-lic"><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">田中 祐也</div><div class="coach-name-en">YUYA TANAKA</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card" style="justify-content:center;"><div class="coach-body" style="gap:.3rem;justify-content:center;"><div class="coach-role" style="color:#27AE60;">U-10コーチ</div><div class="coach-name">遠藤 匠</div><div class="coach-name-en">TAKUMI ENDO</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span></div></div></div>
-          </div>
-        </div>
-        <div class="bc-panel bc-coach-panel" role="tabpanel" id="bc-c-u12" aria-labelledby="bc-c-tab-u12" style="--m:#2E5FD0;--m2:#1F44A0;--mt:#fff;">
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_morohoshi.jpg" alt="諸星 達也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12監督</div><div class="coach-name">諸星 達也</div><div class="coach-name-en">TATSUYA MOROHOSHI</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_kashiwagi_t.jpg" alt="柏木 誉史" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">柏木 誉史</div><div class="coach-name-en">TAKAFUMI KASHIWAGI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>救命技能認定</span><span>JFA公認4級審判員</span><span>クラブウェルフェアオフィサー</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_seto.jpg" alt="瀬戸 俊明" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">瀬戸 俊明</div><div class="coach-name-en">TOSHIAKI SETO</div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_takahashi.jpg" alt="高橋 富康" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">高橋 富康</div><div class="coach-name-en">TOMIYASU TAKAHASHI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_shimoda.jpg" alt="下田 翔也" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">下田 翔也</div><div class="coach-name-en">SHOYA SHIMODA</div><div class="coach-lic"><span class="key">JFA公認C級コーチ</span><span>JFA公認4級審判員</span><span>JFA公認キッズリーダー</span></div></div></div>
-      <div class="coach-card"><div class="coach-avatar" style="padding:0;height:auto;"><img loading="lazy" decoding="async" src="images/coach_isozaki.jpg" alt="磯﨑 幸二" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;"></div><div class="coach-body" style="gap:.3rem;"><div class="coach-role" style="color:#1565C0;">U-12コーチ</div><div class="coach-name">磯﨑 幸二</div><div class="coach-name-en">KOJI ISOZAKI</div><div class="coach-lic"><span class="key">JFA公認D級コーチ</span><span>JFA公認4級審判員</span><span>小田原サッカー協会 技術部役員</span></div></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div-stripe"></div>
-
-<!-- COURSES -->
-<section class="course-section" id="course">
-  <div class="si">
-    <div class="sec-eyebrow">Category</div>
-    <div class="sec-title">年齢・学年別<span class="yl">3つのカテゴリー</span></div>
-    <div class="bc-wrap bc-course" id="courseTabs" data-auto="0">
-      <div class="bc-topbar">
-        <span class="bc-tag">YAHAGI SC</span>
-        <span class="bc-topbar-title">CATEGORY</span>
-        <span class="bc-topbar-right"><span class="bc-rec" aria-hidden="true"></span><span data-bc-clock>KIDS</span></span>
-      </div>
-      <div class="bc-medal-tabs bc-tabs4" role="tablist" aria-label="年齢・学年別カテゴリー">
-        <button type="button" class="bc-tab bc-medal active" role="tab" id="bc-k-tab-kids" aria-controls="bc-k-kids" aria-selected="true" tabindex="0" data-clock="KIDS" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
-          <span class="bc-medal-rank">KIDS</span>
-          <span class="bc-medal-ja">キッズ教室</span>
-          <span class="bc-medal-meta">幼児〜年長</span>
-        </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u8" aria-controls="bc-k-u8" aria-selected="false" tabindex="-1" data-clock="U-8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
-          <span class="bc-medal-rank">U-8</span>
-          <span class="bc-medal-ja">低学年チーム</span>
-          <span class="bc-medal-meta">1〜2年生</span>
-        </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u10" aria-controls="bc-k-u10" aria-selected="false" tabindex="-1" data-clock="U-10" style="--m:#E07800;--m2:#A85A00;--mt:#111;">
-          <span class="bc-medal-rank">U-10</span>
-          <span class="bc-medal-ja">中学年チーム</span>
-          <span class="bc-medal-meta">3〜4年生</span>
-        </button>
-        <button type="button" class="bc-tab bc-medal" role="tab" id="bc-k-tab-u12" aria-controls="bc-k-u12" aria-selected="false" tabindex="-1" data-clock="U-12" style="--m:#2E5FD0;--m2:#1F44A0;--mt:#fff;">
-          <span class="bc-medal-rank">U-12</span>
-          <span class="bc-medal-ja">高学年チーム</span>
-          <span class="bc-medal-meta">5〜6年生</span>
-        </button>
-      </div>
-      <div class="bc-stage">
-        <div class="bc-panel bc-kids active" role="tabpanel" id="bc-k-kids" aria-labelledby="bc-k-tab-kids" style="--m:#F5C000;--m2:#C79A00;--mt:#111;">
-          <svg class="kd-cloud" viewBox="0 0 120 60" aria-hidden="true"><path d="M30 52 a18 18 0 0 1 2-36 a24 24 0 0 1 44-4 a20 20 0 0 1 30 18 a14 14 0 0 1-4 22 Z" fill="#fff"/></svg>
-          <svg class="kd-ball" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#fff" stroke="#1d1d1d" stroke-width="3"/><path d="M32 20 L42 27 L38 39 L26 39 L22 27 Z" fill="#1d1d1d"/><path d="M32 3 L32 20 M42 27 L58 22 M38 39 L48 54 M26 39 L16 54 M22 27 L6 22" stroke="#1d1d1d" stroke-width="2.5" fill="none"/><path d="M24 4 L32 9 L40 4 M58 22 L60 32 L56 40 M48 54 L40 60 M16 54 L24 60 M6 22 L4 32 L8 40" stroke="#1d1d1d" stroke-width="2.5" fill="none" stroke-linejoin="round"/></svg>
-          <div class="bc-cat-grid">
-            <div class="bc-cat-side">
-              <div class="bc-panel-en">PRE-GOLDEN AGE</div>
-              <div class="bc-cat-stat">
-                <div class="bc-cat-stat-label">脳や神経系の発達</div>
-                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="80">80</span><span class="bc-score-unit">%</span></div>
-                <div class="bc-cat-stat-cap">プレゴールデンエイジ（5〜8歳）は、脳や神経系が急速に発達し、成人の約80%に達する時期です。</div>
-              </div>
-              <p class="bc-cat-text">多種多様な動作をたくさん経験することが何より大切です。</p>
-              <div class="bc-points-label">あらゆる動きを経験</div>
-              <div class="bc-moves"><span class="kd-move" style="--k:0"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="25" cy="7" r="4.2" fill="currentColor"/><path d="M23 12 L18 22 M21 15 L29 18 M21 15 L13 13 M18 22 L25 28 L23 35 M18 22 L12 29 L6 28"/></svg>走る</span><span class="kd-move" style="--k:1"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="6" r="4.2" fill="currentColor"/><path d="M20 11 L20 22 M20 14 L12 7 M20 14 L28 7 M20 22 L14 27 L16 33 M20 22 L26 27 L24 33"/><path d="M10 38 L30 38" opacity=".45"/></svg>跳ぶ</span><span class="kd-move" style="--k:2"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="13" cy="15" r="4.2" fill="currentColor"/><path d="M17 19 C21 31 33 29 32 18 M32 18 L25 12 M17 19 L23 24"/><path d="M6 31 C9 37 17 39 22 37" opacity=".45"/></svg>転がる</span><span class="kd-move" style="--k:3"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="13" cy="7" r="4.2" fill="currentColor"/><circle cx="32" cy="7" r="3.2" fill="currentColor"/><path d="M14 12 L16 23 M15 15 L22 10 L27 6 M15 16 L8 20 M16 23 L11 34 M16 23 L23 33"/></svg>投げる</span><span class="kd-move hl" style="--k:4"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="12" cy="7" r="4.2" fill="currentColor"/><circle cx="31" cy="29" r="4" fill="currentColor"/><path d="M13 12 L15 22 M14 15 L7 18 M14 15 L21 12 M15 22 L10 34 M15 22 L25 26"/></svg>蹴る</span></div>
-              <p class="bc-cat-text">全身を動かす楽しさを知ることで<strong>神経回路のネットワーク</strong>が形成され、あらゆる動きを習得しやすい土台が育まれます。</p>
-            </div>
-            <div class="bc-cat-info">
-              <div class="bc-panel-en">SOCCER CLASS</div>
-              <div class="bc-lower-third">
-                <div class="bc-lt-title">キッズサッカー教室</div>
-                <div class="bc-lt-sub">幼児〜年長</div>
-              </div>
-              <div class="bc-points-label">CLASS INFO</div>
-              <dl class="bc-info-table">
-                <div><dt>練習日</dt><dd>土日祝　11:00〜12:00<br><span>夏時間 10:00〜11:00（7〜9月）</span></dd></div>
-                <div><dt>場所</dt><dd>矢作小学校グラウンド</dd></div>
-                <div><dt>対象</dt><dd>幼児（年少〜年長）</dd></div>
-                <div><dt>体験</dt><dd>無料・道具不要・当日OK</dd></div>
-              </dl>
-              <div class="bc-points-label">PROGRAM</div>
-              <ol class="bc-points">
-                <li><span class="bc-pt-num">01</span><span>多種多様な動き遊びで運動神経を育てる</span></li>
-                <li><span class="bc-pt-num">02</span><span>ボールに慣れる・サッカーの楽しさを体験</span></li>
-                <li><span class="bc-pt-num">03</span><span>元気な挨拶・礼儀・友達づくり</span></li>
-              </ol>
-            </div>
-          </div>
-          <svg class="kd-grass" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C150 10 300 70 450 40 C600 10 750 70 900 40 C1050 10 1150 55 1200 40 L1200 80 L0 80 Z" fill="#7BC96F"/><path d="M0 56 C200 34 350 80 600 56 C850 32 1000 78 1200 56 L1200 80 L0 80 Z" fill="#5DB55A"/></svg>
-        </div>
-        <div class="bc-panel bc-mag" role="tabpanel" id="bc-k-u8" style="--u:#D91B2A;--ud:#B3121F;--ut:#fff;" aria-labelledby="bc-k-tab-u8" style="--m:#D91B2A;--m2:#A80F1B;--mt:#fff;">
-          <div class="bc-cat-grid">
-            <div class="mg-visual">
-              <div class="mg-label" aria-hidden="true"><span class="mg-big">U-8</span><span class="mg-age">1〜2年生</span></div>
-              <div class="mg-board" aria-hidden="true">
-                <svg viewBox="0 0 320 220"><defs><marker id="mk-u8" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><text class="ck-t" x="16" y="28">BALL TOUCH</text>
-<g class="ck-cone"><path d="M66 172 l9 -20 9 20z"/><path d="M126 172 l9 -20 9 20z"/><path d="M186 172 l9 -20 9 20z"/><path d="M246 172 l9 -20 9 20z"/></g>
-<path class="ck chalk-draw" style="--d:.15s" pathLength="1" marker-end="url(#mk-u8)" d="M36 150 C60 118 96 118 104 150 S140 182 164 150 S200 118 224 150 S262 182 292 140"/>
-<circle class="ck-ball" cx="36" cy="150" r="8"/>
-<path class="ck chalk-draw" style="--d:.9s" pathLength="1" d="M248 70 q12 -26 24 0 M262 92 q10 -22 20 0"/><circle class="ck-ball" cx="266" cy="104" r="7"/></svg>
-                <div class="mg-tray"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-            <div class="bc-cat-info">
-              <div class="bc-panel-en">LOWER GRADES</div>
-              <div class="bc-lower-third">
-                <div class="bc-lt-title">低学年チーム</div>
-                <div class="bc-lt-sub">1〜2年生</div>
-              </div>
-              <div class="bc-cat-stat bc-cat-stat-inline">
-                <div class="bc-cat-stat-label">スキルテスト目標</div>
-                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="25">25</span><span class="bc-score-unit">点</span></div>
-              </div>
-              <div class="bc-points-label">KEY POINTS</div>
-              <ol class="bc-points">
-                <li><span class="bc-pt-num">01</span><span>ボールタッチ・リフティング基礎</span></li>
-                <li><span class="bc-pt-num">02</span><span>基礎練習＆サッカーの楽しさを学びます！</span></li>
-              </ol>
-            </div>
-          </div>
-        </div>
-        <div class="bc-panel bc-mag" role="tabpanel" id="bc-k-u10" style="--u:#E07800;--ud:#9A5200;--ut:#111;" aria-labelledby="bc-k-tab-u10" style="--m:#B46E00;--m2:#7A4A00;--mt:#fff;">
-          <div class="bc-cat-grid">
-            <div class="mg-visual">
-              <div class="mg-label" aria-hidden="true"><span class="mg-big">U-10</span><span class="mg-age">3〜4年生</span></div>
-              <div class="mg-board" aria-hidden="true">
-                <svg viewBox="0 0 320 220"><defs><marker id="mk-u10" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><text class="ck-t" x="16" y="28">PASS &amp; MOVE</text>
-<g class="ck-p"><circle cx="70" cy="166" r="12"/><circle cx="250" cy="166" r="12"/><circle cx="160" cy="66" r="12"/></g>
-<path class="ck chalk-draw" style="--d:.15s" pathLength="1" marker-end="url(#mk-u10)" d="M86 166 L230 166"/>
-<path class="ck chalk-draw" style="--d:.55s" pathLength="1" marker-end="url(#mk-u10)" d="M242 152 L172 80"/>
-<path class="ck chalk-draw" style="--d:.95s" pathLength="1" marker-end="url(#mk-u10)" d="M148 80 L80 150"/>
-<path class="ck ck-run chalk-draw" style="--d:1.35s" pathLength="1" marker-end="url(#mk-u10)" d="M58 186 Q20 140 54 104"/>
-<circle class="ck-ball" cx="104" cy="166" r="7"/></svg>
-                <div class="mg-tray"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-            <div class="bc-cat-info">
-              <div class="bc-panel-en">MIDDLE GRADES</div>
-              <div class="bc-lower-third">
-                <div class="bc-lt-title">中学年チーム</div>
-                <div class="bc-lt-sub">3〜4年生</div>
-              </div>
-              <div class="bc-cat-stat bc-cat-stat-inline">
-                <div class="bc-cat-stat-label">スキルテスト目標</div>
-                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="35">35</span><span class="bc-score-unit">点</span></div>
-              </div>
-              <div class="bc-points-label">KEY POINTS</div>
-              <ol class="bc-points">
-                <li><span class="bc-pt-num">01</span><span>基本＋実践技術を習得</span></li>
-                <li><span class="bc-pt-num">02</span><span>対人練習・パス・フォーメーション</span></li>
-              </ol>
-            </div>
-          </div>
-        </div>
-        <div class="bc-panel bc-mag" role="tabpanel" id="bc-k-u12" style="--u:#2E5FD0;--ud:#1F44A0;--ut:#fff;" aria-labelledby="bc-k-tab-u12" style="--m:#3566D6;--m2:#1F3A8A;--mt:#fff;">
-          <div class="bc-cat-grid">
-            <div class="mg-visual">
-              <div class="mg-label" aria-hidden="true"><span class="mg-big">U-12</span><span class="mg-age">5〜6年生</span></div>
-              <div class="mg-board" aria-hidden="true">
-                <svg viewBox="0 0 320 220"><defs><marker id="mk-u12" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><text class="ck-t" x="16" y="28">TEAM TACTICS</text>
-<g class="ck-line"><rect x="22" y="40" width="276" height="166"/><path d="M110 40 L110 76 L210 76 L210 40 M140 40 L140 52 L180 52 L180 40 M22 206"/><path d="M110 206 A50 50 0 0 1 210 206"/></g>
-<g class="ck-x"><path d="M114 104 l10 10 m0 -10 l-10 10"/><path d="M196 104 l10 10 m0 -10 l-10 10"/><path d="M155 76 l10 10 m0 -10 l-10 10"/></g>
-<g class="ck-o"><circle cx="90" cy="182" r="7"/><circle cx="230" cy="182" r="7"/><circle cx="70" cy="140" r="7"/><circle cx="160" cy="150" r="7"/><circle cx="250" cy="140" r="7"/><circle cx="160" cy="104" r="7"/></g>
-<path class="ck chalk-draw" style="--d:.15s" pathLength="1" marker-end="url(#mk-u12)" d="M168 146 L240 138"/>
-<path class="ck chalk-draw" style="--d:.55s" pathLength="1" marker-end="url(#mk-u12)" d="M244 132 L170 106"/>
-<path class="ck ck-shot chalk-draw" style="--d:.95s" pathLength="1" marker-end="url(#mk-u12)" d="M160 96 L160 56"/></svg>
-                <div class="mg-tray"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-            <div class="bc-cat-info">
-              <div class="bc-panel-en">UPPER GRADES</div>
-              <div class="bc-lower-third">
-                <div class="bc-lt-title">高学年チーム</div>
-                <div class="bc-lt-sub">5〜6年生</div>
-              </div>
-              <div class="bc-cat-stat bc-cat-stat-inline">
-                <div class="bc-cat-stat-label">スキルテスト目標</div>
-                <div class="bc-score bc-cat-score"><span class="bc-score-num" data-n="40">40</span><span class="bc-score-unit">点以上</span></div>
-              </div>
-              <div class="bc-points-label">KEY POINTS</div>
-              <ol class="bc-points">
-                <li><span class="bc-pt-num">01</span><span>実践技術・チーム戦術を完成</span></li>
-                <li><span class="bc-pt-num">02</span><span>県選手権・協会主催大会参加</span></li>
-                <li><span class="bc-pt-num">03</span><span>GK専門コーチ在籍</span></li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div-stripe"></div>
-
 <!-- RESULTS -->
 <section class="results-section" id="results">
   <div class="si">
@@ -3285,7 +3330,6 @@ body{font-family:'Noto Sans JP',sans-serif;}
   </div>
 </section>
 
-
 <div class="div-stripe"></div>
 
 <!-- ============================================================
@@ -3316,130 +3360,108 @@ body{font-family:'Noto Sans JP',sans-serif;}
 
 <div class="div-stripe"></div>
 
-<!-- SCHEDULE -->
-<section class="sch-section" id="schedule">
+<!-- PHOTO MAGAZINE -->
+<section class="section" style="background:var(--off);padding-bottom:3rem;">
   <div class="si">
-    <div class="sec-eyebrow">Schedule</div>
-    <div class="sec-title">活動スケジュール</div>
-    <div class="sch-grid">
-      <div class="sch-card"><div class="sch-type">通常練習（全学年）</div><div class="sch-title">毎週 土・日・祝日</div><div class="sch-row"><span>時間</span><span>8:00〜11:00 / 夏時間 7:00〜10:00（7〜9月）</span></div><div class="sch-row"><span>場所</span><span>矢作小学校グランド（小田原市）</span></div><div class="sch-row"><span>服装</span><span>練習着・トレシューまたはスパイク</span></div><div class="sch-row"><span>持物</span><span>ボール・スネあて・タオル・水筒</span></div></div>
-      <div class="sch-card" style="border-color:var(--red);background:#fff;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:12px;right:12px;background:var(--red);color:#fff;font-size:11px;font-weight:900;letter-spacing:.15em;padding:5px 14px;border-radius:100px;box-shadow:0 3px 12px rgba(217,27,42,.4);">完全無料</div>
-        <div class="sch-type" style="color:var(--red);">キッズサッカー教室</div>
-        <div class="sch-title">毎週 土・日・祝日</div>
-        <div class="sch-row"><span>時間</span><span>11:00〜12:00（夏時間 10:00〜11:00／7〜9月）</span></div>
-        <div class="sch-row"><span>対象</span><span>幼児〜低学年</span></div>
-        <div style="margin-top:1rem;background:var(--red);border-radius:10px;padding:.85rem 1rem;text-align:center;">
-          <div style="font-size:1.4rem;font-weight:900;color:#fff;letter-spacing:.02em;">道具不要・申込不要</div>
-          <div style="font-size:.82rem;color:rgba(255,255,255,.9);margin-top:4px;">当日そのまま遊びに来てください！</div>
+    <div class="sec-eyebrow">Photo Gallery</div>
+    <div class="sec-title">グラウンドに広がる<span class="hl">笑顔と情熱</span></div>
+    <div style="margin-top:2rem;position:relative;">
+      <div style="position:relative;border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.12);">
+        <div id="pg-slides" style="display:flex;transition:transform .5s ease;">
+          <div style="min-width:100%;position:relative;">
+            <picture><source srcset="images/gallery_kawasaki_01.webp" type="image/webp"><img loading="lazy" src="images/gallery_kawasaki_01.jpg" alt="サッカースクール集合" decoding="async" style="width:100%;height:520px;object-fit:cover;object-position:left center;display:block;"></picture>
+            <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.5));padding:2rem 1.8rem 1.4rem;">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">SOCCER SCHOOL</div>
+              <div style="color:#fff;font-size:1rem;font-weight:800;">川崎竜聖選手によるサッカースクール開校</div>
+            </div>
+          </div>
+          <div style="min-width:100%;position:relative;">
+            <picture><source srcset="images/gallery_kawasaki_02.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_kawasaki_02.jpg" alt="サッカースクール練習" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
+            <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.5));padding:2rem 1.8rem 1.4rem;">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">SOCCER SCHOOL</div>
+              <div style="color:#fff;font-size:1rem;font-weight:800;">みんなの憧れ！指導の様子</div>
+            </div>
+          </div>
+          <div style="min-width:100%;position:relative;">
+            <picture><source srcset="images/hero.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/hero.JPG" alt="全員集合" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
+            <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.5));padding:2rem 1.8rem 1.4rem;">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">TEAM PHOTO</div>
+              <div style="color:#fff;font-size:1rem;font-weight:800;">矢作SCファミリー全員集合！</div>
+            </div>
+          </div>
+          <div style="min-width:100%;position:relative;">
+            <picture><source srcset="images/gallery_event_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_event_01.JPG" alt="BBQ大会" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
+            <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.5));padding:2rem 1.8rem 1.4rem;">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">EVENT</div>
+              <div style="color:#fff;font-size:1rem;font-weight:800;">🎉 BBQ・水鉄砲 大盛り上がり！</div>
+            </div>
+          </div>
+          <div style="min-width:100%;position:relative;">
+            <picture><source srcset="images/gallery_school_01.webp" type="image/webp"><img loading="lazy" decoding="async" src="images/gallery_school_01.JPG" alt="キッズ教室" style="width:100%;height:520px;object-fit:cover;display:block;"></picture>
+            <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.5));padding:2rem 1.8rem 1.4rem;">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.65);margin-bottom:.3rem;">KIDS CLASS</div>
+              <div style="color:#fff;font-size:1rem;font-weight:800;">👶 幼児も大歓迎！</div>
+            </div>
+          </div>
         </div>
+        <button onclick="pgSlide(-1)" aria-label="前のスライド" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border:none;color:#fff;font-size:1.5rem;width:46px;height:46px;border-radius:50%;cursor:pointer;transition:background .2s;line-height:1;" onmouseover="this.style.background='rgba(255,255,255,.45)'" onmouseout="this.style.background='rgba(255,255,255,.25)'">‹</button>
+        <button onclick="pgSlide(1)" aria-label="次のスライド" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border:none;color:#fff;font-size:1.5rem;width:46px;height:46px;border-radius:50%;cursor:pointer;transition:background .2s;line-height:1;" onmouseover="this.style.background='rgba(255,255,255,.45)'" onmouseout="this.style.background='rgba(255,255,255,.25)'">›</button>
+        <div style="position:absolute;top:14px;right:16px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:100px;" id="pg-counter">1 / 5</div>
       </div>
-      <div class="sch-card"><div class="sch-type">朝練習（4年生以上）</div><div class="sch-title">月3回程度</div><div class="sch-row"><span>時間</span><span>7:00〜7:50</span></div><div class="sch-row"><span>場所</span><span>矢作小学校グランド</span></div><div class="sch-row"><span>雨天</span><span>6:20時点で雨なら中止・MGよりLINE連絡</span></div></div>
-      <div class="sch-card"><div class="sch-type">年間行事</div><div class="sch-title">充実のイベントカレンダー</div><div class="sch-row"><span>夏</span><span>夏合宿（御殿場 1泊2日）</span></div><div class="sch-row"><span>秋</span><span>全学年BBQ大会（いこいの森）</span></div><div class="sch-row"><span>冬</span><span>矢作カップ・初蹴り大会</span></div><div class="sch-row"><span>通年</span><span>全学年スキルテスト・FANTASISTA表彰</span></div></div>
-    </div>
-    <div style="margin-top:1.5rem;background:var(--off);border-radius:14px;padding:1rem 1.25rem;font-size:.82rem;color:var(--text2);line-height:1.85;border-left:3px solid var(--red);">
-      📌 <strong style="color:var(--text);">休日について</strong><br>
-      ゴールデンウィーク・夏休み・年末年始などの大型連休期間は基本的にお休みです。<br>
-      キッズサッカー教室は上記に加え、グラウンドの状況などにより休みになることがあります。<br>
-      詳細は各チームのマネージャーよりLINEでご連絡いたします。
-    </div>
-
-    <!-- アクセスマップ -->
-    <div style="margin-top:2.5rem;">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:1rem;flex-wrap:wrap;">
-        <div style="font-size:1.05rem;font-weight:900;color:var(--text);">活動場所</div>
-        <div style="font-size:.85rem;color:var(--text2);">矢作小学校グラウンド</div>
+      <div style="display:flex;justify-content:center;gap:8px;margin-top:1rem;" role="tablist" aria-label="フォトギャラリー">
+        <button id="pg-dot-0" aria-label="スライド1へ" onclick="pgGoTo(0)" style="width:10px;height:10px;border-radius:50%;border:none;background:var(--red);cursor:pointer;padding:0;transition:background .2s;"></button>
+        <button id="pg-dot-1" aria-label="スライド2へ" onclick="pgGoTo(1)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
+        <button id="pg-dot-2" aria-label="スライド3へ" onclick="pgGoTo(2)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
+        <button id="pg-dot-3" aria-label="スライド4へ" onclick="pgGoTo(3)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
+        <button id="pg-dot-4" aria-label="スライド5へ" onclick="pgGoTo(4)" style="width:10px;height:10px;border-radius:50%;border:none;background:#ccc;cursor:pointer;padding:0;transition:background .2s;"></button>
       </div>
-      <div style="font-size:.85rem;color:var(--text2);margin-bottom:1rem;display:flex;align-items:flex-start;gap:6px;">
-        <span style="color:var(--red);font-weight:700;flex-shrink:0;">📍</span>
-        <span>〒250-0873　神奈川県小田原市矢作227</span>
-      </div>
-      <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.12);border:1px solid var(--border);">
-        <iframe
-          src="https://www.google.com/maps?q=〒250-0873+神奈川県小田原市矢作227&output=embed"
-          width="100%" height="320" style="border:0;display:block;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade" title="矢作小学校グラウンド 地図"></iframe>
-      </div>
-      <div style="text-align:center;margin-top:.85rem;">
-        <a href="https://www.google.com/maps/search/?api=1&query=〒250-0873+神奈川県小田原市矢作227" target="_blank" rel="noopener noreferrer"
-          style="display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:700;color:var(--red);text-decoration:none;">
-          Googleマップで開く →
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div-stripe"></div>
-
-<!-- PRICE -->
-<section class="price-section" id="price">
-  <div class="price-inner">
-    <div class="sec-eyebrow" style="color:rgba(255,255,255,.55);">Fee</div>
-    <div class="sec-title" style="color:#fff;">費用・月会費の<span style="color:var(--yellow);">ご案内</span></div>
-    <div class="price-layout">
-      <div class="price-card main"><div class="price-lbl">月会費（毎月）</div><div class="price-amount"><div class="price-num">2,500</div><div class="price-unit">円 / 月</div></div><div class="price-note">兄弟3人目以降は月1,500円</div><ul class="price-list"><li><span class="chk-g">✓</span><span>土日祝の通常練習参加</span></li><li><span class="chk-g">✓</span><span>各種大会・試合参加</span></li><li><span class="chk-g">✓</span><span>育成プログラムによる指導</span></li><li><span class="chk-g">✓</span><span>スキルテスト・FANTASISTA表彰制度</span></li></ul></div>
-      <div class="price-card main"><div class="price-lbl">入団時（初回のみ）</div><div class="price-amount"><div class="price-num">4,500</div><div class="price-unit">円 ＋ 保険料</div></div><div class="price-note">スポーツ安全保険加入金（実費）別途</div><ul class="price-list"><li><span class="chk-y">⭐</span><span>スポーツ安全保険加入</span></li><li><span class="chk-y">⭐</span><span>サッカー協会登録</span></li><li><span class="chk-y">⭐</span><span>ユニフォームシャツ貸与（赤・黄緑）</span></li><li><span class="chk-y">⭐</span><span>ゴールキーパー用ユニフォーム貸与</span></li><li><span class="chk-y">⭐</span><span>入団のしおり・名簿登録</span></li></ul></div>
-    </div>
-  </div>
-</section>
-
-<div class="div-stripe"></div>
-
-<!-- SNS（Facebook & Instagram） -->
-<section style="background:#f9f9f9;padding:4rem 1.5rem;overflow:hidden;">
-  <div style="max-width:1100px;margin:0 auto;text-align:center;">
-    <div class="sec-eyebrow" style="justify-content:center;">SNS</div>
-    <h2 class="sec-title">最新の<span class="hl">活動情報</span></h2>
-    <p style="font-size:.9rem;color:var(--text2);margin:.5rem 0 2.5rem;">日々の練習・試合・イベントの様子を、FacebookとInstagramで発信しています。</p>
-
-    <!-- Facebook タイムライン -->
-    <div style="display:flex;justify-content:center;overflow:hidden;max-width:100%;">
-      <div class="fb-page" data-href="https://www.facebook.com/yahagisc.U8/" data-tabs="timeline" data-width="380" data-height="600" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"></div>
-    </div>
-
-    <!-- フォロー・いいねボタン -->
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:2rem;">
-      <a href="https://www.facebook.com/yahagisc.U8/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#1877F2;color:#fff;padding:12px 28px;border-radius:100px;text-decoration:none;font-weight:700;font-size:.9rem;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Facebookページを見る
-      </a>
-      <a href="https://www.instagram.com/yahagisc/" target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;padding:12px 28px;border-radius:100px;text-decoration:none;font-weight:700;font-size:.9rem;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        @yahagisc をフォローする
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- STEPS -->
-<section class="steps-section" id="join">
-  <div class="si">
-    <div class="sec-eyebrow">How to Join</div>
-    <div class="sec-title">入団まで<span class="hl">4ステップ</span></div>
-    <div class="step-list">
-      <div class="step-item"><div><div class="step-circle">1</div><div class="step-line"></div></div><div><div class="step-title">⚽ 体験練習に来てみよう！</div><div class="step-desc">道具不要・練習着でOK。土日祝の通常練習またはキッズ教室（11:00〜）に気軽にお越しください。</div></div></div>
-      <div class="step-item"><div><div class="step-circle">2</div><div class="step-line"></div></div><div><div class="step-title">📝 入団申込書を提出</div><div class="step-desc">保護者の方が署名・捺印の上ご提出ください。規約のご確認をお願いします。</div></div></div>
-      <div class="step-item"><div><div class="step-circle">3</div><div class="step-line"></div></div><div><div class="step-title">💰 入団金・保険料をお支払い</div><div class="step-desc">入団金4,500円＋スポーツ安全保険加入金をお支払いください。ユニフォームシャツは貸与されます。</div></div></div>
-      <div class="step-item"><div><div class="step-circle">4</div></div><div><div class="step-title">🎉 チームに合流・練習スタート！</div><div class="step-desc">70名の仲間とコーチ陣が笑顔で待っています！TimeTreeでスケジュール共有します。</div></div></div>
-    </div>
-  </div>
-</section>
-
-<div class="div-stripe"></div>
-
-<!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="si">
-    <div class="sec-eyebrow">FAQ</div>
-    <div class="sec-title">よくある<span class="hl">質問</span></div>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>サッカー未経験・初心者でも入れますか？</span></div><div class="faq-a">もちろんです！幼児向けキッズ教室やU-8カテゴリーでは初めてボールに触れるお子さまも多数在籍。基礎から楽しく丁寧に指導します。</div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>少年団と習い事の掛け持ちはできますか？</span></div><div class="faq-a">できます。学校行事と重なる場合も柔軟に対応。休む際はマネージャーへ事前にご連絡ください。</div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>保護者の当番や役割はありますか？</span></div><div class="faq-a">基本的にはありませんが、試合会場までの送迎や試合の審判対応などのご協力をお願いしております。また各カテゴリーには<strong>マネージャー</strong>（主にカテゴリー監督との連絡窓口）をお願いしており、LINEでのスケジュール連絡などを担っていただいています。</div></div>
-      <div class="faq-item"><div class="faq-q"><span class="faq-qb">Q</span><span>年度途中からの入団はできますか？</span></div><div class="faq-a">随時入団受付中です。まずは体験練習からお気軽にどうぞ！</div></div>
+      <script>
+      (function(){
+        var cur=0,total=5,timer;
+        function update(){
+          document.getElementById('pg-slides').style.transform='translateX(-'+(cur*100)+'%)';
+          document.getElementById('pg-counter').textContent=(cur+1)+' / '+total;
+          for(var i=0;i<total;i++){
+            var d=document.getElementById('pg-dot-'+i);
+            if(d) d.style.background=i===cur?'var(--red)':'#ccc';
+          }
+        }
+        window.pgSlide=function(dir){if(window.pgRelease)window.pgRelease();cur=(cur+dir+total)%total;update();reset();};
+        window.pgGoTo=function(n){if(window.pgRelease)window.pgRelease();cur=n;update();reset();};
+        var visible=false;
+        function reset(){clearInterval(timer);if(!visible) return;timer=setInterval(function(){cur=(cur+1)%total;update();},4500);}
+        // 画面に入っている間だけ自動で進める（見ていない間に、写真を先に読み込まないように）
+        var host=document.getElementById('pg-slides');
+        // ギャラリーの写真は、近づくまで読み込みを保留する（横に並んだスライドを、ブラウザが「近い」と判断して先に読み込むのを防ぐ）
+        var held=[];
+        function hold(){
+          if(!host || !('IntersectionObserver' in window)) return;
+          [].slice.call(host.querySelectorAll('source,img')).forEach(function(el){
+            ['srcset','src'].forEach(function(a){
+              var v=el.getAttribute(a);
+              if(v){ el.setAttribute('data-hold-'+a,v); el.removeAttribute(a); }
+            });
+            held.push(el);
+          });
+        }
+        function release(){
+          held.forEach(function(el){
+            ['srcset','src'].forEach(function(a){
+              var v=el.getAttribute('data-hold-'+a);
+              if(v){ el.setAttribute(a,v); el.removeAttribute('data-hold-'+a); }
+            });
+          });
+          held=[];
+        }
+        hold();
+        window.pgRelease=release;
+        if(host && 'IntersectionObserver' in window){
+          new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ release(); o.disconnect(); } },{rootMargin:'400px 0px'}).observe(host.parentElement);
+          new IntersectionObserver(function(es){ visible=es[0].isIntersecting; reset(); },{threshold:.15}).observe(host.parentElement);
+        } else { visible=true; }
+        reset();
+      })();
+      </script>
     </div>
   </div>
 </section>
@@ -3580,6 +3602,35 @@ body{font-family:'Noto Sans JP',sans-serif;}
           <div class="sp-mainbar-pct">1名</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-stripe"></div>
+
+<!-- SNS（Facebook & Instagram） -->
+<section style="background:#f9f9f9;padding:4rem 1.5rem;overflow:hidden;">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <div class="sec-eyebrow" style="justify-content:center;">SNS</div>
+    <h2 class="sec-title">最新の<span class="hl">活動情報</span></h2>
+    <p style="font-size:.9rem;color:var(--text2);margin:.5rem 0 2.5rem;">日々の練習・試合・イベントの様子を、FacebookとInstagramで発信しています。</p>
+
+    <!-- Facebook タイムライン -->
+    <div style="display:flex;justify-content:center;overflow:hidden;max-width:100%;">
+      <div class="fb-page" data-href="https://www.facebook.com/yahagisc.U8/" data-tabs="timeline" data-width="380" data-height="600" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"></div>
+    </div>
+
+    <!-- フォロー・いいねボタン -->
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:2rem;">
+      <a href="https://www.facebook.com/yahagisc.U8/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#1877F2;color:#fff;padding:12px 28px;border-radius:100px;text-decoration:none;font-weight:700;font-size:.9rem;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebookページを見る
+      </a>
+      <a href="https://www.instagram.com/yahagisc/" target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;padding:12px 28px;border-radius:100px;text-decoration:none;font-weight:700;font-size:.9rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @yahagisc をフォローする
+      </a>
     </div>
   </div>
 </section>
