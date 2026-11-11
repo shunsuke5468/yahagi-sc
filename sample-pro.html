@@ -2439,67 +2439,82 @@ section.section[style*="var(--off)"] div[style*="border-radius:20px"]{border:non
 .qk-free b{color:var(--red);}
 .qk-link{color:var(--ink);border-bottom-color:var(--ink);}
 
-/* ===== 成長の物語（サンプル）===== */
-.story{position:relative;background:#F4F1EA;padding:6.5rem 1.5rem 7rem;overflow:hidden;}
-.story::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.5;
-  background:radial-gradient(ellipse at 15% 0%,rgba(245,192,0,.16),transparent 55%),radial-gradient(ellipse at 100% 100%,rgba(217,27,42,.10),transparent 55%);}
-.story-in{position:relative;max-width:1120px;margin:0 auto;}
-.story-head{text-align:center;margin-bottom:4.5rem;}
-.story-head .sec-eyebrow{justify-content:center;}
-.story-title,.st-jp,.story-end-jp{font-family:'Hiragino Mincho ProN','Yu Mincho','YuMincho','Noto Serif JP',serif;font-weight:600;}
-.story-title{font-size:clamp(1.9rem,4.6vw,3.4rem);line-height:1.45;letter-spacing:.04em;color:#1b1b1b;margin-top:.6rem;}
-.story-title em{font-style:normal;color:var(--red);}
-.story-lead{margin-top:1.2rem;font-size:clamp(.95rem,1.6vw,1.1rem);color:#555;letter-spacing:.08em;line-height:2;}
+/* ===== THIS IS YAHAGI SC（サンプル）：プロクラブ風ハイライト ===== */
+.hlx{position:relative;background:#fff;padding:6rem 0 0;overflow:hidden;}
+.hlx::before{content:'YAHAGI';position:absolute;right:-2vw;top:1.5rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,24vw,22rem);line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(11,11,12,.06);pointer-events:none;letter-spacing:.02em;}
+.hlx-in{position:relative;max-width:1200px;margin:0 auto;padding:0 1.5rem;}
+.hlx-head{margin-bottom:2.6rem;}
+.hlx-title{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(3.6rem,9vw,8rem);line-height:.86;letter-spacing:.01em;color:var(--ink);margin-top:.5rem;}
+.hlx-title span{display:block;color:var(--red);}
+.hlx-sub{margin-top:1.1rem;font-weight:700;letter-spacing:.08em;color:#333;}
 .sp-br{display:none;}
 
-/* 1場面：写真＋言葉。左右交互に */
-.st-ch{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:center;gap:clamp(1.5rem,4vw,4rem);margin:0 0 clamp(4rem,9vw,7.5rem);}
-.st-ch:nth-of-type(even){grid-template-columns:minmax(0,5fr) minmax(0,7fr);}
-.st-ch:nth-of-type(even) .st-ph{order:2;}
-.st-ph{position:relative;aspect-ratio:3/2;overflow:hidden;background:#ddd;box-shadow:0 30px 60px -20px rgba(40,20,10,.35);}
-.st-ch:first-of-type .st-ph{aspect-ratio:4/5;max-width:440px;justify-self:end;width:100%;}
-.st-ph img{width:100%;height:100%;object-fit:cover;display:block;}
-.st-ph::after{content:'';position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(255,240,210,.0) 55%,rgba(60,20,0,.18)),radial-gradient(ellipse at 50% 40%,transparent 60%,rgba(0,0,0,.18));}
-.st-cap{position:relative;}
-.st-no{display:block;font-family:'Bebas Neue',sans-serif;font-size:clamp(4.5rem,9vw,7.5rem);line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(217,27,42,.45);letter-spacing:.02em;}
-.st-en{display:block;margin-top:.9rem;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.32em;color:var(--red);}
-.st-jp{margin-top:.6rem;font-size:clamp(1.35rem,2.3vw,2rem);line-height:1.6;letter-spacing:.06em;color:#1b1b1b;}
+/* 写真モザイク */
+.hlx-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(150px,15vw,200px);gap:10px;}
+.hlx-t{position:relative;margin:0;overflow:hidden;background:#111;}
+.t1{grid-column:1/5;grid-row:1/4;}
+.t2{grid-column:5/9;grid-row:1/3;}
+.t3{grid-column:9/13;grid-row:1/3;}
+.t4{grid-column:5/13;grid-row:3/5;}
+.t5{grid-column:1/5;grid-row:4/6;}
+.t6{grid-column:5/13;grid-row:5/6;}
+.hlx-t img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.16,1,.3,1);}
+.hlx-t::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,11,12,.82));pointer-events:none;}
+.hlx-t:hover img{transform:scale(1.06);}
+.hlx-t figcaption{position:absolute;left:1.1rem;right:1.1rem;bottom:1rem;z-index:1;color:#fff;}
+.hlx-t figcaption b{display:inline-block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:.95rem;letter-spacing:.12em;background:var(--red);padding:.05rem .55rem;}
+.hlx-t figcaption strong{display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(1.9rem,3.2vw,3rem);line-height:.95;letter-spacing:.03em;margin-top:.35rem;}
+.hlx-t figcaption span{display:block;font-size:.8rem;font-weight:700;letter-spacing:.1em;opacity:.9;margin-top:.2rem;}
+.hlx-t::before{content:'';position:absolute;left:0;top:0;width:5px;height:0;background:var(--red);z-index:2;transition:height .5s ease;}
+.hlx-t:hover::before{height:100%;}
 
-.st-jp span{display:inline-block;}  /* 1行ずつ一塊にして、「日。」だけが次の行に落ちないように */
-/* 締め */
-.story-end{text-align:center;padding-top:1rem;}
-.story-since{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,15vw,11rem);line-height:.85;color:var(--red);letter-spacing:.02em;}
-.story-since span{display:block;font-size:.22em;letter-spacing:.5em;color:#1b1b1b;margin-bottom:.4rem;}
-.story-end-jp{margin-top:1.4rem;font-size:clamp(1.4rem,3vw,2.2rem);line-height:1.7;letter-spacing:.06em;color:#1b1b1b;}
-.story-end-sub{margin-top:.9rem;color:#555;letter-spacing:.08em;}
-.story-btn{margin-top:2rem;display:inline-flex;padding:1rem 2.4rem;}
+/* 数字バンド：赤地に白い大きな数字 */
+.hlx-band{margin-top:4.5rem;background:linear-gradient(160deg,#C4121F,var(--red-deep));color:#fff;padding:3rem 1.5rem 3.4rem;position:relative;}
+.hlx-band::before{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:var(--yellow);}
+.hlx-stats{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));}
+.hlx-stats > div{padding:0 1.4rem;border-left:1px solid rgba(255,255,255,.25);}
+.hlx-stats > div:first-child{border-left:none;padding-left:0;}
+.hlx-stats b{display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(3.4rem,6.5vw,5.6rem);line-height:.9;letter-spacing:.01em;}
+.hlx-stats b small{font-size:.32em;letter-spacing:.12em;margin-left:.25em;}
+.hlx-stats span{display:block;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.24em;color:var(--yellow);margin-top:.35rem;}
+.hlx-stats i{display:block;font-style:normal;font-size:.78rem;font-weight:700;opacity:.85;margin-top:.1rem;}
+.hlx-btn{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1200px;margin:2.4rem auto 0;background:#fff;color:var(--ink);text-decoration:none;font-weight:900;letter-spacing:.06em;padding:1.1rem 1.6rem;transition:background .2s,color .2s;}
+.hlx-btn span{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.9rem;letter-spacing:.06em;color:var(--red);line-height:1;}
+.hlx-btn:hover{background:var(--yellow);}
 
-/* 動き：JSが動くときだけ、見えたら写真が幕のように開き、言葉が浮かぶ */
-.js-story .st-ph{clip-path:inset(0 0 100% 0);transition:clip-path 1.2s cubic-bezier(.77,0,.18,1);}
-.js-story .st-ph img{transform:scale(1.18);transition:transform 2.4s cubic-bezier(.16,1,.3,1);}
-.js-story .st-cap > *,.js-story .story-head > *,.js-story .story-end > *{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s cubic-bezier(.16,1,.3,1);}
-.js-story .is-in .st-ph,.js-story .st-ph.is-in{clip-path:inset(0 0 0 0);}
-.js-story .is-in .st-ph img{transform:scale(1);}
-.js-story .is-in .st-cap > *,.js-story .story-head.is-in > *,.js-story .story-end.is-in > *{opacity:1;transform:none;}
-.js-story .is-in .st-cap > *:nth-child(2),.js-story .is-in > *:nth-child(2){transition-delay:.25s;}
-.js-story .is-in .st-cap > *:nth-child(3),.js-story .is-in > *:nth-child(3){transition-delay:.5s;}
-.js-story .is-in > *:nth-child(4){transition-delay:.75s;}
+/* 動き：JSが動くときだけ、写真が下から斜めに切り開かれて登場 */
+.js-hlx .hlx-t{clip-path:polygon(0 100%,100% 100%,100% 100%,0 100%);transition:clip-path .9s cubic-bezier(.77,0,.18,1);}
+.js-hlx .hlx-t img{transform:scale(1.15);}
+.js-hlx .hlx-t.is-in{clip-path:polygon(0 0,100% 0,100% 100%,0 100%);}
+.js-hlx .hlx-t.is-in img{transform:scale(1);transition:transform 1.6s cubic-bezier(.16,1,.3,1);}
+.js-hlx .hlx-t.is-in:hover img{transform:scale(1.06);transition-duration:.8s;}
+.js-hlx .hlx-head > *,.js-hlx .hlx-stats > div{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1);}
+.js-hlx .hlx-head.is-in > *,.js-hlx .hlx-stats.is-in > div{opacity:1;transform:none;}
+.js-hlx .is-in > *:nth-child(2){transition-delay:.12s;} .js-hlx .is-in > *:nth-child(3){transition-delay:.24s;} .js-hlx .is-in > *:nth-child(4){transition-delay:.36s;}
 
 @media (max-width:760px){
-  .story{padding:4.5rem 1.25rem 5rem;}
-  .story-head{margin-bottom:3rem;}
+  .hlx{padding-top:4.5rem;}
   .sp-br{display:inline;}
-  .story-title{font-size:1.55rem;}
-  .st-ch,.st-ch:nth-of-type(even){grid-template-columns:1fr;gap:1.2rem;margin-bottom:3.6rem;}
-  .st-ch:nth-of-type(even) .st-ph{order:0;}
-  .st-ch:first-of-type .st-ph{max-width:none;aspect-ratio:4/5;}
-  .st-cap{padding:0 .2rem;}
-  .st-no{font-size:4.2rem;margin-top:-2.6rem;position:relative;z-index:1;-webkit-text-stroke:1.5px rgba(217,27,42,.6);}
-  .st-jp{font-size:1.5rem;}
+  .hlx-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px;gap:6px;}
+  .t1{grid-column:1/2;grid-row:1/3;}
+  .t2{grid-column:2/3;grid-row:1/2;}
+  .t3{grid-column:2/3;grid-row:2/3;}
+  .t4{grid-column:1/3;grid-row:3/5;}
+  .t5{grid-column:1/2;grid-row:5/6;}
+  .t6{grid-column:2/3;grid-row:5/6;}
+  .hlx-t figcaption{left:.7rem;right:.7rem;bottom:.6rem;}
+  .hlx-t figcaption strong{font-size:1.5rem;}
+  .hlx-t figcaption span{font-size:.7rem;}
+  .t4 figcaption strong{font-size:2.2rem;}
+  .hlx-band{margin-top:3rem;padding:2.4rem 1.25rem 2.6rem;}
+  .hlx-stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:1.8rem;}
+  .hlx-stats > div:nth-child(3){border-left:none;padding-left:0;}
+  .hlx-stats > div{padding:0 1rem;}
+  .hlx-stats b{font-size:3.4rem;}
+  .hlx-btn{flex-direction:column;align-items:flex-start;gap:.3rem;padding:1rem 1.2rem;}
 }
 @media (prefers-reduced-motion: reduce){
-  .js-story .st-ph,.js-story .st-ph img,.js-story .st-cap > *,.js-story .story-head > *,.js-story .story-end > *{clip-path:none;transform:none;opacity:1;transition:none;}
+  .js-hlx .hlx-t,.js-hlx .hlx-t img,.js-hlx .hlx-head > *,.js-hlx .hlx-stats > div{clip-path:none;transform:none;opacity:1;transition:none;}
 }
 </style>
 <noscript><style>#contact .final-bg{background-image:image-set(url('images/hero_bg.webp') type('image/webp'), url('images/hero_bg.JPG') type('image/jpeg')) !important;}
@@ -2709,46 +2724,39 @@ section.section[style*="var(--off)"] div[style*="border-radius:20px"]{border:non
 <div class="div-stripe"></div>
 
 <!-- NEWS / お知らせ -->
-<!-- ===== 成長の物語（サンプル）：保護者が自分の子の成長を重ねられる、写真の物語 ===== -->
-<section class="story" id="story" aria-label="成長の物語">
-  <div class="story-in">
-    <div class="story-head">
-      <div class="sec-eyebrow">OUR STORY</div>
-      <h2 class="story-title">ボールを追いかけた日から、<br><em>その先へ。</em></h2>
-      <p class="story-lead">グラウンドで過ごす毎週末は、<br class="sp-br">きっと、家族の宝物になる。</p>
+<!-- ===== THIS IS YAHAGI SC（サンプル）：プロクラブ風のハイライト（写真モザイク＋数字バンド） ===== -->
+<section class="hlx" id="highlights" aria-label="矢作SCのハイライト">
+  <div class="hlx-in">
+    <div class="hlx-head">
+      <div class="sec-eyebrow">HIGHLIGHTS</div>
+      <h2 class="hlx-title">THIS IS<span>YAHAGI SC</span></h2>
+      <p class="hlx-sub">走る。蹴る。挑む。決める。つなぐ。<br class="sp-br">これが、矢作SCのサッカー。</p>
     </div>
 
-    <figure class="st-ch">
-      <div class="st-ph"><img src="images/hero-tsunagu.webp" alt="ボールを追いかける小さな女の子" width="1080" height="1620" loading="lazy" decoding="async" style="object-position:50% 40%"></div>
-      <figcaption class="st-cap"><span class="st-no">01</span><span class="st-en">FIRST TOUCH</span><p class="st-jp"><span>はじめて、</span><br><span>ボールを追いかけた日。</span></p></figcaption>
-    </figure>
-    <figure class="st-ch">
-      <div class="st-ph"><img src="images/gallery_action_02.webp" alt="仲間と一緒にボールを追う子どもたち" width="1567" height="1045" loading="lazy" decoding="async"></div>
-      <figcaption class="st-cap"><span class="st-no">02</span><span class="st-en">TEAMMATES</span><p class="st-jp"><span>仲間と、</span><br><span>ひとつのボールを追った日。</span></p></figcaption>
-    </figure>
-    <figure class="st-ch">
-      <div class="st-ph"><img src="images/gallery_action_03.webp" alt="試合でボールを奪い合う選手たち" width="1567" height="1045" loading="lazy" decoding="async"></div>
-      <figcaption class="st-cap"><span class="st-no">03</span><span class="st-en">CHALLENGE</span><p class="st-jp"><span>本気で挑んで、</span><br><span>本気で悔しがった日。</span></p></figcaption>
-    </figure>
-    <figure class="st-ch">
-      <div class="st-ph"><img src="images/gallery_trophy.webp" alt="賞状とトロフィーを囲むチームの集合写真" width="1477" height="1108" loading="lazy" decoding="async"></div>
-      <figcaption class="st-cap"><span class="st-no">04</span><span class="st-en">TOGETHER</span><p class="st-jp"><span>みんなで、</span><br><span>喜びを分け合った日。</span></p></figcaption>
-    </figure>
-    <figure class="st-ch">
-      <div class="st-ph"><img src="images/gallery_event_01.webp" alt="夏のイベントで水遊びをする子どもたちとコーチ" width="1280" height="960" loading="lazy" decoding="async" style="object-position:50% 15%"></div>
-      <figcaption class="st-cap"><span class="st-no">05</span><span class="st-en">MEMORIES</span><p class="st-jp"><span>夏の日、</span><br><span>笑い転げた日。</span></p></figcaption>
-    </figure>
-    <figure class="st-ch">
-      <div class="st-ph"><img src="images/ob_kawasaki_01.webp" alt="花束を持ってゴール前に立つOB選手" width="1200" height="800" loading="lazy" decoding="async" style="object-position:50% 30%"></div>
-      <figcaption class="st-cap"><span class="st-no">06</span><span class="st-en">BEYOND</span><p class="st-jp"><span>そして、</span><br><span>その先の夢へ。</span></p></figcaption>
-    </figure>
-
-    <div class="story-end">
-      <div class="story-since"><span>SINCE</span>1974</div>
-      <p class="story-end-jp">50年分の「がんばった」が、<br>このグラウンドにある。</p>
-      <p class="story-end-sub">次の物語の主人公は、あなたのお子さんです。</p>
-      <a class="btn btn-yellow story-btn" href="#contact">無料体験に参加する →</a>
+    <div class="hlx-grid">
+      <figure class="hlx-t t1"><img src="images/hero-tsunagu.webp" alt="ドリブルする小さな選手" width="1080" height="1620" loading="lazy" decoding="async" style="object-position:50% 35%">
+        <figcaption><b>01</b><strong>FIRST TOUCH</strong><span>はじめの一歩</span></figcaption></figure>
+      <figure class="hlx-t t2"><img src="images/gallery_action_02.webp" alt="仲間とボールを追う選手たち" width="1567" height="1045" loading="lazy" decoding="async">
+        <figcaption><b>02</b><strong>TEAMWORK</strong><span>仲間とつなぐ</span></figcaption></figure>
+      <figure class="hlx-t t3"><img src="images/gallery_action_03.webp" alt="試合でボールを奪い合う選手たち" width="1567" height="1045" loading="lazy" decoding="async" style="object-position:60% 50%">
+        <figcaption><b>03</b><strong>BATTLE</strong><span>球際で挑む</span></figcaption></figure>
+      <figure class="hlx-t t4"><img src="images/gallery_trophy.webp" alt="賞状とトロフィーを囲むチーム" width="1477" height="1108" loading="lazy" decoding="async" style="object-position:50% 45%">
+        <figcaption><b>04</b><strong>VICTORY</strong><span>勝利をつかむ</span></figcaption></figure>
+      <figure class="hlx-t t5"><img src="images/gallery_event_01.webp" alt="夏のイベントで盛り上がる選手とコーチ" width="1280" height="960" loading="lazy" decoding="async" style="object-position:22% 30%">
+        <figcaption><b>05</b><strong>SPIRIT</strong><span>チームの絆</span></figcaption></figure>
+      <figure class="hlx-t t6"><img src="images/ob_kawasaki_01.webp" alt="花束を持つOB選手" width="1200" height="800" loading="lazy" decoding="async" style="object-position:50% 30%">
+        <figcaption><b>06</b><strong>NEXT STAGE</strong><span>その先のステージへ</span></figcaption></figure>
     </div>
+  </div>
+
+  <div class="hlx-band">
+    <div class="hlx-stats">
+      <div><b>1974</b><span>ESTABLISHED</span><i>創設</i></div>
+      <div><b>50<small>YEARS</small></b><span>HISTORY</span><i>創設50年</i></div>
+      <div><b>70</b><span>PLAYERS</span><i>の仲間</i></div>
+      <div><b>4</b><span>CATEGORIES</span><i>KIDS〜U-12</i></div>
+    </div>
+    <a class="hlx-btn" href="#contact"><span>JOIN THE CLUB</span>無料体験に参加する →</a>
   </div>
 </section>
 
@@ -5167,15 +5175,15 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
 })();
 </script>
 <script>
-/* 成長の物語：画面に入ったら .is-in を付けて、写真と言葉を順に見せる */
+/* THIS IS YAHAGI SC：画面に入ったら .is-in を付けて、写真と数字を順に見せる */
 (function(){
-  var root=document.getElementById('story');
+  var root=document.getElementById('highlights');
   if(!root||!('IntersectionObserver' in window))return;
-  document.documentElement.classList.add('js-story');
+  document.documentElement.classList.add('js-hlx');
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});
-  },{rootMargin:'0px 0px -15% 0px'});
-  root.querySelectorAll('.story-head,.st-ch,.story-end').forEach(function(el){io.observe(el);});
+  },{rootMargin:'0px 0px -12% 0px'});
+  root.querySelectorAll('.hlx-head,.hlx-t,.hlx-stats').forEach(function(el,i){el.style.transitionDelay=el.classList.contains('hlx-t')?((i%3)*.12)+'s':'';io.observe(el);});
 })();
 </script>
 </body>
